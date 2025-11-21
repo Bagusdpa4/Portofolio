@@ -10,15 +10,15 @@ export const Footer = () => {
   return (
     <footer className="bg-gray-950 border-t border-cyan-500/30 py-4 font-sans text-white">
       <div className="mx-auto flex max-w-7xl flex-col items-center justify-center px-6 lg:px-8">
-        <div className="mb-4 flex w-full max-w-7xl items-center justify-between space-y-0 sm:mb-0">
+        <div className="mb-4 flex w-full max-w-7xl flex-col items-center justify-center sm:flex-row sm:justify-between sm:space-y-0">
           <a
             href="#"
-            className="text-xl font-extrabold tracking-wider text-cyan-400 transition duration-300 hover:text-cyan-300 sm:text-2xl"
+            className="text-xl font-extrabold tracking-wider text-cyan-400 transition duration-300 hover:text-cyan-300 sm:text-2xl mb-4 sm:mb-0"
           >
             Bagus Dwi Putra Adiyono
           </a>
 
-          <div className="flex space-x-4">
+          <div className="flex flex-wrap justify-center gap-x-4 gap-y-2 max-w-sm sm:max-w-none">
             <a
               href="https://github.com/Bagusdpa4"
               target="_blank"

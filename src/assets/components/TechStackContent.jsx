@@ -52,7 +52,7 @@ const SkillItem = ({ skill, Icon, color }) => (
 
 export const TechStackContent = () => (
   <div className="bg-slate-800/80 mt-4 rounded-xl border border-gray-700 p-6 shadow-xl sm:p-8">
-    <div className="flex flex-wrap justify-center gap-6 sm:gap-8 lg:mx-auto lg:max-w-6xl">
+    <div className="grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-6 gap-6 sm:gap-8 lg:mx-auto lg:max-w-6xl">
       {skillsData.map((item) => (
         <SkillItem
           key={item.name}

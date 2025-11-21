@@ -168,7 +168,7 @@ export const Homepage = () => {
                 About Me
               </h2>
               <p className="flex items-center justify-center text-xs font-semibold uppercase tracking-wider text-cyan-400 sm:text-sm">
-                <FaUser className="mr-2 h-4 w-4" /> Transforming ideas into
+                <FaUser className="mr-1 lg:mr-2 h-4 w-4" /> Transforming ideas into
                 digital experiences
               </p>
             </div>
@@ -226,11 +226,11 @@ export const Homepage = () => {
 
             {/* Statistik */}
             <div className="mt-16 border-t border-gray-700 pt-10">
-              <div className="grid grid-cols-4 divide-x divide-gray-700 rounded-xl border border-gray-600 bg-gray-800/50">
+              <div className="grid grid-cols-2 lg:grid-cols-4 divide-x divide-gray-700 rounded-xl border border-gray-600 bg-gray-800/50">
                 <StatItem
                   icon={HiCode}
                   number={totalProjects}
-                  label="TOTAL PROJECTS"
+                  label="PROJECTS"
                 />
                 <StatItem
                   icon={PiCertificateFill}
