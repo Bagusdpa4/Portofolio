@@ -74,7 +74,7 @@ export const ArticleContent = () => {
               rel="noopener noreferrer"
               className="mt-3 inline-flex items-center text-xs text-cyan-400 transition duration-300 hover:underline sm:text-sm"
             >
-              View Credential <FiExternalLink className="ml-1 h-3 w-3" />
+              Link Article <FiExternalLink className="ml-1 h-3 w-3" />
             </a>
           </div>
         ))}

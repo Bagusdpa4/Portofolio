@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Navbar } from "../assets/components/Navbar";
 import { Footer } from "../assets/components/Footer";
 import Profile from "../assets/img/Profile.jpg";
@@ -18,12 +18,13 @@ import {
   FaLinkedin,
   FaGithub,
   FaClock,
+  FaInstagram,
 } from "react-icons/fa";
 import { GrArticle } from "react-icons/gr";
 import { PiCertificateFill } from "react-icons/pi";
 import { GiGears } from "react-icons/gi";
 import { FiExternalLink } from "react-icons/fi";
-import { HiOutlineMail } from "react-icons/hi";
+import { FaPhoneVolume } from "react-icons/fa6";
 import { HiCode } from "react-icons/hi";
 
 // Komponen Section
@@ -31,7 +32,7 @@ const Section = ({ id, children, className = "" }) => {
   return (
     <section
       id={id}
-      className={`flex min-h-screen flex-col items-center justify-center px-4 pb-16 pt-20 sm:px-8 ${className}`}
+      className={`flex min-h-screen flex-col items-center justify-center px-4 pb-16 pt-10 sm:px-8 ${className}`}
     >
       {children}
     </section>
@@ -41,55 +42,50 @@ const Section = ({ id, children, className = "" }) => {
 // Data Kontak Pribadi
 const contactInfo = [
   {
-    icon: HiOutlineMail,
+    icon: FaEnvelope,
     label: "Email",
-    value: "bagus.putra@example.com",
-    link: "mailto:bagus.putra@example.com",
-  },
-  {
-    icon: FaLinkedin,
-    label: "LinkedIn",
-    value: "/bagusdwi",
-    link: "https://linkedin.com/in/bagusdwi",
-  },
-  {
-    icon: FaGithub,
-    label: "GitHub",
-    value: "/bagusdev",
-    link: "https://github.com/bagusdev",
+    value: "sugab.dwi88@gmail.com",
   },
   {
     icon: FaPhone,
     label: "Telepon",
-    value: "+62 812 3456 7890",
-    link: "tel:+6281234567890",
+    value: "+6282229749462",
+  },
+  {
+    icon: FaGithub,
+    label: "GitHub",
+    value: "Bagusdpa4",
+  },
+  {
+    icon: FaLinkedin,
+    label: "LinkedIn",
+    value: "bagusdwiputraadiyono",
+  },
+  {
+    icon: FaInstagram,
+    label: "Instagram",
+    value: "bagusdwiputraa",
   },
   {
     icon: FaMapMarkerAlt,
     label: "Lokasi",
-    value: "Jakarta, Indonesia",
-    link: "https://maps.google.com/search?q=Jakarta+Indonesia",
+    value: "Sidoarjo, Indonesia",
   },
 ];
 
 // Komponen Item Kontak
-const ContactItem = ({ icon: Icon, label, value, link }) => (
-  <a
-    href={link}
-    target="_blank"
-    rel="noopener noreferrer"
-    className="flex items-start space-x-3 rounded-lg border border-gray-700 bg-gray-900/50 p-3 transition duration-300 hover:border-cyan-400"
-  >
-    <Icon className="mt-1 h-5 w-5 shrink-0 text-cyan-400" />
+const ContactItem = ({ icon: Icon, label, value }) => (
+  <div className="flex cursor-default items-start space-x-3 rounded-lg border border-gray-700 bg-gray-900/50 p-3 transition duration-300 hover:border-cyan-400">
+    <Icon className="my-3 h-6 w-6 shrink-0 text-cyan-400" />
     <div className="text-left">
       <p className="text-xs font-medium uppercase tracking-wider text-gray-400">
         {label}
       </p>
       <p className="break-word text-base font-semibold text-white sm:text-lg">
-        {value.length > 20 ? value.substring(0, 17) + "..." : value}
+        {value.length > 25 ? value.substring(0, 22) + "..." : value}
       </p>
     </div>
-  </a>
+  </div>
 );
 
 // Komponen Statistik
@@ -108,8 +104,11 @@ const StatItem = ({ icon: Icon, number, label }) => (
 export const Homepage = () => {
   const [activeTab, setActiveTab] = useState("project");
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   // Kolom Statistik Section 2
-  const generalContactInfo = contactInfo.slice(0, 3);
   const totalProjects = 3;
   const totalCertificates = 4;
   const totalArticles = 3;
@@ -298,9 +297,7 @@ export const Homepage = () => {
               <button
                 onClick={() => setActiveTab("article")}
                 className={`flex w-1/4 flex-col items-center justify-center rounded-lg px-3 py-3 font-semibold transition duration-300 sm:px-4 sm:py-4 ${
-                  activeTab === "article"
-                    ? activeTabStyle
-                    : inactiveTabStyle
+                  activeTab === "article" ? activeTabStyle : inactiveTabStyle
                 }`}
               >
                 <GrArticle className="mb-1 h-6 w-6" />
@@ -329,41 +326,67 @@ export const Homepage = () => {
 
         {/* 4. CONTACT SECTION */}
         <Section id="contact">
-          <div className="w-full max-w-7xl text-center">
-            <p className="mb-2 flex items-center justify-center text-xs font-semibold uppercase tracking-wider text-cyan-400 sm:text-sm">
-              <FaEnvelope className="mr-2 h-4 w-4" /> Get in Touch
-            </p>
-            <h2 className="mb-4 text-4xl font-extrabold text-white sm:text-5xl">
-              Let's Collaborate
-            </h2>
-            <p className="mx-auto mb-8 max-w-xl text-base text-gray-400 sm:mb-12 sm:text-xl">
-              Tertarik untuk berdiskusi tentang peluang kerja, proyek, atau
-              kolaborasi? Anda dapat menemukan beberapa informasi utama di bawah
-              ini.
-            </p>
+          <div className="w-full max-w-7xl">
+            {/* Header */}
+            <div className="mb-12 text-center sm:mb-16">
+              <p className="mb-2 flex items-center justify-center text-sm font-semibold uppercase tracking-wider text-cyan-400 sm:text-base">
+                <FaEnvelope className="mr-2 h-4 w-4" /> Get in Touch
+              </p>
+              <h2 className="mb-4 text-4xl font-extrabold text-white sm:text-5xl lg:text-6xl">
+                Let's Collaborate
+              </h2>
+              <p className="mx-auto max-w-2xl text-base text-gray-400 sm:text-xl">
+                Tertarik untuk berdiskusi tentang peluang kerja, proyek, atau
+                kolaborasi? Anda dapat menghubungi saya melalui
+                platform-platform di bawah ini.
+              </p>
+            </div>
 
-            <div className="mx-auto w-full max-w-3xl">
-              <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
-                {generalContactInfo.map((item, index) => (
-                  <ContactItem
-                    key={index}
-                    icon={item.icon}
-                    label={item.label}
-                    value={item.value}
-                    link={item.link}
-                  />
-                ))}
+            {/* Container */}
+            <div className="flex flex-col items-center gap-12 lg:flex-row lg:items-center lg:gap-2">
+              {/* Section Kiri */}
+              <div className="flex w-full flex-col items-center lg:w-1/2">
+                <p className="mb-6 text-base font-semibold text-gray-300 sm:text-lg">
+                  Klik ikon di bawah ini untuk menghubungi saya.
+                </p>
+                <div className="relative flex h-56 w-56 items-center justify-center rounded-full sm:h-72 sm:w-72">
+                  {/* Efek Cincin Bercahaya (Pulsating Ring) */}
+                  <div className="absolute inset-0 h-full w-full animate-ping rounded-full border border-cyan-500/50 opacity-50"></div>
+                  <div className="absolute inset-0 h-full w-full rounded-full border-4 border-cyan-500/70 bg-gray-900/50 shadow-2xl shadow-cyan-500/30"></div>
+
+                  {/* Ikon Kiri */}
+                  <a href="https://wa.me/+6282229749462" title="Hubungi Saya">
+                    <FaPhoneVolume className="relative z-10 h-28 w-28 text-cyan-400 transition duration-300 hover:scale-110 sm:h-36 sm:w-36" />
+                  </a>
+                </div>
               </div>
 
-              {/* Tombol ke Halaman Kontak Detail */}
-              <div className="mt-10 sm:mt-14">
-                <a
-                  href="/contact"
-                  className="text-gray-950 inline-flex items-center rounded-lg bg-cyan-500 px-8 py-3 text-base font-bold shadow-lg transition duration-300 hover:scale-105 hover:bg-cyan-400"
-                >
-                  Lihat Detail Kontak Lainnya{" "}
-                  <FiExternalLink className="ml-2 h-4 w-4" />
-                </a>
+              {/* Section Kanan */}
+              <div className="w-full lg:w-1/2">
+                <div className="mx-auto w-full max-w-lg lg:mx-0 lg:max-w-none">
+                  {/* Daftar Kontak */}
+                  <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+                    {contactInfo.map((item, index) => (
+                      <ContactItem
+                        key={index}
+                        icon={item.icon}
+                        label={item.label}
+                        value={item.value}
+                      />
+                    ))}
+                  </div>
+
+                  {/* Tombol ke Halaman Kontak Detail */}
+                  <div className="mt-10">
+                    <a
+                      href="/contact"
+                      className="text-gray-950 inline-flex w-full items-center justify-center rounded-lg bg-cyan-500 px-8 py-3 text-base font-bold shadow-xl transition duration-300 hover:scale-[1.01] hover:bg-cyan-400"
+                    >
+                      Lihat Detail Kontak Lengkap
+                      <FiExternalLink className="ml-2 h-4 w-4" />
+                    </a>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

@@ -67,7 +67,7 @@ export const ProjectContent = () => {
             <h4 className="mb-2 text-xl font-bold text-white">{item.title}</h4>
             <p className="min-h-[60px] text-sm text-gray-400">{item.desc}</p>
 
-            <div className="mt-4 flex items-center justify-end text-sm font-semibold">
+            <div className="mt-4 flex items-center justify-end text-sm">
               <a
                 href={item.projectUrl || "#"}
                 target="_blank"
