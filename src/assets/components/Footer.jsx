@@ -11,14 +11,11 @@ export const Footer = () => {
     <footer className="bg-gray-950 border-t border-cyan-500/30 py-4 font-sans text-white">
       <div className="mx-auto flex max-w-7xl flex-col items-center justify-center px-6 lg:px-8">
         <div className="mb-4 flex w-full max-w-7xl flex-col items-center justify-center sm:flex-row sm:justify-between sm:space-y-0">
-          <a
-            href="#"
-            className="text-xl font-extrabold tracking-wider text-cyan-400 transition duration-300 hover:text-cyan-300 sm:text-2xl mb-4 sm:mb-0"
-          >
+          <div className="mb-4 text-xl font-extrabold tracking-wider text-cyan-400 transition duration-300 sm:mb-0 sm:text-2xl">
             Bagus Dwi Putra Adiyono
-          </a>
+          </div>
 
-          <div className="flex flex-wrap justify-center gap-x-4 gap-y-2 max-w-sm sm:max-w-none">
+          <div className="flex max-w-sm flex-wrap justify-center gap-x-4 gap-y-2 sm:max-w-none">
             <a
               href="https://github.com/Bagusdpa4"
               target="_blank"

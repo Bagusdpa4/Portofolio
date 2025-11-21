@@ -3,10 +3,10 @@ import { Navbar } from "../assets/components/Navbar";
 import { Footer } from "../assets/components/Footer";
 import Profile from "../assets/img/Profile.jpg";
 
-import { ProjectContent } from "../assets/components/ProjectContent";
-import { CertificateContent } from "../assets/components/CertificateContent";
-import { ArticleContent } from "../assets/components/ArticleContent";
-import { TechStackContent } from "../assets/components/TechStackContent";
+import { ProjectContent } from "../assets/components/portofolio/ProjectContent";
+import { CertificateContent } from "../assets/components/portofolio/CertificateContent";
+import { ArticleContent } from "../assets/components/portofolio/ArticleContent";
+import { TechStackContent } from "../assets/components/portofolio/TechStackContent";
 
 import {
   FaLaptopCode,
@@ -106,6 +106,17 @@ export const Homepage = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
+  const handleSmoothScroll = (e, id) => {
+    e.preventDefault();
+    const targetElement = document.getElementById(id);
+    if (targetElement) {
+      targetElement.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }
+  };
 
   // Kolom Statistik Section 2
   const totalProjects = 3;
@@ -220,6 +231,7 @@ export const Homepage = () => {
                   <a
                     href="#portfolio"
                     className="inline-flex items-center justify-center rounded-lg border border-white/30 px-6 py-3 font-semibold text-white transition duration-300 hover:bg-white/10"
+                    onClick={(e) => handleSmoothScroll(e, "portfolio")}
                   >
                     <span className="mr-2">{"</>"}</span> View Projects
                   </a>

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import { HiMenu, HiX } from "react-icons/hi";
 
 const SCROLL_THRESHOLD = 100;
@@ -6,10 +6,9 @@ const SCROLL_THRESHOLD = 100;
 export const Navbar = () => {
   const [lastScrollY, setLastScrollY] = useState(0);
   const [isNavbarHidden, setIsNavbarHidden] = useState(false);
-
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const handleScroll = () => {
+  const handleScroll = useCallback(() => {
     if (window.scrollY > lastScrollY && window.scrollY > SCROLL_THRESHOLD) {
       setIsNavbarHidden(true);
       setIsMenuOpen(false);
@@ -17,17 +16,26 @@ export const Navbar = () => {
       setIsNavbarHidden(false);
     }
     setLastScrollY(window.scrollY);
-  };
+  }, [lastScrollY]);
 
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, [lastScrollY]);
+  }, [handleScroll]);
 
-  const handleLinkClick = () => {
+  const handleLinkClick = (e, id) => {
+    e.preventDefault();
     setIsMenuOpen(false);
+
+    const targetElement = document.getElementById(id);
+    if (targetElement) {
+      targetElement.scrollIntoView({
+        behavior: "smooth", 
+        block: "start", 
+      });
+    }
   };
 
   return (
@@ -41,7 +49,7 @@ export const Navbar = () => {
         <a
           href="#home"
           className="text-2xl font-extrabold tracking-wider text-cyan-400 transition duration-300 hover:text-cyan-300"
-          onClick={handleLinkClick}
+          onClick={(e) => handleLinkClick(e, "home")}
         >
           Portfolio Bagus
         </a>
@@ -65,6 +73,7 @@ export const Navbar = () => {
             <a
               key={item}
               href={`#${item.toLowerCase()}`}
+              onClick={(e) => handleLinkClick(e, item.toLowerCase())}
               className="text-base font-semibold uppercase tracking-wide transition duration-300 hover:text-cyan-400"
             >
               {item}
@@ -87,7 +96,7 @@ export const Navbar = () => {
               key={item}
               href={`#${item.toLowerCase()}`}
               className="block py-1 text-lg font-medium text-gray-300 hover:text-cyan-400"
-              onClick={handleLinkClick}
+              onClick={(e) => handleLinkClick(e, item.toLowerCase())}
             >
               {item}
             </a>
