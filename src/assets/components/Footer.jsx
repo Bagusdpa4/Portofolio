@@ -23,7 +23,7 @@ export const Footer = () => {
               href="https://github.com/Bagusdpa4"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-lg text-gray-400 transition duration-200 hover:text-cyan-400 sm:text-xl"
+              className="text-lg text-gray-400 transition duration-200 hover:scale-150 hover:text-cyan-400 sm:text-2xl"
               title="GitHub"
             >
               <FaGithub />
@@ -33,7 +33,7 @@ export const Footer = () => {
               href="https://www.linkedin.com/in/bagusdwiputraadiyono/"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-lg text-gray-400 transition duration-200 hover:text-cyan-400 sm:text-xl"
+              className="text-lg text-gray-400 transition duration-200 hover:scale-150 hover:text-cyan-400 sm:text-2xl"
               title="LinkedIn"
             >
               <FaLinkedin />
@@ -43,7 +43,7 @@ export const Footer = () => {
               href="https://wa.me/+6282229749462"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-lg text-gray-400 transition duration-200 hover:text-cyan-400 sm:text-xl"
+              className="text-lg text-gray-400 transition duration-200 hover:scale-150 hover:text-cyan-400 sm:text-2xl"
               title="WhatsApp"
             >
               <FaWhatsapp />
@@ -53,7 +53,7 @@ export const Footer = () => {
               href="https://www.instagram.com/bagusdwiputraa/"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-lg text-gray-400 transition duration-200 hover:text-cyan-400 sm:text-xl"
+              className="text-lg text-gray-400 transition duration-200 hover:scale-150 hover:text-cyan-400 sm:text-2xl"
               title="Instagram"
             >
               <FaInstagram />
@@ -61,7 +61,7 @@ export const Footer = () => {
 
             <a
               href={`mailto:${emailAddress}`}
-              className="text-lg text-gray-400 transition duration-200 hover:text-cyan-400 sm:text-xl"
+              className="text-lg text-gray-400 transition duration-200 hover:scale-150 hover:text-cyan-400 sm:text-2xl"
               title={`Kirim Email ke ${emailAddress}`}
             >
               <AiOutlineMail />
