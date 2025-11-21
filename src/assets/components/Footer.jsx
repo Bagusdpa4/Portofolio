@@ -1,51 +1,79 @@
 import React from "react";
+import { FaGithub, FaLinkedin, FaWhatsapp, FaInstagram } from "react-icons/fa";
+import { AiOutlineMail } from "react-icons/ai";
 
 export const Footer = () => {
-  const currentYear = new Date().getFullYear();
+  const currentYear = new Date().getFullYear();
 
-  return (
-    <footer className="bg-gray-950 border-t border-cyan-500/30 py-8 font-sans text-white">
-      <div className="mx-auto flex max-w-7xl flex-col items-center justify-center px-6 lg:px-8">
-        <div className="mb-6 flex w-full max-w-lg flex-col items-center justify-between space-y-4 sm:flex-row sm:space-y-0">
-          <a
-            href="#"
-            className="text-2xl font-extrabold tracking-wider text-cyan-400 transition duration-300 hover:text-cyan-300"
-          >
-            Bagus
-          </a>
+  return (
+    <footer className="bg-gray-950 border-t border-cyan-500/30 py-4 font-sans text-white">
+      <div className="mx-auto flex max-w-7xl flex-col items-center justify-center px-6 lg:px-8">
+        
+        <div className="mb-4 flex w-full max-w-7xl items-center justify-between space-y-0 sm:mb-0">
+          
+          <a
+            href="#"
+            className="text-xl font-extrabold tracking-wider text-cyan-400 transition duration-300 hover:text-cyan-300 sm:text-2xl"
+          >
+            Bagus
+          </a>
 
-          <div className="flex space-x-6">
-            <a
-              href="https://github.com/yourusername"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-sm text-gray-400 transition duration-200 hover:text-cyan-400 sm:text-base"
-            >
-              [GitHub]
-            </a>
-            <a
-              href="https://linkedin.com/in/yourusername"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-sm text-gray-400 transition duration-200 hover:text-cyan-400 sm:text-base"
-            >
-              [LinkedIn]
-            </a>
-            <a
-              href="mailto:youremail@example.com"
-              className="text-sm text-gray-400 transition duration-200 hover:text-cyan-400 sm:text-base"
-            >
-              [Email]
-            </a>
-          </div>
-        </div>
+          <div className="flex space-x-4">
+            
+            <a
+              href="https://github.com/yourusername"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-lg text-gray-400 transition duration-200 hover:text-cyan-400 sm:text-xl"
+              title="GitHub"
+            >
+              <FaGithub />
+            </a>
 
-        <div className="mb-6 mt-4 w-full max-w-lg border-t border-gray-700"></div>
+            <a
+              href="https://linkedin.com/in/yourusername"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-lg text-gray-400 transition duration-200 hover:text-cyan-400 sm:text-xl"
+              title="LinkedIn"
+            >
+              <FaLinkedin />
+            </a>
 
-        <p className="text-center text-sm text-gray-500">
-          &copy; {currentYear} Bagus. All Rights Reserved.
-        </p>
-      </div>
-    </footer>
-  );
+            <a
+              href="https://wa.me/yourphonenumber"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-lg text-gray-400 transition duration-200 hover:text-cyan-400 sm:text-xl"
+              title="WhatsApp"
+            >
+              <FaWhatsapp />
+            </a>
+
+            <a
+              href="https://instagram.com/yourusername"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-lg text-gray-400 transition duration-200 hover:text-cyan-400 sm:text-xl"
+              title="Instagram"
+            >
+              <FaInstagram />
+            </a>
+
+            <a
+              href="mailto:youremail@example.com"
+              className="text-lg text-gray-400 transition duration-200 hover:text-cyan-400 sm:text-xl"
+              title="Email"
+            >
+              <AiOutlineMail />
+            </a>
+          </div>
+        </div>
+        
+        <p className="mt-4 text-center text-xs text-gray-500 sm:mt-2">
+          &copy; {currentYear} Bagus. All Rights Reserved.
+        </p>
+      </div>
+    </footer>
+  );
 };
