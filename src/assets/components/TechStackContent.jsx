@@ -1,6 +1,5 @@
 import React from "react";
 
-// Import Icons yang relevan dengan Tech Stack
 import {
   FaHtml5,
   FaCss3Alt,
@@ -22,7 +21,6 @@ import {
   SiExpress,
 } from "react-icons/si";
 
-// Data Skill dengan warna ikon asli (gunakan hex atau kelas warna Tailwind jika tersedia)
 const skillsData = [
   { name: "HTML", icon: FaHtml5, color: "text-orange-600" },
   { name: "CSS", icon: FaCss3Alt, color: "text-blue-500" },
@@ -45,9 +43,8 @@ const skillsData = [
 const SkillItem = ({ skill, Icon, color }) => (
   <div
     key={skill}
-    className="flex h-24 w-24 flex-col items-center justify-center rounded-lg border border-gray-700/50 bg-gray-900/50 p-4 text-center transition duration-300 hover:border-indigo-500 hover:shadow-lg hover:shadow-indigo-500/20 sm:h-28 sm:w-28"
+    className="flex h-24 w-24 flex-col items-center justify-center rounded-lg border border-gray-700/50 bg-gray-900/50 p-4 text-center transition duration-300 hover:scale-110 hover:border-cyan-400 hover:shadow-lg hover:shadow-indigo-500/20 sm:h-28 sm:w-28"
   >
-    {/* Menggunakan prop 'color' di sini */}
     <Icon className={`mb-2 h-8 w-8 sm:h-10 sm:w-10 ${color}`} />
     <p className="text-xs font-semibold text-white sm:text-sm">{skill}</p>
   </div>

@@ -2,12 +2,10 @@ import React, { useState } from "react";
 import { Navbar } from "../assets/components/Navbar";
 import { Footer } from "../assets/components/Footer";
 
-// Import Komponen Konten Portfolio
 import { ProjectContent } from "../assets/components/ProjectContent";
 import { CertificateContent } from "../assets/components/CertificateContent";
 import { TechStackContent } from "../assets/components/TechStackContent";
 
-// Import Icons
 import {
   FaLaptopCode,
   FaUser,
@@ -17,10 +15,9 @@ import {
   FaMapMarkerAlt,
   FaLinkedin,
   FaGithub,
-  FaGraduationCap,
-  FaStar,
   FaClock,
 } from "react-icons/fa";
+import { PiCertificateFill } from "react-icons/pi";
 import { GiGears } from "react-icons/gi";
 import { FiExternalLink } from "react-icons/fi";
 import { HiOutlineMail } from "react-icons/hi";
@@ -80,12 +77,12 @@ const ContactItem = ({ icon: Icon, label, value, link }) => (
     rel="noopener noreferrer"
     className="flex items-start space-x-3 rounded-lg border border-gray-700 bg-gray-900/50 p-3 transition duration-300 hover:border-cyan-400"
   >
-    <Icon className="mt-1 h-5 w-5 flex-shrink-0 text-cyan-400" />
+    <Icon className="mt-1 h-5 w-5 shrink-0 text-cyan-400" />
     <div className="text-left">
       <p className="text-xs font-medium uppercase tracking-wider text-gray-400">
         {label}
       </p>
-      <p className="break-words text-base font-semibold text-white sm:text-lg">
+      <p className="break-word text-base font-semibold text-white sm:text-lg">
         {value.length > 20 ? value.substring(0, 17) + "..." : value}
       </p>
     </div>
@@ -109,9 +106,9 @@ export const Homepage = () => {
   const [activeTab, setActiveTab] = useState("project");
 
   const generalContactInfo = contactInfo.slice(0, 3);
-  const totalProjects = 11;
-  const totalCertificates = 7;
-  const yearsOfExperience = 3;
+  const totalProjects = 3;
+  const totalCertificates = 4;
+  const yearsOfExperience = 1;
 
   let PortfolioContentComponent;
   if (activeTab === "certificate") {
@@ -122,13 +119,13 @@ export const Homepage = () => {
     PortfolioContentComponent = ProjectContent;
   }
 
-  // Kelas Tailwind untuk style tombol navigasi aktif
+  // Active tab section portfolio
   const activeTabStyle =
-    "bg-gradient-to-r from-cyan-600 to-blue-700 text-white shadow-lg shadow-cyan-900/50";
-  const inactiveTabStyle = "text-gray-400 hover:bg-gray-800/50";
+    "bg-linear-to-r from-cyan-600 to-blue-700 text-white shadow-lg shadow-cyan-900/50";
+  const inactiveTabStyle = "text-gray-400 hover:bg-gray-700/50 hover:scale-105 cursor-pointer";
 
   return (
-    <div className="from-gray-950 to-blue-950 via-slate-800 min-h-screen bg-gradient-to-r font-sans">
+    <div className="from-gray-950 to-blue-950 via-slate-800 min-h-screen bg-linear-to-r font-sans">
       <Navbar />
 
       <main>
@@ -139,7 +136,7 @@ export const Homepage = () => {
               Welcome To My
             </p>
             <h1 className="text-5xl font-extrabold leading-tight tracking-tighter sm:text-7xl lg:text-9xl">
-              <span className="bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
+              <span className="bg-linear-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
                 Portfolio
               </span>
               Website
@@ -158,7 +155,6 @@ export const Homepage = () => {
         {/* 2. ABOUT SECTION */}
         <Section id="about">
           <div className="w-full max-w-7xl">
-            {/* Judul dan Subtitle diposisikan di tengah atas */}
             <div className="mb-10 text-center">
               <h2 className="mb-2 text-4xl font-extrabold text-white sm:text-5xl">
                 About Me
@@ -169,12 +165,10 @@ export const Homepage = () => {
               </p>
             </div>
 
-            {/* Konten Utama (Deskripsi dan Foto) */}
+            {/* Konten Utama */}
             <div className="flex flex-col items-center gap-10 text-left md:flex-row-reverse md:items-start md:gap-16">
-              {/* KANAN (Foto Profil) */}
               <div className="mt-10 flex w-full justify-center md:mt-0 md:w-1/3 md:justify-end">
                 <div className="relative h-64 w-64 sm:h-80 sm:w-80">
-                  {/* Efek Blur/Glow di belakang */}
                   <div className="absolute inset-0 m-auto h-full w-full animate-pulse rounded-full bg-cyan-500 opacity-20 blur-3xl filter"></div>
 
                   {/* Container Foto Profil */}
@@ -184,7 +178,7 @@ export const Homepage = () => {
                 </div>
               </div>
 
-              {/* KIRI (Deskripsi, Nama, dan Tombol) */}
+              {/* Section Kiri */}
               <div className="w-full space-y-4 md:w-2/3">
                 <p className="text-2xl font-light text-white sm:text-3xl">
                   Hello, I'm
@@ -203,18 +197,16 @@ export const Homepage = () => {
                   hingga akhir.
                 </p>
 
-                {/* Tombol Aksi */}
+                {/* Button */}
                 <div className="flex flex-col space-y-3 pt-4 sm:flex-row sm:space-x-4 sm:space-y-0">
-                  {/* Tombol Primary: Download CV */}
-                  <button className="inline-flex items-center justify-center rounded-lg bg-gradient-to-r from-cyan-600 to-blue-700 px-6 py-3 font-semibold text-white shadow-lg transition duration-300 hover:bg-cyan-600">
+                  <button className="inline-flex items-center cursor-pointer justify-center rounded-lg bg-linear-to-r from-cyan-600 to-blue-700 px-6 py-3 font-semibold text-white shadow-lg transition duration-300 hover:scale-105">
                     <span className="mr-2">💾</span> Download CV
                   </button>
-                  {/* Tombol Secondary: View Projects */}
                   <a
                     href="#portfolio"
                     className="inline-flex items-center justify-center rounded-lg border border-white/30 px-6 py-3 font-semibold text-white transition duration-300 hover:bg-white/10"
                   >
-                    <span className="mr-2">{"< >"}</span> View Projects
+                    <span className="mr-2">{"</>"}</span> View Projects
                   </a>
                 </div>
               </div>
@@ -224,12 +216,12 @@ export const Homepage = () => {
             <div className="mt-16 border-t border-gray-700 pt-10">
               <div className="grid grid-cols-3 divide-x divide-gray-700 rounded-xl border border-gray-700 bg-gray-800/50">
                 <StatItem
-                  icon={FaStar}
+                  icon={HiCode}
                   number={totalProjects}
                   label="TOTAL PROJECTS"
                 />
                 <StatItem
-                  icon={FaGraduationCap}
+                  icon={PiCertificateFill}
                   number={totalCertificates}
                   label="CERTIFICATES"
                 />
@@ -260,7 +252,7 @@ export const Homepage = () => {
               learning path.
             </p>
 
-            {/* TOMBOL NAVIGASI - Warna diubah ke Cyan/Blue */}
+            {/* TOMBOL NAVIGASI */}
             <div className="mx-auto mb-12 flex max-w-4xl justify-center space-x-2 rounded-xl border border-cyan-700/50 bg-gray-900/50 p-2 sm:space-x-4 sm:p-3">
               {/* Tombol Project */}
               <button
@@ -281,7 +273,7 @@ export const Homepage = () => {
                     : inactiveTabStyle
                 }`}
               >
-                <FaGraduationCap className="mb-1 h-6 w-6" />
+                <PiCertificateFill className="mb-1 h-6 w-6" />
                 <span className="text-sm sm:text-base">Certificates</span>
               </button>
               {/* Tombol Tech Stack */}
@@ -296,7 +288,7 @@ export const Homepage = () => {
               </button>
             </div>
 
-            {/* Konten yang ditampilkan berdasarkan Tab Aktif */}
+            {/* Default Konten */}
             <div className="mt-10">
               <PortfolioContentComponent />
             </div>
@@ -321,7 +313,6 @@ export const Homepage = () => {
             </p>
 
             <div className="mx-auto w-full max-w-3xl">
-              {/* Menampilkan 3 item Kontak General saja */}
               <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
                 {generalContactInfo.map((item, index) => (
                   <ContactItem
@@ -338,7 +329,7 @@ export const Homepage = () => {
               <div className="mt-10 sm:mt-14">
                 <a
                   href="/contact"
-                  className="text-gray-950 inline-flex items-center rounded-lg bg-cyan-500 px-8 py-3 text-base font-bold shadow-lg transition duration-300 hover:bg-cyan-400"
+                  className="text-gray-950 inline-flex items-center rounded-lg bg-cyan-500 px-8 py-3 text-base font-bold shadow-lg transition duration-300 hover:bg-cyan-400 hover:scale-105"
                 >
                   Lihat Detail Kontak Lainnya{" "}
                   <FiExternalLink className="ml-2 h-4 w-4" />

@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { FaGraduationCap } from "react-icons/fa";
 import { FiExternalLink } from "react-icons/fi";
 
 const portfolioItems = [
@@ -61,9 +60,8 @@ export const CertificateContent = () => {
         {portfolioItems.slice(0, visibleCount).map((item) => (
           <div
             key={item.id}
-            className="bg-slate-800/80 rounded-xl border border-gray-700 p-5 shadow-xl transition duration-300 hover:border-indigo-500"
+            className="bg-slate-800/80 rounded-xl border border-gray-700 p-5 shadow-xl transition duration-300 hover:scale-105 hover:border-cyan-400"
           >
-            {/* Placeholder Gambar Sertifikat */}
             <div className="mb-4 flex h-48 items-center justify-center rounded-lg bg-gray-900 text-sm text-gray-500 sm:h-64"></div>
 
             <h4 className="mb-1 text-lg font-bold text-white sm:text-xl">
@@ -86,7 +84,7 @@ export const CertificateContent = () => {
         <div className="mt-12 sm:mt-16">
           <button
             onClick={showMoreItems}
-            className="text-gray-950 rounded-lg bg-cyan-500 px-8 py-3 text-base font-bold shadow-lg transition duration-300 hover:bg-cyan-400"
+            className="text-gray-950 cursor-pointer rounded-lg bg-cyan-500 px-8 py-3 text-base font-bold shadow-lg transition duration-300 hover:bg-cyan-400"
           >
             See All Certificates
           </button>
