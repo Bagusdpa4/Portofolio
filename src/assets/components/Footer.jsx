@@ -11,7 +11,7 @@ export const Footer = () => {
     <footer className="bg-gray-950 border-t border-cyan-500/30 py-4 font-sans text-white">
       <div className="mx-auto flex max-w-7xl flex-col items-center justify-center px-6 lg:px-8">
         <div className="mb-4 flex w-full max-w-7xl flex-col items-center justify-center sm:flex-row sm:justify-between sm:space-y-0">
-          <div className="mb-4 text-xl font-extrabold tracking-wider text-cyan-400 transition duration-300 sm:mb-0 sm:text-2xl">
+          <div className="mb-4 text-xl font-extrabold tracking-wider text-gray-400 transition duration-300 sm:mb-0 sm:text-2xl">
             Bagus Dwi Putra Adiyono
           </div>
 

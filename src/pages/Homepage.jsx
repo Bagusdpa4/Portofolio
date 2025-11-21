@@ -26,6 +26,7 @@ import { GiGears } from "react-icons/gi";
 import { FiExternalLink } from "react-icons/fi";
 import { FaPhoneVolume, FaPhone } from "react-icons/fa6";
 import { HiCode } from "react-icons/hi";
+import { BiLogoGmail } from "react-icons/bi";
 
 if ("scrollRestoration" in window.history) {
   window.history.scrollRestoration = "manual";
@@ -46,7 +47,7 @@ const Section = ({ id, children, className = "" }) => {
 // Data Kontak Pribadi
 const contactInfo = [
   {
-    icon: FaEnvelope,
+    icon: BiLogoGmail,
     label: "Email",
     value: "sugab.dwi88@gmail.com",
   },
