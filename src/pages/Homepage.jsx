@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Navbar } from "../assets/components/Navbar";
 import { Footer } from "../assets/components/Footer";
+import Profile from "../assets/img/Profile.jpg";
 
 import { ProjectContent } from "../assets/components/ProjectContent";
 import { CertificateContent } from "../assets/components/CertificateContent";
@@ -28,7 +29,7 @@ const Section = ({ id, children, className = "" }) => {
   return (
     <section
       id={id}
-      className={`flex min-h-screen flex-col items-center justify-center px-4 pb-16 pt-[5rem] sm:px-8 ${className}`}
+      className={`flex min-h-screen flex-col items-center justify-center px-4 pb-16 pt-20 sm:px-8 ${className}`}
     >
       {children}
     </section>
@@ -105,11 +106,13 @@ const StatItem = ({ icon: Icon, number, label }) => (
 export const Homepage = () => {
   const [activeTab, setActiveTab] = useState("project");
 
+  // Kolom Statistik Section 2
   const generalContactInfo = contactInfo.slice(0, 3);
   const totalProjects = 3;
   const totalCertificates = 4;
   const yearsOfExperience = 1;
 
+  // Component Section Portfolio
   let PortfolioContentComponent;
   if (activeTab === "certificate") {
     PortfolioContentComponent = CertificateContent;
@@ -122,10 +125,11 @@ export const Homepage = () => {
   // Active tab section portfolio
   const activeTabStyle =
     "bg-linear-to-r from-cyan-600 to-blue-700 text-white shadow-lg shadow-cyan-900/50";
-  const inactiveTabStyle = "text-gray-400 hover:bg-gray-700/50 hover:scale-105 cursor-pointer";
+  const inactiveTabStyle =
+    "text-gray-400 hover:bg-gray-700/50 hover:scale-105 cursor-pointer";
 
   return (
-    <div className="from-gray-950 to-blue-950 via-slate-800 min-h-screen bg-linear-to-r font-sans">
+    <div className="from-gray-950 to-blue-950 via-slate-800 bg-linear-to-r min-h-screen font-sans">
       <Navbar />
 
       <main>
@@ -173,7 +177,11 @@ export const Homepage = () => {
 
                   {/* Container Foto Profil */}
                   <div className="relative z-10 flex h-full w-full items-center justify-center rounded-full border-4 border-cyan-500/50 bg-gray-700 shadow-2xl shadow-cyan-500/20">
-                    <span className="text-2xl text-gray-400"></span>
+                    <img
+                      src={Profile}
+                      alt="Foto Profil Bagus Dwi"
+                      className="h-full w-full rounded-full object-cover"
+                    />
                   </div>
                 </div>
               </div>
@@ -199,7 +207,7 @@ export const Homepage = () => {
 
                 {/* Button */}
                 <div className="flex flex-col space-y-3 pt-4 sm:flex-row sm:space-x-4 sm:space-y-0">
-                  <button className="inline-flex items-center cursor-pointer justify-center rounded-lg bg-linear-to-r from-cyan-600 to-blue-700 px-6 py-3 font-semibold text-white shadow-lg transition duration-300 hover:scale-105">
+                  <button className="bg-linear-to-r inline-flex cursor-pointer items-center justify-center rounded-lg from-cyan-600 to-blue-700 px-6 py-3 font-semibold text-white shadow-lg transition duration-300 hover:scale-105">
                     <span className="mr-2">💾</span> Download CV
                   </button>
                   <a
@@ -329,7 +337,7 @@ export const Homepage = () => {
               <div className="mt-10 sm:mt-14">
                 <a
                   href="/contact"
-                  className="text-gray-950 inline-flex items-center rounded-lg bg-cyan-500 px-8 py-3 text-base font-bold shadow-lg transition duration-300 hover:bg-cyan-400 hover:scale-105"
+                  className="text-gray-950 inline-flex items-center rounded-lg bg-cyan-500 px-8 py-3 text-base font-bold shadow-lg transition duration-300 hover:scale-105 hover:bg-cyan-400"
                 >
                   Lihat Detail Kontak Lainnya{" "}
                   <FiExternalLink className="ml-2 h-4 w-4" />
