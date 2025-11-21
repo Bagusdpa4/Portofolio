@@ -5,6 +5,7 @@ import Profile from "../assets/img/Profile.jpg";
 
 import { ProjectContent } from "../assets/components/ProjectContent";
 import { CertificateContent } from "../assets/components/CertificateContent";
+import { ArticleContent } from "../assets/components/ArticleContent";
 import { TechStackContent } from "../assets/components/TechStackContent";
 
 import {
@@ -18,6 +19,7 @@ import {
   FaGithub,
   FaClock,
 } from "react-icons/fa";
+import { GrArticle } from "react-icons/gr";
 import { PiCertificateFill } from "react-icons/pi";
 import { GiGears } from "react-icons/gi";
 import { FiExternalLink } from "react-icons/fi";
@@ -110,12 +112,15 @@ export const Homepage = () => {
   const generalContactInfo = contactInfo.slice(0, 3);
   const totalProjects = 3;
   const totalCertificates = 4;
+  const totalArticles = 3;
   const yearsOfExperience = 1;
 
   // Component Section Portfolio
   let PortfolioContentComponent;
   if (activeTab === "certificate") {
     PortfolioContentComponent = CertificateContent;
+  } else if (activeTab === "article") {
+    PortfolioContentComponent = ArticleContent;
   } else if (activeTab === "techstack") {
     PortfolioContentComponent = TechStackContent;
   } else {
@@ -222,7 +227,7 @@ export const Homepage = () => {
 
             {/* Statistik */}
             <div className="mt-16 border-t border-gray-700 pt-10">
-              <div className="grid grid-cols-3 divide-x divide-gray-700 rounded-xl border border-gray-700 bg-gray-800/50">
+              <div className="grid grid-cols-4 divide-x divide-gray-700 rounded-xl border border-gray-600 bg-gray-800/50">
                 <StatItem
                   icon={HiCode}
                   number={totalProjects}
@@ -232,6 +237,11 @@ export const Homepage = () => {
                   icon={PiCertificateFill}
                   number={totalCertificates}
                   label="CERTIFICATES"
+                />
+                <StatItem
+                  icon={GrArticle}
+                  number={totalArticles}
+                  label="ARTICLES"
                 />
                 <StatItem
                   icon={FaClock}
@@ -265,7 +275,7 @@ export const Homepage = () => {
               {/* Tombol Project */}
               <button
                 onClick={() => setActiveTab("project")}
-                className={`flex w-1/3 flex-col items-center justify-center rounded-lg px-3 py-3 font-semibold transition duration-300 sm:px-4 sm:py-4 ${
+                className={`flex w-1/4 flex-col items-center justify-center rounded-lg px-3 py-3 font-semibold transition duration-300 sm:px-4 sm:py-4 ${
                   activeTab === "project" ? activeTabStyle : inactiveTabStyle
                 }`}
               >
@@ -275,7 +285,7 @@ export const Homepage = () => {
               {/* Tombol Certificate */}
               <button
                 onClick={() => setActiveTab("certificate")}
-                className={`flex w-1/3 flex-col items-center justify-center rounded-lg px-3 py-3 font-semibold transition duration-300 sm:px-4 sm:py-4 ${
+                className={`flex w-1/4 flex-col items-center justify-center rounded-lg px-3 py-3 font-semibold transition duration-300 sm:px-4 sm:py-4 ${
                   activeTab === "certificate"
                     ? activeTabStyle
                     : inactiveTabStyle
@@ -284,10 +294,22 @@ export const Homepage = () => {
                 <PiCertificateFill className="mb-1 h-6 w-6" />
                 <span className="text-sm sm:text-base">Certificates</span>
               </button>
+              {/* Tombol Article */}
+              <button
+                onClick={() => setActiveTab("article")}
+                className={`flex w-1/4 flex-col items-center justify-center rounded-lg px-3 py-3 font-semibold transition duration-300 sm:px-4 sm:py-4 ${
+                  activeTab === "article"
+                    ? activeTabStyle
+                    : inactiveTabStyle
+                }`}
+              >
+                <GrArticle className="mb-1 h-6 w-6" />
+                <span className="text-sm sm:text-base">Articles</span>
+              </button>
               {/* Tombol Tech Stack */}
               <button
                 onClick={() => setActiveTab("techstack")}
-                className={`flex w-1/3 flex-col items-center justify-center rounded-lg px-3 py-3 font-semibold transition duration-300 sm:px-4 sm:py-4 ${
+                className={`flex w-1/4 flex-col items-center justify-center rounded-lg px-3 py-3 font-semibold transition duration-300 sm:px-4 sm:py-4 ${
                   activeTab === "techstack" ? activeTabStyle : inactiveTabStyle
                 }`}
               >
