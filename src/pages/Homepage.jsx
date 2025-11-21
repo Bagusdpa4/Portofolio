@@ -211,7 +211,7 @@ export const Homepage = () => {
                 {/* Button */}
                 <div className="flex flex-col space-y-3 pt-4 sm:flex-row sm:space-x-4 sm:space-y-0">
                   <a
-                    href="/src/assets/docs/CV_Bagus Dwi Putra Adiyono.pdf"
+                    href="/docs/CV_Bagus Dwi Putra Adiyono.pdf"
                     target="_blank"
                     className="bg-linear-to-r inline-flex cursor-pointer items-center justify-center rounded-lg from-cyan-600 to-blue-700 px-6 py-3 font-semibold text-white shadow-lg transition duration-300 hover:scale-105"
                   >
