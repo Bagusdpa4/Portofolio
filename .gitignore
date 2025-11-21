@@ -12,6 +12,7 @@ dist
 dist-ssr
 *.local
 yarn.lock
+.gitignore
 
 # Editor directories and files
 .vscode/*
