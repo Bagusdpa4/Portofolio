@@ -13,7 +13,6 @@ import {
   FaUser,
   FaBriefcase,
   FaEnvelope,
-  FaPhone,
   FaMapMarkerAlt,
   FaLinkedin,
   FaGithub,
@@ -24,7 +23,7 @@ import { GrArticle } from "react-icons/gr";
 import { PiCertificateFill } from "react-icons/pi";
 import { GiGears } from "react-icons/gi";
 import { FiExternalLink } from "react-icons/fi";
-import { FaPhoneVolume } from "react-icons/fa6";
+import { FaPhoneVolume, FaPhone } from "react-icons/fa6";
 import { HiCode } from "react-icons/hi";
 
 // Komponen Section
@@ -143,7 +142,7 @@ export const Homepage = () => {
             <p className="mb-4 text-lg font-light tracking-widest text-white opacity-80 sm:text-xl">
               Welcome To My
             </p>
-            <h1 className="text-5xl font-extrabold leading-tight tracking-tighter sm:text-7xl lg:text-9xl">
+            <h1 className="text-slate-500 text-5xl font-extrabold leading-tight tracking-tighter sm:text-7xl lg:text-9xl">
               <span className="bg-linear-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
                 Portfolio
               </span>
@@ -168,8 +167,8 @@ export const Homepage = () => {
                 About Me
               </h2>
               <p className="flex items-center justify-center text-xs font-semibold uppercase tracking-wider text-cyan-400 sm:text-sm">
-                <FaUser className="mr-1 lg:mr-2 h-4 w-4" /> Transforming ideas into
-                digital experiences
+                <FaUser className="mr-1 h-4 w-4 lg:mr-2" /> Transforming ideas
+                into digital experiences
               </p>
             </div>
 
@@ -211,9 +210,13 @@ export const Homepage = () => {
 
                 {/* Button */}
                 <div className="flex flex-col space-y-3 pt-4 sm:flex-row sm:space-x-4 sm:space-y-0">
-                  <button className="bg-linear-to-r inline-flex cursor-pointer items-center justify-center rounded-lg from-cyan-600 to-blue-700 px-6 py-3 font-semibold text-white shadow-lg transition duration-300 hover:scale-105">
+                  <a
+                    href="/src/assets/docs/CV_Bagus Dwi Putra Adiyono.pdf"
+                    target="_blank"
+                    className="bg-linear-to-r inline-flex cursor-pointer items-center justify-center rounded-lg from-cyan-600 to-blue-700 px-6 py-3 font-semibold text-white shadow-lg transition duration-300 hover:scale-105"
+                  >
                     <span className="mr-2">💾</span> Download CV
-                  </button>
+                  </a>
                   <a
                     href="#portfolio"
                     className="inline-flex items-center justify-center rounded-lg border border-white/30 px-6 py-3 font-semibold text-white transition duration-300 hover:bg-white/10"
@@ -226,7 +229,7 @@ export const Homepage = () => {
 
             {/* Statistik */}
             <div className="mt-16 border-t border-gray-700 pt-10">
-              <div className="grid grid-cols-2 lg:grid-cols-4 divide-x divide-gray-700 rounded-xl border border-gray-600 bg-gray-800/50">
+              <div className="grid grid-cols-2 divide-x divide-gray-700 rounded-xl border border-gray-600 bg-gray-800/50 lg:grid-cols-4">
                 <StatItem
                   icon={HiCode}
                   number={totalProjects}
