@@ -15,7 +15,7 @@ export const Footer = () => {
             href="#"
             className="text-xl font-extrabold tracking-wider text-cyan-400 transition duration-300 hover:text-cyan-300 sm:text-2xl"
           >
-            Bagus
+            Bagus Dwi Putra Adiyono
           </a>
 
           <div className="flex space-x-4">
