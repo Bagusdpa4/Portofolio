@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { motion } from "framer-motion";
 import { Navbar } from "../assets/components/Navbar";
 import { Footer } from "../assets/components/Footer";
 import Profile from "../assets/img/Profile.jpg";
@@ -25,6 +26,10 @@ import { GiGears } from "react-icons/gi";
 import { FiExternalLink } from "react-icons/fi";
 import { FaPhoneVolume, FaPhone } from "react-icons/fa6";
 import { HiCode } from "react-icons/hi";
+
+if ("scrollRestoration" in window.history) {
+  window.history.scrollRestoration = "manual";
+}
 
 // Komponen Section
 const Section = ({ id, children, className = "" }) => {
@@ -100,6 +105,80 @@ const StatItem = ({ icon: Icon, number, label }) => (
   </div>
 );
 
+// Framer Motion Variants
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      delayChildren: 0.5,
+      staggerChildren: 0.2,
+      duration: 2,
+    },
+  },
+};
+
+const textVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 1.5,
+      ease: "easeOut",
+    },
+  },
+};
+
+// Variants untuk Judul/Header Section (Muncul dari Atas)
+const sectionHeaderVariants = {
+  hidden: { opacity: 0, y: -50 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.8,
+      ease: "easeOut",
+    },
+  },
+};
+
+// Variants untuk Konten (Muncul/Fade In)
+const contentFadeInVariants = (direction = "up") => ({
+  hidden: {
+    opacity: 0,
+    x: direction === "left" ? -100 : direction === "right" ? 100 : 0,
+    y: direction === "up" ? 100 : 0,
+  },
+  visible: {
+    opacity: 1,
+    x: 0,
+    y: 0,
+    transition: {
+      duration: 1,
+      ease: "easeOut",
+    },
+  },
+});
+
+// Variants Container untuk Staggering (misalnya, Daftar Kontak atau Statistik)
+const staggerContainerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      delayChildren: 0.2, // Jeda sebelum anak pertama muncul
+      staggerChildren: 0.1, // Jeda antara setiap anak
+    },
+  },
+};
+
+// Variants untuk item-item di dalam Stagger Container
+const itemVariants = {
+  hidden: { opacity: 0, y: 50 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.7 } },
+};
+
 export const Homepage = () => {
   const [activeTab, setActiveTab] = useState("project");
 
@@ -143,28 +222,42 @@ export const Homepage = () => {
     "text-gray-400 hover:bg-gray-700/50 hover:scale-105 cursor-pointer";
 
   return (
-    <div className="from-gray-950 to-blue-950 via-slate-800 bg-linear-to-r min-h-screen font-sans">
-      <Navbar />
+    <motion.div
+      className="from-gray-950 to-blue-950 via-slate-800 bg-linear-to-r min-h-screen font-sans"
+      variants={containerVariants}
+      initial="hidden"
+      animate="visible"
+    >
+      <Navbar handleSmoothScroll={handleSmoothScroll} />
 
       <main>
         {/* 1. HOME SECTION */}
         <Section id="home" className="justify-center pt-0 text-center">
           <div className="mx-auto max-w-4xl py-20">
-            <p className="mb-4 text-lg font-light tracking-widest text-white opacity-80 sm:text-xl">
+            <motion.p
+              className="mb-4 text-lg font-light tracking-widest text-white opacity-80 sm:text-xl"
+              variants={textVariants}
+            >
               Welcome To My
-            </p>
-            <h1 className="text-slate-500 text-5xl font-extrabold leading-tight tracking-tighter sm:text-7xl lg:text-9xl">
+            </motion.p>
+            <motion.h1
+              className="text-slate-500 text-5xl font-extrabold leading-tight tracking-tighter sm:text-7xl lg:text-9xl"
+              variants={textVariants}
+            >
               <span className="bg-linear-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
                 Portfolio
               </span>
               Website
-            </h1>
-            <div className="mt-12 flex w-full justify-center sm:mt-16">
+            </motion.h1>
+            <motion.div
+              className="mt-12 flex w-full justify-center sm:mt-16"
+              variants={textVariants}
+            >
               <div className="flex h-32 w-64 items-center justify-center rounded-lg border border-cyan-500/30 bg-gray-900/50 text-gray-400 sm:h-40 sm:w-80 sm:text-xl">
                 <FaLaptopCode className="mr-2 h-10 w-10 text-cyan-400" />
                 <p className="text-sm sm:text-base">Creative Developer</p>
               </div>
-            </div>
+            </motion.div>
           </div>
         </Section>
 
@@ -173,7 +266,13 @@ export const Homepage = () => {
         {/* 2. ABOUT SECTION */}
         <Section id="about">
           <div className="w-full max-w-7xl">
-            <div className="mb-10 text-center">
+            <motion.div
+              className="mb-10 text-center"
+              variants={sectionHeaderVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.3 }}
+            >
               <h2 className="mb-2 text-4xl font-extrabold text-white sm:text-5xl">
                 About Me
               </h2>
@@ -181,11 +280,17 @@ export const Homepage = () => {
                 <FaUser className="mr-1 h-4 w-4 lg:mr-2" /> Transforming ideas
                 into digital experiences
               </p>
-            </div>
+            </motion.div>
 
             {/* Konten Utama */}
             <div className="flex flex-col items-center gap-10 text-left md:flex-row-reverse md:items-start md:gap-16">
-              <div className="mt-10 flex w-full justify-center md:mt-0 md:w-1/3 md:justify-end">
+              <motion.div
+                className="mt-10 flex w-full justify-center md:mt-0 md:w-1/3 md:justify-end"
+                variants={contentFadeInVariants("right")}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.3 }}
+              >
                 <div className="relative h-64 w-64 sm:h-80 sm:w-80">
                   <div className="absolute inset-0 m-auto h-full w-full animate-pulse rounded-full bg-cyan-500 opacity-20 blur-3xl filter"></div>
 
@@ -198,10 +303,16 @@ export const Homepage = () => {
                     />
                   </div>
                 </div>
-              </div>
+              </motion.div>
 
               {/* Section Kiri */}
-              <div className="w-full space-y-4 md:w-2/3">
+              <motion.div
+                className="w-full space-y-4 md:w-2/3"
+                variants={contentFadeInVariants("left")}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.3 }}
+              >
                 <p className="text-2xl font-light text-white sm:text-3xl">
                   Hello, I'm
                 </p>
@@ -236,34 +347,52 @@ export const Homepage = () => {
                     <span className="mr-2">{"</>"}</span> View Projects
                   </a>
                 </div>
-              </div>
+              </motion.div>
             </div>
 
             {/* Statistik */}
-            <div className="mt-16 border-t border-gray-700 pt-10">
-              <div className="grid grid-cols-2 divide-x divide-gray-700 rounded-xl border border-gray-600 bg-gray-800/50 lg:grid-cols-4">
-                <StatItem
-                  icon={HiCode}
-                  number={totalProjects}
-                  label="PROJECTS"
-                />
-                <StatItem
-                  icon={PiCertificateFill}
-                  number={totalCertificates}
-                  label="CERTIFICATES"
-                />
-                <StatItem
-                  icon={GrArticle}
-                  number={totalArticles}
-                  label="ARTICLES"
-                />
-                <StatItem
-                  icon={FaClock}
-                  number={yearsOfExperience}
-                  label="YEARS OF EXPERIENCE"
-                />
-              </div>
-            </div>
+            <motion.div
+              className="mt-16 border-t border-gray-700 pt-10"
+              variants={staggerContainerVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.3 }}
+            >
+              <motion.div
+                className="grid grid-cols-2 divide-x divide-gray-700 rounded-xl border border-gray-600 bg-gray-800/50 lg:grid-cols-4"
+                variants={staggerContainerVariants}
+              >
+                {
+                  // Pembungkus StatItem dengan motion.div
+                  [
+                    { icon: HiCode, number: totalProjects, label: "PROJECTS" },
+                    {
+                      icon: PiCertificateFill,
+                      number: totalCertificates,
+                      label: "CERTIFICATES",
+                    },
+                    {
+                      icon: GrArticle,
+                      number: totalArticles,
+                      label: "ARTICLES",
+                    },
+                    {
+                      icon: FaClock,
+                      number: yearsOfExperience,
+                      label: "YEARS OF EXPERIENCE",
+                    },
+                  ].map((stat, index) => (
+                    <motion.div key={index} variants={itemVariants}>
+                      <StatItem
+                        icon={stat.icon}
+                        number={stat.number}
+                        label={stat.label}
+                      />
+                    </motion.div>
+                  ))
+                }
+              </motion.div>
+            </motion.div>
           </div>
         </Section>
 
@@ -272,20 +401,33 @@ export const Homepage = () => {
         {/* 3. PORTFOLIO SECTION */}
         <Section id="portfolio">
           <div className="w-full max-w-7xl text-center">
-            <p className="mb-2 flex items-center justify-center text-xs font-semibold uppercase tracking-wider text-cyan-400 sm:text-sm">
-              <FaBriefcase className="mr-2 h-4 w-4" /> My Work
-            </p>
-            <h2 className="mb-4 text-4xl font-extrabold text-white sm:text-5xl">
-              Portfolio Showcase
-            </h2>
-            <p className="mx-auto mb-8 max-w-xl text-base text-gray-400 sm:text-lg">
-              Explore my journey through projects, certifications, and technical
-              expertise. Each section represents a milestone in my continuous
-              learning path.
-            </p>
+            <motion.div
+              variants={sectionHeaderVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.3 }}
+            >
+              <p className="mb-2 flex items-center justify-center text-xs font-semibold uppercase tracking-wider text-cyan-400 sm:text-sm">
+                <FaBriefcase className="mr-2 h-4 w-4" /> My Work
+              </p>
+              <h2 className="mb-4 text-4xl font-extrabold text-white sm:text-5xl">
+                Portfolio Showcase
+              </h2>
+              <p className="mx-auto mb-8 max-w-xl text-base text-gray-400 sm:text-lg">
+                Explore my journey through projects, certifications, and
+                technical expertise. Each section represents a milestone in my
+                continuous learning path.
+              </p>
+            </motion.div>
 
             {/* TOMBOL NAVIGASI */}
-            <div className="mx-auto mb-12 flex max-w-4xl justify-center space-x-2 rounded-xl border border-cyan-700/50 bg-gray-900/50 p-2 sm:space-x-4 sm:p-3">
+            <motion.div
+              className="mx-auto mb-12 flex max-w-4xl justify-center space-x-2 rounded-xl border border-cyan-700/50 bg-gray-900/50 p-2 sm:space-x-4 sm:p-3"
+              variants={contentFadeInVariants("up")}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.5 }}
+            >
               {/* Tombol Project */}
               <button
                 onClick={() => setActiveTab("project")}
@@ -328,7 +470,7 @@ export const Homepage = () => {
                 <GiGears className="mb-1 h-6 w-6" />
                 <span className="text-sm sm:text-base">Tech Stack</span>
               </button>
-            </div>
+            </motion.div>
 
             {/* Default Konten */}
             <div className="mt-10">
@@ -343,7 +485,13 @@ export const Homepage = () => {
         <Section id="contact">
           <div className="w-full max-w-7xl">
             {/* Header */}
-            <div className="mb-12 text-center sm:mb-16">
+            <motion.div
+              className="mb-12 text-center sm:mb-16"
+              variants={sectionHeaderVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.3 }}
+            >
               <p className="mb-2 flex items-center justify-center text-sm font-semibold uppercase tracking-wider text-cyan-400 sm:text-base">
                 <FaEnvelope className="mr-2 h-4 w-4" /> Get in Touch
               </p>
@@ -355,12 +503,18 @@ export const Homepage = () => {
                 kolaborasi? Anda dapat menghubungi saya melalui
                 platform-platform di bawah ini.
               </p>
-            </div>
+            </motion.div>
 
             {/* Container */}
             <div className="flex flex-col items-center gap-12 lg:flex-row lg:items-center lg:gap-2">
               {/* Section Kiri */}
-              <div className="flex w-full flex-col items-center lg:w-1/2">
+              <motion.div
+                className="flex w-full flex-col items-center lg:w-1/2"
+                variants={contentFadeInVariants("left")}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.3 }}
+              >
                 <p className="mb-6 text-base font-semibold text-gray-300 sm:text-lg">
                   Klik ikon di bawah ini untuk menghubungi saya.
                 </p>
@@ -374,25 +528,32 @@ export const Homepage = () => {
                     <FaPhoneVolume className="relative z-10 h-28 w-28 text-cyan-400 transition duration-300 hover:scale-110 sm:h-36 sm:w-36" />
                   </a>
                 </div>
-              </div>
+              </motion.div>
 
               {/* Section Kanan */}
-              <div className="w-full lg:w-1/2">
+              <motion.div
+                className="w-full lg:w-1/2"
+                variants={staggerContainerVariants}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.3 }}
+              >
                 <div className="mx-auto w-full max-w-lg lg:mx-0 lg:max-w-none">
                   {/* Daftar Kontak */}
                   <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
                     {contactInfo.map((item, index) => (
-                      <ContactItem
-                        key={index}
-                        icon={item.icon}
-                        label={item.label}
-                        value={item.value}
-                      />
+                      <motion.div key={index} variants={itemVariants}>
+                        <ContactItem
+                          icon={item.icon}
+                          label={item.label}
+                          value={item.value}
+                        />
+                      </motion.div>
                     ))}
                   </div>
 
                   {/* Tombol ke Halaman Kontak Detail */}
-                  <div className="mt-10">
+                  <motion.div className="mt-10" variants={itemVariants}>
                     <a
                       href="/contact"
                       className="text-gray-950 inline-flex w-full items-center justify-center rounded-lg bg-cyan-500 px-8 py-3 text-base font-bold shadow-xl transition duration-300 hover:scale-[1.01] hover:bg-cyan-400"
@@ -400,15 +561,15 @@ export const Homepage = () => {
                       Lihat Detail Kontak Lengkap
                       <FiExternalLink className="ml-2 h-4 w-4" />
                     </a>
-                  </div>
+                  </motion.div>
                 </div>
-              </div>
+              </motion.div>
             </div>
           </div>
         </Section>
       </main>
 
       <Footer />
-    </div>
+    </motion.div>
   );
 };
