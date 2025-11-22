@@ -199,9 +199,9 @@ export const Homepage = () => {
   };
 
   // Kolom Statistik Section 2
-  const totalProjects = 3;
+  const totalProjects = 6;
   const totalCertificates = 4;
-  const totalArticles = 3;
+  const totalArticles = 2;
   const yearsOfExperience = 1;
 
   // Component Section Portfolio
@@ -379,7 +379,7 @@ export const Homepage = () => {
                     },
                     {
                       icon: FaClock,
-                      number: yearsOfExperience,
+                      number: yearsOfExperience + "+",
                       label: "YEARS OF EXPERIENCE",
                     },
                   ].map((stat, index) => (
