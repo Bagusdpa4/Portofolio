@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { Navbar } from "../assets/components/Navbar";
 import { Footer } from "../assets/components/Footer";
 import Profile from "../assets/img/Profile.jpg";
@@ -475,7 +475,17 @@ export const Homepage = () => {
 
             {/* Default Konten */}
             <div className="mt-10">
-              <PortfolioContentComponent />
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={activeTab}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -20 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <PortfolioContentComponent />
+                </motion.div>
+              </AnimatePresence>
             </div>
           </div>
         </Section>
