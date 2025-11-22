@@ -566,7 +566,7 @@ export const Homepage = () => {
                   {/* Tombol ke Halaman Kontak Detail */}
                   <motion.div className="mt-10" variants={itemVariants}>
                     <a
-                      href="/contact"
+                      href="/contact-me"
                       className="text-gray-950 inline-flex w-full items-center justify-center rounded-lg bg-cyan-500 px-8 py-3 text-base font-bold shadow-xl transition duration-300 hover:scale-[1.01] hover:bg-cyan-400"
                     >
                       Lihat Detail Kontak Lengkap
