@@ -15,7 +15,7 @@ const portfolioItems = [
     title: "Restful API for Airline Ticket Booking",
     desc: "Pembuatan Restful API untuk simulasi pemesanan tiket pesawat. Fitur termasuk otentikasi JWT, validasi data, dan integrasi database. Dibangun dengan Node.js, Express, dan PostgreSQL.",
     category: "Backend Javascript",
-    projectUrl: "https://project-pkl-binar.vercel.app/api-docs",
+    projectUrl: "https://api-ticketing.vercel.app/api-docs",
     thumbnailUrl: "/images/Restful API for Airline Ticket Booking.jpg",
   },
   {
@@ -44,7 +44,7 @@ const portfolioItems = [
   },
   {
     id: 6,
-    title: "Rental Binar Car",
+    title: "Landing Pages Rental Car",
     desc: "Implementasi desain UI/UX kedalam website dengan berfokus menampilkan informasi penyewaan mobil. Diimplementasikan dengan HTML dan CSS Murni.",
     category: "Frontend Javascript",
     projectUrl: "https://bagusdpa4.github.io/challenge-01/",

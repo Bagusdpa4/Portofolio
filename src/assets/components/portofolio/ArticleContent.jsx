@@ -55,7 +55,7 @@ export const ArticleContent = () => {
                 <img
                   src={item.thumbnailUrl}
                   alt={`Thumbnail ${item.title}`}
-                  className="h-full w-full object-cover"
+                  className="h-full w-full object-cover transition duration-500 hover:scale-110"
                 />
               ) : (
                 <div className="absolute inset-0 flex items-center justify-center bg-indigo-900/40 text-indigo-400">

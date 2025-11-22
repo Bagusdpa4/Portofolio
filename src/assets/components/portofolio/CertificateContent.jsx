@@ -58,7 +58,7 @@ export const CertificateContent = () => {
                 <img
                   src={item.thumbnailUrl}
                   alt={`Thumbnail ${item.title}`}
-                  className="h-full w-full object-cover"
+                  className="h-full w-full object-cover transition duration-500 hover:scale-110"
                 />
               ) : (
                 // Fallback jika thumbnailUrl tidak ada
