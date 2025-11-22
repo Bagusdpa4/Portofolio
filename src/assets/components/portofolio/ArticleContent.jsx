@@ -22,6 +22,16 @@ const portfolioItems = [
     file: "/docs/Information System Development for Web-Based Creative Services E-Commerce Using Rapid Application Development Method.pdf",
     thumbnailUrl: "/images/GSCA.jpg",
   },
+  {
+    id: 3,
+    title:
+      "ANALYSIS OF THE EFFECTIVENESS OF USE OF INDONESIAN LANGUAGE AT UPN 'VETERAN' JAWA TIMUR ELEARNING WEBSITE",
+    desc: "Jurnal ilmiah yang menganalisis efektivitas penggunaan bahasa indonesia pada website e-learning UPN Veteran Jawa Timur.",
+    category: "Article",
+    projectUrl: "https://ejurnal.unim.ac.id/index.php/matapena/article/view/2650",
+    file: "/docs/ANALYSIS OF THE EFFECTIVENESS OF USE OF INDONESIAN LANGUAGE AT UPN 'VETERAN' JAWA TIMUR ELEARNING WEBSITE.pdf",
+    thumbnailUrl: "/images/Matapena.jpg",
+  },
 ];
 
 export const ArticleContent = () => {
