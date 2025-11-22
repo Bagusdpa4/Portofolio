@@ -74,7 +74,7 @@ export const ProjectContent = () => {
                 rel="noopener noreferrer"
                 className="flex items-center text-cyan-400 transition duration-300 hover:underline"
               >
-                Details <FiExternalLink className="ml-1 h-3 w-3" />
+                Detail Project <FiExternalLink className="ml-1 h-3 w-3" />
               </a>
             </div>
           </div>

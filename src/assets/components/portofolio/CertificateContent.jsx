@@ -1,48 +1,39 @@
 import React, { useState } from "react";
 import { FiExternalLink } from "react-icons/fi";
+import { HiOutlineDocumentText, HiOutlineAcademicCap } from "react-icons/hi2";
 
 const portfolioItems = [
   {
+    id: 1,
+    title: "Junior Web Programmer (BNSP)",
+    desc: "Sertifikat Kompetensi sebagai Junior Web Programmer dari BNSP (Badan Nasional Sertifikasi Profesi). Berlaku 3 tahun. Diterbitkan 02 Oktober 2025.",
+    category: "Sertifikat",
+    projectUrl: "/public/docs/sertifikasi.pdf",
+    thumbnailUrl: "/public/images/sertifikasi.jpg",
+  },
+  {
+    id: 2,
+    title: "Back End Javascript",
+    desc: "Penyelesaian program Studi Independen Bersertifikat Back End Javascript oleh Binar Academy, Kampus Merdeka. Periode 16 Feb 2024 - 30 Jun 2024.",
+    category: "Sertifikat",
+    projectUrl: "/public/docs/BEJS.pdf",
+    thumbnailUrl: "/public/images/BEJS.jpg",
+  },
+  {
+    id: 3,
+    title: "Front End Javascript",
+    desc: "Penyelesaian program Studi Independen Bersertifikat Front End Javascript oleh Binar Academy, Kampus Merdeka. Periode 14 Aug 2023 - 31 Dec 2023.",
+    category: "Sertifikat",
+    projectUrl: "/public/docs/FEJS.pdf",
+    thumbnailUrl: "/public/images/FEJS.jpg",
+  },
+  {
     id: 4,
-    title: "Sertifikat Web Dev Basic",
-    desc: "Penyelesaian kursus dasar pengembangan web.",
-    category: "Sertifikat",
-    projectUrl: "#",
-  },
-  {
-    id: 6,
-    title: "Sertifikat React Intermediate",
-    desc: "Penguasaan React Hooks dan State Management.",
-    category: "Sertifikat",
-    projectUrl: "#",
-  },
-  {
-    id: 7,
-    title: "Sertifikat Node.js Expert",
-    desc: "Membangun RESTful API dengan Express.js.",
-    category: "Sertifikat",
-    projectUrl: "#",
-  },
-  {
-    id: 8,
-    title: "Sertifikat Algoritma Dasar",
-    desc: "Pemahaman struktur data dan algoritma.",
-    category: "Sertifikat",
-    projectUrl: "#",
-  },
-  {
-    id: 9,
-    title: "Sertifikat Cloud Computing",
-    desc: "Dasar-dasar layanan dan infrastruktur cloud.",
-    category: "Sertifikat",
-    projectUrl: "#",
-  },
-  {
-    id: 10,
-    title: "Sertifikat Design System",
-    desc: "Membuat dan mengelola Design System.",
-    category: "Sertifikat",
-    projectUrl: "#",
+    title: "Lulusan Berpredikat Dengan Pujian (Cumlaude)",
+    desc: "Piagam Penghargaan dari Rektor UPN Veteran Jawa Timur atas prestasi lulusan S-1 Sistem Informasi dengan IPK 3.88. Diterbitkan 26 Juli 2025.",
+    category: "Penghargaan",
+    projectUrl: "/public/docs/Penghargaan.pdf",
+    thumbnailUrl: "/public/images/Penghargaan.jpg",
   },
 ];
 
@@ -62,7 +53,30 @@ export const CertificateContent = () => {
             key={item.id}
             className="bg-slate-800/80 rounded-xl border border-gray-700 p-5 shadow-xl transition duration-300 hover:scale-105 hover:border-cyan-400"
           >
-            <div className="mb-4 flex h-48 items-center justify-center rounded-lg bg-gray-900 text-sm text-gray-500 sm:h-64"></div>
+            <div className="relative mb-4 flex h-48 items-center justify-center overflow-hidden rounded-lg bg-gray-900 text-sm text-gray-500 sm:h-64">
+              {item.thumbnailUrl ? (
+                <img
+                  src={item.thumbnailUrl}
+                  alt={`Thumbnail ${item.title}`}
+                  className="h-full w-full object-cover"
+                />
+              ) : (
+                // Fallback jika thumbnailUrl tidak ada
+                <div
+                  className={`absolute inset-0 flex items-center justify-center ${
+                    item.category === "Sertifikat"
+                      ? "bg-cyan-900/40 text-cyan-400"
+                      : "bg-yellow-900/40 text-yellow-400"
+                  }`}
+                >
+                  {item.category === "Sertifikat" ? (
+                    <HiOutlineDocumentText className="h-20 w-20" />
+                  ) : (
+                    <HiOutlineAcademicCap className="h-20 w-20" />
+                  )}
+                </div>
+              )}
+            </div>
 
             <h4 className="mb-1 text-lg font-bold text-white sm:text-xl">
               {item.title}
@@ -74,7 +88,7 @@ export const CertificateContent = () => {
               rel="noopener noreferrer"
               className="mt-3 inline-flex items-center text-xs text-cyan-400 transition duration-300 hover:underline sm:text-sm"
             >
-              View Credential <FiExternalLink className="ml-1 h-3 w-3" />
+              View Certificate <FiExternalLink className="ml-1 h-3 w-3" />
             </a>
           </div>
         ))}
