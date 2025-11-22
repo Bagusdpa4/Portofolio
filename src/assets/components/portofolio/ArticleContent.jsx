@@ -3,46 +3,24 @@ import { FiExternalLink } from "react-icons/fi";
 
 const portfolioItems = [
   {
-    id: 4,
-    title: "Sertifikat Web Dev Basic",
-    desc: "Penyelesaian kursus dasar pengembangan web.",
-    category: "Sertifikat",
-    projectUrl: "#",
+    id: 1,
+    title:
+      "Information System Development for Web-Based Creative Services E-Commerce Using Rapid Application Development Method",
+    desc: "Jurnal ilmiah yang membahas pengembangan sistem informasi e-commerce jasa kreatif berbasis web menggunakan metode Rapid Application Development (RAD).",
+    category: "Article",
+    projectUrl: "https://jurnal.kdi.or.id/index.php/bt/article/view/2615",
+    file: "/docs/Information System Development for Web-Based Creative Services E-Commerce Using Rapid Application Development Method.pdf",
+    thumbnailUrl: "/images/RAD.jpg",
   },
   {
-    id: 6,
-    title: "Sertifikat React Intermediate",
-    desc: "Penguasaan React Hooks dan State Management.",
-    category: "Sertifikat",
-    projectUrl: "#",
-  },
-  {
-    id: 7,
-    title: "Sertifikat Node.js Expert",
-    desc: "Membangun RESTful API dengan Express.js.",
-    category: "Sertifikat",
-    projectUrl: "#",
-  },
-  {
-    id: 8,
-    title: "Sertifikat Algoritma Dasar",
-    desc: "Pemahaman struktur data dan algoritma.",
-    category: "Sertifikat",
-    projectUrl: "#",
-  },
-  {
-    id: 9,
-    title: "Sertifikat Cloud Computing",
-    desc: "Dasar-dasar layanan dan infrastruktur cloud.",
-    category: "Sertifikat",
-    projectUrl: "#",
-  },
-  {
-    id: 10,
-    title: "Sertifikat Design System",
-    desc: "Membuat dan mengelola Design System.",
-    category: "Sertifikat",
-    projectUrl: "#",
+    id: 2,
+    title:
+      "Analisis Self-Efficacy Pembelajaran Mahasiswa Menggunakan E-learning UPN “VETERAN” Jawa Timur Dengan Model GSCA",
+    desc: "Jurnal ilmiah yang menganalisis kemampuan pembelajaran mahasiswa menggunakan e-learning UPN Veteran Jawa Timur dengan pendekatan model Generalized Structured Component Analysis (GSCA).",
+    category: "Article",
+    projectUrl: "https://ejurnal.unim.ac.id/index.php/submit/article/view/2667",
+    file: "/docs/Information System Development for Web-Based Creative Services E-Commerce Using Rapid Application Development Method.pdf",
+    thumbnailUrl: "/images/GSCA.jpg",
   },
 ];
 
@@ -62,14 +40,25 @@ export const ArticleContent = () => {
             key={item.id}
             className="bg-slate-800/80 rounded-xl border border-gray-700 p-5 shadow-xl transition duration-300 hover:scale-105 hover:border-cyan-400"
           >
-            <div className="mb-4 flex h-48 items-center justify-center rounded-lg bg-gray-900 text-sm text-gray-500 sm:h-64"></div>
-
-            <h4 className="mb-1 text-lg font-bold text-white sm:text-xl">
+            <div className="mb-4 flex h-48 items-center justify-center rounded-lg bg-gray-900 text-sm text-gray-500 sm:h-64">
+              {item.thumbnailUrl ? (
+                <img
+                  src={item.thumbnailUrl}
+                  alt={`Thumbnail ${item.title}`}
+                  className="h-full w-full object-cover"
+                />
+              ) : (
+                <div className="absolute inset-0 flex items-center justify-center bg-indigo-900/40 text-indigo-400">
+                  <HiOutlineNewspaper className="h-20 w-20" />
+                </div>
+              )}
+            </div>
+            <h4 className="mb-1 text-sm font-bold text-white sm:text-lg">
               {item.title}
             </h4>
             <p className="text-xs text-gray-400 sm:text-sm">{item.desc}</p>
             <a
-              href={item.projectUrl || "#"}
+              href={item.projectUrl || item.file}
               target="_blank"
               rel="noopener noreferrer"
               className="mt-3 inline-flex items-center text-xs text-cyan-400 transition duration-300 hover:underline sm:text-sm"
