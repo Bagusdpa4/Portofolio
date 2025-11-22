@@ -4,48 +4,53 @@ import { FiExternalLink } from "react-icons/fi";
 const portfolioItems = [
   {
     id: 1,
-    title: "Website E-Commerce",
-    desc: "Platform penjualan produk fashion responsif dengan React.",
-    category: "Proyek",
-    projectUrl: "#",
+    title: "E-Commerce Cahaya Kreativ",
+    desc: "Sistem pemesanan dan pengelolaan jasa kreatif untuk salah satu CV Fotografi di Surabaya, mencakup fitur e-commerce lengkap, manajemen produk, dan dashboard admin. Dibuat menggunakan Reactjs, Node.js/Express, dan PostgreSQL.",
+    category: "Website/Full-Stack",
+    projectUrl: "https://cahayakreativ.com/",
+    thumbnailUrl: "/images/Cahaya Kreativ.jpg",
   },
   {
     id: 2,
-    title: "Sistem Manajemen Tugas",
-    desc: "Aplikasi Todo List menggunakan Node.js dan MongoDB.",
-    category: "Proyek",
-    projectUrl: "#",
+    title: "Restful API for Airline Ticket Booking",
+    desc: "Pembuatan Restful API untuk simulasi pemesanan tiket pesawat. Fitur termasuk otentikasi JWT, validasi data, dan integrasi database. Dibangun dengan Node.js, Express, dan PostgreSQL.",
+    category: "Backend Javascript",
+    projectUrl: "https://project-pkl-binar.vercel.app/api-docs",
+    thumbnailUrl: "/images/Restful API for Airline Ticket Booking.jpg",
   },
   {
     id: 3,
-    title: "Landing Page Startup",
-    desc: "Desain UI/UX modern menggunakan Tailwind CSS.",
-    category: "Proyek",
-    projectUrl: "#",
+    title: "Website Online Course",
+    desc: "Pembuatan website online course yang responsif dan modern. Fokus pada pencarian course dan progress pembelajran serta dashboar admin. Dibangun menggunakan Reactjs dan Tailwind CSS.",
+    category: "Frontend Javascript",
+    projectUrl: "https://final-project-binar-seven.vercel.app/",
+    thumbnailUrl: "/images/Online Course.jpg",
   },
   {
     id: 4,
-    title: "Aplikasi Cuaca Interaktif",
-    desc: "Menggunakan API eksternal untuk menampilkan prakiraan cuaca.",
-    category: "Proyek",
-    projectUrl: "#",
+    title: "List Movie TMDB",
+    desc: "Aplikasi Website untuk menampilkan daftar film, detail, dan pencarian, memanfaatkan API dari The Movie Database (TMDB). Dibangun dengan Reactjs, Axios, Redux dan JWT.",
+    category: "Frontend Javascript",
+    projectUrl: "https://challenge-06-beta.vercel.app/",
+    thumbnailUrl: "/images/TMDB.jpg",
   },
   {
     id: 5,
-    title: "Blog Pribadi Berbasis Markdown",
-    desc: "Sistem blog cepat menggunakan Gatsby/Next.js.",
-    category: "Proyek",
-    projectUrl: "#",
+    title: "ToDo List App",
+    desc: "Aplikasi manajemen tugas harian sederhana yang mencakup penambahan, penghapusan, dan penandaan selesai. Diimplementasikan menggunakan Reactjs dan Logika Javascript sederhana.",
+    category: "Frontend Javascript",
+    projectUrl: "https://bagusdpa4.github.io/challenge03/",
+    thumbnailUrl: "/images/ToDo List.jpg",
   },
   {
     id: 6,
-    title: "Game Sederhana (Tic-Tac-Toe)",
-    desc: "Diimplementasikan menggunakan state React dasar.",
-    category: "Proyek",
-    projectUrl: "#",
+    title: "Rental Binar Car",
+    desc: "Implementasi desain UI/UX kedalam website dengan berfokus menampilkan informasi penyewaan mobil. Diimplementasikan dengan HTML dan CSS Murni.",
+    category: "Frontend Javascript",
+    projectUrl: "https://bagusdpa4.github.io/challenge-01/",
+    thumbnailUrl: "/images/Rental Binar Car.jpg",
   },
 ];
-
 export const ProjectContent = () => {
   const itemsPerPage = 3;
   const [visibleCount, setVisibleCount] = useState(itemsPerPage);
@@ -62,7 +67,13 @@ export const ProjectContent = () => {
             key={item.id}
             className="bg-slate-800/80 rounded-xl border border-gray-700 p-5 shadow-xl transition duration-300 hover:scale-105 hover:border-cyan-400"
           >
-            <div className="mb-4 flex h-40 items-center justify-center rounded-lg bg-gray-900 text-sm text-gray-500 sm:h-52"></div>
+            <div className="mb-4 h-40 overflow-hidden rounded-lg bg-gray-900 sm:h-52">
+              <img
+                src={item.thumbnailUrl}
+                alt={`Thumbnail for ${item.title}`}
+                className="h-full w-full object-cover transition duration-500 hover:scale-110"
+              />
+            </div>
 
             <h4 className="mb-2 text-xl font-bold text-white">{item.title}</h4>
             <p className="min-h-[60px] text-sm text-gray-400">{item.desc}</p>
