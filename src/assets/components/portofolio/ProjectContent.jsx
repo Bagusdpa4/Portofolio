@@ -80,9 +80,7 @@ export const ProjectContent = () => {
 
             <div className="mt-4 flex items-center justify-end text-sm">
               <a
-                href={item.projectUrl || "#"}
-                target="_blank"
-                rel="noopener noreferrer"
+                href={`/project/${item.id}`}
                 className="flex items-center text-cyan-400 transition duration-300 hover:underline"
               >
                 Detail Project <FiExternalLink className="ml-1 h-3 w-3" />
