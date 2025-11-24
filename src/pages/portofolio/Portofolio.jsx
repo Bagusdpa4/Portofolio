@@ -82,8 +82,7 @@ export const Portofolio = () => {
           visible: { opacity: 1, transition: { duration: 0.5 } },
         }}
       >
-        <div className="mx-auto max-w-7xl">
-          {/* Bagian Navigasi Kembali dan Breadcrumb Sederhana */}
+        <div className="mx-auto max-w-7xl pt-4">
           <motion.div
             className="mb-8 flex items-center space-x-2 text-sm text-gray-400"
             variants={itemVariants}
@@ -101,26 +100,96 @@ export const Portofolio = () => {
             </span>
           </motion.div>
 
-          {/* Tata Letak Utama (Dua Kolom) */}
-          <div className="grid grid-cols-1 gap-12 lg:grid-cols-3">
-            {/* Kolom Kiri (Deskripsi dan Fitur Utama) */}
+          <div className="grid grid-cols-1 gap-12 lg:grid-cols-5">
             <motion.div
-              className="space-y-8 lg:col-span-2"
+              className="space-y-8 lg:col-span-3 order-1" 
               variants={contentFadeInVariants("left")}
             >
-              {/* Judul dan Ringkasan */}
               <div className="space-y-3">
-                <h1 className="text-5xl font-extrabold text-white sm:text-6xl">
+                <h1 className="text-4xl font-extrabold text-white sm:text-5xl">
                   {project.title}
                 </h1>
                 <p className="text-lg text-gray-300">{project.category}</p>
-
-                <p className="whitespace-pre-wrap pt-4 text-xl leading-relaxed text-gray-400">
-                  {mainDescription}
-                </p>
               </div>
 
-              {/* Bagian Fitur Utama */}
+              <div className="block lg:hidden">
+                  <motion.div
+                      className="overflow-hidden rounded-xl border border-gray-700 shadow-2xl"
+                      variants={itemVariants}
+                  >
+                      <img
+                          src={project.thumbnailUrl}
+                          alt={project.title}
+                          className="h-auto w-full object-cover"
+                      />
+                  </motion.div>
+              </div>
+
+              <div className="space-y-8">
+                <p className="whitespace-pre-wrap pt-0 text-xl leading-relaxed text-gray-400">
+                  {mainDescription}
+                </p>
+
+                <motion.div
+                  className="flex flex-col space-y-4 sm:flex-row sm:space-x-4 sm:space-y-0"
+                  variants={staggerContainerVariants}
+                >
+                  <motion.a
+                    href={project.projectUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="bg-linear-to-r inline-flex flex-1 items-center justify-center rounded-lg from-cyan-600 to-blue-700 px-6 py-3 text-lg font-bold text-white shadow-lg transition duration-300 hover:scale-[1.02] hover:bg-cyan-500"
+                    variants={itemVariants}
+                  >
+                    Live Demo
+                    <FiExternalLink className="ml-2 h-5 w-5" />
+                  </motion.a>
+                  <motion.a
+                    href={githubLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex flex-1 items-center justify-center rounded-lg border border-gray-600 px-6 py-3 text-lg font-bold text-gray-300 shadow transition duration-300 hover:bg-gray-800 hover:text-white"
+                    variants={itemVariants}
+                  >
+                    GitHub
+                    <FaGithub className="ml-2 h-5 w-5" />
+                  </motion.a>
+                </motion.div>
+
+                <motion.div
+                  className="p-6 border border-gray-700 rounded-xl bg-slate-800/60"
+                  variants={staggerContainerVariants}
+                >
+                  <h2 className="mb-4 flex items-center text-xl font-bold text-white">
+                    <FaCode className="mr-2 text-cyan-400" /> Technologies Used
+                  </h2>
+                  <div className="flex flex-wrap gap-2">
+                    {technologiesList.map((tech, index) => (
+                      <motion.span
+                        key={index}
+                        className="rounded-full bg-gray-700/70 px-3 py-1 text-sm font-medium text-cyan-300"
+                        variants={itemVariants}
+                      >
+                        {tech}
+                      </motion.span>
+                    ))}
+                  </div>
+                </motion.div>
+              </div>
+            </motion.div>
+
+            <motion.div
+              className="space-y-8 lg:col-span-2 order-2"
+              variants={contentFadeInVariants("right")}
+            >
+              <div className="overflow-hidden rounded-xl border border-gray-700 shadow-2xl hidden lg:block">
+                <img
+                  src={project.thumbnailUrl}
+                  alt={project.title}
+                  className="h-auto w-full object-cover"
+                />
+              </div>
+
               <motion.div
                 className="bg-slate-800/60 rounded-xl border border-gray-700 p-8 shadow-xl"
                 variants={staggerContainerVariants}
@@ -142,69 +211,6 @@ export const Portofolio = () => {
                     </motion.li>
                   ))}
                 </ul>
-              </motion.div>
-            </motion.div>
-
-            {/* Kolom Kanan (Thumbnail, Buttons, Technologies) */}
-            <motion.div
-              className="space-y-8 lg:col-span-1"
-              variants={contentFadeInVariants("right")}
-            >
-              {/* Thumbnail Proyek */}
-              <div className="overflow-hidden rounded-xl border border-gray-700 shadow-2xl">
-                <img
-                  src={project.thumbnailUrl}
-                  alt={project.title}
-                  className="h-auto w-full object-cover"
-                />
-              </div>
-
-              {/* Tombol Aksi */}
-              <motion.div
-                className="flex flex-col space-y-4"
-                variants={staggerContainerVariants}
-              >
-                <motion.a
-                  href={project.projectUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="bg-linear-to-r inline-flex items-center justify-center rounded-lg from-cyan-600 to-blue-700 px-6 py-3 text-lg font-bold text-white shadow-lg transition duration-300 hover:scale-[1.02] hover:bg-cyan-500"
-                  variants={itemVariants}
-                >
-                  Live Demo
-                  <FiExternalLink className="ml-2 h-5 w-5" />
-                </motion.a>
-                <motion.a
-                  href={githubLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center rounded-lg border border-gray-600 px-6 py-3 text-lg font-bold text-gray-300 shadow transition duration-300 hover:bg-gray-800 hover:text-white"
-                  variants={itemVariants}
-                >
-                  GitHub
-                  <FaGithub className="ml-2 h-5 w-5" />
-                </motion.a>
-              </motion.div>
-
-              {/* Bagian Teknologi Digunakan */}
-              <motion.div
-                className="bg-slate-800/60 rounded-xl border border-gray-700 p-6 shadow-xl"
-                variants={staggerContainerVariants}
-              >
-                <h2 className="mb-4 flex items-center text-xl font-bold text-white">
-                  <FaCode className="mr-2 text-cyan-400" /> Technologies Used
-                </h2>
-                <div className="flex flex-wrap gap-2">
-                  {technologiesList.map((tech, index) => (
-                    <motion.span
-                      key={index}
-                      className="rounded-full bg-gray-700/70 px-3 py-1 text-sm font-medium text-cyan-300"
-                      variants={itemVariants}
-                    >
-                      {tech}
-                    </motion.span>
-                  ))}
-                </div>
               </motion.div>
             </motion.div>
           </div>

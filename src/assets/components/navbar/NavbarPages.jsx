@@ -121,7 +121,7 @@ export const NavbarPages = () => {
       } `}
     >
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 font-sans text-white lg:px-0">
-        <span className="text-2xl font-extrabold tracking-wider text-cyan-400">
+        <span className="text-2xl font-extrabold tracking-wider text-cyan-400 cursor-pointer hover:text-cyan-300" onClick={(e) => handleLinkClick(e, "home")}>
           BagusDev
         </span>
 
