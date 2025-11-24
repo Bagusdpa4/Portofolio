@@ -32,6 +32,15 @@ export const Navbar = () => {
     setIsMenuOpen(false);
     setActiveSection(id);
 
+    if (id === "home") {
+            if (isHomePage) {
+              window.scrollTo({ top: 0, behavior: "smooth" });
+            } else {
+              navigate("/");
+            }
+            return;
+          }
+
     if (isHomePage) {
       const targetElement = document.getElementById(id);
       if (targetElement) {
@@ -109,7 +118,7 @@ export const Navbar = () => {
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 font-sans text-white lg:px-0">
         {/* Section Kiri */}
         <a
-          href="#home"
+          href="/"
           className="text-2xl font-extrabold tracking-wider text-cyan-400 transition duration-300 hover:text-cyan-300"
           onClick={(e) => handleLinkClick(e, "home")}
         >
