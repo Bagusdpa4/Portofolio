@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Navbar } from "../assets/components/Navbar";
-import { Footer } from "../assets/components/Footer";
+import { Navbar } from "../assets/components/navbar/Navbar";
+import { Footer } from "../assets/components/navbar/Footer";
 import Profile from "../assets/img/Profile.jpg";
 
 import { ProjectContent } from "../assets/components/portofolio/ProjectContent";
@@ -266,7 +266,7 @@ export const Homepage = () => {
 
         {/* 2. ABOUT SECTION */}
         <Section id="about">
-          <div className="w-full max-w-7xl">
+          <div className="w-full max-w-7xl pt-0 lg:pt-10">
             <motion.div
               className="mb-10 text-center"
               variants={sectionHeaderVariants}
@@ -401,7 +401,7 @@ export const Homepage = () => {
 
         {/* 3. PORTFOLIO SECTION */}
         <Section id="portfolio">
-          <div className="w-full max-w-7xl text-center">
+          <div className="w-full max-w-7xl pt-0 text-center lg:pt-10">
             <motion.div
               variants={sectionHeaderVariants}
               initial="hidden"

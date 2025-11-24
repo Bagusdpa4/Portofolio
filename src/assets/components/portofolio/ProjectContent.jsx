@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { FiExternalLink } from "react-icons/fi";
 
-const portfolioItems = [
+export const portfolioItems = [
   {
     id: 1,
     title: "E-Commerce Cahaya Kreativ",
