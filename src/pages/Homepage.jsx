@@ -22,6 +22,7 @@ import {
   FaClock,
   FaInstagram,
 } from "react-icons/fa";
+import { CgProfile } from "react-icons/cg";
 import { GrArticle } from "react-icons/gr";
 import { PiCertificateFill } from "react-icons/pi";
 import { GiGears } from "react-icons/gi";
@@ -394,11 +395,13 @@ export const Homepage = () => {
                     <span className="mr-2">💾</span> Download CV
                   </a>
                   <a
-                    href="#portfolio"
-                    className="inline-flex items-center justify-center rounded-lg border border-white/30 px-6 py-3 font-semibold text-white transition duration-300 hover:bg-white/10"
-                    onClick={(e) => handleSmoothScroll(e, "portfolio")}
+                    href="/about-me"
+                    className="inline-flex items-center justify-center rounded-lg border border-white/30 px-6 py-3 font-semibold text-white transition duration-300 hover:scale-105 hover:bg-white/10"
                   >
-                    <span className="mr-2">{"</>"}</span> View Projects
+                    <span className="mr-2">
+                      <CgProfile size={20} />
+                    </span>{" "}
+                    Learn More About Me
                   </a>
                 </div>
               </motion.div>
