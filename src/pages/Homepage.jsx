@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { Navbar } from "../assets/components/navbar/Navbar";
 import { Footer } from "../assets/components/navbar/Footer";
 import Profile from "../assets/img/Profile.jpg";
+import { Loading } from "../assets/components/loading/Loading";
 
 import { ProjectContent } from "../assets/components/portofolio/ProjectContent";
 import { CertificateContent } from "../assets/components/portofolio/CertificateContent";
@@ -23,7 +25,6 @@ import {
 import { GrArticle } from "react-icons/gr";
 import { PiCertificateFill } from "react-icons/pi";
 import { GiGears } from "react-icons/gi";
-import { FiExternalLink } from "react-icons/fi";
 import { FaPhoneVolume, FaPhone } from "react-icons/fa6";
 import { HiCode } from "react-icons/hi";
 import { BiLogoGmail } from "react-icons/bi";
@@ -181,27 +182,59 @@ const itemVariants = {
 };
 
 export const Homepage = () => {
+  const [isLoading, setIsLoading] = useState(true);
   const [activeTab, setActiveTab] = useState("project");
+  const location = useLocation();
 
   useEffect(() => {
-    const hash = window.location.hash;
-    if (hash) {
-      const id = hash.substring(1); 
+    if (location.hash) {
+      const id = location.hash.replace("#", "");
       const targetElement = document.getElementById(id);
 
-      if (targetElement) {
-        setTimeout(() => {
-          targetElement.scrollIntoView({
-            behavior: "smooth",
-            block: "start",
-          });
-        }, 100);
-        return;
-      }
+      setTimeout(() => {
+        if (targetElement) {
+          targetElement.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+      }, 50);
     }
-    
-    window.scrollTo(0, 0);
+  }, [location.hash]);
+
+  useEffect(() => {
+    const minimumLoadTime = 700;
+    let timeoutId;
+
+    timeoutId = setTimeout(() => {
+      setIsLoading(false);
+    }, minimumLoadTime);
+
+    return () => {
+      if (timeoutId) {
+        clearTimeout(timeoutId);
+      }
+    };
   }, []);
+
+  useEffect(() => {
+    if (!isLoading) {
+      const hash = window.location.hash;
+      if (hash) {
+        const id = hash.substring(1);
+        const targetElement = document.getElementById(id);
+
+        if (targetElement) {
+          setTimeout(() => {
+            targetElement.scrollIntoView({
+              behavior: "smooth",
+              block: "start",
+            });
+          }, 100);
+          return;
+        }
+      }
+
+      window.scrollTo(0, 0);
+    }
+  }, [isLoading]);
 
   const handleSmoothScroll = (e, id) => {
     e.preventDefault();
@@ -237,6 +270,10 @@ export const Homepage = () => {
     "bg-linear-to-r from-cyan-600 to-blue-700 text-white shadow-lg shadow-cyan-900/50";
   const inactiveTabStyle =
     "text-gray-400 hover:bg-gray-700/50 hover:scale-105 cursor-pointer";
+
+  if (isLoading) {
+    return <Loading />;
+  }
 
   return (
     <motion.div

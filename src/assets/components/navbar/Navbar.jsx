@@ -42,16 +42,7 @@ export const Navbar = () => {
       }
     } else {
       // Navigasi ke homepage dan langsung ke section yang dituju
-      navigate("/");
-      setTimeout(() => {
-        const targetElement = document.getElementById(id);
-        if (targetElement) {
-          targetElement.scrollIntoView({
-            behavior: "smooth",
-            block: "start",
-          });
-        }
-      }, 100);
+      navigate(`/#${id}`);
     }
   };
 

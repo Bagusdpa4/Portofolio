@@ -1,9 +1,10 @@
-import React, { useCallback } from "react";
-import { useParams, Link, useNavigate } from "react-router-dom";
+import React, { useCallback, useState, useEffect } from "react";
+import { useParams, useNavigate } from "react-router-dom";
 import { FiExternalLink } from "react-icons/fi";
 import { FaCode, FaStar, FaGithub } from "react-icons/fa";
 import { portfolioItems } from "../../assets/components/portofolio/ProjectContent";
 import { Navbar } from "../../assets/components/navbar/Navbar";
+import { Loading } from "../../assets/components/loading/Loading";
 import { motion } from "framer-motion";
 
 const contentFadeInVariants = (direction = "up") => ({
@@ -44,49 +45,69 @@ const staggerContainerVariants = {
 export const Portofolio = () => {
   const { id } = useParams();
   const navigate = useNavigate();
+  const [isLoading, setIsLoading] = useState(true);
   const project = portfolioItems.find((item) => item.id === parseInt(id));
+
+  useEffect(() => {
+    const minimumLoadTime = 700;
+    const startTime = Date.now();
+    let timer;
+
+    setTimeout(() => {
+      const elapsedTime = Date.now() - startTime;
+      const remainingTime = minimumLoadTime - elapsedTime;
+
+      timer = setTimeout(
+        () => {
+          setIsLoading(false);
+          if (!project) {
+            navigate("/404", { replace: true });
+          }
+        },
+        Math.max(0, remainingTime),
+      );
+    }, 50);
+
+    return () => clearTimeout(timer);
+  }, [id, navigate, project]);
 
   const featuresList = project?.features || [];
   const technologiesList = project?.techStack || [];
   const githubLink = project?.githubUrl || "#";
   const mainDescription = project?.longDesc || project?.desc;
 
-  const handleProjectLinkClick = useCallback(
+  const handleProjectLinkClickBreadcrumb = useCallback(
     (e, sectionId) => {
       e.preventDefault();
-
       navigate("/");
-
       setTimeout(() => {
+        window.history.replaceState(null, null, `/#${sectionId}`);
         const targetElement = document.getElementById(sectionId);
         if (targetElement) {
-          targetElement.scrollIntoView({
-            behavior: "smooth",
-            block: "start",
-          });
+          targetElement.scrollIntoView({ behavior: "smooth", block: "start" });
+        } else {
+          // Logika retry untuk memastikan scroll
+          setTimeout(() => {
+            const retryElement = document.getElementById(sectionId);
+            if (retryElement) {
+              retryElement.scrollIntoView({
+                behavior: "smooth",
+                block: "start",
+              });
+            }
+          }, 300);
         }
       }, 100);
     },
     [navigate],
   );
 
+  if (isLoading || !project) {
+    return <Loading />;
+  }
+
   if (!project) {
-    return (
-      <div className="min-h-screen pt-20 text-center text-white">
-        <h1 className="text-4xl font-bold text-red-400">
-          404 - Project Not Found
-        </h1>
-        <p className="mt-4 text-xl text-gray-400">
-          Maaf, proyek dengan ID "{id}" tidak ditemukan.
-        </p>
-        <Link
-          to="/"
-          className="mt-6 inline-block text-cyan-400 underline hover:no-underline"
-        >
-          &larr; Kembali ke Homepage
-        </Link>
-      </div>
-    );
+    return null;
   }
 
   return (
