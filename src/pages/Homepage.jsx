@@ -184,6 +184,22 @@ export const Homepage = () => {
   const [activeTab, setActiveTab] = useState("project");
 
   useEffect(() => {
+    const hash = window.location.hash;
+    if (hash) {
+      const id = hash.substring(1); 
+      const targetElement = document.getElementById(id);
+
+      if (targetElement) {
+        setTimeout(() => {
+          targetElement.scrollIntoView({
+            behavior: "smooth",
+            block: "start",
+          });
+        }, 100);
+        return;
+      }
+    }
+    
     window.scrollTo(0, 0);
   }, []);
 

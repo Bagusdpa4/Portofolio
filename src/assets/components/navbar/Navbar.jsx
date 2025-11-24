@@ -89,11 +89,11 @@ export const Navbar = () => {
 
   return (
     <nav
-      className={`bg-gray-950/90 fixed left-0 top-0 z-50 w-full transform border-b border-cyan-500/30 shadow-lg backdrop-blur-sm transition-transform duration-300 ease-in-out ${
+      className={`bg-transparent fixed left-0 top-0 z-50 w-full transform border-b border-cyan-500/30 shadow-lg backdrop-blur-sm transition-transform duration-300 ease-in-out ${
         isNavbarHidden ? "-translate-y-full" : "translate-y-0"
       } `}
     >
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 font-sans text-white lg:px-8">
+      <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 font-sans text-white lg:px-0">
         {/* Section Kiri */}
         <a
           href="#home"

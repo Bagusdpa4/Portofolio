@@ -15,6 +15,7 @@ export const NavbarPages = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("home");
 
+  // Fungsi untuk menyembunyikan/menampilkan navbar saat scroll (TETAP DIJAGA)
   const handleScroll = useCallback(() => {
     if (isHomePage) {
       if (window.scrollY > lastScrollY && window.scrollY > SCROLL_THRESHOLD) {
@@ -30,9 +31,9 @@ export const NavbarPages = () => {
   const handleLinkClick = (e, id) => {
     e.preventDefault();
     setIsMenuOpen(false);
-    setActiveSection(id);
 
     if (isHomePage) {
+      // Logika scroll ke section di Homepage
       const targetElement = document.getElementById(id);
       if (targetElement) {
         targetElement.scrollIntoView({
@@ -41,21 +42,27 @@ export const NavbarPages = () => {
         });
       }
     } else {
-      // PERBAIKAN: Navigasi ke halaman yang dituju, bukan ke section di homepage.
-      // 'home' -> '/'
-      // 'about' -> '/about'
-      const targetPath = id === "home" ? "/" : `/${id}`;
+      // Logika Navigasi Halaman
+      let targetPath;
+      if (id === "home") {
+        targetPath = "/";
+      } else if (id === "contact") {
+        targetPath = "/contact-me";
+      } else {
+        targetPath = `/${id}`;
+      }
       navigate(targetPath);
     }
   };
 
   useEffect(() => {
+    // Menghapus logika observer jika tidak di Homepage (sesuai permintaan, tetapi fungsi ini penting untuk homepage)
     if (!isHomePage) {
       window.addEventListener("scroll", handleScroll);
       return () => window.removeEventListener("scroll", handleScroll);
     }
 
-    // Logic Intersection Observer hanya untuk Homepage
+    // Logic Intersection Observer hanya untuk Homepage (TETAP DIJAGA)
     const observerOptions = {
       root: null,
       rootMargin: "0px 0px -70% 0px",
@@ -90,36 +97,33 @@ export const NavbarPages = () => {
     };
   }, [handleScroll, isHomePage]);
 
-  // Logika untuk menentukan tautan aktif di halaman non-homepage
+  // Logika untuk menentukan tautan aktif (berwarna biru dan bergaris bawah)
   const isLinkActive = (id) => {
     if (isHomePage) {
       return activeSection === id;
     }
 
-    // Jika di halaman non-homepage, cek pathname
     if (id === "home") {
       return pathname === "/";
     }
 
-    // Cek apakah pathname dimulai dengan '/[id]' (misalnya, '/portfolio' atau '/portfolio/detail')
+    if (id === "contact") {
+      return pathname.startsWith("/contact-me");
+    }
+
     return pathname.startsWith(`/${id}`);
   };
 
   return (
     <nav
-      className={`bg-gray-950/90 fixed left-0 top-0 z-50 w-full transform border-b border-cyan-500/30 shadow-lg backdrop-blur-sm transition-transform duration-300 ease-in-out ${
+      className={`fixed left-0 top-0 z-50 w-full transform border-b border-cyan-500/30 bg-transparent shadow-lg backdrop-blur-sm transition-transform duration-300 ease-in-out ${
         isNavbarHidden ? "-translate-y-full" : "translate-y-0"
       } `}
     >
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 font-sans text-white lg:px-8">
-        {/* Section Kiri */}
-        <a
-          href="#home"
-          className="text-2xl font-extrabold tracking-wider text-cyan-400 transition duration-300 hover:text-cyan-300"
-          onClick={(e) => handleLinkClick(e, "home")}
-        >
+      <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 font-sans text-white lg:px-0">
+        <span className="text-2xl font-extrabold tracking-wider text-cyan-400">
           BagusDev
-        </a>
+        </span>
 
         {/* Responsive Hamburger */}
         <button
@@ -142,7 +146,6 @@ export const NavbarPages = () => {
               href={`#${id}`}
               onClick={(e) => handleLinkClick(e, id)}
               className={`relative text-base font-semibold uppercase tracking-wide transition duration-300 hover:text-cyan-400 ${
-                // PERBAIKAN LOGIKA LINK AKTIF
                 isLinkActive(id)
                   ? "text-cyan-400 after:w-full after:bg-cyan-400"
                   : "text-gray-300 after:w-0 after:bg-gray-500"
@@ -168,7 +171,6 @@ export const NavbarPages = () => {
               key={id}
               href={`#${id}`}
               className={`block py-1 text-lg font-medium transition duration-300 ${
-                // PERBAIKAN LOGIKA LINK AKTIF
                 isLinkActive(id)
                   ? "font-bold text-cyan-400"
                   : "text-gray-300 hover:text-cyan-400"
