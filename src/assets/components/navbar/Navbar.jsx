@@ -42,7 +42,16 @@ export const Navbar = () => {
       }
     } else {
       // Navigasi ke homepage dan langsung ke section yang dituju
-      navigate(`/#${id}`);
+      navigate("/");
+      setTimeout(() => {
+        const targetElement = document.getElementById(id);
+        if (targetElement) {
+          targetElement.scrollIntoView({
+            behavior: "smooth",
+            block: "start",
+          });
+        }
+      }, 100);
     }
   };
 
@@ -87,9 +96,22 @@ export const Navbar = () => {
     };
   }, [handleScroll, isHomePage]);
 
+  const isLinkActive = (id) => {
+    // Logika untuk Portfolio/Project Page tetap dipertahankan
+    if (
+      !isHomePage &&
+      pathname.includes("/portofolio/") &&
+      id === "portfolio"
+    ) {
+      return true;
+    }
+
+    return isHomePage && activeSection === id;
+  };
+
   return (
     <nav
-      className={`bg-transparent fixed left-0 top-0 z-50 w-full transform border-b border-cyan-500/30 shadow-lg backdrop-blur-sm transition-transform duration-300 ease-in-out ${
+      className={`fixed left-0 top-0 z-50 w-full transform border-b border-cyan-500/30 bg-transparent shadow-lg backdrop-blur-sm transition-transform duration-300 ease-in-out ${
         isNavbarHidden ? "-translate-y-full" : "translate-y-0"
       } `}
     >

@@ -1,9 +1,9 @@
-import React from "react";
-import { useParams, Link } from "react-router-dom";
+import React, { useCallback } from "react";
+import { useParams, Link, useNavigate } from "react-router-dom";
 import { FiExternalLink } from "react-icons/fi";
 import { FaCode, FaStar, FaGithub } from "react-icons/fa";
 import { portfolioItems } from "../../assets/components/portofolio/ProjectContent";
-import { NavbarPages } from "../../assets/components/navbar/NavbarPages";
+import { Navbar } from "../../assets/components/navbar/Navbar";
 import { motion } from "framer-motion";
 
 const contentFadeInVariants = (direction = "up") => ({
@@ -43,12 +43,32 @@ const staggerContainerVariants = {
 
 export const Portofolio = () => {
   const { id } = useParams();
+  const navigate = useNavigate();
   const project = portfolioItems.find((item) => item.id === parseInt(id));
 
   const featuresList = project?.features || [];
   const technologiesList = project?.techStack || [];
   const githubLink = project?.githubUrl || "#";
   const mainDescription = project?.longDesc || project?.desc;
+
+  const handleProjectLinkClick = useCallback(
+    (e, sectionId) => {
+      e.preventDefault();
+
+      navigate("/");
+
+      setTimeout(() => {
+        const targetElement = document.getElementById(sectionId);
+        if (targetElement) {
+          targetElement.scrollIntoView({
+            behavior: "smooth",
+            block: "start",
+          });
+        }
+      }, 100);
+    },
+    [navigate],
+  );
 
   if (!project) {
     return (
@@ -71,7 +91,7 @@ export const Portofolio = () => {
 
   return (
     <>
-      <NavbarPages />
+      <Navbar />
 
       <motion.div
         className="from-gray-950 to-blue-950 via-slate-800 bg-linear-to-r min-h-screen px-4 pb-16 pt-20 sm:px-8"
@@ -87,11 +107,19 @@ export const Portofolio = () => {
             className="mb-8 flex items-center space-x-2 text-sm text-gray-400"
             variants={itemVariants}
           >
-            <a href="/" className="hover:text-cyan-400">
+            <a
+              href="/"
+              onClick={(e) => handleProjectLinkClick(e, "home")}
+              className="hover:text-cyan-400"
+            >
               Home
             </a>
             <span>/</span>
-            <a href="/#portfolio" className="hover:text-cyan-400">
+            <a
+              href="/#portfolio"
+              onClick={(e) => handleProjectLinkClick(e, "portfolio")}
+              className="hover:text-cyan-400"
+            >
               Project
             </a>
             <span>/</span>
@@ -102,7 +130,7 @@ export const Portofolio = () => {
 
           <div className="grid grid-cols-1 gap-12 lg:grid-cols-5">
             <motion.div
-              className="space-y-8 lg:col-span-3 order-1" 
+              className="order-1 space-y-8 lg:col-span-3"
               variants={contentFadeInVariants("left")}
             >
               <div className="space-y-3">
@@ -113,16 +141,16 @@ export const Portofolio = () => {
               </div>
 
               <div className="block lg:hidden">
-                  <motion.div
-                      className="overflow-hidden rounded-xl border border-gray-700 shadow-2xl"
-                      variants={itemVariants}
-                  >
-                      <img
-                          src={project.thumbnailUrl}
-                          alt={project.title}
-                          className="h-auto w-full object-cover"
-                      />
-                  </motion.div>
+                <motion.div
+                  className="overflow-hidden rounded-xl border border-gray-700 shadow-2xl"
+                  variants={itemVariants}
+                >
+                  <img
+                    src={project.thumbnailUrl}
+                    alt={project.title}
+                    className="h-auto w-full object-cover"
+                  />
+                </motion.div>
               </div>
 
               <div className="space-y-8">
@@ -157,7 +185,7 @@ export const Portofolio = () => {
                 </motion.div>
 
                 <motion.div
-                  className="p-6 border border-gray-700 rounded-xl bg-slate-800/60"
+                  className="bg-slate-800/60 rounded-xl border border-gray-700 p-6"
                   variants={staggerContainerVariants}
                 >
                   <h2 className="mb-4 flex items-center text-xl font-bold text-white">
@@ -179,10 +207,10 @@ export const Portofolio = () => {
             </motion.div>
 
             <motion.div
-              className="space-y-8 lg:col-span-2 order-2"
+              className="order-2 space-y-8 lg:col-span-2"
               variants={contentFadeInVariants("right")}
             >
-              <div className="overflow-hidden rounded-xl border border-gray-700 shadow-2xl hidden lg:block">
+              <div className="hidden overflow-hidden rounded-xl border border-gray-700 shadow-2xl lg:block">
                 <img
                   src={project.thumbnailUrl}
                   alt={project.title}
