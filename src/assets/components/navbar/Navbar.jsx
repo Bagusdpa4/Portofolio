@@ -16,16 +16,14 @@ export const Navbar = () => {
   const [activeSection, setActiveSection] = useState("home");
 
   const handleScroll = useCallback(() => {
-    if (isHomePage) {
-      if (window.scrollY > lastScrollY && window.scrollY > SCROLL_THRESHOLD) {
-        setIsNavbarHidden(true);
-        setIsMenuOpen(false);
-      } else if (window.scrollY < lastScrollY) {
-        setIsNavbarHidden(false);
-      }
-      setLastScrollY(window.scrollY);
+    if (window.scrollY > lastScrollY && window.scrollY > SCROLL_THRESHOLD) {
+      setIsNavbarHidden(true);
+      setIsMenuOpen(false);
+    } else if (window.scrollY < lastScrollY) {
+      setIsNavbarHidden(false);
     }
-  }, [lastScrollY, isHomePage]);
+    setLastScrollY(window.scrollY);
+  }, [lastScrollY]);
 
   const handleLinkClick = (e, id) => {
     e.preventDefault();
@@ -33,13 +31,13 @@ export const Navbar = () => {
     setActiveSection(id);
 
     if (id === "home") {
-            if (isHomePage) {
-              window.scrollTo({ top: 0, behavior: "smooth" });
-            } else {
-              navigate("/");
-            }
-            return;
-          }
+      if (isHomePage) {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      } else {
+        navigate("/");
+      }
+      return;
+    }
 
     if (isHomePage) {
       const targetElement = document.getElementById(id);
@@ -56,12 +54,8 @@ export const Navbar = () => {
   };
 
   useEffect(() => {
-    if (!isHomePage) {
-      window.addEventListener("scroll", handleScroll);
-      return () => window.removeEventListener("scroll", handleScroll);
-    }
+    if (!isHomePage) return;
 
-    // Logic Intersection Observer hanya untuk Homepage
     const observerOptions = {
       root: null,
       rootMargin: "0px 0px -70% 0px",
@@ -83,8 +77,6 @@ export const Navbar = () => {
       }
     });
 
-    window.addEventListener("scroll", handleScroll);
-
     return () => {
       SECTION_IDS.forEach((id) => {
         const element = document.getElementById(id);
@@ -92,12 +84,18 @@ export const Navbar = () => {
           observer.unobserve(element);
         }
       });
+    };
+  }, [isHomePage]);
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, [handleScroll, isHomePage]);
+  }, [handleScroll]);
 
   const isLinkActive = (id) => {
-    // Logika untuk Portfolio/Project Page tetap dipertahankan
     if (
       !isHomePage &&
       pathname.includes("/portofolio/") &&
@@ -147,7 +145,10 @@ export const Navbar = () => {
               onClick={(e) => handleLinkClick(e, id)}
               className={`relative text-base font-semibold uppercase tracking-wide transition duration-300 hover:text-cyan-400 ${
                 (isHomePage && activeSection === id) ||
-                (!isHomePage && id === "portfolio")
+                (!isHomePage &&
+                  id === "portfolio" &&
+                  pathname.includes("/portofolio/")) ||
+                (!isHomePage && id === "about" && pathname === "/about-me")
                   ? "text-cyan-400 after:w-full after:bg-cyan-400"
                   : "text-gray-300 after:w-0 after:bg-gray-500"
               } after:absolute after:bottom-0 after:left-0 after:h-0.5 after:transition-all after:duration-300`}
@@ -173,7 +174,10 @@ export const Navbar = () => {
               href={`#${id}`}
               className={`block py-1 text-lg font-medium transition duration-300 ${
                 (isHomePage && activeSection === id) ||
-                (!isHomePage && id === "portfolio")
+                (!isHomePage &&
+                  id === "portfolio" &&
+                  pathname.includes("/portofolio/")) ||
+                (!isHomePage && id === "about" && pathname === "/about-me")
                   ? "font-bold text-cyan-400"
                   : "text-gray-300 hover:text-cyan-400"
               }`}
