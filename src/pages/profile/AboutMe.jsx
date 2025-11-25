@@ -147,7 +147,7 @@ export const AboutMe = () => {
     >
       <Navbar handleSmoothScroll={handleSmoothScroll} />
 
-      <div className="mx-auto max-w-7xl pt-[80px] sm:pt-[100px]">
+      <div className="mx-auto max-w-7xl pt-24 sm:pt-[100px]">
         <motion.header className="mb-8 text-center" variants={fadeIn}>
           <h1 className="text-4xl font-extrabold text-white sm:text-5xl">
             About <span className="text-cyan-400">Me</span>

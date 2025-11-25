@@ -96,15 +96,17 @@ export const Navbar = () => {
   }, [handleScroll]);
 
   const isLinkActive = (id) => {
-    if (
-      !isHomePage &&
-      pathname.includes("/portofolio/") &&
-      id === "portfolio"
-    ) {
+    if (isHomePage) {
+      return activeSection === id;
+    }
+    if (id === "about" && pathname === "/about-me") {
       return true;
     }
-
-    return isHomePage && activeSection === id;
+    if (id === "portfolio" && pathname.includes("/project/")) {
+      return true;
+    }
+    
+    return false;
   };
 
   return (
@@ -144,11 +146,7 @@ export const Navbar = () => {
               href={`#${id}`}
               onClick={(e) => handleLinkClick(e, id)}
               className={`relative text-base font-semibold uppercase tracking-wide transition duration-300 hover:text-cyan-400 ${
-                (isHomePage && activeSection === id) ||
-                (!isHomePage &&
-                  id === "portfolio" &&
-                  pathname.includes("/portofolio/")) ||
-                (!isHomePage && id === "about" && pathname === "/about-me")
+                isLinkActive(id)
                   ? "text-cyan-400 after:w-full after:bg-cyan-400"
                   : "text-gray-300 after:w-0 after:bg-gray-500"
               } after:absolute after:bottom-0 after:left-0 after:h-0.5 after:transition-all after:duration-300`}
@@ -173,11 +171,7 @@ export const Navbar = () => {
               key={id}
               href={`#${id}`}
               className={`block py-1 text-lg font-medium transition duration-300 ${
-                (isHomePage && activeSection === id) ||
-                (!isHomePage &&
-                  id === "portfolio" &&
-                  pathname.includes("/portofolio/")) ||
-                (!isHomePage && id === "about" && pathname === "/about-me")
+                isLinkActive(id)
                   ? "font-bold text-cyan-400"
                   : "text-gray-300 hover:text-cyan-400"
               }`}
