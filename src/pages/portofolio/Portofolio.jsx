@@ -138,7 +138,7 @@ export const Portofolio = () => {
             <span>/</span>
             <a
               href="/#portfolio"
-              onClick={(e) => handleProjectLinkClick(e, "portfolio")}
+              onClick={(e) => handleProjectLinkClickBreadcrumb(e, "portfolio")}
               className="hover:text-cyan-400"
             >
               Project

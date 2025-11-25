@@ -75,7 +75,6 @@ const myEducation = [
   },
 ];
 
-// --- Framer Motion Variants (Dibiarkan untuk konten) ---
 const fadeIn = {
   hidden: { opacity: 0, y: 50 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } },
@@ -159,7 +158,7 @@ export const AboutMe = () => {
 
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-5">
           <motion.div
-            className="space-y-8 lg:col-span-2"
+            className="order-1 space-y-8 lg:order-0 lg:col-span-2"
             variants={staggerContainer}
             initial="hidden"
             whileInView="visible"
@@ -200,7 +199,7 @@ export const AboutMe = () => {
             </motion.div>
 
             <motion.div
-              className="bg-slate-800/60 rounded-xl border border-gray-700 p-8 shadow-2xl"
+              className="bg-slate-800/60 hidden rounded-xl border border-gray-700 p-8 shadow-2xl lg:block"
               variants={fadeInLeft}
             >
               <h2 className="mb-5 flex items-center text-2xl font-bold text-white">
@@ -217,7 +216,7 @@ export const AboutMe = () => {
             </motion.div>
 
             <motion.section
-              className="bg-slate-800/60 space-y-6 rounded-xl border border-gray-700 p-6 shadow-xl"
+              className="bg-slate-800/60 hidden space-y-6 rounded-xl border border-gray-700 p-6 shadow-xl lg:block"
               variants={fadeInLeft}
             >
               <h2 className="flex items-center text-3xl font-bold text-white">
@@ -253,13 +252,16 @@ export const AboutMe = () => {
           </motion.div>
 
           <motion.div
-            className="space-y-12 lg:col-span-3"
+            className="order-2 space-y-12 lg:order-0 lg:col-span-3"
             variants={staggerContainer}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.1 }}
           >
-            <motion.section className="space-y-4" variants={fadeInRight}>
+            <motion.section
+              className="order-2 space-y-4 lg:order-0"
+              variants={fadeInRight}
+            >
               <h2 className="flex items-center border-b border-cyan-500/50 pb-2 text-3xl font-bold text-white">
                 <FaBriefcase className="mr-3 text-cyan-400" /> My Career Summary
               </h2>
@@ -271,7 +273,10 @@ export const AboutMe = () => {
               </p>
             </motion.section>
 
-            <motion.section className="space-y-6" variants={fadeInRight}>
+            <motion.section
+              className="order-3 space-y-6 lg:order-0"
+              variants={fadeInRight}
+            >
               <h2 className="flex items-center border-b border-cyan-500/50 pb-2 text-3xl font-bold text-white">
                 <FaBriefcase className="mr-3 text-green-400" /> Work Experience
               </h2>
@@ -294,7 +299,10 @@ export const AboutMe = () => {
               </div>
             </motion.section>
 
-            <motion.section className="space-y-6" variants={fadeInRight}>
+            <motion.section
+              className="order-4 space-y-6 lg:order-0"
+              variants={fadeInRight}
+            >
               <h2 className="flex items-center border-b border-cyan-500/50 pb-2 text-3xl font-bold text-white">
                 <FaGraduationCap className="mr-3 text-red-400" /> Education
               </h2>
@@ -317,8 +325,25 @@ export const AboutMe = () => {
               </div>
             </motion.section>
 
+            <motion.div
+              className="bg-slate-800/60 order-5 rounded-xl border border-gray-700 p-8 shadow-2xl lg:order-0 lg:hidden"
+              variants={fadeInRight}
+            >
+              <h2 className="mb-5 flex items-center text-2xl font-bold text-white">
+                <FaHeart className="mr-3 text-pink-400" /> Hobbies & Interests
+              </h2>
+              <ul className="list-none space-y-2 pl-0 text-gray-300">
+                {hobbies.map((hobby, index) => (
+                  <li key={index} className="flex items-center">
+                    <span className="mr-2 text-pink-400">&#9679;</span>
+                    {hobby}
+                  </li>
+                ))}
+              </ul>
+            </motion.div>
+
             <motion.section
-              className="bg-slate-800/60 space-y-4 rounded-xl border border-gray-700 p-6 shadow-xl"
+              className="bg-slate-800/60 order-6 space-y-4 rounded-xl border border-gray-700 p-6 shadow-xl lg:order-0"
               variants={fadeInRight}
             >
               <h2 className="flex items-center text-3xl font-bold text-white">
@@ -328,6 +353,41 @@ export const AboutMe = () => {
               <p className="text-lg leading-relaxed text-gray-300">
                 {developmentPhilosophy}
               </p>
+            </motion.section>
+
+            <motion.section
+              className="bg-slate-800/60 order-7 space-y-6 rounded-xl border border-gray-700 p-6 shadow-xl lg:order-0 lg:hidden"
+              variants={fadeInRight}
+            >
+              <h2 className="flex items-center text-3xl font-bold text-white">
+                <FaCode className="mr-3 text-yellow-400" />
+                Technical Expertise
+              </h2>
+
+              {Object.keys(categorizedSkills).map((category) => (
+                <div key={category} className="pt-2">
+                  <h3 className="mb-3 text-xl font-semibold text-cyan-400">
+                    {category}
+                  </h3>
+
+                  <div className="flex flex-wrap gap-3">
+                    {categorizedSkills[category].map((skill, index) => (
+                      <motion.span
+                        key={index}
+                        className="rounded-full bg-gray-700/70 px-4 py-1 text-sm font-medium text-white shadow-md transition duration-200 hover:bg-gray-600"
+                        initial={{ opacity: 0, scale: 0.8 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        transition={{
+                          duration: 0.3,
+                          delay: 0.1 + index * 0.05,
+                        }}
+                      >
+                        {skill}
+                      </motion.span>
+                    ))}
+                  </div>
+                </div>
+              ))}
             </motion.section>
           </motion.div>
         </div>
