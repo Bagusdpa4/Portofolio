@@ -21,6 +21,8 @@ import {
   FaGithub,
   FaClock,
   FaInstagram,
+  FaCode,
+  FaLightbulb,
 } from "react-icons/fa";
 import { CgProfile } from "react-icons/cg";
 import { GrArticle } from "react-icons/gr";
@@ -276,6 +278,101 @@ export const Homepage = () => {
     return <Loading />;
   }
 
+  const TypewriterLoop = ({ texts }) => {
+    const [textIndex, setTextIndex] = useState(0);
+    const [displayedText, setDisplayedText] = useState("");
+    const [charIndex, setCharIndex] = useState(0);
+    const [isDeleting, setIsDeleting] = useState(false);
+
+    useEffect(() => {
+      const currentText = texts[textIndex];
+
+      let speed = isDeleting ? 40 : 85;
+
+      const timer = setTimeout(() => {
+        if (!isDeleting) {
+          setDisplayedText(currentText.substring(0, charIndex + 1));
+          setCharIndex(charIndex + 1);
+
+          if (charIndex + 1 === currentText.length) {
+            setTimeout(() => setIsDeleting(true), 900);
+          }
+        } else {
+          setDisplayedText(currentText.substring(0, charIndex - 1));
+          setCharIndex(charIndex - 1);
+
+          if (charIndex === 0) {
+            setIsDeleting(false);
+            setTextIndex((prev) => (prev + 1) % texts.length);
+          }
+        }
+      }, speed);
+
+      return () => clearTimeout(timer);
+    }, [charIndex, isDeleting, textIndex, texts]);
+
+    return (
+      <span className="relative text-xl font-semibold text-cyan-300 sm:text-2xl">
+        {displayedText}
+        <span className="absolute -right-2 top-0 animate-pulse">|</span>
+      </span>
+    );
+  };
+
+  const AnimatedBadges = () => {
+    const badges = ["Web Developer", "IT Programmer", "IT Support"];
+
+    return (
+      <motion.div
+        className="mt-6 flex flex-wrap justify-center gap-3"
+        variants={staggerContainerVariants}
+        initial="hidden"
+        animate="visible"
+      >
+        {badges.map((badge, i) => (
+          <motion.div
+            key={i}
+            variants={itemVariants}
+            initial={{ opacity: 0, scale: 0.8, y: 20 }}
+            animate={{
+              opacity: 1,
+              scale: 1,
+              y: 0,
+              transition: {
+                delay: i * 0.15,
+                duration: 0.5,
+                ease: "easeOut",
+              },
+            }}
+            whileHover={{
+              y: -6,
+              scale: 1.05,
+              boxShadow: "0 0 12px rgba(6, 182, 212, 0.6)",
+            }}
+            className="rounded-lg border cursor-pointer border-cyan-500/40 bg-gray-900/40 px-4 py-2 text-sm text-white shadow-md transition-all duration-300 hover:border-cyan-400/70 sm:text-base"
+          >
+            <motion.span
+              animate={{
+                textShadow: [
+                  "0 0 4px rgba(6, 182, 212, 0.4)",
+                  "0 0 8px rgba(6, 182, 212, 0.7)",
+                  "0 0 4px rgba(6, 182, 212, 0.4)",
+                ],
+              }}
+              transition={{
+                duration: 2,
+                repeat: Infinity,
+                ease: "easeInOut",
+              }}
+            >
+              {badge}
+            </motion.span>
+          </motion.div>
+        ))}
+      </motion.div>
+    );
+  };
+
   return (
     <motion.div
       className="from-gray-950 to-blue-950 via-slate-800 bg-linear-to-r min-h-screen font-sans"
@@ -299,19 +396,34 @@ export const Homepage = () => {
               className="text-slate-500 text-5xl font-extrabold leading-tight tracking-tighter sm:text-7xl lg:text-9xl"
               variants={textVariants}
             >
-              <span className="bg-linear-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
+              <span
+                className="bg-linear-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent"
+                style={{
+                  textShadow:
+                    "0 0 10px rgba(6, 182, 212, 0.8), 0 0 20px rgba(6, 182, 212, 0.5)",
+                }}
+              >
                 Portfolio
               </span>
-              Website
+
+              <span
+                style={{
+                  textShadow:
+                    "0 0 10px rgba(6, 182, 212, 0.3), 0 0 20px rgba(6, 182, 212, 0.1)",
+                }}
+              >
+                Website
+              </span>
             </motion.h1>
-            <motion.div
-              className="mt-12 flex w-full justify-center sm:mt-16"
-              variants={textVariants}
-            >
-              <div className="flex h-32 w-64 items-center justify-center rounded-lg border border-cyan-500/30 bg-gray-900/50 text-gray-400 sm:h-40 sm:w-80 sm:text-xl">
-                <FaLaptopCode className="mr-2 h-10 w-10 text-cyan-400" />
-                <p className="text-sm sm:text-base">Creative Developer</p>
-              </div>
+            <motion.div variants={textVariants} className="mt-12">
+              <TypewriterLoop
+                texts={[
+                  "Membangun Solusi Digital dengan Presisi",
+                  "Menyediakan Pengalaman Web Modern dan Skalabel",
+                ]}
+              />
+
+              <AnimatedBadges />
             </motion.div>
           </div>
         </Section>
