@@ -9,7 +9,7 @@ import {
 } from "react-icons/fa";
 import { MdWorkHistory } from "react-icons/md";
 import { GiBookmarklet } from "react-icons/gi";
-import Foto from "../../assets/img/Foto.JPG";
+import Foto from "../../assets/img/Foto.jpg";
 import { Navbar } from "../../assets/components/navbar/Navbar";
 import { Loading } from "../../assets/components/loading/Loading";
 import { motion } from "framer-motion";
