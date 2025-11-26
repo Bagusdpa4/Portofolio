@@ -324,7 +324,7 @@ export const Homepage = () => {
 
     return (
       <motion.div
-        className="mt-6 flex flex-wrap justify-center gap-3"
+        className="mt-20 flex flex-wrap justify-center gap-3"
         variants={staggerContainerVariants}
         initial="hidden"
         animate="visible"
@@ -415,7 +415,7 @@ export const Homepage = () => {
                 Website
               </span>
             </motion.h1>
-            <motion.div variants={textVariants} className="mt-12">
+            <motion.div variants={textVariants} className="mt-20">
               <TypewriterLoop
                 texts={[
                   "Membangun Solusi Digital dengan Presisi",
