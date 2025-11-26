@@ -5,73 +5,95 @@ import {
   FaBriefcase,
   FaLightbulb,
   FaHeart,
-  FaImage,
+  FaUserTie,
 } from "react-icons/fa";
+import { MdWorkHistory } from "react-icons/md";
+import { GiBookmarklet } from "react-icons/gi";
+import Foto from "../../assets/img/Foto.JPG";
 import { Navbar } from "../../assets/components/navbar/Navbar";
 import { Loading } from "../../assets/components/loading/Loading";
 import { motion } from "framer-motion";
 
-const developmentPhilosophy =
-  "Saya percaya bahwa software yang baik haruslah cepat, mudah dipelihara, dan dapat diukur skalanya. Fokus pada Clean Code dan Testing adalah kunci untuk memberikan produk yang tidak hanya berfungsi saat ini, tetapi juga berkelanjutan di masa depan. Saya berkomitmen untuk belajar teknologi baru setiap hari.";
+const futureFocusAndAspiration =
+  "Saya berambisi untuk terus berkembang di dunia teknologi informasi melalui peningkatan kompetensi di bidang pengembangan aplikasi, analisis sistem, serta pengelolaan data. Ke depannya, saya ingin memperdalam pemahaman terkait arsitektur sistem modern, optimalisasi proses bisnis berbasis teknologi, serta pemanfaatan layanan cloud untuk mendukung efisiensi operasional. Saya berharap dapat berkontribusi dalam menciptakan solusi teknologi yang bermanfaat, berkelanjutan, dan mampu memberikan dampak positif bagi pengguna maupun organisasi.";
 const careerSummary1 =
-  "Saya adalah seorang pengembang yang bersemangat dalam membangun solusi web yang efisien dan user-friendly. Berbekal pengalaman di ReactJS, Node.js, dan PostgreSQL, saya mahir dalam seluruh siklus pengembangan (Full-Stack).";
+  "Saya merupakan lulusan S1 Sistem Informasi dari Universitas Pembangunan Nasional “Veteran” Jawa Timur dengan pengalaman lebih dari satu tahun dalam pengembangan aplikasi berbasis web. Saya terbiasa menggunakan berbagai tools, framework, dan pendekatan yang mendukung proses pembangunan aplikasi berbasis web, mulai dari pengembangan website, sistem e-commerce, integrasi RESTful API, hingga perancangan dan pengelolaan database. Saya mampu menangani proyek dari tahap analisis kebutuhan, perancangan, pengembangan, hingga implementasi dan pengujian, termasuk proyek yang telah digunakan dalam lingkungan perusahaan.";
 const careerSummary2 =
-  "Saya selalu mencari tantangan baru untuk mengoptimalkan kinerja aplikasi, menerapkan praktik terbaik industri, dan memberikan pengalaman pengguna terbaik melalui antarmuka yang intuitif dan cepat.";
+  "Saya memiliki ketertarikan pada pengembangan teknologi informasi secara menyeluruh, baik di bidang pemrograman, analisis sistem, maupun pengelolaan data. Fokus saya adalah merancang solusi teknologi yang fungsional, aman, dan sesuai dengan kebutuhan operasional pengguna. Saya merupakan individu yang terstruktur, mampu berkolaborasi dengan baik dalam tim, memiliki kemampuan pemecahan masalah yang kuat, serta dapat berkomunikasi dengan jelas. Saya berkomitmen untuk terus belajar dan beradaptasi dengan perkembangan teknologi guna memberikan kontribusi terbaik dalam lingkungan kerja profesional.";
 
 const hobbies = [
-  "Eksplorasi Kuliner Lokal",
-  "Bermain Gitar",
-  "Mendaki Gunung",
-  "Membaca Buku Sejarah",
+  "Bermain Futsal",
+  "Bermain Game",
+  "Menonton Film",
+  "Mendengarkan Musik",
 ];
+
+const interest = ["Web Developer", "IT Programmer", "IT Support"];
 
 const categorizedSkills = {
   Frontend: [
-    "ReactJS",
-    "Redux",
-    "Tailwind CSS",
-    "Next.js (Dasar)",
     "JavaScript (ES6+)",
+    "React.JS",
+    "Tailwind CSS",
+    "Bootstrap",
+    "Redux",
     "HTML5 & CSS3",
+    "Next.js (Dasar)",
   ],
   Backend: [
-    "Node.js & Express",
+    "Node.js & Express.js",
+    "Prisma ORM",
     "RESTful API Development",
     "JWT Authentication",
     "Error Handling",
+    "Google Cloud Platform",
   ],
-  Database: ["PostgreSQL", "MongoDB", "SQL Basics"],
+  Database: ["PostgreSQL", "MySQL (Dasar)"],
   Tools: [
     "Git & GitHub",
-    "VS Code",
-    "Vercel/Netlify Deployment",
-    "Figma (Dasar UI/UX)",
+    "Visual Studio Code",
+    "Postman",
+    "Vercel",
+    "Microsoft Office",
   ],
 };
 
 const myExperiences = [
-  {
-    title: "Front-End Developer (Intern)",
-    company: "Tech Solutions Inc.",
-    duration: "Jan 2024 - Jun 2024",
-    description:
-      "Mengembangkan komponen UI yang responsif menggunakan React dan Tailwind CSS, meningkatkan kecepatan loading halaman sebesar 15%.",
-  },
-  {
-    title: "Freelance Web Developer",
-    company: "Self-Employed",
-    duration: "2023 - Sekarang",
-    description:
-      "Menyediakan layanan pembuatan landing page dan website portofolio untuk klien kecil.",
-  },
+  // {
+  //   title: "Front-End Developer (Intern)",
+  //   company: "Tech Solutions Inc.",
+  //   duration: "Jan 2024 - Jun 2024",
+  //   description:
+  //     "Mengembangkan komponen UI yang responsif menggunakan React dan Tailwind CSS, meningkatkan kecepatan loading halaman sebesar 15%.",
+  // },
+  // {
+  //   title: "Freelance Web Developer",
+  //   company: "Self-Employed",
+  //   duration: "2023 - Sekarang",
+  //   description:
+  //     "Menyediakan layanan pembuatan landing page dan website portofolio untuk klien kecil.",
+  // },
 ];
 
 const myEducation = [
   {
-    degree: "Sarjana Teknik Informatika",
-    institution: "Universitas XYZ",
-    duration: "2020 - 2024",
-    gpa: "3.85",
+    degree: "Sarjana Sistem Informasi",
+    institution: "Universitas Pembangunan Nasional 'Veteran' Jawa Timur",
+    duration: "2021 - 2025",
+    gpa: "3.88 / 4.00",
+  },
+];
+
+const myEducationNonFormal = [
+  {
+    degree: "Backend Javascript",
+    institution: "PT. Lentera Bangsa Benderang (Binar Academy)",
+    duration: "Februari - Juli 2024",
+  },
+  {
+    degree: "Frontend Javascript",
+    institution: "PT. Lentera Bangsa Benderang (Binar Academy)",
+    duration: "Agustus 2023 - Januari 2024",
   },
 ];
 
@@ -158,7 +180,7 @@ export const AboutMe = () => {
 
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-5">
           <motion.div
-            className="order-1 space-y-8 lg:order-0 lg:col-span-2"
+            className="lg:order-0 order-1 space-y-8 lg:col-span-2"
             variants={staggerContainer}
             initial="hidden"
             whileInView="visible"
@@ -168,9 +190,14 @@ export const AboutMe = () => {
               className="bg-slate-800/60 rounded-xl border border-gray-700 p-8 shadow-2xl"
               variants={fadeInLeft}
             >
-              <div className="mx-auto mb-6 h-56 w-56 overflow-hidden rounded-xl border-4 border-cyan-400/50 bg-gray-700/70 p-4 shadow-inner">
+              <div className="mx-auto mb-6 h-56 w-56 overflow-hidden rounded-xl border-4 border-cyan-400/50 bg-gray-700/70 shadow-inner">
                 <div className="flex h-full w-full items-center justify-center">
-                  <FaImage className="h-24 w-24 text-gray-400" />
+                  <img
+                    src={Foto}
+                    loading="lazy"
+                    alt="Foto Profil Bagus Dwi"
+                    className="h-full w-full object-cover"
+                  />
                 </div>
               </div>
 
@@ -179,21 +206,21 @@ export const AboutMe = () => {
               </h2>
 
               <p className="mb-6 text-center text-lg text-gray-400">
-                Full-Stack Developer | Fokus pada ReactJS dan Node.js.
+                S1 Sistem Informasi | Junior Web Developer
               </p>
 
               <div className="space-y-3 text-gray-300">
                 <p className="flex justify-between border-b border-gray-700 pb-2">
                   <span className="font-medium text-cyan-400">Email:</span>
-                  <span className="text-right">bagusdpa4@email.com</span>
+                  <span className="text-right">sugab.dwi88@email.com</span>
                 </p>
                 <p className="flex justify-between border-b border-gray-700 pb-2">
                   <span className="font-medium text-cyan-400">Telepon:</span>
-                  <span className="text-right">0812-xxxx-xxxx</span>
+                  <span className="text-right">0822-2974-9462</span>
                 </p>
                 <p className="flex justify-between">
                   <span className="font-medium text-cyan-400">Lokasi:</span>
-                  <span className="text-right">Surabaya, Indonesia</span>
+                  <span className="text-right">Sidoarjo, Indonesia</span>
                 </p>
               </div>
             </motion.div>
@@ -203,13 +230,24 @@ export const AboutMe = () => {
               variants={fadeInLeft}
             >
               <h2 className="mb-5 flex items-center text-2xl font-bold text-white">
-                <FaHeart className="mr-3 text-pink-400" /> Hobbies & Interests
+                <FaHeart className="mr-3 text-pink-400" /> Hobbies
               </h2>
               <ul className="list-none space-y-2 pl-0 text-gray-300">
                 {hobbies.map((hobby, index) => (
                   <li key={index} className="flex items-center">
                     <span className="mr-2 text-pink-400">&#9679;</span>
                     {hobby}
+                  </li>
+                ))}
+              </ul>
+              <h2 className="mb-5 mt-6 flex items-center text-2xl font-bold text-white">
+                <FaBriefcase className="mr-3 text-cyan-400" /> Career Interests
+              </h2>
+              <ul className="list-none space-y-2 pl-0 text-gray-300">
+                {interest.map((item, index) => (
+                  <li key={index} className="flex items-center">
+                    <span className="mr-2 text-cyan-400">&#9679;</span>
+                    {item}
                   </li>
                 ))}
               </ul>
@@ -252,18 +290,18 @@ export const AboutMe = () => {
           </motion.div>
 
           <motion.div
-            className="order-2 space-y-12 lg:order-0 lg:col-span-3"
+            className="lg:order-0 order-2 space-y-12 lg:col-span-3"
             variants={staggerContainer}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.1 }}
           >
             <motion.section
-              className="order-2 space-y-4 lg:order-0"
+              className="lg:order-0 order-2 space-y-4"
               variants={fadeInRight}
             >
               <h2 className="flex items-center border-b border-cyan-500/50 pb-2 text-3xl font-bold text-white">
-                <FaBriefcase className="mr-3 text-cyan-400" /> My Career Summary
+                <FaUserTie className="mr-3 text-cyan-400" /> Summary
               </h2>
               <p className="text-lg leading-relaxed text-gray-300">
                 {careerSummary1}
@@ -274,11 +312,12 @@ export const AboutMe = () => {
             </motion.section>
 
             <motion.section
-              className="order-3 space-y-6 lg:order-0"
+              className="lg:order-0 order-3 space-y-6"
               variants={fadeInRight}
             >
               <h2 className="flex items-center border-b border-cyan-500/50 pb-2 text-3xl font-bold text-white">
-                <FaBriefcase className="mr-3 text-green-400" /> Work Experience
+                <MdWorkHistory className="mr-3 text-green-400" /> Work
+                Experience
               </h2>
               <div className="space-y-6">
                 {myExperiences.map((exp, index) => (
@@ -300,7 +339,7 @@ export const AboutMe = () => {
             </motion.section>
 
             <motion.section
-              className="order-4 space-y-6 lg:order-0"
+              className="lg:order-0 order-4 space-y-6"
               variants={fadeInRight}
             >
               <h2 className="flex items-center border-b border-cyan-500/50 pb-2 text-3xl font-bold text-white">
@@ -325,12 +364,39 @@ export const AboutMe = () => {
               </div>
             </motion.section>
 
+            <motion.section
+              className="lg:order-0 order-4 space-y-6"
+              variants={fadeInRight}
+            >
+              <h2 className="flex items-center border-b border-cyan-500/50 pb-2 text-3xl font-bold text-white">
+                <GiBookmarklet className="mr-3 text-blue-400" /> Education
+                Non-Formal
+              </h2>
+              <div className="space-y-4">
+                {myEducationNonFormal.map((edu, index) => (
+                  <motion.div
+                    key={index}
+                    className="border-l-4 border-gray-500 pl-4"
+                    variants={fadeInRight}
+                  >
+                    <h3 className="text-xl font-semibold text-white">
+                      {edu.degree}
+                    </h3>
+                    <p className="font-medium text-gray-300">
+                      {edu.institution}
+                    </p>
+                    <p className="mt-1 text-sm text-gray-400">{edu.duration}</p>
+                  </motion.div>
+                ))}
+              </div>
+            </motion.section>
+
             <motion.div
-              className="bg-slate-800/60 order-5 rounded-xl border border-gray-700 p-8 shadow-2xl lg:order-0 lg:hidden"
+              className="bg-slate-800/60 lg:order-0 order-5 rounded-xl border border-gray-700 p-8 shadow-2xl lg:hidden"
               variants={fadeInRight}
             >
               <h2 className="mb-5 flex items-center text-2xl font-bold text-white">
-                <FaHeart className="mr-3 text-pink-400" /> Hobbies & Interests
+                <FaHeart className="mr-3 text-pink-400" /> Hobbies
               </h2>
               <ul className="list-none space-y-2 pl-0 text-gray-300">
                 {hobbies.map((hobby, index) => (
@@ -340,23 +406,35 @@ export const AboutMe = () => {
                   </li>
                 ))}
               </ul>
+
+              <h2 className="mb-5 mt-6 flex items-center text-2xl font-bold text-white">
+                <FaBriefcase className="mr-3 text-cyan-400" /> Career Interests
+              </h2>
+              <ul className="list-none space-y-2 pl-0 text-gray-300">
+                {interest.map((interest, index) => (
+                  <li key={index} className="flex items-center">
+                    <span className="mr-2 text-blue-400">&#9679;</span>
+                    {interest}
+                  </li>
+                ))}
+              </ul>
             </motion.div>
 
             <motion.section
-              className="bg-slate-800/60 order-6 space-y-4 rounded-xl border border-gray-700 p-6 shadow-xl lg:order-0"
+              className="bg-slate-800/60 lg:order-0 order-6 space-y-4 rounded-xl border border-gray-700 p-6 shadow-xl"
               variants={fadeInRight}
             >
               <h2 className="flex items-center text-3xl font-bold text-white">
-                <FaLightbulb className="mr-3 text-amber-400" /> Development
-                Philosophy
+                <FaLightbulb className="mr-3 text-amber-400" /> Future Goals &
+                Aspirations
               </h2>
               <p className="text-lg leading-relaxed text-gray-300">
-                {developmentPhilosophy}
+                {futureFocusAndAspiration}
               </p>
             </motion.section>
 
             <motion.section
-              className="bg-slate-800/60 order-7 space-y-6 rounded-xl border border-gray-700 p-6 shadow-xl lg:order-0 lg:hidden"
+              className="bg-slate-800/60 lg:order-0 order-7 space-y-6 rounded-xl border border-gray-700 p-6 shadow-xl lg:hidden"
               variants={fadeInRight}
             >
               <h2 className="flex items-center text-3xl font-bold text-white">
