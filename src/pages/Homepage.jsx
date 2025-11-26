@@ -332,8 +332,8 @@ export const Homepage = () => {
                 About Me
               </h2>
               <p className="flex items-center justify-center text-xs font-semibold uppercase tracking-wider text-cyan-400 sm:text-sm">
-                <FaUser className="mr-1 h-4 w-4 lg:mr-2" /> Transforming ideas
-                into digital experiences
+                <FaUser className="mr-1 h-4 w-4 lg:mr-2" /> Mengubah Ide menjadi
+                Pengalaman Digital yang Nyata.
               </p>
             </motion.div>
 
@@ -375,14 +375,13 @@ export const Homepage = () => {
                   Bagus Dwi Putra Adiyono
                 </h3>
                 <p className="text-base text-gray-300 sm:text-lg">
-                  Saya adalah seorang pengembang **Front-End** yang bersemangat
-                  dalam mengubah ide kreatif menjadi antarmuka pengguna yang
-                  indah dan fungsional. Saya memiliki keahlian dalam React dan
-                  Tailwind CSS untuk menciptakan pengalaman digital yang
-                  responsif, modern, dan berpusat pada pengguna. Saya juga
-                  mengeksplorasi pengembangan Full-Stack menggunakan Node.js
-                  untuk membangun solusi digital yang komprehensif dari awal
-                  hingga akhir.
+                  Saya merupakan lulusan Sistem Informasi dengan minat pada
+                  pengembangan aplikasi berbasis web, analisis sistem, dan
+                  manajemen data. Saya berpengalaman dalam merancang dan
+                  membangun solusi berbasis web yang fungsional, aman, serta
+                  sesuai kebutuhan operasional pengguna. Saya terus
+                  mengembangkan kemampuan teknis dan analitis untuk mendukung
+                  terciptanya solusi teknologi yang efektif dan berkelanjutan.
                 </p>
 
                 {/* Button */}
@@ -471,9 +470,10 @@ export const Homepage = () => {
                 Portfolio Showcase
               </h2>
               <p className="mx-auto mb-8 max-w-xl text-base text-gray-400 sm:text-lg">
-                Explore my journey through projects, certifications, and
-                technical expertise. Each section represents a milestone in my
-                continuous learning path.
+                Telusuri perjalanan karya saya melalui proyek nyata, sertifikasi
+                yang saya raih, artikel yang pernah diterbitkan, hingga keahlian
+                teknis saya. Setiap bagian adalah bukti dari semangat belajar
+                dan perkembangan saya.
               </p>
             </motion.div>
 
