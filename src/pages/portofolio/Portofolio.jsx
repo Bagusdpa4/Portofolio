@@ -1,7 +1,7 @@
 import React, { useCallback, useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { FiExternalLink } from "react-icons/fi";
-import { FaCode, FaStar, FaGithub } from "react-icons/fa";
+import { FaCode, FaStar, FaGithub, FaClock } from "react-icons/fa";
 import { portfolioItems } from "../../assets/components/portofolio/ProjectContent";
 import { Navbar } from "../../assets/components/navbar/Navbar";
 import { Loading } from "../../assets/components/loading/Loading";
@@ -158,7 +158,16 @@ export const Portofolio = () => {
                 <h1 className="text-4xl font-extrabold text-white sm:text-5xl">
                   {project.title}
                 </h1>
-                <p className="text-lg text-gray-300">{project.category}</p>
+                <div className="flex flex-wrap items-center justify-between gap-y-2">
+                  <p className="text-lg text-gray-300">{project.category}</p>
+
+                  {project.time && (
+                    <p className="text-md flex items-center text-cyan-400">
+                      <FaClock className="mr-2 h-4 w-4 text-gray-400" />
+                      {project.time}
+                    </p>
+                  )}
+                </div>
               </div>
 
               <div className="block lg:hidden">
