@@ -5,20 +5,51 @@ import { GiGears } from "react-icons/gi";
 import { RiCustomerServiceFill } from "react-icons/ri";
 
 // Komponen Item Layanan
-const ServiceItem = ({ icon: Icon, title, description, variants }) => (
+const ServiceItem = ({
+  icon: Icon,
+  title,
+  description,
+  color,
+  ring,
+  iconColor,
+  variants,
+}) => (
   <motion.div
-    className="relative flex h-full flex-col items-start overflow-hidden rounded-xl border border-gray-700 bg-gray-900/90 p-6 text-left shadow-xl transition-all duration-500 hover:border-cyan-500 hover:bg-gray-800/90 hover:shadow-cyan-900/50"
+    className={`relative flex h-full flex-col items-start overflow-hidden rounded-xl border border-gray-700 bg-gray-900/80 p-6 text-left shadow-xl transition-all duration-500 hover:scale-[1.03] hover:shadow-2xl`}
+    style={{
+      background: `linear-gradient(135deg, var(--tw-gradient-stops))`,
+    }}
     variants={variants}
-    whileHover={{ y: -8, transition: { duration: 0.3 } }}
+    whileHover={{ y: -8, transition: { duration: 0.35 } }}
   >
-    {/* Decorative element */}
-    <div className="absolute right-0 top-0 h-1/2 w-1/2 rounded-bl-full bg-cyan-500/10 opacity-50 blur-3xl filter transition-opacity duration-500 group-hover:opacity-70"></div>
+    {/* Glow Background Moving */}
+    <motion.div
+      className={`absolute inset-0 bg-gradient-to-br ${color} opacity-20 blur-2xl`}
+      animate={{ scale: [1, 1.2, 1], opacity: [0.18, 0.25, 0.18] }}
+      transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+    />
 
-    <div className="relative z-10 mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-cyan-600/20 ring-4 ring-cyan-500/20">
-      <Icon className="h-7 w-7 text-cyan-400" />
+    {/* Icon */}
+    <div
+      className={`relative z-10 mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-gray-800/40 ${ring} ring-4 transition-all duration-300`}
+    >
+      <motion.div whileHover={{ scale: 1.15 }} className={iconColor}>
+        <Icon className="h-7 w-7" />
+      </motion.div>
     </div>
+
+    {/* Title */}
     <h4 className="relative z-10 mb-3 text-xl font-bold text-white">{title}</h4>
-    <p className="relative z-10 text-sm text-gray-400">{description}</p>
+
+    {/* Description */}
+    <motion.p
+      className="relative z-10 text-sm text-gray-400"
+      whileHover={{ opacity: 1 }}
+      initial={{ opacity: 0.75 }}
+      transition={{ duration: 0.3 }}
+    >
+      {description}
+    </motion.p>
   </motion.div>
 );
 
@@ -26,27 +57,39 @@ const ServiceItem = ({ icon: Icon, title, description, variants }) => (
 const services = [
   {
     icon: FaLaptopCode,
-    title: "Full-Stack Web Development",
+    title: "Full-Stack Development (End-to-End)",
+    color: "from-cyan-500/20 to-blue-500/20",
+    ring: "ring-cyan-400/40",
+    iconColor: "text-cyan-400",
     description:
-      "Membangun aplikasi web fungsional dari nol, menangani logic backend (API) hingga antarmuka pengguna (UI/UX) dengan fokus pada performa dan skalabilitas.",
+      "Membangun aplikasi web secara menyeluruh mulai dari backend, RESTful API, integrasi database, hingga antarmuka pengguna yang aman, stabil, dan siap diskalakan.",
   },
   {
     icon: FaCode,
-    title: "Frontend Development (React.js)",
+    title: "Frontend Development & Modern UI/UX",
+    color: "from-purple-500/20 to-pink-500/20",
+    ring: "ring-purple-400/40",
+    iconColor: "text-purple-400",
     description:
-      "Menciptakan pengalaman pengguna yang interaktif, responsif, dan modern menggunakan React.js, Tailwind CSS, dan praktik UI/UX terbaik.",
+      "Mengembangkan interface modern dan responsif menggunakan React.js dan Tailwind CSS dengan fokus pada kecepatan, kenyamanan, dan pengalaman pengguna.",
   },
   {
     icon: FaLightbulb,
-    title: "RESTful API Integration",
+    title: "API Integration & Third-Party Services",
+    color: "from-yellow-500/20 to-orange-500/20",
+    ring: "ring-yellow-400/40",
+    iconColor: "text-yellow-300",
     description:
-      "Merancang, mengimplementasikan, dan mengintegrasikan API yang aman dan efisien untuk memastikan komunikasi data yang mulus antara klien dan server.",
+      "Mengintegrasikan aplikasi dengan layanan pihak ketiga secara aman dan efisien, termasuk pembayaran, autentikasi, dan sinkronisasi data real-time.",
   },
   {
     icon: GiGears,
-    title: "Database Management & Query",
+    title: "Database Design & Optimization",
+    color: "from-green-500/20 to-emerald-500/20",
+    ring: "ring-green-400/40",
+    iconColor: "text-green-400",
     description:
-      "Perancangan dan pengelolaan skema database (PostgreSQL, MySQL) yang optimal, termasuk penulisan query yang efisien untuk kinerja aplikasi.",
+      "Merancang struktur database yang terorganisir serta mengoptimalkan query untuk performa cepat dan stabil menggunakan Prisma ORM atau SQL.",
   },
 ];
 
@@ -103,7 +146,7 @@ export const ServiceSection = ({ SectionComponent }) => {
       {/* Decorative Blur */}
       <div className="pointer-events-none absolute left-1/2 top-1/2 h-3/4 w-3/4 -translate-x-1/2 -translate-y-1/2 rounded-full bg-cyan-900/10 blur-[150px]"></div>
 
-      <div className="relative z-10 w-full max-w-7xl pt-0 lg:pt-10">
+      <div className="relative z-10 w-full max-w-7xl">
         <motion.div
           className="mb-10 text-center"
           variants={sectionHeaderVariants}
@@ -111,12 +154,12 @@ export const ServiceSection = ({ SectionComponent }) => {
           whileInView="visible"
           viewport={{ once: true, amount: 0.3 }}
         >
-          <h2 className="mb-2 text-4xl font-extrabold text-white sm:text-5xl">
-            My Services
+          <h2 className="mb-2 py-4 text-4xl font-extrabold text-white sm:text-5xl">
+            My Expertise & Services
           </h2>
           <p className="flex items-center justify-center text-xs font-semibold uppercase tracking-wider text-cyan-400 sm:text-sm">
-            <RiCustomerServiceFill className="mr-1 h-4 w-4 lg:mr-2" /> Apa yang dapat saya
-            tawarkan
+            <RiCustomerServiceFill className="mr-1 hidden h-4 w-4 lg:mr-2 lg:flex" />
+            Membangun Solusi Digital dengan Presisi & Performa Tinggi.
           </p>
         </motion.div>
 
