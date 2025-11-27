@@ -1,40 +1,36 @@
 import React, { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
+
+// Component
+import Profile from "../assets/img/Profile.jpg";
 import { Navbar } from "../assets/components/navbar/Navbar";
 import { Footer } from "../assets/components/navbar/Footer";
-import Profile from "../assets/img/Profile.jpg";
 import { Loading } from "../assets/components/loading/Loading";
-
+import { IntroOverlay } from "../assets/components/home/IntroOverlay";
+import { HeroSection } from "../assets/components/home/HeroSection";
 import { ProjectContent } from "../assets/components/portofolio/ProjectContent";
 import { CertificateContent } from "../assets/components/portofolio/CertificateContent";
 import { ArticleContent } from "../assets/components/portofolio/ArticleContent";
 import { TechStackContent } from "../assets/components/portofolio/TechStackContent";
+import { ServiceSection } from "../assets/components/home/ServiceSection";
+import { ContactSection } from "../assets/components/home/ContactSection";
 
-import {
-  FaLaptopCode,
-  FaUser,
-  FaBriefcase,
-  FaEnvelope,
-  FaMapMarkerAlt,
-  FaLinkedin,
-  FaGithub,
-  FaClock,
-  FaInstagram,
-  FaCode,
-  FaLightbulb,
-} from "react-icons/fa";
+// Icons
+import { FaUser, FaBriefcase, FaClock } from "react-icons/fa";
 import { CgProfile } from "react-icons/cg";
 import { GrArticle } from "react-icons/gr";
 import { PiCertificateFill } from "react-icons/pi";
 import { GiGears } from "react-icons/gi";
-import { FaPhoneVolume, FaPhone } from "react-icons/fa6";
 import { HiCode } from "react-icons/hi";
-import { BiLogoGmail } from "react-icons/bi";
 
 if ("scrollRestoration" in window.history) {
   window.history.scrollRestoration = "manual";
 }
+
+const INTRO_SHOWN_KEY = "intro_overlay_shown";
+const INTRO_DISPLAY_TIME_MS = 3000;
+const MINIMUM_LOAD_TIME_MS = 500;
 
 // Komponen Section
 const Section = ({ id, children, className = "" }) => {
@@ -48,94 +44,20 @@ const Section = ({ id, children, className = "" }) => {
   );
 };
 
-// Data Kontak Pribadi
-const contactInfo = [
-  {
-    icon: BiLogoGmail,
-    label: "Email",
-    value: "sugab.dwi88@gmail.com",
-  },
-  {
-    icon: FaPhone,
-    label: "Telepon",
-    value: "+6282229749462",
-  },
-  {
-    icon: FaGithub,
-    label: "GitHub",
-    value: "Bagusdpa4",
-  },
-  {
-    icon: FaLinkedin,
-    label: "LinkedIn",
-    value: "bagusdwiputraadiyono",
-  },
-  {
-    icon: FaInstagram,
-    label: "Instagram",
-    value: "bagusdwiputraa",
-  },
-  {
-    icon: FaMapMarkerAlt,
-    label: "Lokasi",
-    value: "Sidoarjo, Indonesia",
-  },
-];
-
-// Komponen Item Kontak
-const ContactItem = ({ icon: Icon, label, value }) => (
-  <div className="flex cursor-default items-start space-x-3 rounded-lg border border-gray-700 bg-gray-900/50 p-3 transition duration-300 hover:border-cyan-400">
-    <Icon className="my-3 h-6 w-6 shrink-0 text-cyan-400" />
-    <div className="text-left">
-      <p className="text-xs font-medium uppercase tracking-wider text-gray-400">
-        {label}
-      </p>
-      <p className="break-word text-base font-semibold text-white sm:text-lg">
-        {value.length > 25 ? value.substring(0, 22) + "..." : value}
-      </p>
-    </div>
-  </div>
-);
-
-// Komponen Statistik
-const StatItem = ({ icon: Icon, number, label }) => (
-  <div className="flex flex-col items-center p-4">
-    <div className="flex items-center">
-      <Icon className="mr-2 h-5 w-5 text-cyan-400 sm:h-6 sm:w-6" />
-      <p className="text-3xl font-extrabold text-white sm:text-4xl">{number}</p>
-    </div>
-    <p className="mt-1 text-center text-xs uppercase tracking-widest text-gray-400">
-      {label}
-    </p>
-  </div>
-);
-
 // Framer Motion Variants
 const containerVariants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
     transition: {
-      delayChildren: 0.5,
-      staggerChildren: 0.2,
-      duration: 2,
+      delayChildren: 0.1,
+      staggerChildren: 0.1,
+      duration: 1,
     },
   },
 };
 
-const textVariants = {
-  hidden: { opacity: 0, y: 20 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 1.5,
-      ease: "easeOut",
-    },
-  },
-};
-
-// Variants untuk Judul/Header Section (Muncul dari Atas)
+// Variants untuk Judul/Header Section (Muncul dari Atas) - Digunakan di About dan Portfolio
 const sectionHeaderVariants = {
   hidden: { opacity: 0, y: -50 },
   visible: {
@@ -148,7 +70,7 @@ const sectionHeaderVariants = {
   },
 };
 
-// Variants untuk Konten (Muncul/Fade In)
+// Variants untuk Konten (Muncul/Fade In) - Digunakan di About dan Portfolio Nav
 const contentFadeInVariants = (direction = "up") => ({
   hidden: {
     opacity: 0,
@@ -172,8 +94,8 @@ const staggerContainerVariants = {
   visible: {
     opacity: 1,
     transition: {
-      delayChildren: 0.2, // Jeda sebelum anak pertama muncul
-      staggerChildren: 0.1, // Jeda antara setiap anak
+      delayChildren: 0.2,
+      staggerChildren: 0.1,
     },
   },
 };
@@ -184,9 +106,110 @@ const itemVariants = {
   visible: { opacity: 1, y: 0, transition: { duration: 0.7 } },
 };
 
+// Komponen Statistik
+const StatItem = ({ icon: Icon, number, label }) => (
+  <div className="flex flex-col items-center p-4">
+    <div className="flex items-center">
+      <Icon className="mr-2 h-5 w-5 text-cyan-400 sm:h-6 sm:w-6" />
+      <p className="text-3xl font-extrabold text-white sm:text-4xl">{number}</p>
+    </div>
+    <p className="mt-1 text-center text-xs uppercase tracking-widest text-gray-400">
+      {label}
+    </p>
+  </div>
+);
+
+const TypewriterText = ({
+  texts,
+  typingSpeed = 50, // Sangat Cepat
+  deletingSpeed = 25, // Sangat Cepat
+  pauseDelay = 1000, // Jeda setelah selesai mengetik
+  initialDelay = 0,
+  className = "text-white",
+}) => {
+  const [displayedText, setDisplayedText] = useState("");
+  const [isDeleting, setIsDeleting] = useState(false);
+  const [textIndex, setTextIndex] = useState(0);
+  const [charIndex, setCharIndex] = useState(0);
+
+  useEffect(() => {
+    let timer;
+    const currentText = texts[textIndex % texts.length];
+    const fullText = currentText;
+
+    const handleTyping = () => {
+      // 1. Mengetik
+      if (!isDeleting) {
+        if (charIndex < fullText.length) {
+          setDisplayedText(fullText.substring(0, charIndex + 1));
+          setCharIndex((prev) => prev + 1);
+          timer = setTimeout(handleTyping, typingSpeed);
+        } else {
+          // Selesai mengetik, jeda
+          timer = setTimeout(() => setIsDeleting(true), pauseDelay);
+        }
+      } // 2. Menghapus
+      else {
+        if (charIndex > 0) {
+          setDisplayedText(fullText.substring(0, charIndex - 1));
+          setCharIndex((prev) => prev - 1);
+          timer = setTimeout(handleTyping, deletingSpeed);
+        } else {
+          // Selesai menghapus, ganti teks
+          setIsDeleting(false);
+          setTextIndex((prev) => prev + 1);
+          timer = setTimeout(handleTyping, typingSpeed * 2); // Jeda singkat
+        }
+      }
+    };
+
+    const startTypingWithInitialDelay = setTimeout(() => {
+      handleTyping();
+    }, initialDelay); // Cleanup function
+
+    return () => {
+      clearTimeout(timer);
+      clearTimeout(startTypingWithInitialDelay);
+    };
+  }, [
+    textIndex,
+    charIndex,
+    isDeleting,
+    texts,
+    typingSpeed,
+    deletingSpeed,
+    pauseDelay,
+    initialDelay,
+  ]);
+
+  return (
+    <motion.p
+      className={className}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.5 }}
+    >
+      {displayedText}
+      <motion.span
+        aria-hidden="true"
+        className="ml-0.5 inline-block h-6 w-1 bg-current align-text-bottom"
+        animate={{ opacity: [0, 1, 1, 0] }}
+        transition={{
+          duration: 0.8,
+          repeat: Infinity,
+          ease: "easeInOut",
+          repeatDelay: 0.5,
+        }}
+      />
+    </motion.p>
+  );
+};
+
 export const Homepage = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [activeTab, setActiveTab] = useState("project");
+  const initialShowIntro = sessionStorage.getItem(INTRO_SHOWN_KEY) !== "true";
+  const [showIntro, setShowIntro] = useState(initialShowIntro);
   const location = useLocation();
 
   useEffect(() => {
@@ -202,18 +225,29 @@ export const Homepage = () => {
     }
   }, [location.hash]);
 
+  // Logika Loading dan Intro
   useEffect(() => {
-    const minimumLoadTime = 700;
     let timeoutId;
+    let introTimeoutId;
 
-    timeoutId = setTimeout(() => {
-      setIsLoading(false);
-    }, minimumLoadTime);
+    if (initialShowIntro) {
+      timeoutId = setTimeout(() => {
+        setIsLoading(false);
+        introTimeoutId = setTimeout(() => {
+          setShowIntro(false);
+          sessionStorage.setItem(INTRO_SHOWN_KEY, "true");
+        }, INTRO_DISPLAY_TIME_MS);
+      }, MINIMUM_LOAD_TIME_MS);
+    } else {
+      timeoutId = setTimeout(() => {
+        setIsLoading(false);
+        setShowIntro(false);
+      }, MINIMUM_LOAD_TIME_MS);
+    }
 
     return () => {
-      if (timeoutId) {
-        clearTimeout(timeoutId);
-      }
+      if (timeoutId) clearTimeout(timeoutId);
+      if (introTimeoutId) clearTimeout(introTimeoutId);
     };
   }, []);
 
@@ -278,101 +312,6 @@ export const Homepage = () => {
     return <Loading />;
   }
 
-  const TypewriterLoop = ({ texts }) => {
-    const [textIndex, setTextIndex] = useState(0);
-    const [displayedText, setDisplayedText] = useState("");
-    const [charIndex, setCharIndex] = useState(0);
-    const [isDeleting, setIsDeleting] = useState(false);
-
-    useEffect(() => {
-      const currentText = texts[textIndex];
-
-      let speed = isDeleting ? 40 : 85;
-
-      const timer = setTimeout(() => {
-        if (!isDeleting) {
-          setDisplayedText(currentText.substring(0, charIndex + 1));
-          setCharIndex(charIndex + 1);
-
-          if (charIndex + 1 === currentText.length) {
-            setTimeout(() => setIsDeleting(true), 900);
-          }
-        } else {
-          setDisplayedText(currentText.substring(0, charIndex - 1));
-          setCharIndex(charIndex - 1);
-
-          if (charIndex === 0) {
-            setIsDeleting(false);
-            setTextIndex((prev) => (prev + 1) % texts.length);
-          }
-        }
-      }, speed);
-
-      return () => clearTimeout(timer);
-    }, [charIndex, isDeleting, textIndex, texts]);
-
-    return (
-      <span className="relative text-xl font-semibold text-cyan-300 sm:text-2xl">
-        {displayedText}
-        <span className="absolute -right-2 top-0 animate-pulse">|</span>
-      </span>
-    );
-  };
-
-  const AnimatedBadges = () => {
-    const badges = ["Web Developer", "IT Programmer", "IT Support"];
-
-    return (
-      <motion.div
-        className="mt-20 flex flex-wrap justify-center gap-3"
-        variants={staggerContainerVariants}
-        initial="hidden"
-        animate="visible"
-      >
-        {badges.map((badge, i) => (
-          <motion.div
-            key={i}
-            variants={itemVariants}
-            initial={{ opacity: 0, scale: 0.8, y: 20 }}
-            animate={{
-              opacity: 1,
-              scale: 1,
-              y: 0,
-              transition: {
-                delay: i * 0.15,
-                duration: 0.5,
-                ease: "easeOut",
-              },
-            }}
-            whileHover={{
-              y: -6,
-              scale: 1.05,
-              boxShadow: "0 0 12px rgba(6, 182, 212, 0.6)",
-            }}
-            className="rounded-lg border cursor-pointer border-cyan-500/40 bg-gray-900/40 px-4 py-2 text-sm text-white shadow-md transition-all duration-300 hover:border-cyan-400/70 sm:text-base"
-          >
-            <motion.span
-              animate={{
-                textShadow: [
-                  "0 0 4px rgba(6, 182, 212, 0.4)",
-                  "0 0 8px rgba(6, 182, 212, 0.7)",
-                  "0 0 4px rgba(6, 182, 212, 0.4)",
-                ],
-              }}
-              transition={{
-                duration: 2,
-                repeat: Infinity,
-                ease: "easeInOut",
-              }}
-            >
-              {badge}
-            </motion.span>
-          </motion.div>
-        ))}
-      </motion.div>
-    );
-  };
-
   return (
     <motion.div
       className="from-gray-950 to-blue-950 via-slate-800 bg-linear-to-r min-h-screen font-sans"
@@ -383,54 +322,13 @@ export const Homepage = () => {
       <Navbar handleSmoothScroll={handleSmoothScroll} />
 
       <main>
-        {/* 1. HOME SECTION */}
-        <Section id="home" className="justify-center pt-0 text-center">
-          <div className="mx-auto max-w-4xl py-20">
-            <motion.p
-              className="mb-4 text-lg font-light tracking-widest text-white opacity-80 sm:text-xl"
-              variants={textVariants}
-            >
-              Welcome To My
-            </motion.p>
-            <motion.h1
-              className="text-slate-500 text-5xl font-extrabold leading-tight tracking-tighter sm:text-7xl lg:text-9xl"
-              variants={textVariants}
-            >
-              <span
-                className="bg-linear-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent"
-                style={{
-                  textShadow:
-                    "0 0 10px rgba(6, 182, 212, 0.8), 0 0 20px rgba(6, 182, 212, 0.5)",
-                }}
-              >
-                Portfolio
-              </span>
+        <IntroOverlay showIntro={showIntro} />
 
-              <span
-                style={{
-                  textShadow:
-                    "0 0 10px rgba(6, 182, 212, 0.3), 0 0 20px rgba(6, 182, 212, 0.1)",
-                }}
-              >
-                Website
-              </span>
-            </motion.h1>
-            <motion.div variants={textVariants} className="mt-20">
-              <TypewriterLoop
-                texts={[
-                  "Membangun Solusi Digital dengan Presisi",
-                  "Menyediakan Pengalaman Web Modern dan Skalabel",
-                ]}
-              />
-
-              <AnimatedBadges />
-            </motion.div>
-          </div>
-        </Section>
+        <HeroSection handleSmoothScroll={handleSmoothScroll} />
 
         <hr className="mx-auto w-full max-w-7xl border-t border-gray-700" />
 
-        {/* 2. ABOUT SECTION */}
+        {/* 3. ABOUT SECTION */}
         <Section id="about">
           <div className="w-full max-w-7xl pt-0 lg:pt-10">
             <motion.div
@@ -444,8 +342,8 @@ export const Homepage = () => {
                 About Me
               </h2>
               <p className="flex items-center justify-center text-xs font-semibold uppercase tracking-wider text-cyan-400 sm:text-sm">
-                <FaUser className="mr-1 h-4 w-4 lg:mr-2" /> Mengubah Ide menjadi
-                Pengalaman Digital yang Nyata.
+                <FaUser className="mr-1 h-4 w-4 lg:mr-2" /> Transforming ideas
+                into functional code.
               </p>
             </motion.div>
 
@@ -481,11 +379,21 @@ export const Homepage = () => {
                 viewport={{ once: true, amount: 0.3 }}
               >
                 <p className="text-2xl font-light text-white sm:text-3xl">
-                  Hello, I'm
+                  <span className="block sm:inline">Hello, I'm </span>
+                  <span className="font-semibold text-cyan-400">
+                    Bagus Dwi Putra Adiyono
+                  </span>
                 </p>
-                <h3 className="text-4xl font-extrabold text-cyan-400 sm:text-5xl">
-                  Bagus Dwi Putra Adiyono
-                </h3>
+                <motion.div>
+                  <TypewriterText
+                    texts={["Web Developer", "IT Programmer", "IT Support"]}
+                    typingSpeed={50}
+                    deletingSpeed={25}
+                    pauseDelay={1000}
+                    initialDelay={75}
+                    className="font-serif text-4xl font-extrabold text-white sm:text-5xl"
+                  />
+                </motion.div>
                 <p className="text-base text-gray-300 sm:text-lg">
                   Saya merupakan lulusan Sistem Informasi dengan minat pada
                   pengembangan aplikasi berbasis web, analisis sistem, dan
@@ -530,35 +438,32 @@ export const Homepage = () => {
                 className="grid grid-cols-2 divide-x divide-gray-700 rounded-xl border border-gray-600 bg-gray-800/50 lg:grid-cols-4"
                 variants={staggerContainerVariants}
               >
-                {
-                  // Pembungkus StatItem dengan motion.div
-                  [
-                    { icon: HiCode, number: totalProjects, label: "PROJECTS" },
-                    {
-                      icon: PiCertificateFill,
-                      number: totalCertificates,
-                      label: "CERTIFICATES",
-                    },
-                    {
-                      icon: GrArticle,
-                      number: totalArticles,
-                      label: "ARTICLES",
-                    },
-                    {
-                      icon: FaClock,
-                      number: yearsOfExperience + "+",
-                      label: "YEARS OF EXPERIENCE",
-                    },
-                  ].map((stat, index) => (
-                    <motion.div key={index} variants={itemVariants}>
-                      <StatItem
-                        icon={stat.icon}
-                        number={stat.number}
-                        label={stat.label}
-                      />
-                    </motion.div>
-                  ))
-                }
+                {[
+                  { icon: HiCode, number: totalProjects, label: "PROJECTS" },
+                  {
+                    icon: PiCertificateFill,
+                    number: totalCertificates,
+                    label: "CERTIFICATES",
+                  },
+                  {
+                    icon: GrArticle,
+                    number: totalArticles,
+                    label: "ARTICLES",
+                  },
+                  {
+                    icon: FaClock,
+                    number: yearsOfExperience + "+",
+                    label: "YEARS OF EXPERIENCE",
+                  },
+                ].map((stat, index) => (
+                  <motion.div key={index} variants={itemVariants}>
+                    <StatItem
+                      icon={stat.icon}
+                      number={stat.number}
+                      label={stat.label}
+                    />
+                  </motion.div>
+                ))}
               </motion.div>
             </motion.div>
           </div>
@@ -566,7 +471,12 @@ export const Homepage = () => {
 
         <hr className="mx-auto w-full max-w-7xl border-t border-gray-700" />
 
-        {/* 3. PORTFOLIO SECTION */}
+        {/* 4. SERVICE SECTION */}
+        <ServiceSection SectionComponent={Section} />
+
+        <hr className="mx-auto w-full max-w-7xl border-t border-gray-700" />
+
+        {/* 5. PORTFOLIO SECTION */}
         <Section id="portfolio">
           <div className="w-full max-w-7xl pt-0 text-center lg:pt-10">
             <motion.div
@@ -660,81 +570,8 @@ export const Homepage = () => {
 
         <hr className="mx-auto w-full max-w-7xl border-t border-gray-700" />
 
-        {/* 4. CONTACT SECTION */}
-        <Section id="contact">
-          <div className="w-full max-w-7xl">
-            {/* Header */}
-            <motion.div
-              className="mb-12 text-center sm:mb-16"
-              variants={sectionHeaderVariants}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, amount: 0.3 }}
-            >
-              <p className="mb-2 flex items-center justify-center text-sm font-semibold uppercase tracking-wider text-cyan-400 sm:text-base">
-                <FaEnvelope className="mr-2 h-4 w-4" /> Get in Touch
-              </p>
-              <h2 className="mb-4 text-4xl font-extrabold text-white sm:text-5xl lg:text-6xl">
-                Let's Collaborate
-              </h2>
-              <p className="mx-auto max-w-2xl text-base text-gray-400 sm:text-xl">
-                Tertarik untuk berdiskusi tentang peluang kerja, proyek, atau
-                kolaborasi? Anda dapat menghubungi saya melalui
-                platform-platform di bawah ini.
-              </p>
-            </motion.div>
-
-            {/* Container */}
-            <div className="flex flex-col items-center gap-12 lg:flex-row lg:items-center lg:gap-2">
-              {/* Section Kiri */}
-              <motion.div
-                className="flex w-full flex-col items-center lg:w-1/2"
-                variants={contentFadeInVariants("left")}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true, amount: 0.3 }}
-              >
-                <p className="mb-6 text-base font-semibold text-gray-300 sm:text-lg">
-                  Klik ikon di bawah ini untuk menghubungi saya.
-                </p>
-                <div className="relative flex h-56 w-56 items-center justify-center rounded-full sm:h-72 sm:w-72">
-                  {/* Efek Cincin Bercahaya (Pulsating Ring) */}
-                  <div className="absolute inset-0 h-full w-full animate-ping rounded-full border border-cyan-500/50 opacity-50"></div>
-                  <div className="absolute inset-0 h-full w-full rounded-full border-4 border-cyan-500/70 bg-gray-900/50 shadow-2xl shadow-cyan-500/30"></div>
-
-                  {/* Ikon Kiri */}
-                  <a href="https://wa.me/+6282229749462" title="Hubungi Saya">
-                    <FaPhoneVolume className="relative z-10 h-28 w-28 text-cyan-400 transition duration-300 hover:scale-110 sm:h-36 sm:w-36" />
-                  </a>
-                </div>
-              </motion.div>
-
-              {/* Section Kanan */}
-              <motion.div
-                className="w-full lg:w-1/2"
-                variants={staggerContainerVariants}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true, amount: 0.3 }}
-              >
-                <div className="mx-auto w-full max-w-lg lg:mx-0 lg:max-w-none">
-                  {/* Daftar Kontak */}
-                  <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-                    {contactInfo.map((item, index) => (
-                      <motion.div key={index} variants={itemVariants}>
-                        <ContactItem
-                          icon={item.icon}
-                          label={item.label}
-                          value={item.value}
-                        />
-                      </motion.div>
-                    ))}
-                  </div>
-                </div>
-              </motion.div>
-            </div>
-          </div>
-        </Section>
+        {/* 6. CONTACT SECTION */}
+        <ContactSection SectionComponent={Section} />
       </main>
 
       <Footer />

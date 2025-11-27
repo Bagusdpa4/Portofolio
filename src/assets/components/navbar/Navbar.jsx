@@ -3,7 +3,7 @@ import { HiMenu, HiX } from "react-icons/hi";
 import { useLocation, useNavigate } from "react-router-dom";
 
 const SCROLL_THRESHOLD = 100;
-const SECTION_IDS = ["home", "about", "portfolio", "contact"];
+const SECTION_IDS = ["home", "about", "services", "portfolio", "contact"];
 
 export const Navbar = () => {
   const { pathname } = useLocation();
