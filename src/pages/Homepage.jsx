@@ -288,7 +288,7 @@ export const Homepage = () => {
   const totalProjects = 6;
   const totalCertificates = 4;
   const totalArticles = 3;
-  const yearsOfExperience = 1;
+  const yearsOfExperience = 2;
 
   // Component Section Portfolio
   let PortfolioContentComponent;
@@ -452,7 +452,7 @@ export const Homepage = () => {
                   },
                   {
                     icon: FaClock,
-                    number: yearsOfExperience + "+",
+                    number: yearsOfExperience,
                     label: "YEARS OF EXPERIENCE",
                   },
                 ].map((stat, index) => (
@@ -578,3 +578,4 @@ export const Homepage = () => {
     </motion.div>
   );
 };
+
