@@ -59,20 +59,13 @@ const categorizedSkills = {
 };
 
 const myExperiences = [
-  // {
-  //   title: "Front-End Developer (Intern)",
-  //   company: "Tech Solutions Inc.",
-  //   duration: "Jan 2024 - Jun 2024",
-  //   description:
-  //     "Mengembangkan komponen UI yang responsif menggunakan React dan Tailwind CSS, meningkatkan kecepatan loading halaman sebesar 15%.",
-  // },
-  // {
-  //   title: "Freelance Web Developer",
-  //   company: "Self-Employed",
-  //   duration: "2023 - Sekarang",
-  //   description:
-  //     "Menyediakan layanan pembuatan landing page dan website portofolio untuk klien kecil.",
-  // },
+  {
+    title: "Web Developer (Intern)",
+    company: "PT. Shelter Indonesia Gemilang",
+    duration: "Dec 2025 - Jun 2026",
+    description:
+      "Mengembangkan website atau aplikasi perusahaan. Membuat dan mengembangkan platform e-learning atau website internal training. Menyiapkan akun learning management system (LMS) sebagai bagian dari kelas.",
+  },
 ];
 
 const myEducation = [
