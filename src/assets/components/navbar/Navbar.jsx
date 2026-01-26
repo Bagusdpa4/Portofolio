@@ -105,7 +105,7 @@ export const Navbar = () => {
     if (id === "portfolio" && pathname.includes("/project/")) {
       return true;
     }
-    
+
     return false;
   };
 
@@ -165,7 +165,7 @@ export const Navbar = () => {
             : "max-h-0 opacity-0"
         } `}
       >
-        <div className="flex flex-col space-y-3 px-6">
+        <div className="flex flex-col space-y-2 px-6">
           {SECTION_IDS.map((id) => (
             <a
               key={id}

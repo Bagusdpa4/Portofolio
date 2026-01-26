@@ -5,14 +5,38 @@ import { HiOutlineDocumentText, HiOutlineAcademicCap } from "react-icons/hi2";
 const portfolioItems = [
   {
     id: 1,
+    title: "Essential Skills: Integrity at Work",
+    desc: "Sertifikat Pelatihan dari Gerakan Nasional Indonesia Kompeten (GNIK) & Kemnaker RI untuk membangun karakter individu, budaya organisasi, serta kepercayaan publik dengan membekali pemahaman konseptual, reflektif, dan aplikatif mengenai integritas dalam konteks dunia kerja dan kehidupan profesional.",
+    category: "Sertifikat",
+    projectUrl: "/docs/Essential Skills - Integrity at Work.pdf",
+    thumbnailUrl: "/images/Integrity at Work.png",
+  },
+  {
+    id: 2,
+    title: "Essential Skills: Design Thinking",
+    desc: "Sertifikat Pelatihan dari Gerakan Nasional Indonesia Kompeten (GNIK) & Kemnaker RI untuk membangun pola pikir inovatif melalui Design Thinking sebagai pendekatan berpikir yang berfokus pada manusia (human-centered), kreatif, dan aplikatif dalam menyelesaikan berbagai tantangan.",
+    category: "Sertifikat",
+    projectUrl: "/docs/Essential Skills - Design Thinking.pdf",
+    thumbnailUrl: "/images/Design Thinking.png",
+  },
+  {
+    id: 3,
+    title: "Essential Skills: Emotional Resilience",
+    desc: "Sertifikat Pelatihan dari Gerakan Nasional Indonesia Kompeten (GNIK) & Kemnaker RI untuk membangun ketahanan emosional (Emotional Resilience) di dunia kerja untuk menghadapi tantangan dan tekanan secara adaptif.",
+    category: "Sertifikat",
+    projectUrl: "/docs/Essential Skills - Emotional Resilience.pdf",
+    thumbnailUrl: "/images/Emotional Resilience.png",
+  },
+  {
+    id: 4,
     title: "Junior Web Programmer (BNSP)",
-    desc: "Sertifikat Kompetensi sebagai Junior Web Programmer dari BNSP (Badan Nasional Sertifikasi Profesi). Berlaku 3 tahun. Diterbitkan 02 Oktober 2025.",
+    desc: "Sertifikat Kompetensi sebagai Junior Web Programmer dari BNSP (Badan Nasional Sertifikasi Profesi). Berlaku 3 tahun sejak diterbitkan pada tanggal 02 Oktober 2025 sampai dengan 02 Oktober 2028.",
     category: "Sertifikat",
     projectUrl: "/docs/sertifikasi.pdf",
     thumbnailUrl: "/images/sertifikasi.jpg",
   },
   {
-    id: 2,
+    id: 5,
     title: "Back End Javascript",
     desc: "Penyelesaian program Studi Independen Bersertifikat Back End Javascript oleh Binar Academy, Kampus Merdeka. Periode 16 Feb 2024 - 30 Jun 2024.",
     category: "Sertifikat",
@@ -20,7 +44,7 @@ const portfolioItems = [
     thumbnailUrl: "/images/BEJS.jpg",
   },
   {
-    id: 3,
+    id: 6,
     title: "Front End Javascript",
     desc: "Penyelesaian program Studi Independen Bersertifikat Front End Javascript oleh Binar Academy, Kampus Merdeka. Periode 14 Aug 2023 - 31 Dec 2023.",
     category: "Sertifikat",
@@ -28,7 +52,7 @@ const portfolioItems = [
     thumbnailUrl: "/images/FEJS.jpg",
   },
   {
-    id: 4,
+    id: 7,
     title: "Lulusan Berpredikat Dengan Pujian (Cumlaude)",
     desc: "Piagam Penghargaan dari Rektor UPN Veteran Jawa Timur atas prestasi lulusan S-1 Sistem Informasi dengan IPK 3.88. Diterbitkan 26 Juli 2025.",
     category: "Penghargaan",
