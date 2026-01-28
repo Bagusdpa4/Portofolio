@@ -13,6 +13,7 @@ import {
   FaTrello,
   FaNpm,
   FaYarn,
+  FaLaravel,
 } from "react-icons/fa";
 import {
   SiTailwindcss,
@@ -41,7 +42,8 @@ const skillsData = [
   { name: "Tailwind CSS", icon: SiTailwindcss, color: "text-cyan-300" },
   { name: "Bootstrap", icon: FaBootstrap, color: "text-purple-700" },
   { name: "Vite", icon: SiVite, color: "text-purple-400" },
-  // { name: "Material UI", icon: SiMui, color: "text-blue-500" },
+  { name: "Material UI", icon: SiMui, color: "text-blue-500" },
+  { name: "Laravel", icon: FaLaravel, color: "text-orange-400" },
 
   // Backend & Database
   { name: "Node JS", icon: FaNodeJs, color: "text-green-500" },
@@ -51,7 +53,7 @@ const skillsData = [
   { name: "Prisma", icon: TbBrandPrisma, color: "text-cyan-400" },
   { name: "PostgreSQL", icon: SiPostgresql, color: "text-blue-400" },
   // { name: "MongoDB", icon: SiMongodb, color: "text-green-600" },
-  // { name: "MySQL", icon: SiMysql, color: "text-orange-400" },
+  { name: "MySQL", icon: SiMysql, color: "text-orange-400" },
   // { name: "Firebase", icon: SiFirebase, color: "text-yellow-500" },
 
   // Tools & Lainnya
