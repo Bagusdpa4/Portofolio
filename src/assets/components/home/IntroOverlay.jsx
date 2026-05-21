@@ -28,7 +28,7 @@ const TypewriterText = ({ text, delay = 0, speed, initialDelay = 0 }) => {
         }, speed);
         return () => clearTimeout(timeout);
       }, initialDelay);
-      
+
       return () => clearTimeout(startTyping);
     }
   }, [text, currentIndex, speed, initialDelay]);
@@ -51,10 +51,15 @@ const TypewriterText = ({ text, delay = 0, speed, initialDelay = 0 }) => {
       <motion.span
         aria-hidden="true"
         // w-1: Lebar tipis; h-6: Tinggi sesuai baris teks; bg-cyan-300: Warna sesuai teks
-        className="ml-0.5 inline-block w-1 h-6 bg-cyan-300 align-text-bottom"
+        className="ml-0.5 inline-block h-6 w-1 bg-cyan-300 align-text-bottom"
         animate={{ opacity: [0, 1, 1, 0] }}
-        transition={{ duration: 0.8, repeat: Infinity, ease: "easeInOut", repeatDelay: 0.5 }}
-      /> 
+        transition={{
+          duration: 0.8,
+          repeat: Infinity,
+          ease: "easeInOut",
+          repeatDelay: 0.5,
+        }}
+      />
     </motion.p>
   );
 };
@@ -185,7 +190,7 @@ export const IntroOverlay = ({ showIntro }) => {
 
   // Tagline
   const tagline = "Membangun Solusi Digital dengan Presisi.";
-  
+
   // Menghitung kecepatan ketik
   const typingSpeed = EXIT_DURATION_MS / tagline.length;
 

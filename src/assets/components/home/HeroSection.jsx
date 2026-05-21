@@ -62,7 +62,7 @@ export const HeroSection = ({ handleSmoothScroll }) => (
     className="from-gray-950 via-slate-800 to-blue-950 bg-linear-to-r overflow-hidden text-left"
   >
     <div className="relative z-10 mx-auto flex h-full w-full max-w-7xl grow items-center justify-center">
-      <div className="flex h-full w-full flex-col-reverse items-center gap-10 lg:flex-row lg:gap-16 py-4">
+      <div className="flex h-full w-full flex-col-reverse items-center gap-10 py-4 lg:flex-row lg:gap-16">
         {/* KOLOM KIRI */}
         <motion.div
           className="flex h-full w-full flex-col justify-center lg:w-3/5"
@@ -130,7 +130,7 @@ export const HeroSection = ({ handleSmoothScroll }) => (
 
         {/* KOLOM KANAN */}
         <motion.div
-          className="group relative w-full justify-center lg:flex lg:h-full hidden lg:w-2/4 lg:items-center"
+          className="group relative hidden w-full justify-center lg:flex lg:h-full lg:w-2/4 lg:items-center"
           variants={contentFadeInVariants("right")}
           initial="hidden"
           whileInView="visible"

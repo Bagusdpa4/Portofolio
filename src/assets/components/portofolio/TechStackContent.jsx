@@ -15,7 +15,7 @@ import {
   FaYarn,
   FaLaravel,
   FaPhp,
-  FaGitlab
+  FaGitlab,
 } from "react-icons/fa";
 import {
   SiTailwindcss,

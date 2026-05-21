@@ -188,7 +188,7 @@ export const AboutMe = () => {
               className="bg-slate-800/60 rounded-xl border border-gray-700 p-8 shadow-2xl"
               variants={fadeInLeft}
             >
-              <div className="mx-auto mb-6 h-56 w-56 overflow-hidden rounded-xl border-4 border-cyan-400/50 bg-gray-700/70 shadow-inner">
+              <div className="mx-auto mb-6 h-60 w-60 overflow-hidden rounded-xl border-4 border-cyan-400/50 bg-gray-700/70 shadow-inner">
                 <div className="flex h-full w-full items-center justify-center">
                   <img
                     src={Foto}
@@ -371,7 +371,7 @@ export const AboutMe = () => {
                 {myEducation.map((edu, index) => (
                   <motion.div
                     key={index}
-                    className="border-l-4 border-gray-500 pl-4"
+                    className="border-l-4 border-cyan-400 pl-4"
                     variants={fadeInRight}
                   >
                     <h3 className="text-xl font-semibold text-white">
@@ -398,7 +398,7 @@ export const AboutMe = () => {
                 {myEducationNonFormal.map((edu, index) => (
                   <motion.div
                     key={index}
-                    className="border-l-4 border-gray-500 pl-4"
+                    className="border-l-4 border-cyan-400 pl-4"
                     variants={fadeInRight}
                   >
                     <h3 className="text-xl font-semibold text-white">
