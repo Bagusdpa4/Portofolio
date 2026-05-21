@@ -85,7 +85,7 @@ export const ArticleContent = () => {
             onClick={showMoreItems}
             className="text-gray-950 cursor-pointer rounded-lg bg-cyan-500 px-8 py-3 text-base font-bold shadow-lg transition duration-300 hover:bg-cyan-400"
           >
-            See All Certificates
+            See More Articles
           </button>
         </div>
       )}

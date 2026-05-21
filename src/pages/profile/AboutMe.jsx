@@ -38,7 +38,7 @@ const categorizedSkills = {
     "Bootstrap",
     "Redux",
     "HTML5 & CSS3",
-    "Next.js (Dasar)",
+    // "Next.js (Dasar)",
   ],
   Backend: [
     "Node.js & Express.js",
@@ -47,6 +47,7 @@ const categorizedSkills = {
     "JWT Authentication",
     "Error Handling",
     "Google Cloud Platform",
+    "Laravel",
   ],
   Database: ["PostgreSQL", "MySQL (Dasar)"],
   Tools: [
@@ -62,9 +63,13 @@ const myExperiences = [
   {
     title: "Web Developer (Intern)",
     company: "PT. Shelter Indonesia Gemilang",
-    duration: "Dec 2025 - Jun 2026",
-    description:
-      "Mengembangkan website atau aplikasi perusahaan. Membuat dan mengembangkan platform e-learning atau website internal training. Menyiapkan akun learning management system (LMS) sebagai bagian dari kelas.",
+    duration: "Dec 2025 - Now",
+    jobdesk: [
+      "Membuat website admin panel untuk edit data penjualan perusahaan. (Frontend React.js)",
+      "Maintenance & penambahan fitur pada website deposit untuk pencatatan data kurir perusahaan. (Frontend React.js & Backend Laravel)",
+      "Membuat 5 tampilan website signage untuk acara branch launching aplikasi perusahaan. Terdapat 5 website signage untuk 5 aplikasi yang akan didemokan. (Frontend React.js)",
+      "Membuat website booking system untuk peminjaman ruangan, kendaraan & peralatan perusahaan. (Frontend React.js & Backend Laravel)",
+    ],
   },
 ];
 
@@ -325,7 +330,31 @@ export const AboutMe = () => {
                     <p className="font-medium text-cyan-300">
                       {exp.company} | {exp.duration}
                     </p>
-                    <p className="mt-2 text-gray-400">{exp.description}</p>
+                    <ul className="mt-2 list-none space-y-1 text-gray-400">
+                      {exp.jobdesk.map((point, i) => {
+                        const match = point.match(/^(.*?)(\(.*?\))(.*)$/);
+                        return (
+                          <li key={i} className="flex items-start">
+                            <span className="mr-2 mt-1.5 text-cyan-400">
+                              &#9679;
+                            </span>
+                            <span>
+                              {match ? (
+                                <>
+                                  {match[1]}
+                                  <span className="rounded-md border border-cyan-500/30 bg-cyan-500/20 px-1.5 py-0.5 text-sm font-medium text-cyan-300">
+                                    {match[2]}
+                                  </span>
+                                  {match[3]}
+                                </>
+                              ) : (
+                                point
+                              )}
+                            </span>
+                          </li>
+                        );
+                      })}
+                    </ul>
                   </motion.div>
                 ))}
               </div>

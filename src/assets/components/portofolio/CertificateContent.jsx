@@ -13,6 +13,14 @@ const portfolioItems = [
   },
   {
     id: 2,
+    title: "Essential Skills: Social Influence",
+    desc: "Sertifikat Pelatihan dari Gerakan Nasional Indonesia Kompeten (GNIK) & Kemnaker RI untuk membangun kemampuan mempengaruhi orang lain secara positif di lingkungan kerja melalui sikap, komunikasi, dan hubungan interpersonal.",
+    category: "Sertifikat",
+    projectUrl: "/docs/Essential Skills - Social Influence.pdf",
+    thumbnailUrl: "/images/Social Influence.png",
+  },
+  {
+    id: 3,
     title: "Essential Skills: Emotional Intelligence",
     desc: "Sertifikat Pelatihan dari Gerakan Nasional Indonesia Kompeten (GNIK) & Kemnaker RI untuk membangun kemampuan untuk mengenali, memahami, dan mengelola emosi diri sendiri serta emosi orang lain, serta menggunakan pemahaman tersebut untuk membimbing pikiran dan tindakan.",
     category: "Sertifikat",
@@ -20,7 +28,7 @@ const portfolioItems = [
     thumbnailUrl: "/images/Emotional Intelligence.png",
   },
   {
-    id: 3,
+    id: 4,
     title: "Essential Skills: Digital Literacy",
     desc: "Sertifikat Pelatihan dari Gerakan Nasional Indonesia Kompeten (GNIK) & Kemnaker RI untuk membantu memahami konsep literasi digital, etika dan keamanan digital, penerapan digitalisasi di tempat kerja, hingga pengembangan digital mindset yang adaptif terhadap perubahan.",
     category: "Sertifikat",
@@ -28,7 +36,7 @@ const portfolioItems = [
     thumbnailUrl: "/images/Digital Literacy.png",
   },
   {
-    id: 4,
+    id: 5,
     title: "Essential Skills: Self Efficacy",
     desc: "Sertifikat Pelatihan dari Gerakan Nasional Indonesia Kompeten (GNIK) & Kemnaker RI untuk membangun keyakinan seseorang terhadap kemampuannya sendiri untuk mengatur tindakan, menghadapi tantangan, dan mencapai hasil atau kinerja tertentu dalam situasi tertentu.",
     category: "Sertifikat",
@@ -36,7 +44,7 @@ const portfolioItems = [
     thumbnailUrl: "/images/Self Efficacy.png",
   },
   {
-    id: 5,
+    id: 6,
     title: "Essential Skills: Adaptability",
     desc: "Sertifikat Pelatihan dari Gerakan Nasional Indonesia Kompeten (GNIK) & Kemnaker RI untuk membangun kemampuan beradaptasi secara efektif di dunia kerja yang dinamis dan penuh perubahan.",
     category: "Sertifikat",
@@ -44,15 +52,16 @@ const portfolioItems = [
     thumbnailUrl: "/images/Adaptability.png",
   },
   {
-    id: 6,
+    id: 7,
     title: "Essential Skills: Digital Disruption & Transformation",
     desc: "Sertifikat Pelatihan dari Gerakan Nasional Indonesia Kompeten (GNIK) & Kemnaker RI untuk membangun mindset adaptif, kritis, dan berkelanjutan, agar mampu tetap relevan dan berkontribusi secara bermakna di tengah percepatan teknologi dan transformasi organisasi.",
     category: "Sertifikat",
-    projectUrl: "/docs/Essential Skills - Digital Disruption & Transformation.pdf",
+    projectUrl:
+      "/docs/Essential Skills - Digital Disruption & Transformation.pdf",
     thumbnailUrl: "/images/Digital Disruption & Transformation.png",
   },
   {
-    id: 7,
+    id: 8,
     title: "Essential Skills: Integrity at Work",
     desc: "Sertifikat Pelatihan dari Gerakan Nasional Indonesia Kompeten (GNIK) & Kemnaker RI untuk membangun karakter individu, budaya organisasi, serta kepercayaan publik dengan membekali pemahaman konseptual, reflektif, dan aplikatif mengenai integritas dalam konteks dunia kerja dan kehidupan profesional.",
     category: "Sertifikat",
@@ -60,7 +69,7 @@ const portfolioItems = [
     thumbnailUrl: "/images/Integrity at Work.png",
   },
   {
-    id: 8,
+    id: 9,
     title: "Essential Skills: Design Thinking",
     desc: "Sertifikat Pelatihan dari Gerakan Nasional Indonesia Kompeten (GNIK) & Kemnaker RI untuk membangun pola pikir inovatif melalui Design Thinking sebagai pendekatan berpikir yang berfokus pada manusia (human-centered), kreatif, dan aplikatif dalam menyelesaikan berbagai tantangan.",
     category: "Sertifikat",
@@ -68,7 +77,7 @@ const portfolioItems = [
     thumbnailUrl: "/images/Design Thinking.png",
   },
   {
-    id: 9,
+    id: 10,
     title: "Essential Skills: Emotional Resilience",
     desc: "Sertifikat Pelatihan dari Gerakan Nasional Indonesia Kompeten (GNIK) & Kemnaker RI untuk membangun ketahanan emosional (Emotional Resilience) di dunia kerja untuk menghadapi tantangan dan tekanan secara adaptif.",
     category: "Sertifikat",
@@ -76,7 +85,7 @@ const portfolioItems = [
     thumbnailUrl: "/images/Emotional Resilience.png",
   },
   {
-    id: 10,
+    id: 11,
     title: "Back End Javascript",
     desc: "Penyelesaian program Studi Independen Bersertifikat Back End Javascript oleh Binar Academy, Kampus Merdeka. Periode 16 Feb 2024 - 30 Jun 2024.",
     category: "Sertifikat",
@@ -84,7 +93,7 @@ const portfolioItems = [
     thumbnailUrl: "/images/BEJS.jpg",
   },
   {
-    id: 11,
+    id: 12,
     title: "Front End Javascript",
     desc: "Penyelesaian program Studi Independen Bersertifikat Front End Javascript oleh Binar Academy, Kampus Merdeka. Periode 14 Aug 2023 - 31 Dec 2023.",
     category: "Sertifikat",
@@ -92,7 +101,7 @@ const portfolioItems = [
     thumbnailUrl: "/images/FEJS.jpg",
   },
   {
-    id: 12,
+    id: 13,
     title: "Lulusan Berpredikat Dengan Pujian (Cumlaude)",
     desc: "Piagam Penghargaan dari Rektor UPN Veteran Jawa Timur atas prestasi lulusan S-1 Sistem Informasi dengan IPK 3.88. Diterbitkan 26 Juli 2025.",
     category: "Penghargaan",
@@ -164,7 +173,7 @@ export const CertificateContent = () => {
             onClick={showMoreItems}
             className="text-gray-950 cursor-pointer rounded-lg bg-cyan-500 px-8 py-3 text-base font-bold shadow-lg transition duration-300 hover:bg-cyan-400"
           >
-            See All Certificates
+            See More Certificates
           </button>
         </div>
       )}

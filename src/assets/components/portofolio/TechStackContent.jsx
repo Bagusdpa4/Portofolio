@@ -14,6 +14,8 @@ import {
   FaNpm,
   FaYarn,
   FaLaravel,
+  FaPhp,
+  FaGitlab
 } from "react-icons/fa";
 import {
   SiTailwindcss,
@@ -28,6 +30,7 @@ import {
   SiMysql,
   SiPostman,
   SiJsonwebtokens,
+  SiSwagger,
 } from "react-icons/si";
 import { TbBrandPrisma, TbApi, TbBrandOffice } from "react-icons/tb";
 import { BiLogoVisualStudio, BiLogoGoogleCloud } from "react-icons/bi";
@@ -43,7 +46,6 @@ const skillsData = [
   { name: "Bootstrap", icon: FaBootstrap, color: "text-purple-700" },
   { name: "Vite", icon: SiVite, color: "text-purple-400" },
   { name: "Material UI", icon: SiMui, color: "text-blue-500" },
-  { name: "Laravel", icon: FaLaravel, color: "text-orange-400" },
 
   // Backend & Database
   { name: "Node JS", icon: FaNodeJs, color: "text-green-500" },
@@ -52,13 +54,17 @@ const skillsData = [
   { name: "JWT", icon: SiJsonwebtokens, color: "text-red-500" },
   { name: "Prisma", icon: TbBrandPrisma, color: "text-cyan-400" },
   { name: "PostgreSQL", icon: SiPostgresql, color: "text-blue-400" },
+  { name: "Swagger", icon: SiSwagger, color: "text-emerald-400" },
   // { name: "MongoDB", icon: SiMongodb, color: "text-green-600" },
+  { name: "Laravel", icon: FaLaravel, color: "text-orange-400" },
+  { name: "PHP", icon: FaPhp, color: "text-indigo-400" },
   { name: "MySQL", icon: SiMysql, color: "text-orange-400" },
   // { name: "Firebase", icon: SiFirebase, color: "text-yellow-500" },
 
   // Tools & Lainnya
   { name: "Git", icon: FaGitAlt, color: "text-orange-700" },
   { name: "GitHub", icon: FaGithub, color: "text-white" },
+  { name: "Gitlab", icon: FaGitlab, color: "text-orange-400" },
   { name: "Vercel", icon: SiVercel, color: "text-white" },
   { name: "Trello", icon: FaTrello, color: "text-blue-500" },
   { name: "NPM", icon: FaNpm, color: "text-red-600" },

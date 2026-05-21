@@ -285,8 +285,8 @@ export const Homepage = () => {
   };
 
   // Kolom Statistik Section 2
-  const totalProjects = 6;
-  const totalCertificates = 12;
+  const totalProjects = 14;
+  const totalCertificates = 13;
   const totalArticles = 3;
   const yearsOfExperience = 2;
 
@@ -439,7 +439,11 @@ export const Homepage = () => {
                 variants={staggerContainerVariants}
               >
                 {[
-                  { icon: HiCode, number: totalProjects, label: "PROJECTS" },
+                  {
+                    icon: HiCode,
+                    number: totalProjects,
+                    label: "PROJECTS + Magang",
+                  },
                   {
                     icon: PiCertificateFill,
                     number: totalCertificates,
@@ -452,7 +456,7 @@ export const Homepage = () => {
                   },
                   {
                     icon: FaClock,
-                    number: yearsOfExperience,
+                    number: `${yearsOfExperience}+`,
                     label: "YEARS OF EXPERIENCE",
                   },
                 ].map((stat, index) => (
@@ -578,4 +582,3 @@ export const Homepage = () => {
     </motion.div>
   );
 };
-
