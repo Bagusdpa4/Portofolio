@@ -63,12 +63,13 @@ const myExperiences = [
   {
     title: "Web Developer (Intern)",
     company: "PT. Shelter Indonesia Gemilang",
-    duration: "Dec 2025 - Now",
+    duration: "Dec 2025 - Jun 2026",
     jobdesk: [
       "Membuat website admin panel untuk edit data penjualan perusahaan. (Frontend React.js)",
       "Maintenance & penambahan fitur pada website deposit untuk pencatatan data kurir perusahaan. (Frontend React.js & Backend Laravel)",
       "Membuat 5 tampilan website signage untuk acara branch launching aplikasi perusahaan. Terdapat 5 website signage untuk 5 aplikasi yang akan didemokan. (Frontend React.js)",
       "Membuat website booking system untuk peminjaman ruangan, kendaraan & peralatan perusahaan. (Frontend React.js & Backend Laravel)",
+      "Melakukan penambahan & perbaikan fitur pada website Customer Activity And Information System untuk list data customer activity. (Frontend React.js)",
     ],
   },
 ];
@@ -335,9 +336,7 @@ export const AboutMe = () => {
                         const match = point.match(/^(.*?)(\(.*?\))(.*)$/);
                         return (
                           <li key={i} className="flex items-start">
-                            <span className="mr-2 mt-1.5 text-cyan-400">
-                              &#9679;
-                            </span>
+                            <span className="mr-2 text-cyan-400">&#9679;</span>
                             <span>
                               {match ? (
                                 <>
