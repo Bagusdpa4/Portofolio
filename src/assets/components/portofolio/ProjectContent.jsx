@@ -4,6 +4,35 @@ import { FiExternalLink } from "react-icons/fi";
 export const portfolioItems = [
   {
     id: 1,
+    title: "Drulz Deals",
+    desc: "Sebuah web pemesanan minuman & makanan dengan sistem integrasi langsung ke WhatsApp pemilik website untuk produk pesanannya.",
+    longDesc:
+      "Drulz Deals adalah aplikasi web pemesanan minuman dan makanan yang dirancang untuk mempermudah proses order antara customer dan pemilik outlet. Customer dapat memilih outlet favorit untuk memesan produk. Setiap produk yang tersedia memiliki harga diskon tersendiri, sehingga customer dapat langsung melihat harga terbaik tanpa perlu negosiasi. Setelah memilih produk satuan maupun paket bundling, daftar pesanan customer akan secara otomatis diteruskan ke WhatsApp pemilik website, sehingga proses selanjutnya hanya tinggal konfirmasi pembayaran dan pick up di outlet yang dipilih.",
+    category: "Frontend Javascript",
+    time: "Juni 2026 - Sekarang",
+    projectUrl: "https://drulz-deals.vercel.app/",
+    githubUrl: "https://github.com/Bagusdpa4/Pesen-Kopi",
+    techStack: [
+      "Javascript",
+      "ReactJS",
+      "Tailwind CSS",
+      "Node.js",
+      "Github",
+      "Visual Studio Code",
+      "Vercel",
+    ],
+    features: [
+      "Sistem pemesanan makanan.",
+      "Sistem pemesanan minuman.",
+      "Sistem pemesanan satuan produk.",
+      "Sistem pemesanan paket bundling produk.",
+      "Direct by WA untuk pembayaran.",
+      "Desain responsif dan dinamis.",
+    ],
+    thumbnailUrl: "/images/Drulz Deals.png",
+  },
+  {
+    id: 2,
     title: "E-Commerce Cahaya Kreativ",
     desc: "Sistem pemesanan dan pengelolaan jasa kreatif, mencakup fitur e-commerce lengkap, manajemen produk, Konsultasi Chat dan dashboard admin.",
     longDesc:
@@ -42,7 +71,7 @@ export const portfolioItems = [
     thumbnailUrl: "/images/Cahaya Kreativ.jpg",
   },
   {
-    id: 2,
+    id: 3,
     title: "Restful API for Airline Ticket Booking",
     desc: "Pembuatan Restful API untuk simulasi pemesanan tiket pesawat. Fitur termasuk pencarian jadwal penerbangan, pemesanan & pembayaran tiket secara online.",
     longDesc:
@@ -81,7 +110,7 @@ export const portfolioItems = [
     thumbnailUrl: "/images/Restful API for Airline Ticket Booking.jpg",
   },
   {
-    id: 3,
+    id: 4,
     title: "Website Online Course",
     desc: "Pembuatan website online course yang responsif dan modern. Fokus pada pencarian course dan progress pembelajaran serta dashboard admin sebagai tempat manajemen course.",
     longDesc:
@@ -113,7 +142,7 @@ export const portfolioItems = [
     thumbnailUrl: "/images/Online Course.jpg",
   },
   {
-    id: 4,
+    id: 5,
     title: "List Movie TMDB",
     desc: "Aplikasi Website untuk menampilkan daftar film, detail film, dan pencarian film terpopuler didunia saat ini. Pengambilan data memanfaatkan API dari The Movie Database (TMDB).",
     longDesc:
@@ -146,7 +175,7 @@ export const portfolioItems = [
     thumbnailUrl: "/images/TMDB.jpg",
   },
   {
-    id: 5,
+    id: 6,
     title: "ToDo List App",
     desc: "Aplikasi manajemen tugas harian sederhana yang mencakup penambahan, penghapusan, dan penandaan selesai.",
     longDesc:
@@ -177,7 +206,7 @@ export const portfolioItems = [
     thumbnailUrl: "/images/ToDo List.jpg",
   },
   {
-    id: 6,
+    id: 7,
     title: "Landing Pages Rental Car",
     desc: "Implementasi desain UI/UX ke dalam landing page penyewaan mobil dengan fokus pada tampilan informasi yang jelas dan sederhana.",
     longDesc:
