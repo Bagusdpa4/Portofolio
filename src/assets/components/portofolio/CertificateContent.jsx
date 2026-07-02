@@ -8,11 +8,19 @@ const portfolioItems = [
     title: "Junior Web Programmer (BNSP)",
     desc: "Sertifikat Kompetensi sebagai Junior Web Programmer dari BNSP (Badan Nasional Sertifikasi Profesi). Berlaku 3 tahun sejak diterbitkan pada tanggal 02 Oktober 2025 sampai dengan 02 Oktober 2028.",
     category: "Sertifikat",
-    projectUrl: "/docs/sertifikasi.pdf",
+    projectUrl: "/docs/Certificate_BNSP.pdf",
     thumbnailUrl: "/images/sertifikasi.jpg",
   },
   {
     id: 2,
+    title: "Sertifikat Magang",
+    desc: "Sertifikat telah mengikuti Program Pemagangan Lulusan Perguruan Tinggi yang dilaksanakan oleh Kementerian Ketenagakerjaan (Kemnaker) & Shelter Indonesia Gemilang sebagai Web Developer.",
+    category: "Sertifikat",
+    projectUrl: "/docs/Certificate_Magang_2026.pdf",
+    thumbnailUrl: "/images/Magang.png",
+  },
+  {
+    id: 3,
     title: "Essential Skills: Social Influence",
     desc: "Sertifikat Pelatihan dari Gerakan Nasional Indonesia Kompeten (GNIK) & Kemnaker RI untuk membangun kemampuan mempengaruhi orang lain secara positif di lingkungan kerja melalui sikap, komunikasi, dan hubungan interpersonal.",
     category: "Sertifikat",
@@ -20,7 +28,7 @@ const portfolioItems = [
     thumbnailUrl: "/images/Social Influence.png",
   },
   {
-    id: 3,
+    id: 4,
     title: "Essential Skills: Emotional Intelligence",
     desc: "Sertifikat Pelatihan dari Gerakan Nasional Indonesia Kompeten (GNIK) & Kemnaker RI untuk membangun kemampuan untuk mengenali, memahami, dan mengelola emosi diri sendiri serta emosi orang lain, serta menggunakan pemahaman tersebut untuk membimbing pikiran dan tindakan.",
     category: "Sertifikat",
@@ -28,7 +36,7 @@ const portfolioItems = [
     thumbnailUrl: "/images/Emotional Intelligence.png",
   },
   {
-    id: 4,
+    id: 5,
     title: "Essential Skills: Digital Literacy",
     desc: "Sertifikat Pelatihan dari Gerakan Nasional Indonesia Kompeten (GNIK) & Kemnaker RI untuk membantu memahami konsep literasi digital, etika dan keamanan digital, penerapan digitalisasi di tempat kerja, hingga pengembangan digital mindset yang adaptif terhadap perubahan.",
     category: "Sertifikat",
@@ -36,7 +44,7 @@ const portfolioItems = [
     thumbnailUrl: "/images/Digital Literacy.png",
   },
   {
-    id: 5,
+    id: 6,
     title: "Essential Skills: Self Efficacy",
     desc: "Sertifikat Pelatihan dari Gerakan Nasional Indonesia Kompeten (GNIK) & Kemnaker RI untuk membangun keyakinan seseorang terhadap kemampuannya sendiri untuk mengatur tindakan, menghadapi tantangan, dan mencapai hasil atau kinerja tertentu dalam situasi tertentu.",
     category: "Sertifikat",
@@ -44,7 +52,7 @@ const portfolioItems = [
     thumbnailUrl: "/images/Self Efficacy.png",
   },
   {
-    id: 6,
+    id: 7,
     title: "Essential Skills: Adaptability",
     desc: "Sertifikat Pelatihan dari Gerakan Nasional Indonesia Kompeten (GNIK) & Kemnaker RI untuk membangun kemampuan beradaptasi secara efektif di dunia kerja yang dinamis dan penuh perubahan.",
     category: "Sertifikat",
@@ -52,7 +60,7 @@ const portfolioItems = [
     thumbnailUrl: "/images/Adaptability.png",
   },
   {
-    id: 7,
+    id: 8,
     title: "Essential Skills: Digital Disruption & Transformation",
     desc: "Sertifikat Pelatihan dari Gerakan Nasional Indonesia Kompeten (GNIK) & Kemnaker RI untuk membangun mindset adaptif, kritis, dan berkelanjutan, agar mampu tetap relevan dan berkontribusi secara bermakna di tengah percepatan teknologi dan transformasi organisasi.",
     category: "Sertifikat",
@@ -61,7 +69,7 @@ const portfolioItems = [
     thumbnailUrl: "/images/Digital Disruption & Transformation.png",
   },
   {
-    id: 8,
+    id: 9,
     title: "Essential Skills: Integrity at Work",
     desc: "Sertifikat Pelatihan dari Gerakan Nasional Indonesia Kompeten (GNIK) & Kemnaker RI untuk membangun karakter individu, budaya organisasi, serta kepercayaan publik dengan membekali pemahaman konseptual, reflektif, dan aplikatif mengenai integritas dalam konteks dunia kerja dan kehidupan profesional.",
     category: "Sertifikat",
@@ -69,7 +77,7 @@ const portfolioItems = [
     thumbnailUrl: "/images/Integrity at Work.png",
   },
   {
-    id: 9,
+    id: 10,
     title: "Essential Skills: Design Thinking",
     desc: "Sertifikat Pelatihan dari Gerakan Nasional Indonesia Kompeten (GNIK) & Kemnaker RI untuk membangun pola pikir inovatif melalui Design Thinking sebagai pendekatan berpikir yang berfokus pada manusia (human-centered), kreatif, dan aplikatif dalam menyelesaikan berbagai tantangan.",
     category: "Sertifikat",
@@ -77,7 +85,7 @@ const portfolioItems = [
     thumbnailUrl: "/images/Design Thinking.png",
   },
   {
-    id: 10,
+    id: 11,
     title: "Essential Skills: Emotional Resilience",
     desc: "Sertifikat Pelatihan dari Gerakan Nasional Indonesia Kompeten (GNIK) & Kemnaker RI untuk membangun ketahanan emosional (Emotional Resilience) di dunia kerja untuk menghadapi tantangan dan tekanan secara adaptif.",
     category: "Sertifikat",
@@ -85,7 +93,7 @@ const portfolioItems = [
     thumbnailUrl: "/images/Emotional Resilience.png",
   },
   {
-    id: 11,
+    id: 12,
     title: "Back End Javascript",
     desc: "Penyelesaian program Studi Independen Bersertifikat Back End Javascript oleh Binar Academy, Kampus Merdeka. Periode 16 Feb 2024 - 30 Jun 2024.",
     category: "Sertifikat",
@@ -93,7 +101,7 @@ const portfolioItems = [
     thumbnailUrl: "/images/BEJS.jpg",
   },
   {
-    id: 12,
+    id: 13,
     title: "Front End Javascript",
     desc: "Penyelesaian program Studi Independen Bersertifikat Front End Javascript oleh Binar Academy, Kampus Merdeka. Periode 14 Aug 2023 - 31 Dec 2023.",
     category: "Sertifikat",
@@ -101,7 +109,7 @@ const portfolioItems = [
     thumbnailUrl: "/images/FEJS.jpg",
   },
   {
-    id: 13,
+    id: 14,
     title: "Lulusan Berpredikat Dengan Pujian (Cumlaude)",
     desc: "Piagam Penghargaan dari Rektor UPN Veteran Jawa Timur atas prestasi lulusan S-1 Sistem Informasi dengan IPK 3.88. Diterbitkan 26 Juli 2025.",
     category: "Penghargaan",
