@@ -3,7 +3,8 @@ import { useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 
 // Component
-import Profile from "../assets/img/Profile.jpg";
+// import Profile from "../assets/img/Profile.jpg";
+import Formal from "../assets/img/Formal.PNG"
 import { Navbar } from "../assets/components/navbar/Navbar";
 import { Footer } from "../assets/components/navbar/Footer";
 import { Loading } from "../assets/components/loading/Loading";
@@ -362,7 +363,7 @@ export const Homepage = () => {
                   {/* Container Foto Profil */}
                   <div className="relative z-10 flex h-full w-full items-center justify-center rounded-full border-4 border-cyan-500/50 bg-gray-700 shadow-2xl shadow-cyan-500/20">
                     <img
-                      src={Profile}
+                      src={Formal}
                       alt="Foto Profil Bagus Dwi"
                       className="h-full w-full rounded-full object-cover"
                     />
