@@ -11,7 +11,7 @@ export const portfolioItems = [
     category: "Frontend Javascript",
     time: "Juni 2026 - Sekarang",
     projectUrl: "https://drulz-deals.vercel.app/",
-    githubUrl: "https://github.com/Bagusdpa4/Pesen-Kopi",
+    githubUrl: "https://github.com/Bagusdpa4/drulz-deals",
     techStack: [
       "Javascript",
       "ReactJS",
