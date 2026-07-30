@@ -6,113 +6,113 @@ const portfolioItems = [
   {
     id: 1,
     title: "Junior Web Programmer (BNSP)",
-    desc: "Sertifikat Kompetensi sebagai Junior Web Programmer dari BNSP (Badan Nasional Sertifikasi Profesi). Berlaku 3 tahun sejak diterbitkan pada tanggal 02 Oktober 2025 sampai dengan 02 Oktober 2028.",
-    category: "Sertifikat",
+    desc: "Competency Certificate as a Junior Web Programmer issued by BNSP (Indonesian National Professional Certification Board). Valid for 3 years, from October 2, 2025 to October 2, 2028.",
+    category: "Certificate",
     projectUrl: "/docs/Certificate_BNSP.pdf",
     thumbnailUrl: "/images/sertifikasi.jpg",
   },
   {
     id: 2,
-    title: "Sertifikat Magang",
-    desc: "Sertifikat telah mengikuti Program Pemagangan Lulusan Perguruan Tinggi yang dilaksanakan oleh Kementerian Ketenagakerjaan (Kemnaker) & Shelter Indonesia Gemilang sebagai Web Developer.",
-    category: "Sertifikat",
+    title: "Internship Certificate",
+    desc: "Certificate of completion for the University Graduate Internship Program organized by Indonesia's Ministry of Manpower (Kemnaker) & Shelter Indonesia Gemilang, as a Web Developer.",
+    category: "Certificate",
     projectUrl: "/docs/Certificate_Magang_2026.pdf",
     thumbnailUrl: "/images/Magang.png",
   },
   {
     id: 3,
+    title: "Back End Javascript",
+    desc: "Certificate of completion for the Back-End JavaScript Independent Study Program by Binar Academy, under Kampus Merdeka. Period: February 16 - June 30, 2024.",
+    category: "Certificate",
+    projectUrl: "/docs/BEJS.pdf",
+    thumbnailUrl: "/images/BEJS.jpg",
+  },
+  {
+    id: 4,
+    title: "Front End Javascript",
+    desc: "Certificate of completion for the Front-End JavaScript Independent Study Program by Binar Academy, under Kampus Merdeka. Period: August 14 - December 31, 2023.",
+    category: "Certificate",
+    projectUrl: "/docs/FEJS.pdf",
+    thumbnailUrl: "/images/FEJS.jpg",
+  },
+  {
+    id: 5,
     title: "Essential Skills: Social Influence",
-    desc: "Sertifikat Pelatihan dari Gerakan Nasional Indonesia Kompeten (GNIK) & Kemnaker RI untuk membangun kemampuan mempengaruhi orang lain secara positif di lingkungan kerja melalui sikap, komunikasi, dan hubungan interpersonal.",
-    category: "Sertifikat",
+    desc: "Training certificate from the National Competent Indonesia Movement (GNIK) & Indonesia's Ministry of Manpower, focused on building the ability to positively influence others in the workplace through attitude, communication, and interpersonal relationships.",
+    category: "Certificate",
     projectUrl: "/docs/Essential Skills - Social Influence.pdf",
     thumbnailUrl: "/images/Social Influence.png",
   },
   {
-    id: 4,
+    id: 6,
     title: "Essential Skills: Emotional Intelligence",
-    desc: "Sertifikat Pelatihan dari Gerakan Nasional Indonesia Kompeten (GNIK) & Kemnaker RI untuk membangun kemampuan untuk mengenali, memahami, dan mengelola emosi diri sendiri serta emosi orang lain, serta menggunakan pemahaman tersebut untuk membimbing pikiran dan tindakan.",
-    category: "Sertifikat",
+    desc: "Training certificate from GNIK & Indonesia's Ministry of Manpower, focused on building the ability to recognize, understand, and manage one's own emotions and the emotions of others, and to use that understanding to guide thought and action.",
+    category: "Certificate",
     projectUrl: "/docs/Essential Skills - Emotional Intelligence.pdf",
     thumbnailUrl: "/images/Emotional Intelligence.png",
   },
   {
-    id: 5,
+    id: 7,
     title: "Essential Skills: Digital Literacy",
-    desc: "Sertifikat Pelatihan dari Gerakan Nasional Indonesia Kompeten (GNIK) & Kemnaker RI untuk membantu memahami konsep literasi digital, etika dan keamanan digital, penerapan digitalisasi di tempat kerja, hingga pengembangan digital mindset yang adaptif terhadap perubahan.",
-    category: "Sertifikat",
+    desc: "Training certificate from GNIK & Indonesia's Ministry of Manpower, covering digital literacy concepts, digital ethics and security, workplace digitalization, and developing an adaptive digital mindset.",
+    category: "Certificate",
     projectUrl: "/docs/Essential Skills - Digital Literacy.pdf",
     thumbnailUrl: "/images/Digital Literacy.png",
   },
   {
-    id: 6,
+    id: 8,
     title: "Essential Skills: Self Efficacy",
-    desc: "Sertifikat Pelatihan dari Gerakan Nasional Indonesia Kompeten (GNIK) & Kemnaker RI untuk membangun keyakinan seseorang terhadap kemampuannya sendiri untuk mengatur tindakan, menghadapi tantangan, dan mencapai hasil atau kinerja tertentu dalam situasi tertentu.",
-    category: "Sertifikat",
+    desc: "Training certificate from GNIK & Indonesia's Ministry of Manpower, focused on building confidence in one's own ability to manage actions, face challenges, and achieve specific results or performance in a given situation.",
+    category: "Certificate",
     projectUrl: "/docs/Essential Skills - Self Efficacy.pdf",
     thumbnailUrl: "/images/Self Efficacy.png",
   },
   {
-    id: 7,
+    id: 9,
     title: "Essential Skills: Adaptability",
-    desc: "Sertifikat Pelatihan dari Gerakan Nasional Indonesia Kompeten (GNIK) & Kemnaker RI untuk membangun kemampuan beradaptasi secara efektif di dunia kerja yang dinamis dan penuh perubahan.",
-    category: "Sertifikat",
+    desc: "Training certificate from GNIK & Indonesia's Ministry of Manpower, focused on building the ability to adapt effectively in a dynamic, ever-changing work environment.",
+    category: "Certificate",
     projectUrl: "/docs/Essential Skills - Adaptability.pdf",
     thumbnailUrl: "/images/Adaptability.png",
   },
   {
-    id: 8,
+    id: 10,
     title: "Essential Skills: Digital Disruption & Transformation",
-    desc: "Sertifikat Pelatihan dari Gerakan Nasional Indonesia Kompeten (GNIK) & Kemnaker RI untuk membangun mindset adaptif, kritis, dan berkelanjutan, agar mampu tetap relevan dan berkontribusi secara bermakna di tengah percepatan teknologi dan transformasi organisasi.",
-    category: "Sertifikat",
+    desc: "Training certificate from GNIK & Indonesia's Ministry of Manpower, focused on building an adaptive, critical, and sustainable mindset to stay relevant and contribute meaningfully amid accelerating technology and organizational transformation.",
+    category: "Certificate",
     projectUrl:
       "/docs/Essential Skills - Digital Disruption & Transformation.pdf",
     thumbnailUrl: "/images/Digital Disruption & Transformation.png",
   },
   {
-    id: 9,
+    id: 11,
     title: "Essential Skills: Integrity at Work",
-    desc: "Sertifikat Pelatihan dari Gerakan Nasional Indonesia Kompeten (GNIK) & Kemnaker RI untuk membangun karakter individu, budaya organisasi, serta kepercayaan publik dengan membekali pemahaman konseptual, reflektif, dan aplikatif mengenai integritas dalam konteks dunia kerja dan kehidupan profesional.",
-    category: "Sertifikat",
+    desc: "Training certificate from GNIK & Indonesia's Ministry of Manpower, focused on building individual character, organizational culture, and public trust through conceptual, reflective, and applied understanding of integrity in the workplace and professional life.",
+    category: "Certificate",
     projectUrl: "/docs/Essential Skills - Integrity at Work.pdf",
     thumbnailUrl: "/images/Integrity at Work.png",
   },
   {
-    id: 10,
+    id: 12,
     title: "Essential Skills: Design Thinking",
-    desc: "Sertifikat Pelatihan dari Gerakan Nasional Indonesia Kompeten (GNIK) & Kemnaker RI untuk membangun pola pikir inovatif melalui Design Thinking sebagai pendekatan berpikir yang berfokus pada manusia (human-centered), kreatif, dan aplikatif dalam menyelesaikan berbagai tantangan.",
-    category: "Sertifikat",
+    desc: "Training certificate from GNIK & Indonesia's Ministry of Manpower, focused on building an innovative mindset through Design Thinking as a human-centered, creative, and applicable approach to solving various challenges.",
+    category: "Certificate",
     projectUrl: "/docs/Essential Skills - Design Thinking.pdf",
     thumbnailUrl: "/images/Design Thinking.png",
   },
   {
-    id: 11,
+    id: 13,
     title: "Essential Skills: Emotional Resilience",
-    desc: "Sertifikat Pelatihan dari Gerakan Nasional Indonesia Kompeten (GNIK) & Kemnaker RI untuk membangun ketahanan emosional (Emotional Resilience) di dunia kerja untuk menghadapi tantangan dan tekanan secara adaptif.",
-    category: "Sertifikat",
+    desc: "Training certificate from GNIK & Indonesia's Ministry of Manpower, focused on building emotional resilience in the workplace to adaptively handle challenges and pressure.",
+    category: "Certificate",
     projectUrl: "/docs/Essential Skills - Emotional Resilience.pdf",
     thumbnailUrl: "/images/Emotional Resilience.png",
   },
   {
-    id: 12,
-    title: "Back End Javascript",
-    desc: "Penyelesaian program Studi Independen Bersertifikat Back End Javascript oleh Binar Academy, Kampus Merdeka. Periode 16 Feb 2024 - 30 Jun 2024.",
-    category: "Sertifikat",
-    projectUrl: "/docs/BEJS.pdf",
-    thumbnailUrl: "/images/BEJS.jpg",
-  },
-  {
-    id: 13,
-    title: "Front End Javascript",
-    desc: "Penyelesaian program Studi Independen Bersertifikat Front End Javascript oleh Binar Academy, Kampus Merdeka. Periode 14 Aug 2023 - 31 Dec 2023.",
-    category: "Sertifikat",
-    projectUrl: "/docs/FEJS.pdf",
-    thumbnailUrl: "/images/FEJS.jpg",
-  },
-  {
     id: 14,
-    title: "Lulusan Berpredikat Dengan Pujian (Cumlaude)",
-    desc: "Piagam Penghargaan dari Rektor UPN Veteran Jawa Timur atas prestasi lulusan S-1 Sistem Informasi dengan IPK 3.88. Diterbitkan 26 Juli 2025.",
-    category: "Penghargaan",
+    title: "Cumlaude Graduate",
+    desc: "Award certificate from the Rector of UPN Veteran Jawa Timur recognizing academic achievement as an Information Systems graduate with a GPA of 3.88. Issued on July 26, 2025.",
+    category: "Award",
     projectUrl: "/docs/Penghargaan.pdf",
     thumbnailUrl: "/images/Penghargaan.jpg",
   },
@@ -123,7 +123,7 @@ export const CertificateContent = () => {
   const [visibleCount, setVisibleCount] = useState(itemsPerPage);
 
   const showMoreItems = () => {
-    setVisibleCount((prevCount) => prevCount + itemsPerPage);
+    setVisibleCount(portfolioItems.length);
   };
 
   return (
@@ -145,12 +145,12 @@ export const CertificateContent = () => {
                 // Fallback jika thumbnailUrl tidak ada
                 <div
                   className={`absolute inset-0 flex items-center justify-center ${
-                    item.category === "Sertifikat"
+                    item.category === "Certificate"
                       ? "bg-cyan-900/40 text-cyan-400"
                       : "bg-yellow-900/40 text-yellow-400"
                   }`}
                 >
-                  {item.category === "Sertifikat" ? (
+                  {item.category === "Certificate" ? (
                     <HiOutlineDocumentText className="h-20 w-20" />
                   ) : (
                     <HiOutlineAcademicCap className="h-20 w-20" />
@@ -181,7 +181,7 @@ export const CertificateContent = () => {
             onClick={showMoreItems}
             className="text-gray-950 cursor-pointer rounded-lg bg-cyan-500 px-8 py-3 text-base font-bold shadow-lg transition duration-300 hover:bg-cyan-400"
           >
-            See More Certificates
+            See All Certificates
           </button>
         </div>
       )}

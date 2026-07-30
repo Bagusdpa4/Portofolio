@@ -10,23 +10,25 @@ import {
 import { MdWorkHistory } from "react-icons/md";
 import { GiBookmarklet } from "react-icons/gi";
 // import Foto from "../../assets/img/Foto.jpg";
-import Profile from "../../assets/img/Profile.jpg"
+import Profile from "../../assets/img/Profile.jpg";
 import { Navbar } from "../../assets/components/navbar/Navbar";
 import { Loading } from "../../assets/components/loading/Loading";
 import { motion } from "framer-motion";
 
 const futureFocusAndAspiration =
-  "Saya berambisi untuk terus berkembang di dunia teknologi informasi melalui peningkatan kompetensi di bidang pengembangan aplikasi, analisis sistem, serta pengelolaan data. Ke depannya, saya ingin memperdalam pemahaman terkait arsitektur sistem modern, optimalisasi proses bisnis berbasis teknologi, serta pemanfaatan layanan cloud untuk mendukung efisiensi operasional. Saya berharap dapat berkontribusi dalam menciptakan solusi teknologi yang bermanfaat, berkelanjutan, dan mampu memberikan dampak positif bagi pengguna maupun organisasi.";
+  "I am ambitious to keep growing in the field of information technology by improving my competencies in application development, systems analysis, and data management. Going forward, I want to deepen my understanding of modern system architecture, technology-driven business process optimization, and the use of cloud services to support operational efficiency. I hope to contribute to creating technology solutions that are useful, sustainable, and able to make a positive impact for both users and organizations.";
+
 const careerSummary1 =
-  "Saya merupakan lulusan S1 Sistem Informasi dari Universitas Pembangunan Nasional “Veteran” Jawa Timur dengan pengalaman lebih dari satu tahun dalam pengembangan aplikasi berbasis web. Saya terbiasa menggunakan berbagai tools, framework, dan pendekatan yang mendukung proses pembangunan aplikasi berbasis web, mulai dari pengembangan website, sistem e-commerce, integrasi RESTful API, hingga perancangan dan pengelolaan database. Saya mampu menangani proyek dari tahap analisis kebutuhan, perancangan, pengembangan, hingga implementasi dan pengujian, termasuk proyek yang telah digunakan dalam lingkungan perusahaan.";
+  "I am a Web Developer with over 2 years of experience building responsive web applications through internships, academic projects, and independent work. I am proficient in React.js, Node.js, Express.js, Laravel, RESTful APIs, and SQL databases, and I hold a Bachelor's degree in Information Systems from Universitas Pembangunan Nasional 'Veteran' Jawa Timur. I have handled projects end-to-end, from requirements analysis and system design through development, testing, and deployment, including projects delivered for real company use.";
+
 const careerSummary2 =
-  "Saya memiliki ketertarikan pada pengembangan teknologi informasi secara menyeluruh, baik di bidang pemrograman, analisis sistem, maupun pengelolaan data. Fokus saya adalah merancang solusi teknologi yang fungsional, aman, dan sesuai dengan kebutuhan operasional pengguna. Saya merupakan individu yang terstruktur, mampu berkolaborasi dengan baik dalam tim, memiliki kemampuan pemecahan masalah yang kuat, serta dapat berkomunikasi dengan jelas. Saya berkomitmen untuk terus belajar dan beradaptasi dengan perkembangan teknologi guna memberikan kontribusi terbaik dalam lingkungan kerja profesional.";
+  "As a Certified Junior Web Programmer, I am committed to building software solutions that are scalable, maintainable, and user-centered. I focus on designing technology solutions that are functional, secure, and aligned with users' operational needs. I am structured, collaborate well within teams, have strong problem-solving skills, and communicate clearly. I am committed to continuously learning and adapting to new technologies to deliver the best contribution in a professional work environment.";
 
 const hobbies = [
-  "Bermain Futsal",
-  "Bermain Game",
-  "Menonton Film",
-  "Mendengarkan Musik",
+  "Playing Futsal",
+  "Playing Games",
+  "Watching Movies",
+  "Listening to Music",
 ];
 
 const interest = ["Web Developer", "IT Programmer", "IT Support"];
@@ -48,9 +50,10 @@ const categorizedSkills = {
     "JWT Authentication",
     "Error Handling",
     "Google Cloud Platform",
+    "Midtrans",
     "Laravel",
   ],
-  Database: ["PostgreSQL", "MySQL (Dasar)"],
+  Database: ["PostgreSQL", "MySQL"],
   Tools: [
     "Git & GitHub",
     "Visual Studio Code",
@@ -62,22 +65,46 @@ const categorizedSkills = {
 
 const myExperiences = [
   {
-    title: "Web Developer (Intern)",
+    title: "Web Developer",
+    type: "Internship",
     company: "PT. Shelter Indonesia Gemilang",
     duration: "Dec 2025 - Jun 2026",
     jobdesk: [
-      "Membuat website admin panel untuk edit data penjualan perusahaan. (Frontend React.js)",
-      "Maintenance & penambahan fitur pada website deposit untuk pencatatan data kurir perusahaan. (Frontend React.js & Backend Laravel)",
-      "Membuat 5 tampilan website signage untuk acara branch launching aplikasi perusahaan. Terdapat 5 website signage untuk 5 aplikasi yang akan didemokan. (Frontend React.js)",
-      "Membuat website booking system untuk peminjaman ruangan, kendaraan & peralatan perusahaan. (Frontend React.js & Backend Laravel)",
-      "Melakukan penambahan & perbaikan fitur pada website Customer Activity And Information System untuk list data customer activity. (Frontend React.js)",
+      "Developed an internal admin panel using React.js to streamline sales data management and support efficient data maintenance across company operations.",
+      "Maintained and enhanced a courier deposit management system by implementing 5 new features and resolving application issues using React.js and Laravel, improving system functionality for internal operations.",
+      "Developed 5 digital signage web interfaces using React.js to support a branch launching event and showcase 5 company application products.",
+      "Built an internal booking system using React.js and Laravel to manage reservations for meeting rooms, company vehicles, and office equipment, replacing manual booking processes with a centralized digital platform.",
+      "Enhanced the Customer Activity module by redesigning the user interface and expanding data visualization using React.js, providing users with more comprehensive activity insights.",
+    ],
+  },
+  {
+    title: "Full-Stack Web Developer",
+    type: "Freelance",
+    company: "Drulz Deals",
+    duration: "Jun 2026 - Now",
+    jobdesk: [
+      "Developed a web-based coffee ordering platform featuring discounted products from multiple coffee brands for client promotional campaigns.",
+      "Implemented a structured product catalog to display coffee brands and menu offerings in a user-friendly interface.",
+      "Integrated WhatsApp as the ordering and payment communication channel, enabling customers to place orders directly with the client.",
+    ],
+  },
+  {
+    title: "Full-Stack Web Developer",
+    type: "Freelance",
+    company: "Cahaya Kreativ",
+    duration: "Jan - Aug 2025",
+    jobdesk: [
+      "Independently developed a full-stack web application using React.js, Express.js, and PostgreSQL for a photography and videography service provider.",
+      "Implemented authentication, booking management, payment processing, scheduling, and customer consultation features to streamline service ordering workflows.",
+      "Designed and developed an administrative dashboard to manage services, products, customer orders, and booking schedules through a centralized interface.",
+      "Deployed the application for production use, enabling the client to digitize and manage daily booking operations.",
     ],
   },
 ];
 
 const myEducation = [
   {
-    degree: "Sarjana Sistem Informasi",
+    degree: "Bachelor's Degree in Information Systems",
     institution: "Universitas Pembangunan Nasional 'Veteran' Jawa Timur",
     duration: "2021 - 2025",
     gpa: "3.88 / 4.00",
@@ -88,12 +115,12 @@ const myEducationNonFormal = [
   {
     degree: "Backend Javascript",
     institution: "PT. Lentera Bangsa Benderang (Binar Academy)",
-    duration: "Februari - Juli 2024",
+    duration: "February - July 2024",
   },
   {
     degree: "Frontend Javascript",
     institution: "PT. Lentera Bangsa Benderang (Binar Academy)",
-    duration: "Agustus 2023 - Januari 2024",
+    duration: "August 2023 - January 2024",
   },
 ];
 
@@ -206,20 +233,20 @@ export const AboutMe = () => {
               </h2>
 
               <p className="mb-6 text-center text-lg text-gray-400">
-                S1 Sistem Informasi | Junior Web Developer
+                S1 Information Systems | Certified Web Programmer
               </p>
 
               <div className="space-y-3 text-gray-300">
                 <p className="flex justify-between border-b border-gray-700 pb-2">
                   <span className="font-medium text-cyan-400">Email:</span>
-                  <span className="text-right">sugab.dwi88@email.com</span>
+                  <span className="text-right">sugab.dwi88@gmail.com</span>
                 </p>
                 <p className="flex justify-between border-b border-gray-700 pb-2">
-                  <span className="font-medium text-cyan-400">Telepon:</span>
+                  <span className="font-medium text-cyan-400">Phone:</span>
                   <span className="text-right">0822-2974-9462</span>
                 </p>
                 <p className="flex justify-between">
-                  <span className="font-medium text-cyan-400">Lokasi:</span>
+                  <span className="font-medium text-cyan-400">Location:</span>
                   <span className="text-right">Sidoarjo, Indonesia</span>
                 </p>
               </div>
@@ -297,7 +324,7 @@ export const AboutMe = () => {
             viewport={{ once: true, amount: 0.1 }}
           >
             <motion.section
-              className="lg:order-0 order-2 space-y-4"
+              className="lg:order-0 order-2 space-y-4 text-justify"
               variants={fadeInRight}
             >
               <h2 className="flex items-center border-b border-cyan-500/50 pb-2 text-3xl font-bold text-white">
@@ -319,16 +346,23 @@ export const AboutMe = () => {
                 <MdWorkHistory className="mr-3 text-green-400" /> Work
                 Experience
               </h2>
-              <div className="space-y-6">
+              <div className="space-y-6 text-justify">
                 {myExperiences.map((exp, index) => (
                   <motion.div
                     key={index}
                     className="border-l-4 border-cyan-400 pl-4"
                     variants={fadeInRight}
                   >
-                    <h3 className="text-xl font-semibold text-white">
-                      {exp.title}
-                    </h3>
+                    <div className="flex flex-wrap items-center gap-2">
+                      <h3 className="text-xl font-semibold text-white">
+                        {exp.title}
+                      </h3>
+                      {exp.type && (
+                        <span className="rounded-full border border-cyan-500/30 bg-cyan-500/20 px-2.5 py-0.5 text-sm font-medium text-cyan-300">
+                          {exp.type}
+                        </span>
+                      )}
+                    </div>
                     <p className="font-medium text-cyan-300">
                       {exp.company} | {exp.duration}
                     </p>
@@ -367,7 +401,7 @@ export const AboutMe = () => {
               <h2 className="flex items-center border-b border-cyan-500/50 pb-2 text-3xl font-bold text-white">
                 <FaGraduationCap className="mr-3 text-red-400" /> Education
               </h2>
-              <div className="space-y-4">
+              <div className="space-y-4 text-justify">
                 {myEducation.map((edu, index) => (
                   <motion.div
                     key={index}
@@ -394,7 +428,7 @@ export const AboutMe = () => {
                 <GiBookmarklet className="mr-3 text-blue-400" /> Education
                 Non-Formal
               </h2>
-              <div className="space-y-4">
+              <div className="space-y-4 text-justify">
                 {myEducationNonFormal.map((edu, index) => (
                   <motion.div
                     key={index}
@@ -450,7 +484,7 @@ export const AboutMe = () => {
                 <FaLightbulb className="mr-3 text-amber-400" /> Future Goals &
                 Aspirations
               </h2>
-              <p className="text-lg leading-relaxed text-gray-300">
+              <p className="text-justify text-lg leading-relaxed text-gray-300">
                 {futureFocusAndAspiration}
               </p>
             </motion.section>

@@ -5,11 +5,11 @@ export const portfolioItems = [
   {
     id: 1,
     title: "Drulz Deals",
-    desc: "Sebuah web pemesanan minuman & makanan dengan sistem integrasi langsung ke WhatsApp pemilik website untuk produk pesanannya.",
+    desc: "A food & beverage ordering website with direct WhatsApp integration for order fulfillment with the store owner.",
     longDesc:
-      "Drulz Deals adalah aplikasi web pemesanan minuman dan makanan yang dirancang untuk mempermudah proses order antara customer dan pemilik outlet. Customer dapat memilih outlet favorit untuk memesan produk. Setiap produk yang tersedia memiliki harga diskon tersendiri, sehingga customer dapat langsung melihat harga terbaik tanpa perlu negosiasi. Setelah memilih produk satuan maupun paket bundling, daftar pesanan customer akan secara otomatis diteruskan ke WhatsApp pemilik website, sehingga proses selanjutnya hanya tinggal konfirmasi pembayaran dan pick up di outlet yang dipilih.",
+      "Drulz Deals is a food and beverage ordering web app built to simplify the ordering process between customers and outlet owners. Customers can choose their favorite outlet to place an order. Every product comes with its own discounted price, so customers can see the best price upfront without needing to negotiate. After selecting individual items or bundle packages, the order list is automatically forwarded to the website owner's WhatsApp, so the only remaining steps are payment confirmation and pickup at the chosen outlet.",
     category: "Frontend Javascript",
-    time: "Juni 2026 - Sekarang",
+    time: "June 2026 - Present",
     projectUrl: "https://drulz-deals.vercel.app/",
     githubUrl: "https://github.com/Bagusdpa4/drulz-deals",
     techStack: [
@@ -22,23 +22,23 @@ export const portfolioItems = [
       "Vercel",
     ],
     features: [
-      "Sistem pemesanan makanan.",
-      "Sistem pemesanan minuman.",
-      "Sistem pemesanan satuan produk.",
-      "Sistem pemesanan paket bundling produk.",
-      "Direct by WA untuk pembayaran.",
-      "Desain responsif dan dinamis.",
+      "Food ordering system.",
+      "Beverage ordering system.",
+      "Individual product ordering.",
+      "Bundle package ordering.",
+      "Direct WhatsApp integration for payment.",
+      "Responsive and dynamic design.",
     ],
     thumbnailUrl: "/images/Drulz Deals.png",
   },
   {
     id: 2,
     title: "E-Commerce Cahaya Kreativ",
-    desc: "Sistem pemesanan dan pengelolaan jasa kreatif, mencakup fitur e-commerce lengkap, manajemen produk, Konsultasi Chat dan dashboard admin.",
+    desc: "A booking and management system for creative services, featuring a complete e-commerce setup, product management, chat consultation, and an admin dashboard.",
     longDesc:
-      "Sebuah sistem pemesanan dan pengelolaan jasa kreatif untuk salah satu CV Fotografi di Surabaya. Proyek ini dirancang untuk berfokus pada pemesanan layanan jasa secara online mulai dari registrasi, booking jadwal, pembayaran dan konsultasi via chat dalam website. Admin dapat melakukan kontrol website berupa manajemen produk, monitoring order dan chat yang masuk. Produk yang disediakan meliputi paket jasa fotografi, videografi dan manajemen konten sosial media. Pengerjaan sistem ini membutuhkan waktu sekitar 9 bulan dan website ini telah diserahkan dan diintegrasikan oleh perusahaan terkait. Seluruh proses pengembangan, mulai dari perancangan hingga deployment, dikerjakan sebagai proyek individual.",
+      "A booking and management system built for a photography company in Surabaya. This project focuses on end-to-end online service booking, from registration and schedule booking to payment and in-website chat consultation. Admins can control the website through product management and by monitoring incoming orders and chats. The services offered include photography, videography, and social media content management packages. The system took about 9 months to build and has since been handed over to and integrated by the client company. The entire development process, from planning to deployment, was carried out individually.",
     category: "Website/Full-Stack",
-    time: "Desember 2024 - Agustus 2025",
+    time: "December 2024 - August 2025",
     projectUrl: "https://cahayakreativ.com/",
     githubUrl: "https://github.com/Bagusdpa4/Cahaya-Kreativ-FE",
     techStack: [
@@ -59,25 +59,25 @@ export const portfolioItems = [
       "Vercel",
     ],
     features: [
-      "Sistem pemesanan jasa kreatif online 24/7.",
-      "Sistem pemilihan & pengaturan jadwal layanan jasa kreatif.",
-      "Sistem pembayaran menggunakan midtrans.",
-      "Sistem konsultasi antara customer dengan perusahaan.",
-      "Manajemen chat, produk dan order via Admin Dashboard.",
-      "Sistem otentikasi (JWT).",
-      "Integrasi PostgreSQL sebagai database.",
-      "Desain responsif dan dinamis.",
+      "24/7 online creative service booking system.",
+      "Service scheduling and selection system.",
+      "Payment system using Midtrans.",
+      "Chat-based consultation between customers and the company.",
+      "Chat, product, and order management via Admin Dashboard.",
+      "JWT authentication system.",
+      "PostgreSQL database integration.",
+      "Responsive and dynamic design.",
     ],
     thumbnailUrl: "/images/Cahaya Kreativ.jpg",
   },
   {
     id: 3,
     title: "Restful API for Airline Ticket Booking",
-    desc: "Pembuatan Restful API untuk simulasi pemesanan tiket pesawat. Fitur termasuk pencarian jadwal penerbangan, pemesanan & pembayaran tiket secara online.",
+    desc: "A RESTful API built for a flight ticket booking simulation, featuring flight schedule search, online ticket booking, and payment.",
     longDesc:
-      "Restful API yang dikembangkan untuk website simulasi pemesanan tiket pesawat dengan standar arsitektur REST. Restful API ini mencakup proses autentikasi JWT, validasi data, dan pengelolaan data maskapai, jadwal penerbangan serta pemesanan & pembayaran tiket. PostgreSQL digunakan sebagai wadah penyimpanan data keseluruhan sistem. Sistem dilengkapi dokumentasi interaktif menggunakan Swagger agar mudah diakses dan diintegrasi oleh tim Front-end. Proyek akhir ini dikembangkan selama 6 minggu secara berkelompok yang terdiri dari 3 tim Back-end dan 3 tim Front-end.",
+      "A RESTful API built for a flight ticket booking simulation website, following standard REST architecture. It covers JWT authentication, data validation, and management of airline data, flight schedules, and ticket booking & payment. PostgreSQL serves as the database for the entire system. The API includes interactive documentation using Swagger for easy access and integration by the frontend team. This final project was developed over 6 weeks by a group of 3 back-end and 3 front-end teams.",
     category: "Backend Javascript",
-    time: "Februari - Juli 2024",
+    time: "February - July 2024",
     projectUrl: "https://api-ticketing.vercel.app/api-docs",
     githubUrl: "https://github.com/Bagusdpa4/Backend_Flight_Ticketing",
     techStack: [
@@ -98,25 +98,25 @@ export const portfolioItems = [
       "Vercel",
     ],
     features: [
-      "Endpoint untuk pendaftaran & login user.",
-      "Implementasi otentikasi JWT.",
-      "CRUD data maskapai, jadwal penerbangan dan harga tiket sesuai destinasi.",
-      "Pencarian & pemilihan jadwal penerbangan.",
-      "Pemesanan & pembayaran tiket.",
-      "Menerapkan validasi data input.",
-      "Menerapkan cronjob sebagai perintah untuk membuat data penerbangan berulang.",
-      "Dokumentasi API interaktif.",
+      "Endpoints for user registration & login.",
+      "JWT authentication implementation.",
+      "CRUD for airline data, flight schedules, and destination-based ticket pricing.",
+      "Flight schedule search & selection.",
+      "Ticket booking & payment.",
+      "Input data validation.",
+      "Cron job implementation for generating recurring flight data.",
+      "Interactive API documentation.",
     ],
     thumbnailUrl: "/images/Restful API for Airline Ticket Booking.jpg",
   },
   {
     id: 4,
     title: "Website Online Course",
-    desc: "Pembuatan website online course yang responsif dan modern. Fokus pada pencarian course dan progress pembelajaran serta dashboard admin sebagai tempat manajemen course.",
+    desc: "A modern, responsive online course website, focused on course discovery, learning progress tracking, and an admin dashboard for course management.",
     longDesc:
-      "Platform website kursus online yang dirancang modern dan responsif. Fitur utamanya meliputi pencarian course, pembelian course, progress pembelajaran, serta dashboard admin untuk manajemen course. Proyek ini dibangun menggunakan ReactJS dan Redux untuk performa cepat dalam menampilkan data, serta Tailwind CSS untuk tampilan yang rapi dan responsif. Fokus pengembangannya adalah memberikan pengalaman pengguna yang optimal dengan navigasi yang mudah dalam mencari course dan mendukung proses belajar online. Proyek akhir ini dikembangkan selama 6 minggu secara berkelompok, terdiri dari 4 tim Back-end dan 4 tim Front-end.",
+      "A modern, responsive online course platform. Key features include course search, course purchasing, learning progress tracking, and an admin dashboard for course management. The project was built using React.js and Redux for fast data rendering, along with Tailwind CSS for a clean, responsive look. Development focused on delivering an optimal user experience with easy course navigation and smooth support for online learning. This final project was developed over 6 weeks by a group of 4 back-end and 4 front-end teams.",
     category: "Frontend Javascript",
-    time: " Agustus 2023 - Januari 2024",
+    time: "August 2023 - January 2024",
     projectUrl: "https://final-project-binar-seven.vercel.app/",
     githubUrl: "https://github.com/Bagusdpa4/Final-Project",
     techStack: [
@@ -132,21 +132,21 @@ export const portfolioItems = [
       "Material Tailwind",
     ],
     features: [
-      "Fitur autentikasi akun.",
-      "Pencarian dan filter course.",
-      "Pelacakan progres pembelajaran (progress bar).",
-      "Pembelian course.",
-      "Dashboard admin sebagai manajemen course.",
-      "Responsif di semua ukuran layar.",
+      "Account authentication.",
+      "Course search and filtering.",
+      "Learning progress tracking (progress bar).",
+      "Course purchasing.",
+      "Admin dashboard for course management.",
+      "Responsive across all screen sizes.",
     ],
     thumbnailUrl: "/images/Online Course.jpg",
   },
   {
     id: 5,
     title: "List Movie TMDB",
-    desc: "Aplikasi Website untuk menampilkan daftar film, detail film, dan pencarian film terpopuler didunia saat ini. Pengambilan data memanfaatkan API dari The Movie Database (TMDB).",
+    desc: "A web app displaying movie listings, movie details, and search for today's most popular films worldwide, powered by The Movie Database (TMDB) API.",
     longDesc:
-      "Aplikasi web untuk mencari dan menjelajahi informasi suatu film menggunakan API dari The Movie Database (TMDB). Pengguna dapat melihat daftar film populer, detail film, dan melakukan pencarian film secara cepat. Data film yang diambil merupakan film asli yang ada didunia saat ini. Redux digunakan untuk manajemen state, sedangkan Axios menangani pengambilan data API TMDB. Aplikasi ini dibuat dengan fokus pada kecepatan, kemudahan akses, dan tampilan yang informatif. Namun website ini belum mengintegrasikan tampilan responsif.",
+      "A web app for searching and exploring movie information using The Movie Database (TMDB) API. Users can browse popular movies, view movie details, and search quickly. All movie data reflects real, currently existing films. Redux handles state management, while Axios handles fetching data from the TMDB API. The app was built with a focus on speed, ease of access, and an informative layout. Note: this website has not yet been made fully responsive.",
     category: "Frontend Javascript",
     time: "November 2023",
     projectUrl: "https://challenge-06-beta.vercel.app/",
@@ -165,21 +165,21 @@ export const portfolioItems = [
       "Google Cloud Platform",
     ],
     features: [
-      "Fitur autentikasi akun.",
-      "Menampilkan daftar film populer real-time.",
-      "Fitur pencarian film real-time.",
-      "Halaman detail film dengan rating.",
-      "Manajemen state menggunakan Redux.",
-      "Integrasi dengan TMDB API.",
+      "Account authentication.",
+      "Real-time popular movie listing.",
+      "Real-time movie search.",
+      "Movie detail page with ratings.",
+      "State management using Redux.",
+      "TMDB API integration.",
     ],
     thumbnailUrl: "/images/TMDB.jpg",
   },
   {
     id: 6,
     title: "ToDo List App",
-    desc: "Aplikasi manajemen tugas harian sederhana yang mencakup penambahan, penghapusan, dan penandaan selesai.",
+    desc: "A simple daily task management app with features for adding, deleting, and marking tasks as complete.",
     longDesc:
-      "Aplikasi daftar tugas harian (ToDo List) yang sederhana namun fungsional. Pengguna dapat melakukan pencarian, penambahan, pengeditan, penghapusan, serta menandai tugas sebagai selesai. Data disimpan secara lokal dan statis sehingga data baru akan hilang ketika halaman di-refresh. Tampilan dibuat sederhana dan mudah digunakan untuk memenuhi kebutuhan manajemen tugas harian. Proyek ini berfokus pada penguasaan dasar-dasar React.JS dan memanfaatkan logika JavaScript sederhana, namun belum mengintegrasikan tampilan responsif.",
+      "A simple yet functional daily To-Do List app. Users can search, add, edit, delete, and mark tasks as complete. Data is stored locally and statically, so new entries are lost on page refresh. The interface is kept simple and easy to use for everyday task management. This project focused on mastering React.js fundamentals and basic JavaScript logic, though it has not yet been made fully responsive.",
     category: "Frontend Javascript",
     time: "September 2023",
     projectUrl: "https://bagusdpa4.github.io/challenge03/",
@@ -195,24 +195,24 @@ export const portfolioItems = [
       "Visual Studio Code",
     ],
     features: [
-      "Penambahan tugas baru.",
-      "Penghapusan tugas.",
-      "Pengeditan tugas",
-      "Menandai tugas sebagai selesai.",
-      "Filter tugas.",
-      "Melakukan pencarian tugas yang sudah ada.",
-      "Penyimpanan data lokal sementara dan statis.",
+      "Add new tasks.",
+      "Delete tasks.",
+      "Edit tasks.",
+      "Mark tasks as complete.",
+      "Task filtering.",
+      "Search existing tasks.",
+      "Temporary, static local data storage.",
     ],
     thumbnailUrl: "/images/ToDo List.jpg",
   },
   {
     id: 7,
     title: "Landing Pages Rental Car",
-    desc: "Implementasi desain UI/UX ke dalam landing page penyewaan mobil dengan fokus pada tampilan informasi yang jelas dan sederhana.",
+    desc: "A UI/UX design implementation for a car rental landing page, focused on clear and simple information display.",
     longDesc:
-      "Landing page penyewaan mobil yang dibangun berdasarkan desain UI/UX dengan menekankan ketepatan visual dan konsistensi layout. Website ini menampilkan informasi layanan rental secara jelas, dengan struktur yang teratur dan elemen visual yang sederhana. Proyek dikembangkan menggunakan HTML dan CSS murni sebagai latihan dasar front-end dan penerapan konsep responsive design yang belom sempurna 100%. Tampilan yang bersih, ringan, dan mudah dipahami menjadi fokus utama dalam pengerjaannya.",
+      "A car rental landing page built from a UI/UX design, with an emphasis on visual accuracy and layout consistency. The website presents rental service information clearly, with an organized structure and simple visual elements. It was developed using plain HTML and CSS as a front-end fundamentals exercise, applying responsive design concepts that aren't yet 100% complete. A clean, lightweight, and easy-to-understand look was the main focus throughout development.",
     category: "Landing Pages",
-    time: "Agustus 2023",
+    time: "August 2023",
     projectUrl: "https://bagusdpa4.github.io/challenge-01/",
     githubUrl: "https://github.com/Bagusdpa4/challenge-01",
     techStack: [
@@ -225,10 +225,10 @@ export const portfolioItems = [
       "Responsive Design",
     ],
     features: [
-      "Desain responsif yang sederhana dan ringan.",
-      "Penyajian informasi layanan rental yang jelas dan terstruktur.",
-      "Implementasi elemen visual dasar menggunakan CSS.",
-      "Ketepatan visual dan layout sesuai dengan desain UI/UX.",
+      "Simple, lightweight responsive design.",
+      "Clear and structured presentation of rental service information.",
+      "Basic visual elements implemented with CSS.",
+      "Visual and layout accuracy matching the UI/UX design.",
     ],
     thumbnailUrl: "/images/Rental Binar Car.jpg",
   },
@@ -239,7 +239,7 @@ export const ProjectContent = () => {
   const [visibleCount, setVisibleCount] = useState(itemsPerPage);
 
   const showMoreItems = () => {
-    setVisibleCount((prevCount) => prevCount + itemsPerPage);
+    setVisibleCount(portfolioItems.length);
   };
 
   return (
@@ -279,7 +279,7 @@ export const ProjectContent = () => {
             onClick={showMoreItems}
             className="text-gray-950 cursor-pointer rounded-lg bg-cyan-500 px-8 py-3 text-base font-bold shadow-lg transition duration-300 hover:bg-cyan-400"
           >
-            See More Projects
+            See All Projects
           </button>
         </div>
       )}

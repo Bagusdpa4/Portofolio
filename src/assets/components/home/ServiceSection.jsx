@@ -24,7 +24,7 @@ const ServiceItem = ({
   >
     {/* Glow Background Moving */}
     <motion.div
-      className={`absolute inset-0 bg-gradient-to-br ${color} opacity-20 blur-2xl`}
+      className={`bg-linear-to-br absolute inset-0 ${color} opacity-20 blur-2xl`}
       animate={{ scale: [1, 1.2, 1], opacity: [0.18, 0.25, 0.18] }}
       transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
     />
@@ -43,7 +43,7 @@ const ServiceItem = ({
 
     {/* Description */}
     <motion.p
-      className="relative z-10 text-sm text-gray-400"
+      className="relative z-10 text-sm text-gray-400 text-justify"
       whileHover={{ opacity: 1 }}
       initial={{ opacity: 0.75 }}
       transition={{ duration: 0.3 }}
@@ -62,7 +62,7 @@ const services = [
     ring: "ring-cyan-400/40",
     iconColor: "text-cyan-400",
     description:
-      "Membangun aplikasi web secara menyeluruh mulai dari backend, RESTful API, integrasi database, hingga antarmuka pengguna yang aman, stabil, dan siap diskalakan.",
+      "I build complete web applications from the ground up — backend, RESTful APIs, database integration, and user interfaces — that are secure, stable, and ready to scale.",
   },
   {
     icon: FaCode,
@@ -71,7 +71,7 @@ const services = [
     ring: "ring-purple-400/40",
     iconColor: "text-purple-400",
     description:
-      "Mengembangkan interface modern dan responsif menggunakan React.js dan Tailwind CSS dengan fokus pada kecepatan, kenyamanan, dan pengalaman pengguna.",
+      "I develop modern, responsive interfaces using React.js and Tailwind CSS, focused on speed, usability, and a smooth user experience.",
   },
   {
     icon: FaLightbulb,
@@ -80,7 +80,7 @@ const services = [
     ring: "ring-yellow-400/40",
     iconColor: "text-yellow-300",
     description:
-      "Mengintegrasikan aplikasi dengan layanan pihak ketiga secara aman dan efisien, termasuk pembayaran, autentikasi, dan sinkronisasi data real-time.",
+      "I integrate applications with third-party services securely and efficiently, including payments, authentication, and real-time data synchronization.",
   },
   {
     icon: GiGears,
@@ -89,7 +89,7 @@ const services = [
     ring: "ring-green-400/40",
     iconColor: "text-green-400",
     description:
-      "Merancang struktur database yang terorganisir serta mengoptimalkan query untuk performa cepat dan stabil menggunakan Prisma ORM atau SQL.",
+      "I design well-structured database schemas and optimize queries for fast, stable performance using Prisma ORM or SQL.",
   },
 ];
 
@@ -159,7 +159,7 @@ export const ServiceSection = ({ SectionComponent }) => {
           </h2>
           <p className="flex items-center justify-center text-xs font-semibold uppercase tracking-wider text-cyan-400 sm:text-sm">
             <RiCustomerServiceFill className="mr-1 hidden h-4 w-4 lg:mr-2 lg:flex" />
-            Membangun Solusi Digital dengan Presisi & Performa Tinggi.
+            Building Digital Solutions with Precision & High Performance.
           </p>
         </motion.div>
 
@@ -185,8 +185,8 @@ export const ServiceSection = ({ SectionComponent }) => {
           viewport={{ once: true, amount: 0.3 }}
         >
           <p className="mx-auto max-w-2xl text-lg text-gray-400">
-            Layanan ini dapat disesuaikan dengan kebutuhan unik proyek Anda.
-            Hubungi saya untuk diskusi lebih lanjut!
+            These services can be tailored to fit the unique needs of your
+            project. Feel free to reach out for a more detailed discussion!
           </p>
         </motion.div>
       </div>

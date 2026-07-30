@@ -189,7 +189,7 @@ export const IntroOverlay = ({ showIntro }) => {
   }, [showIntro]);
 
   // Tagline
-  const tagline = "Membangun Solusi Digital dengan Presisi.";
+  const tagline = "Building Digital Solutions with Precision.";
 
   // Menghitung kecepatan ketik
   const typingSpeed = EXIT_DURATION_MS / tagline.length;

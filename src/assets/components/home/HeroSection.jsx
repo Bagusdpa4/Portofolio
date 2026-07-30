@@ -62,7 +62,7 @@ export const HeroSection = ({ handleSmoothScroll }) => (
     className="from-gray-950 via-slate-800 to-blue-950 bg-linear-to-r overflow-hidden text-left"
   >
     <div className="relative z-10 mx-auto flex h-full w-full max-w-7xl grow items-center justify-center">
-      <div className="flex h-full w-full flex-col-reverse items-center gap-10 py-4 lg:flex-row lg:gap-16">
+      <div className="flex h-full w-full flex-col-reverse items-center gap-10 py-4 lg:flex-row lg:gap-8">
         {/* KOLOM KIRI */}
         <motion.div
           className="flex h-full w-full flex-col justify-center lg:w-3/5"
@@ -79,15 +79,14 @@ export const HeroSection = ({ handleSmoothScroll }) => (
 
           {/* 1. Sub-tagline yang cocok */}
           <p className="mt-4 text-xl font-semibold text-gray-300 md:text-2xl">
-            Pengembangan Web Responsif dan Berbasis Data.
+            Building Fast, Reliable, and User-Focused Web Applications.
           </p>
 
           {/* 2. Short Description (Minimal 2 baris) */}
-          <p className="mx-auto mt-6 max-w-3xl text-lg text-gray-400 lg:mx-0 lg:max-w-none">
-            Fokus pada pengembangan website menggunakan teknologi terbaru. Saya
-            dapat membantu Anda membangun produk digital yang tidak hanya
-            terlihat indah tetapi juga memberikan pengalaman pengguna yang mulus
-            dan performa yang optimal
+          <p className="mx-auto mt-6 max-w-3xl text-justify text-lg text-gray-400 lg:mx-0 lg:max-w-none">
+            I focus on building websites with modern technologies. I can help
+            you create digital products that not only look great but also
+            deliver a seamless user experience and top-notch performance.
           </p>
 
           {/* 3. CTA Buttons (Disuaikan untuk mobile) */}
@@ -97,14 +96,14 @@ export const HeroSection = ({ handleSmoothScroll }) => (
               onClick={(e) => handleSmoothScroll(e, "portfolio")}
               className="inline-flex cursor-pointer items-center justify-center rounded-lg bg-cyan-600 px-6 py-3 text-base font-semibold text-white shadow-xl shadow-cyan-900/50 transition duration-300 hover:scale-[1.05] hover:bg-cyan-700 sm:px-8 sm:text-lg"
             >
-              <FaBriefcase className="mr-2 h-5 w-5" /> Lihat Portfolio
+              <FaBriefcase className="mr-2 h-5 w-5" /> View Portfolio
             </a>
             <a
               href="#contact"
               onClick={(e) => handleSmoothScroll(e, "contact")}
               className="inline-flex items-center justify-center rounded-lg border border-white/30 px-6 py-3 text-base font-semibold text-white transition duration-300 hover:scale-[1.05] hover:bg-white/10 sm:px-8 sm:text-lg"
             >
-              <FaEnvelope className="mr-2 h-5 w-5" /> Hubungi Saya
+              <FaEnvelope className="mr-2 h-5 w-5" /> Get in Touch
             </a>
           </div>
 

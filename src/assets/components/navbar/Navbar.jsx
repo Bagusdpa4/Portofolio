@@ -129,7 +129,7 @@ export const Navbar = () => {
         <button
           className="z-50 p-2 text-gray-300 hover:text-cyan-400 focus:outline-none lg:hidden"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
-          aria-label={isMenuOpen ? "Tutup Menu" : "Buka Menu"}
+          aria-label={isMenuOpen ? "Close Menu" : "Open Menu"}
         >
           {isMenuOpen ? (
             <HiX className="h-6 w-6" />

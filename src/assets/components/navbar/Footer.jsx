@@ -59,7 +59,7 @@ export const Footer = () => {
             <a
               href={`mailto:${emailAddress}`}
               className="text-lg text-gray-400 transition duration-200 hover:scale-150 hover:text-cyan-400 sm:text-2xl"
-              title={`Kirim Email ke ${emailAddress}`}
+              title={`Send Email to ${emailAddress}`}
             >
               <AiOutlineMail />
             </a>

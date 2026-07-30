@@ -6,7 +6,7 @@ const portfolioItems = [
     id: 1,
     title:
       "Information System Development for Web-Based Creative Services E-Commerce Using Rapid Application Development Method",
-    desc: "Jurnal ilmiah yang membahas pengembangan sistem informasi e-commerce jasa kreatif berbasis web menggunakan metode Rapid Application Development (RAD).",
+    desc: "A scientific journal article discussing the development of a web-based e-commerce information system for creative services using the Rapid Application Development (RAD) method.",
     category: "Article",
     projectUrl: "https://jurnal.kdi.or.id/index.php/bt/article/view/2615",
     file: "/docs/Information System Development for Web-Based Creative Services E-Commerce Using Rapid Application Development Method.pdf",
@@ -16,7 +16,7 @@ const portfolioItems = [
     id: 2,
     title:
       "Analisis Self-Efficacy Pembelajaran Mahasiswa Menggunakan E-learning UPN “VETERAN” Jawa Timur Dengan Model GSCA",
-    desc: "Jurnal ilmiah yang menganalisis kemampuan pembelajaran mahasiswa menggunakan e-learning UPN Veteran Jawa Timur dengan pendekatan model Generalized Structured Component Analysis (GSCA).",
+    desc: "A scientific journal article analyzing students' learning self-efficacy using UPN Veteran Jawa Timur's e-learning platform, based on the Generalized Structured Component Analysis (GSCA) model.",
     category: "Article",
     projectUrl: "https://garuda.kemdiktisaintek.go.id/documents/detail/4008369",
     file: "/docs/Information System Development for Web-Based Creative Services E-Commerce Using Rapid Application Development Method.pdf",
@@ -25,8 +25,8 @@ const portfolioItems = [
   {
     id: 3,
     title:
-      "Analisis Efektivitas Penggunaan Bahasa Indonesia Pada Website E-Learning UPN “Veteran” Jawa Timur",
-    desc: "Jurnal ilmiah yang menganalisis efektivitas penggunaan bahasa indonesia pada website e-learning UPN Veteran Jawa Timur.",
+      'Analysis Of The Effectiveness Of Use Of Indonesian Language At UPN "Veteran" Jawa Timur E-Learning Website',
+    desc: "A scientific journal article analyzing the effectiveness of Indonesian language use on UPN Veteran Jawa Timur's e-learning website.",
     category: "Article",
     projectUrl: "https://garuda.kemdiktisaintek.go.id/documents/detail/3534138",
     file: "/docs/ANALYSIS OF THE EFFECTIVENESS OF USE OF INDONESIAN LANGUAGE AT UPN 'VETERAN' JAWA TIMUR ELEARNING WEBSITE.pdf",
@@ -39,7 +39,7 @@ export const ArticleContent = () => {
   const [visibleCount, setVisibleCount] = useState(itemsPerPage);
 
   const showMoreItems = () => {
-    setVisibleCount((prevCount) => prevCount + itemsPerPage);
+    setVisibleCount(portfolioItems.length);
   };
 
   return (
@@ -85,7 +85,7 @@ export const ArticleContent = () => {
             onClick={showMoreItems}
             className="text-gray-950 cursor-pointer rounded-lg bg-cyan-500 px-8 py-3 text-base font-bold shadow-lg transition duration-300 hover:bg-cyan-400"
           >
-            See More Articles
+            See All Articles
           </button>
         </div>
       )}

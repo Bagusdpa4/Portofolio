@@ -7,11 +7,11 @@ import {
   FaGithub,
   FaInstagram,
   FaPhoneAlt,
-  FaWhatsapp
+  FaWhatsapp,
 } from "react-icons/fa";
 import { BiLogoGmail } from "react-icons/bi";
 
-// Data Kontak Pribadi 
+// Data Kontak Pribadi
 const contactInfo = [
   {
     icon: BiLogoGmail,
@@ -20,7 +20,7 @@ const contactInfo = [
   },
   {
     icon: FaPhoneAlt,
-    label: "No Telepon",
+    label: "Phone",
     value: "082229749462",
   },
   {
@@ -40,12 +40,12 @@ const contactInfo = [
   },
   {
     icon: FaMapMarkerAlt,
-    label: "Lokasi",
+    label: "Location",
     value: "Sidoarjo, Indonesia",
   },
 ];
 
-// Komponen Item Kontak 
+// Komponen Item Kontak
 const ContactItem = ({ icon: Icon, label, value, variants }) => (
   <motion.div
     className="flex cursor-default items-start space-x-3 rounded-lg border border-gray-700 bg-gray-900/50 p-3 transition duration-300 hover:border-cyan-400"
@@ -129,9 +129,9 @@ export const ContactSection = ({ SectionComponent }) => {
             Let's Collaborate
           </h2>
           <p className="mx-auto max-w-2xl text-base text-gray-400 sm:text-xl">
-            Tertarik untuk berdiskusi tentang peluang kerja, proyek, atau
-            kolaborasi? Anda dapat menghubungi saya melalui platform-platform di
-            bawah ini.
+            Interested in discussing job opportunities, projects, or
+            collaboration? Feel free to reach out through any of the platforms
+            below.
           </p>
         </motion.div>
 
@@ -146,7 +146,7 @@ export const ContactSection = ({ SectionComponent }) => {
             viewport={{ once: true, amount: 0.3 }}
           >
             <p className="mb-6 text-base font-semibold text-gray-300 sm:text-lg">
-              Klik ikon di bawah ini untuk menghubungi saya.
+              Tap the icon below to get in touch.
             </p>
             <div className="relative flex h-56 w-56 items-center justify-center rounded-full sm:h-72 sm:w-72">
               {/* Efek Cincin Bercahaya (Pulsating Ring) */}
@@ -154,7 +154,7 @@ export const ContactSection = ({ SectionComponent }) => {
               <div className="absolute inset-0 h-full w-full rounded-full border-4 border-cyan-500/70 bg-gray-900/50 shadow-2xl shadow-cyan-500/30"></div>
 
               {/* Ikon */}
-              <a href="https://wa.me/+6282229749462" title="Hubungi Saya">
+              <a href="https://wa.me/+6282229749462" title="Contact Me">
                 <FaWhatsapp className="relative z-10 h-28 w-28 text-cyan-400 transition duration-300 hover:scale-110 sm:h-36 sm:w-36" />
               </a>
             </div>

@@ -184,7 +184,7 @@ export const Portofolio = () => {
               </div>
 
               <div className="space-y-8">
-                <p className="whitespace-pre-wrap pt-0 text-xl leading-relaxed text-gray-400">
+                <p className="whitespace-pre-wrap pt-0 text-justify text-xl leading-relaxed text-gray-400">
                   {mainDescription}
                 </p>
 
@@ -255,7 +255,7 @@ export const Portofolio = () => {
                 <h2 className="mb-5 flex items-center text-2xl font-bold text-white">
                   <FaStar className="mr-3 text-yellow-400" /> Key Features
                 </h2>
-                <ul className="list-none space-y-3 pl-0">
+                <ul className="list-none space-y-3 pl-0 text-justify">
                   {featuresList.map((feature, index) => (
                     <motion.li
                       key={index}

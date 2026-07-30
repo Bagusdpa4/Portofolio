@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 
 // Component
 // import Profile from "../assets/img/Profile.jpg";
-import Formal from "../assets/img/Formal.PNG"
+import Formal from "../assets/img/Formal.PNG";
 import { Navbar } from "../assets/components/navbar/Navbar";
 import { Footer } from "../assets/components/navbar/Footer";
 import { Loading } from "../assets/components/loading/Loading";
@@ -395,14 +395,14 @@ export const Homepage = () => {
                     className="font-serif text-4xl font-extrabold text-white sm:text-5xl"
                   />
                 </motion.div>
-                <p className="text-base text-gray-300 sm:text-lg">
-                  Saya merupakan lulusan Sistem Informasi dengan minat pada
-                  pengembangan aplikasi berbasis web, analisis sistem, dan
-                  manajemen data. Saya berpengalaman dalam merancang dan
-                  membangun solusi berbasis web yang fungsional, aman, serta
-                  sesuai kebutuhan operasional pengguna. Saya terus
-                  mengembangkan kemampuan teknis dan analitis untuk mendukung
-                  terciptanya solusi teknologi yang efektif dan berkelanjutan.
+                <p className="text-justify text-base text-gray-300 sm:text-lg">
+                  I am a Web Developer with over 2 years of experience building
+                  responsive web applications through internships, academic
+                  projects, and independent work. I am proficient in React.js,
+                  Node.js, Express.js, Laravel, RESTful APIs, and SQL databases,
+                  and I hold a Bachelor's degree in Information Systems. I am a
+                  Certified Junior Web Programmer committed to building
+                  scalable, maintainable, and user-centered software solutions.
                 </p>
 
                 {/* Button */}
@@ -443,7 +443,7 @@ export const Homepage = () => {
                   {
                     icon: HiCode,
                     number: totalProjects,
-                    label: "PROJECTS + Magang",
+                    label: "PROJECTS + Intern",
                   },
                   {
                     icon: PiCertificateFill,
@@ -497,10 +497,10 @@ export const Homepage = () => {
                 Portfolio Showcase
               </h2>
               <p className="mx-auto mb-8 max-w-xl text-base text-gray-400 sm:text-lg">
-                Telusuri perjalanan karya saya melalui proyek nyata, sertifikasi
-                yang saya raih, artikel yang pernah diterbitkan, hingga keahlian
-                teknis saya. Setiap bagian adalah bukti dari semangat belajar
-                dan perkembangan saya.
+                Explore my journey through real-world projects, certifications
+                I've earned, articles I've published, and my technical skills.
+                Each section reflects my passion for learning and continuous
+                growth.
               </p>
             </motion.div>
 
