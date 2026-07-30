@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { FiExternalLink } from "react-icons/fi";
+import { useNavigate } from "react-router-dom";
 
 export const portfolioItems = [
   {
@@ -20,16 +21,25 @@ export const portfolioItems = [
       "Github",
       "Visual Studio Code",
       "Vercel",
+      "Supabase",
     ],
     features: [
-      "Food ordering system.",
-      "Beverage ordering system.",
+      "Food & Beverage ordering system.",
+      "More than one food & beverage brand.",
       "Individual product ordering.",
       "Bundle package ordering.",
       "Direct WhatsApp integration for payment.",
       "Responsive and dynamic design.",
     ],
-    thumbnailUrl: "/images/Drulz Deals.png",
+    thumbnailUrl: "/images/Project/Project 1/Homepage.png",
+    galleryUrls: [
+      "/images/Project/Project 1/Satuan.png",
+      "/images/Project/Project 1/Bundling.png",
+      "/images/Project/Project 1/Other Product.png",
+      "/images/Project/Project 1/Option Modal.png",
+      "/images/Project/Project 1/Cart.png",
+      "/images/Project/Project 1/Order.png",
+    ],
   },
   {
     id: 2,
@@ -69,6 +79,11 @@ export const portfolioItems = [
       "Responsive and dynamic design.",
     ],
     thumbnailUrl: "/images/Cahaya Kreativ.jpg",
+    // galleryUrls: [
+    //   "/images/Cahaya Kreativ - Admin Dashboard.jpg",
+    //   "/images/Cahaya Kreativ - Booking Page.jpg",
+    //   "/images/Cahaya Kreativ - Chat Consultation.jpg",
+    // ],
   },
   {
     id: 3,
@@ -235,6 +250,7 @@ export const portfolioItems = [
 ];
 
 export const ProjectContent = () => {
+  const navigate = useNavigate();
   const itemsPerPage = 3;
   const [visibleCount, setVisibleCount] = useState(itemsPerPage);
 
@@ -248,7 +264,8 @@ export const ProjectContent = () => {
         {portfolioItems.slice(0, visibleCount).map((item) => (
           <div
             key={item.id}
-            className="bg-slate-800/80 rounded-xl border border-gray-700 p-5 shadow-xl transition duration-300 hover:scale-105 hover:border-cyan-400"
+            onClick={() => navigate(`/project/${item.id}`)}
+            className="bg-slate-800/80 cursor-pointer rounded-xl border border-gray-700 p-5 shadow-xl transition duration-300 hover:scale-105 hover:border-cyan-400"
           >
             <div className="mb-4 h-40 overflow-hidden rounded-lg bg-gray-900 sm:h-52">
               <img
@@ -264,6 +281,7 @@ export const ProjectContent = () => {
             <div className="mt-4 flex items-center justify-end text-sm">
               <a
                 href={`/project/${item.id}`}
+                onClick={(e) => e.stopPropagation()}
                 className="flex items-center text-cyan-400 transition duration-300 hover:underline"
               >
                 Detail Project <FiExternalLink className="ml-1 h-3 w-3" />

@@ -6,7 +6,7 @@ const portfolioItems = [
   {
     id: 1,
     title: "Junior Web Programmer (BNSP)",
-    desc: "Competency Certificate as a Junior Web Programmer issued by BNSP (Indonesian National Professional Certification Board). Valid for 3 years, from October 2, 2025 to October 2, 2028.",
+    desc: "Competency Certificate as a Junior Web Programmer issued by Badan Nasional Sertifikasi Profesi (BNSP). Valid for 3 years, from October 2, 2025 to October 2, 2028.",
     category: "Certificate",
     projectUrl: "/docs/Certificate_BNSP.pdf",
     thumbnailUrl: "/images/sertifikasi.jpg",
@@ -14,7 +14,7 @@ const portfolioItems = [
   {
     id: 2,
     title: "Internship Certificate",
-    desc: "Certificate of completion for the University Graduate Internship Program organized by Indonesia's Ministry of Manpower (Kemnaker) & Shelter Indonesia Gemilang, as a Web Developer.",
+    desc: "Certificate of completion for the University Graduate Internship Program organized by Kementerian Ketenagakerjaan RI & PT Shelter Indonesia Gemilang, as a Web Developer.",
     category: "Certificate",
     projectUrl: "/docs/Certificate_Magang_2026.pdf",
     thumbnailUrl: "/images/Magang.png",
@@ -37,79 +37,52 @@ const portfolioItems = [
   },
   {
     id: 5,
-    title: "Essential Skills: Social Influence",
-    desc: "Training certificate from the National Competent Indonesia Movement (GNIK) & Indonesia's Ministry of Manpower, focused on building the ability to positively influence others in the workplace through attitude, communication, and interpersonal relationships.",
+    title: "Essential Skills (9 Modules)",
+    desc: "A series of 9 training certificates from the Gerakan Nasional Indonesia Kompeten (GNIK) & Kementerian Ketenagakerjaan RI, covering key soft skills for the workplace. ",
     category: "Certificate",
-    projectUrl: "/docs/Essential Skills - Social Influence.pdf",
-    thumbnailUrl: "/images/Social Influence.png",
-  },
-  {
-    id: 6,
-    title: "Essential Skills: Emotional Intelligence",
-    desc: "Training certificate from GNIK & Indonesia's Ministry of Manpower, focused on building the ability to recognize, understand, and manage one's own emotions and the emotions of others, and to use that understanding to guide thought and action.",
-    category: "Certificate",
-    projectUrl: "/docs/Essential Skills - Emotional Intelligence.pdf",
-    thumbnailUrl: "/images/Emotional Intelligence.png",
-  },
-  {
-    id: 7,
-    title: "Essential Skills: Digital Literacy",
-    desc: "Training certificate from GNIK & Indonesia's Ministry of Manpower, covering digital literacy concepts, digital ethics and security, workplace digitalization, and developing an adaptive digital mindset.",
-    category: "Certificate",
-    projectUrl: "/docs/Essential Skills - Digital Literacy.pdf",
-    thumbnailUrl: "/images/Digital Literacy.png",
-  },
-  {
-    id: 8,
-    title: "Essential Skills: Self Efficacy",
-    desc: "Training certificate from GNIK & Indonesia's Ministry of Manpower, focused on building confidence in one's own ability to manage actions, face challenges, and achieve specific results or performance in a given situation.",
-    category: "Certificate",
-    projectUrl: "/docs/Essential Skills - Self Efficacy.pdf",
-    thumbnailUrl: "/images/Self Efficacy.png",
-  },
-  {
-    id: 9,
-    title: "Essential Skills: Adaptability",
-    desc: "Training certificate from GNIK & Indonesia's Ministry of Manpower, focused on building the ability to adapt effectively in a dynamic, ever-changing work environment.",
-    category: "Certificate",
-    projectUrl: "/docs/Essential Skills - Adaptability.pdf",
-    thumbnailUrl: "/images/Adaptability.png",
-  },
-  {
-    id: 10,
-    title: "Essential Skills: Digital Disruption & Transformation",
-    desc: "Training certificate from GNIK & Indonesia's Ministry of Manpower, focused on building an adaptive, critical, and sustainable mindset to stay relevant and contribute meaningfully amid accelerating technology and organizational transformation.",
-    category: "Certificate",
-    projectUrl:
-      "/docs/Essential Skills - Digital Disruption & Transformation.pdf",
-    thumbnailUrl: "/images/Digital Disruption & Transformation.png",
-  },
-  {
-    id: 11,
-    title: "Essential Skills: Integrity at Work",
-    desc: "Training certificate from GNIK & Indonesia's Ministry of Manpower, focused on building individual character, organizational culture, and public trust through conceptual, reflective, and applied understanding of integrity in the workplace and professional life.",
-    category: "Certificate",
-    projectUrl: "/docs/Essential Skills - Integrity at Work.pdf",
-    thumbnailUrl: "/images/Integrity at Work.png",
-  },
-  {
-    id: 12,
-    title: "Essential Skills: Design Thinking",
-    desc: "Training certificate from GNIK & Indonesia's Ministry of Manpower, focused on building an innovative mindset through Design Thinking as a human-centered, creative, and applicable approach to solving various challenges.",
-    category: "Certificate",
-    projectUrl: "/docs/Essential Skills - Design Thinking.pdf",
+    files: [
+      {
+        label: "Social Influence",
+        url: "/docs/Essential Skills - Social Influence.pdf",
+      },
+      {
+        label: "Emotional Intelligence",
+        url: "/docs/Essential Skills - Emotional Intelligence.pdf",
+      },
+      {
+        label: "Digital Literacy",
+        url: "/docs/Essential Skills - Digital Literacy.pdf",
+      },
+      {
+        label: "Self Efficacy",
+        url: "/docs/Essential Skills - Self Efficacy.pdf",
+      },
+      {
+        label: "Adaptability",
+        url: "/docs/Essential Skills - Adaptability.pdf",
+      },
+      {
+        label: "Digital Disruption",
+        fullLabel: "Digital Disruption & Transformation",
+        url: "/docs/Essential Skills - Digital Disruption & Transformation.pdf",
+      },
+      {
+        label: "Integrity at Work",
+        url: "/docs/Essential Skills - Integrity at Work.pdf",
+      },
+      {
+        label: "Design Thinking",
+        url: "/docs/Essential Skills - Design Thinking.pdf",
+      },
+      {
+        label: "Emotional Resilience",
+        url: "/docs/Essential Skills - Emotional Resilience.pdf",
+      },
+    ],
     thumbnailUrl: "/images/Design Thinking.png",
   },
   {
-    id: 13,
-    title: "Essential Skills: Emotional Resilience",
-    desc: "Training certificate from GNIK & Indonesia's Ministry of Manpower, focused on building emotional resilience in the workplace to adaptively handle challenges and pressure.",
-    category: "Certificate",
-    projectUrl: "/docs/Essential Skills - Emotional Resilience.pdf",
-    thumbnailUrl: "/images/Emotional Resilience.png",
-  },
-  {
-    id: 14,
+    id: 6,
     title: "Cumlaude Graduate",
     desc: "Award certificate from the Rector of UPN Veteran Jawa Timur recognizing academic achievement as an Information Systems graduate with a GPA of 3.88. Issued on July 26, 2025.",
     category: "Award",
@@ -129,50 +102,81 @@ export const CertificateContent = () => {
   return (
     <>
       <div className="grid w-full grid-cols-1 gap-6 sm:gap-8 md:grid-cols-2 lg:grid-cols-3">
-        {portfolioItems.slice(0, visibleCount).map((item) => (
-          <div
-            key={item.id}
-            className="bg-slate-800/80 rounded-xl border border-gray-700 p-5 shadow-xl transition duration-300 hover:scale-105 hover:border-cyan-400"
-          >
-            <div className="relative mb-4 flex h-48 items-center justify-center overflow-hidden rounded-lg bg-gray-900 text-sm text-gray-500 sm:h-64">
-              {item.thumbnailUrl ? (
-                <img
-                  src={item.thumbnailUrl}
-                  alt={`Thumbnail ${item.title}`}
-                  className="h-full w-full object-cover transition duration-500 hover:scale-110"
-                />
-              ) : (
-                // Fallback jika thumbnailUrl tidak ada
-                <div
-                  className={`absolute inset-0 flex items-center justify-center ${
-                    item.category === "Certificate"
-                      ? "bg-cyan-900/40 text-cyan-400"
-                      : "bg-yellow-900/40 text-yellow-400"
-                  }`}
-                >
-                  {item.category === "Certificate" ? (
-                    <HiOutlineDocumentText className="h-20 w-20" />
-                  ) : (
-                    <HiOutlineAcademicCap className="h-20 w-20" />
-                  )}
-                </div>
-              )}
-            </div>
-
-            <h4 className="mb-1 text-lg font-bold text-white sm:text-xl">
-              {item.title}
-            </h4>
-            <p className="text-xs text-gray-400 sm:text-sm">{item.desc}</p>
-            <a
-              href={item.projectUrl || "#"}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-3 inline-flex items-center text-xs text-cyan-400 transition duration-300 hover:underline sm:text-sm"
+        {portfolioItems.slice(0, visibleCount).map((item) => {
+          const isClickable = !item.files && item.projectUrl;
+          return (
+            <div
+              key={item.id}
+              onClick={() => {
+                if (isClickable) {
+                  window.open(item.projectUrl, "_blank", "noopener,noreferrer");
+                }
+              }}
+              className={`bg-slate-800/80 flex h-full flex-col rounded-xl border border-gray-700 p-5 shadow-xl transition duration-300 hover:scale-105 hover:border-cyan-400 ${
+                isClickable ? "cursor-pointer" : ""
+              }`}
             >
-              View Certificate <FiExternalLink className="ml-1 h-3 w-3" />
-            </a>
-          </div>
-        ))}
+              <div className="relative mb-4 flex h-48 items-center justify-center overflow-hidden rounded-lg bg-gray-900 text-sm text-gray-500 sm:h-64">
+                {item.thumbnailUrl ? (
+                  <img
+                    src={item.thumbnailUrl}
+                    alt={`Thumbnail ${item.title}`}
+                    className="h-full w-full object-cover transition duration-500 hover:scale-110"
+                  />
+                ) : (
+                  <div
+                    className={`absolute inset-0 flex items-center justify-center ${
+                      item.category === "Certificate"
+                        ? "bg-cyan-900/40 text-cyan-400"
+                        : "bg-yellow-900/40 text-yellow-400"
+                    }`}
+                  >
+                    {item.category === "Certificate" ? (
+                      <HiOutlineDocumentText className="h-20 w-20" />
+                    ) : (
+                      <HiOutlineAcademicCap className="h-20 w-20" />
+                    )}
+                  </div>
+                )}
+              </div>
+
+              <h4 className="mb-1 text-lg font-bold text-white sm:text-xl">
+                {item.title}
+              </h4>
+              <p className="text-xs text-gray-400 sm:text-sm">{item.desc}</p>
+
+              <div className="mt-auto pt-3">
+                {item.files ? (
+                  <div className="grid grid-cols-2 gap-1.5 sm:grid-cols-3">
+                    {item.files.map((file, idx) => (
+                      <a
+                        key={idx}
+                        href={file.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        title={file.fullLabel || file.label}
+                        onClick={(e) => e.stopPropagation()}
+                        className="flex items-center justify-center truncate rounded-md border border-cyan-500/30 bg-cyan-500/10 px-2 py-1 text-[11px] text-cyan-400 transition duration-300 hover:bg-cyan-500/20 hover:underline"
+                      >
+                        {file.label}
+                      </a>
+                    ))}
+                  </div>
+                ) : (
+                  <a
+                    href={item.projectUrl || "#"}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={(e) => e.stopPropagation()}
+                    className="inline-flex items-center text-xs text-cyan-400 transition duration-300 hover:underline sm:text-sm"
+                  >
+                    View Certificate <FiExternalLink className="ml-1 h-3 w-3" />
+                  </a>
+                )}
+              </div>
+            </div>
+          );
+        })}
       </div>
 
       {visibleCount < portfolioItems.length && (

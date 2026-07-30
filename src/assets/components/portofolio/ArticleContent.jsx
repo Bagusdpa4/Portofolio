@@ -48,7 +48,10 @@ export const ArticleContent = () => {
         {portfolioItems.slice(0, visibleCount).map((item) => (
           <div
             key={item.id}
-            className="bg-slate-800/80 rounded-xl border border-gray-700 p-5 shadow-xl transition duration-300 hover:scale-105 hover:border-cyan-400"
+            onClick={() => {
+              window.open(item.projectUrl, "_blank", "noopener,noreferrer");
+            }}
+            className="bg-slate-800/80 cursor-pointer rounded-xl border border-gray-700 p-5 shadow-xl transition duration-300 hover:scale-105 hover:border-cyan-400"
           >
             <div className="mb-4 flex h-48 items-center justify-center rounded-lg bg-gray-900 text-sm text-gray-500 sm:h-64">
               {item.thumbnailUrl ? (
