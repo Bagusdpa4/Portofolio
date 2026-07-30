@@ -9,8 +9,8 @@ import {
 } from "react-icons/fa";
 import { MdWorkHistory } from "react-icons/md";
 import { GiBookmarklet } from "react-icons/gi";
-// import Foto from "../../assets/img/Foto.jpg";
-import Profile from "../../assets/img/Profile.jpg";
+import Foto from "../../assets/img/Foto.jpg";
+// import Profile from "../../assets/img/Profile.jpg";
 import { Navbar } from "../../assets/components/navbar/Navbar";
 import { Loading } from "../../assets/components/loading/Loading";
 import { motion } from "framer-motion";
@@ -220,7 +220,7 @@ export const AboutMe = () => {
               <div className="mx-auto mb-6 h-60 w-60 overflow-hidden rounded-xl border-4 border-cyan-400/50 bg-gray-700/70 shadow-inner">
                 <div className="flex h-full w-full items-center justify-center">
                   <img
-                    src={Profile}
+                    src={Foto}
                     loading="lazy"
                     alt="Foto Profil Bagus Dwi"
                     className="h-full w-full object-cover"
@@ -371,7 +371,7 @@ export const AboutMe = () => {
                         const match = point.match(/^(.*?)(\(.*?\))(.*)$/);
                         return (
                           <li key={i} className="flex items-start">
-                            <span className="mr-2 text-cyan-400">&#9679;</span>
+                            <span className="mr-3 text-cyan-400">&#9679;</span>
                             <span>
                               {match ? (
                                 <>
