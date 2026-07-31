@@ -8,11 +8,13 @@ import {
   FaClock,
   FaChevronLeft,
   FaChevronRight,
+  FaExpand,
 } from "react-icons/fa";
 import { portfolioItems } from "../../assets/components/portofolio/ProjectContent";
 import { Navbar } from "../../assets/components/navbar/Navbar";
 import { Loading } from "../../assets/components/loading/Loading";
-import { motion } from "framer-motion";
+import { ImageLightbox } from "../../assets/components/common/ImageLightbox";
+import { motion, AnimatePresence } from "framer-motion";
 
 const contentFadeInVariants = (direction = "up") => ({
   hidden: {
@@ -54,6 +56,8 @@ export const Portofolio = () => {
   const navigate = useNavigate();
   const [isLoading, setIsLoading] = useState(true);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [slideDirection, setSlideDirection] = useState(1);
+  const [isLightboxOpen, setIsLightboxOpen] = useState(false);
   const project = portfolioItems.find((item) => item.id === parseInt(id));
 
   const allImages = project
@@ -63,17 +67,21 @@ export const Portofolio = () => {
   const hasMultipleImages = allImages.length > 1;
 
   const goToPrevImage = (e) => {
-    e.stopPropagation();
+    e?.stopPropagation();
     setCurrentImageIndex((prev) =>
       prev === 0 ? allImages.length - 1 : prev - 1,
     );
   };
 
   const goToNextImage = (e) => {
-    e.stopPropagation();
+    e?.stopPropagation();
     setCurrentImageIndex((prev) =>
       prev === allImages.length - 1 ? 0 : prev + 1,
     );
+  };
+
+  const goToImage = (idx) => {
+    setCurrentImageIndex(idx);
   };
 
   useEffect(() => {
@@ -142,45 +150,79 @@ export const Portofolio = () => {
     return null;
   }
 
-  const ImageCarousel = () => (
-    <div className="group relative overflow-hidden rounded-xl border border-gray-700 shadow-2xl">
-      <img
-        src={allImages[currentImageIndex]}
-        alt={`${project.title} screenshot ${currentImageIndex + 1}`}
-        className="h-auto w-full cursor-pointer object-cover"
-      />
+  // Animasi transisi gambar
+  const imageVariants = {
+    initial: { opacity: 0, scale: 0.95 },
+    animate: { opacity: 1, scale: 1 },
+    exit: { opacity: 0, scale: 0.95 },
+  };
+
+  const ImageCarousel = ({
+    allImages,
+    currentImageIndex,
+    hasMultipleImages,
+    projectTitle,
+    onImageClick,
+    onPrev,
+    onNext,
+    onSelect,
+  }) => (
+    <div>
+      <div className="group relative overflow-hidden rounded-xl border border-gray-700 shadow-2xl">
+        <AnimatePresence mode="wait">
+          <motion.img
+            key={currentImageIndex}
+            src={allImages[currentImageIndex]}
+            alt={`${projectTitle} screenshot ${currentImageIndex + 1}`}
+            variants={imageVariants}
+            initial="initial"
+            animate="animate"
+            exit="exit"
+            transition={{ duration: 0.25, ease: "easeOut" }}
+            onClick={onImageClick}
+            className="h-auto w-full cursor-pointer object-cover"
+          />
+        </AnimatePresence>
+
+        <div className="pointer-events-none absolute right-3 top-3 flex h-9 w-9 items-center justify-center rounded-full bg-gray-900/70 text-white opacity-0 transition duration-300 group-hover:opacity-100">
+          <FaExpand className="h-4 w-4" />
+        </div>
+
+        {hasMultipleImages && (
+          <>
+            <button
+              onClick={onPrev}
+              aria-label="Previous image"
+              className="absolute left-2 top-1/2 flex h-9 w-9 -translate-y-1/2 cursor-pointer items-center justify-center rounded-full bg-gray-900/70 text-white opacity-0 transition duration-300 hover:bg-cyan-600 group-hover:opacity-100"
+            >
+              <FaChevronLeft className="h-4 w-4" />
+            </button>
+            <button
+              onClick={onNext}
+              aria-label="Next image"
+              className="absolute right-2 top-1/2 flex h-9 w-9 -translate-y-1/2 cursor-pointer items-center justify-center rounded-full bg-gray-900/70 text-white opacity-0 transition duration-300 hover:bg-cyan-600 group-hover:opacity-100"
+            >
+              <FaChevronRight className="h-4 w-4" />
+            </button>
+          </>
+        )}
+      </div>
+
       {hasMultipleImages && (
-        <>
-          <button
-            onClick={goToPrevImage}
-            aria-label="Previous image"
-            className="absolute left-2 top-1/2 flex h-9 w-9 -translate-y-1/2 cursor-pointer items-center justify-center rounded-full bg-gray-900/70 text-white opacity-0 transition duration-300 hover:bg-cyan-600 group-hover:opacity-100"
-          >
-            <FaChevronLeft className="h-4 w-4" />
-          </button>
-          <button
-            onClick={goToNextImage}
-            aria-label="Next image"
-            className="absolute right-2 top-1/2 flex h-9 w-9 -translate-y-1/2 cursor-pointer items-center justify-center rounded-full bg-gray-900/70 text-white opacity-0 transition duration-300 hover:bg-cyan-600 group-hover:opacity-100"
-          >
-            <FaChevronRight className="h-4 w-4" />
-          </button>
-          <div className="absolute bottom-3 left-1/2 flex -translate-x-1/2 gap-1.5">
-            {allImages.map((_, idx) => (
-              <button
-                key={idx}
-                onClick={(e) => {
-                  e.stopPropagation();
-                  setCurrentImageIndex(idx);
-                }}
-                aria-label={`Go to image ${idx + 1}`}
-                className={`h-2 w-2 rounded-full transition duration-300 ${
-                  idx === currentImageIndex ? "bg-cyan-400" : "bg-gray-500/60"
-                }`}
-              />
-            ))}
-          </div>
-        </>
+        <div className="mt-3 flex flex-wrap justify-center gap-1.5">
+          {allImages.map((_, idx) => (
+            <button
+              key={idx}
+              onClick={() => onSelect(idx)}
+              aria-label={`Go to image ${idx + 1}`}
+              className={`h-4 w-4 cursor-pointer rounded-full transition duration-300 ${
+                idx === currentImageIndex
+                  ? "w-5 bg-cyan-400"
+                  : "bg-gray-600 hover:bg-gray-500"
+              }`}
+            />
+          ))}
+        </div>
       )}
     </div>
   );
@@ -247,7 +289,16 @@ export const Portofolio = () => {
 
               <div className="block lg:hidden">
                 <motion.div variants={itemVariants}>
-                  <ImageCarousel />
+                  <ImageCarousel
+                    allImages={allImages}
+                    currentImageIndex={currentImageIndex}
+                    hasMultipleImages={hasMultipleImages}
+                    projectTitle={project.title}
+                    onImageClick={() => setIsLightboxOpen(true)}
+                    onPrev={goToPrevImage}
+                    onNext={goToNextImage}
+                    onSelect={goToImage}
+                  />
                 </motion.div>
               </div>
 
@@ -309,7 +360,16 @@ export const Portofolio = () => {
               variants={contentFadeInVariants("right")}
             >
               <div className="hidden lg:block">
-                <ImageCarousel />
+                <ImageCarousel
+                  allImages={allImages}
+                  currentImageIndex={currentImageIndex}
+                  hasMultipleImages={hasMultipleImages}
+                  projectTitle={project.title}
+                  onImageClick={() => setIsLightboxOpen(true)}
+                  onPrev={goToPrevImage}
+                  onNext={goToNextImage}
+                  onSelect={goToImage}
+                />
               </div>
 
               <motion.div
@@ -338,6 +398,16 @@ export const Portofolio = () => {
           </div>
         </div>
       </motion.div>
+
+      <ImageLightbox
+        images={allImages}
+        currentIndex={currentImageIndex}
+        isOpen={isLightboxOpen}
+        onClose={() => setIsLightboxOpen(false)}
+        onPrev={() => goToPrevImage()}
+        onNext={() => goToNextImage()}
+        onSelect={goToImage}
+      />
     </>
   );
 };
