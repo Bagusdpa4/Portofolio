@@ -9,8 +9,8 @@ const portfolioItems = [
     desc: "A scientific journal article discussing the development of a web-based e-commerce information system for creative services using the Rapid Application Development (RAD) method.",
     category: "Article",
     projectUrl: "https://jurnal.kdi.or.id/index.php/bt/article/view/2615",
-    file: "/docs/Information System Development for Web-Based Creative Services E-Commerce Using Rapid Application Development Method.pdf",
-    thumbnailUrl: "/images/RAD.jpg",
+    file: "/docs/Article/Information System Development for Web-Based Creative Services E-Commerce Using Rapid Application Development Method.pdf",
+    thumbnailUrl: "/images/Article/RAD.jpg",
   },
   {
     id: 2,
@@ -19,8 +19,8 @@ const portfolioItems = [
     desc: "A scientific journal article analyzing students' learning self-efficacy using UPN Veteran Jawa Timur's e-learning platform, based on the Generalized Structured Component Analysis (GSCA) model.",
     category: "Article",
     projectUrl: "https://garuda.kemdiktisaintek.go.id/documents/detail/4008369",
-    file: "/docs/Information System Development for Web-Based Creative Services E-Commerce Using Rapid Application Development Method.pdf",
-    thumbnailUrl: "/images/GSCA.jpg",
+    file: "/docs/Article/Information System Development for Web-Based Creative Services E-Commerce Using Rapid Application Development Method.pdf",
+    thumbnailUrl: "/images/Article/GSCA.jpg",
   },
   {
     id: 3,
@@ -29,8 +29,8 @@ const portfolioItems = [
     desc: "A scientific journal article analyzing the effectiveness of Indonesian language use on UPN Veteran Jawa Timur's e-learning website.",
     category: "Article",
     projectUrl: "https://garuda.kemdiktisaintek.go.id/documents/detail/3534138",
-    file: "/docs/ANALYSIS OF THE EFFECTIVENESS OF USE OF INDONESIAN LANGUAGE AT UPN 'VETERAN' JAWA TIMUR ELEARNING WEBSITE.pdf",
-    thumbnailUrl: "/images/Matapena.jpg",
+    file: "/docs/Article/ANALYSIS OF THE EFFECTIVENESS OF USE OF INDONESIAN LANGUAGE AT UPN 'VETERAN' JAWA TIMUR ELEARNING WEBSITE.pdf",
+    thumbnailUrl: "/images/Article/Matapena.jpg",
   },
 ];
 

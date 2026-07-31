@@ -78,7 +78,7 @@ export const portfolioItems = [
       "PostgreSQL database integration.",
       "Responsive and dynamic design.",
     ],
-    thumbnailUrl: "/images/Cahaya Kreativ.jpg",
+    thumbnailUrl: "/images/Project/Project 2/Cahaya Kreativ.jpg",
     // galleryUrls: [
     //   "/images/Cahaya Kreativ - Admin Dashboard.jpg",
     //   "/images/Cahaya Kreativ - Booking Page.jpg",
@@ -122,7 +122,7 @@ export const portfolioItems = [
       "Cron job implementation for generating recurring flight data.",
       "Interactive API documentation.",
     ],
-    thumbnailUrl: "/images/Restful API for Airline Ticket Booking.jpg",
+    thumbnailUrl: "/images/Project/Project 3/Restful API for Airline Ticket Booking.jpg",
   },
   {
     id: 4,
@@ -154,7 +154,7 @@ export const portfolioItems = [
       "Admin dashboard for course management.",
       "Responsive across all screen sizes.",
     ],
-    thumbnailUrl: "/images/Online Course.jpg",
+    thumbnailUrl: "/images/Project/Project 4/Online Course.jpg",
   },
   {
     id: 5,
@@ -187,7 +187,7 @@ export const portfolioItems = [
       "State management using Redux.",
       "TMDB API integration.",
     ],
-    thumbnailUrl: "/images/TMDB.jpg",
+    thumbnailUrl: "/images/Project/Project 5/TMDB.jpg",
   },
   {
     id: 6,
@@ -218,7 +218,7 @@ export const portfolioItems = [
       "Search existing tasks.",
       "Temporary, static local data storage.",
     ],
-    thumbnailUrl: "/images/ToDo List.jpg",
+    thumbnailUrl: "/images/Project/Project 6/ToDo List.jpg",
   },
   {
     id: 7,
@@ -245,7 +245,7 @@ export const portfolioItems = [
       "Basic visual elements implemented with CSS.",
       "Visual and layout accuracy matching the UI/UX design.",
     ],
-    thumbnailUrl: "/images/Rental Binar Car.jpg",
+    thumbnailUrl: "/images/Project/Project 7/Rental Binar Car.jpg",
   },
 ];
 
