@@ -49,7 +49,7 @@ export const portfolioItems = [
       "A booking and management system built for a photography company in Surabaya. This project focuses on end-to-end online service booking, from registration and schedule booking to payment and in-website chat consultation. Admins can control the website through product management and by monitoring incoming orders and chats. The services offered include photography, videography, and social media content management packages. The system took about 9 months to build and has since been handed over to and integrated by the client company. The entire development process, from planning to deployment, was carried out individually.",
     category: "Website/Full-Stack",
     time: "December 2024 - August 2025",
-    projectUrl: "https://cahayakreativ.com/",
+    projectUrl: "https://cahayakreativ.vercel.app/",
     githubUrl: "https://github.com/Bagusdpa4/Cahaya-Kreativ-FE",
     techStack: [
       "Javascript",
@@ -67,6 +67,8 @@ export const portfolioItems = [
       "Github",
       "Visual Studio Code",
       "Vercel",
+      "Neon",
+      "Imagekit",
     ],
     features: [
       "24/7 online creative service booking system.",
@@ -79,11 +81,20 @@ export const portfolioItems = [
       "Responsive and dynamic design.",
     ],
     thumbnailUrl: "/images/Project/Project 2/Cahaya Kreativ.jpg",
-    // galleryUrls: [
-    //   "/images/Cahaya Kreativ - Admin Dashboard.jpg",
-    //   "/images/Cahaya Kreativ - Booking Page.jpg",
-    //   "/images/Cahaya Kreativ - Chat Consultation.jpg",
-    // ],
+    galleryUrls: [
+      "/images/Project/Project 2/Gallery.png",
+      "/images/Project/Project 2/Product.png",
+      "/images/Project/Project 2/Auth.png",
+      "/images/Project/Project 2/Chat.png",
+      "/images/Project/Project 2/Detail.png",
+      "/images/Project/Project 2/Order.png",
+      "/images/Project/Project 2/Profile.png",
+      "/images/Project/Project 2/Notif.png",
+      "/images/Project/Project 2/Admin.png",
+      "/images/Project/Project 2/Jadwal.png",
+      "/images/Project/Project 2/Management Order.png",
+      "/images/Project/Project 2/Management Product.png",
+    ],
   },
   {
     id: 3,
@@ -122,7 +133,14 @@ export const portfolioItems = [
       "Cron job implementation for generating recurring flight data.",
       "Interactive API documentation.",
     ],
-    thumbnailUrl: "/images/Project/Project 3/Restful API for Airline Ticket Booking.jpg",
+    thumbnailUrl:
+      "/images/Project/Project 3/Restful API for Airline Ticket Booking.jpg",
+    galleryUrls: [
+      "/images/Project/Project 3/Api.png",
+      "/images/Project/Project 3/Api-2.png",
+      "/images/Project/Project 3/Api-3.png",
+      "/images/Project/Project 3/Schemas.png",
+    ],
   },
   {
     id: 4,
@@ -155,6 +173,17 @@ export const portfolioItems = [
       "Responsive across all screen sizes.",
     ],
     thumbnailUrl: "/images/Project/Project 4/Online Course.jpg",
+    galleryUrls: [
+      "/images/Project/Project 4/Course.png",
+      "/images/Project/Project 4/Detail.png",
+      "/images/Project/Project 4/Filter.png",
+      "/images/Project/Project 4/Auth.png",
+      "/images/Project/Project 4/Profile.png",
+      "/images/Project/Project 4/Notif.png",
+      "/images/Project/Project 4/Buy.png",
+      "/images/Project/Project 4/Course-me.png",
+      "/images/Project/Project 4/Task.png",
+    ],
   },
   {
     id: 5,
@@ -188,6 +217,12 @@ export const portfolioItems = [
       "TMDB API integration.",
     ],
     thumbnailUrl: "/images/Project/Project 5/TMDB.jpg",
+    galleryUrls: [
+      "/images/Project/Project 5/Auth.png",
+      "/images/Project/Project 5/Movie.png",
+      "/images/Project/Project 5/Movie-2.png",
+      "/images/Project/Project 5/Detail.png",
+    ],
   },
   {
     id: 6,
