@@ -49,7 +49,7 @@ export const ArticleContent = () => {
           <div
             key={item.id}
             onClick={() => {
-              window.open(item.projectUrl, "_blank", "noopener,noreferrer");
+              window.open(item.file, "_blank", "noopener,noreferrer");
             }}
             className="bg-slate-800/80 cursor-pointer rounded-xl border border-gray-700 p-5 shadow-xl transition duration-300 hover:scale-105 hover:border-cyan-400"
           >
@@ -71,9 +71,10 @@ export const ArticleContent = () => {
             </h4>
             <p className="text-xs text-gray-400 sm:text-sm">{item.desc}</p>
             <a
-              href={item.projectUrl || item.file}
+              href={item.projectUrl}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={(e) => e.stopPropagation()}
               className="mt-3 inline-flex items-center text-xs text-cyan-400 transition duration-300 hover:underline sm:text-sm"
             >
               Link Article <FiExternalLink className="ml-1 h-3 w-3" />
