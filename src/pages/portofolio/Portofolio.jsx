@@ -184,7 +184,7 @@ export const Portofolio = () => {
           />
         </AnimatePresence>
 
-        <div className="pointer-events-none absolute right-3 top-3 flex h-9 w-9 items-center justify-center rounded-full bg-gray-900/70 text-white opacity-0 transition duration-300 group-hover:opacity-100">
+        <div className="pointer-events-none absolute right-3 top-3 flex h-9 w-9 items-center justify-center rounded-full bg-gray-900/70 text-white opacity-100 transition duration-300 md:opacity-0 md:group-hover:opacity-100">
           <FaExpand className="h-4 w-4" />
         </div>
 
@@ -193,14 +193,14 @@ export const Portofolio = () => {
             <button
               onClick={onPrev}
               aria-label="Previous image"
-              className="absolute left-2 top-1/2 flex h-9 w-9 -translate-y-1/2 cursor-pointer items-center justify-center rounded-full bg-gray-900/70 text-white opacity-0 transition duration-300 hover:bg-cyan-600 group-hover:opacity-100"
+              className="absolute left-2 top-1/2 flex h-9 w-9 -translate-y-1/2 cursor-pointer items-center justify-center rounded-full bg-gray-900/70 text-white opacity-100 transition duration-300 hover:bg-cyan-600 md:opacity-0 md:group-hover:opacity-100"
             >
               <FaChevronLeft className="h-4 w-4" />
             </button>
             <button
               onClick={onNext}
               aria-label="Next image"
-              className="absolute right-2 top-1/2 flex h-9 w-9 -translate-y-1/2 cursor-pointer items-center justify-center rounded-full bg-gray-900/70 text-white opacity-0 transition duration-300 hover:bg-cyan-600 group-hover:opacity-100"
+              className="absolute right-2 top-1/2 flex h-9 w-9 -translate-y-1/2 cursor-pointer items-center justify-center rounded-full bg-gray-900/70 text-white opacity-100 transition duration-300 hover:bg-cyan-600 md:opacity-0 md:group-hover:opacity-100"
             >
               <FaChevronRight className="h-4 w-4" />
             </button>
