@@ -15,6 +15,7 @@ import { Navbar } from "../../assets/components/navbar/Navbar";
 import { Loading } from "../../assets/components/loading/Loading";
 import { ImageLightbox } from "../../assets/components/common/ImageLightbox";
 import { motion, AnimatePresence } from "framer-motion";
+import { ImageWithSkeleton } from "../../assets/components/common/ImageWithSkeleton";
 
 const contentFadeInVariants = (direction = "up") => ({
   hidden: {
@@ -170,18 +171,23 @@ export const Portofolio = () => {
     <div>
       <div className="group relative overflow-hidden rounded-xl border border-gray-700 shadow-2xl">
         <AnimatePresence mode="wait">
-          <motion.img
+          <motion.div
             key={currentImageIndex}
-            src={allImages[currentImageIndex]}
-            alt={`${projectTitle} screenshot ${currentImageIndex + 1}`}
             variants={imageVariants}
             initial="initial"
             animate="animate"
             exit="exit"
             transition={{ duration: 0.25, ease: "easeOut" }}
             onClick={onImageClick}
-            className="h-auto w-full cursor-pointer object-cover"
-          />
+            className="cursor-pointer"
+          >
+            <ImageWithSkeleton
+              src={allImages[currentImageIndex]}
+              alt={`${projectTitle} screenshot ${currentImageIndex + 1}`}
+              className="w-full"
+              imgClassName="h-auto w-full object-cover"
+            />
+          </motion.div>
         </AnimatePresence>
 
         <div className="pointer-events-none absolute right-3 top-3 flex h-9 w-9 items-center justify-center rounded-full bg-gray-900/70 text-white opacity-100 transition duration-300 md:opacity-0 md:group-hover:opacity-100">
