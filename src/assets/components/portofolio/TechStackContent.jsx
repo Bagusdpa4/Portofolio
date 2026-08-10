@@ -15,7 +15,7 @@ import {
   FaLaravel,
   FaPhp,
   FaGitlab,
-  FaFigma
+  FaFigma,
 } from "react-icons/fa";
 
 import {
@@ -215,10 +215,11 @@ const skillsData = [
     icon: TbBrandOffice,
     color: "text-red-400",
   },
-  { 
-    name: "Figma", 
-    icon: FaFigma, 
-    color: "text-fuchsia-500" },
+  {
+    name: "Figma",
+    icon: FaFigma,
+    color: "text-fuchsia-500",
+  },
   {
     name: "Claude AI",
     icon: RiClaudeFill,
