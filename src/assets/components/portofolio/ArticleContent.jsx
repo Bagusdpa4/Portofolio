@@ -42,6 +42,10 @@ export const ArticleContent = () => {
   const toggleItems = () => {
     if (isExpanded) {
       setVisibleCount(itemsPerPage);
+      const portfolioSection = document.getElementById("portfolio");
+      if (portfolioSection) {
+        portfolioSection.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
     } else {
       setVisibleCount(portfolioItems.length);
     }

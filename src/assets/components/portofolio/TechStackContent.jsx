@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 import {
   FaHtml5,
@@ -84,50 +84,85 @@ const skillsData = [
   // { name: "Figma", icon: FaFigma, color: "text-fuchsia-500" },
 ];
 
-const SkillItem = ({ skill, Icon, color, iconGradientId }) => (
+const SkillItem = ({
+  skill,
+  Icon,
+  color,
+  iconGradientId,
+  isHiddenOnMobile,
+}) => (
   <div
     key={skill}
-    className="flex h-24 w-24 flex-col items-center justify-center rounded-lg border border-gray-700/50 bg-slate-300/70 p-4 text-center transition duration-300 hover:scale-110 hover:border-sky-600 hover:shadow-lg hover:shadow-indigo-500/20 dark:bg-gray-900/50 dark:hover:border-cyan-400 sm:h-28 sm:w-28"
+    className={`${isHiddenOnMobile ? "hidden lg:flex" : "flex"} aspect-square w-full flex-col items-center justify-center rounded-lg border border-gray-700/50 bg-slate-300/70 p-2 text-center transition duration-300 hover:scale-110 hover:border-sky-600 hover:shadow-lg hover:shadow-indigo-500/20 dark:bg-gray-900/50 dark:hover:border-cyan-400 sm:p-4`}
   >
     <Icon
-      className={`mb-2 h-8 w-8 sm:h-10 sm:w-10 ${color || ""}`}
+      className={`mb-2 h-7 w-7 shrink-0 sm:h-10 sm:w-10 ${color || ""}`}
       style={iconGradientId ? { fill: `url(#${iconGradientId})` } : undefined}
     />
-    <p className="text-sm font-bold text-black dark:font-semibold dark:text-white sm:text-sm">
+    <p className="text-xs font-bold leading-tight text-black dark:font-semibold dark:text-white sm:text-sm">
       {skill}
     </p>
   </div>
 );
 
-export const TechStackContent = () => (
-  <div className="mt-4 rounded-xl border border-gray-700 bg-slate-200 p-6 shadow-xl dark:bg-slate-800/80 sm:p-8">
-    {/* Definisi gradient SVG, disembunyikan, dipakai via fill="url(#...)" */}
-    <svg width="0" height="0" className="absolute">
-      <defs>
-        <linearGradient
-          id="gemini-icon-gradient"
-          x1="0%"
-          y1="0%"
-          x2="100%"
-          y2="0%"
-        >
-          <stop offset="30%" stopColor="#facc15" /> {/* yellow-400 */}
-          <stop offset="50%" stopColor="#22c55e" /> {/* green-500 */}
-          <stop offset="90%" stopColor="#3b82f6" /> {/* blue-500 */}
-        </linearGradient>
-      </defs>
-    </svg>
+export const TechStackContent = () => {
+  const itemsPerPage = 12;
+  const [isExpanded, setIsExpanded] = useState(false);
 
-    <div className="grid grid-cols-3 gap-6 sm:grid-cols-4 sm:gap-8 lg:mx-auto lg:max-w-6xl lg:grid-cols-8">
-      {skillsData.map((item) => (
-        <SkillItem
-          key={item.name}
-          skill={item.name}
-          Icon={item.icon}
-          color={item.color}
-          iconGradientId={item.iconGradientId}
-        />
-      ))}
+  const toggleItems = () => {
+    if (isExpanded) {
+      setIsExpanded(false);
+      const portfolioSection = document.getElementById("portfolio");
+      if (portfolioSection) {
+        portfolioSection.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    } else {
+      setIsExpanded(true);
+    }
+  };
+
+  return (
+    <div className="mt-4 rounded-xl border border-gray-700 bg-slate-200 p-6 shadow-xl dark:bg-slate-800/80 sm:p-8">
+      {/* Definisi gradient SVG, disembunyikan, dipakai via fill="url(#...)" */}
+      <svg width="0" height="0" className="absolute">
+        <defs>
+          <linearGradient
+            id="gemini-icon-gradient"
+            x1="0%"
+            y1="0%"
+            x2="100%"
+            y2="0%"
+          >
+            <stop offset="30%" stopColor="#facc15" /> {/* yellow-400 */}
+            <stop offset="50%" stopColor="#22c55e" /> {/* green-500 */}
+            <stop offset="90%" stopColor="#3b82f6" /> {/* blue-500 */}
+          </linearGradient>
+        </defs>
+      </svg>
+
+      <div className="grid grid-cols-3 gap-4 sm:grid-cols-4 sm:gap-8 lg:mx-auto lg:max-w-6xl lg:grid-cols-8">
+        {skillsData.map((item, index) => (
+          <SkillItem
+            key={item.name}
+            skill={item.name}
+            Icon={item.icon}
+            color={item.color}
+            iconGradientId={item.iconGradientId}
+            isHiddenOnMobile={index >= itemsPerPage && !isExpanded}
+          />
+        ))}
+      </div>
+
+      {skillsData.length > itemsPerPage && (
+        <div className="mt-8 text-center sm:mt-10 lg:hidden">
+          <button
+            onClick={toggleItems}
+            className="inline-flex cursor-pointer items-center justify-center rounded-lg bg-sky-600 px-6 py-3 text-base font-semibold text-white shadow-xl shadow-sky-900/30 transition duration-300 hover:scale-[1.05] hover:bg-sky-700 dark:bg-cyan-600 dark:shadow-cyan-900/50 dark:hover:bg-cyan-700 sm:px-8 sm:text-lg"
+          >
+            {isExpanded ? "See Less" : "See All"}
+          </button>
+        </div>
+      )}
     </div>
-  </div>
-);
+  );
+};
