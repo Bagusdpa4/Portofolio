@@ -115,7 +115,12 @@ const badgeAnimationVariants = {
 
 // Animated Badges Component
 const AnimatedBadges = () => {
-  const badges = ["Web Developer", "IT Programmer", "IT Support"];
+  const badges = [
+    "Web Developer",
+    "IT Programmer",
+    "IT Support",
+    "IT Operational",
+  ];
 
   return (
     <motion.div

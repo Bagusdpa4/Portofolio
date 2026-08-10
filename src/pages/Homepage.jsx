@@ -351,15 +351,20 @@ export const Homepage = () => {
                 whileInView="visible"
                 viewport={{ once: true, amount: 0.3 }}
               >
-                <p className="text-2xl font-light text-black dark:text-white sm:text-3xl">
-                  <span className="block sm:inline">Hello, I'm </span>
+                <p className="text-xl font-light text-black dark:text-white sm:text-3xl">
+                  <span>Hello, I'm </span>
                   <span className="font-semibold text-sky-600 dark:text-cyan-400">
                     Bagus Dwi Putra Adiyono
                   </span>
                 </p>
                 <motion.div>
                   <TypewriterText
-                    texts={["Web Developer", "IT Programmer", "IT Support"]}
+                    texts={[
+                      "Web Developer",
+                      "IT Programmer",
+                      "IT Support",
+                      "IT Operational",
+                    ]}
                     typingSpeed={50}
                     deletingSpeed={25}
                     pauseDelay={1000}
