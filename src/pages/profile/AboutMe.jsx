@@ -33,7 +33,12 @@ const hobbies = [
   "Listening to Music",
 ];
 
-const interest = ["Web Developer", "IT Programmer", "IT Support"];
+const interest = [
+  "Web Developer",
+  "IT Programmer",
+  "IT Support",
+  "IT Operational",
+];
 
 const categorizedSkills = {
   Frontend: [
@@ -42,12 +47,14 @@ const categorizedSkills = {
     "Tailwind CSS",
     "Bootstrap",
     "Redux",
+    "vite",
     "HTML5 & CSS3",
-    // "Next.js (Dasar)",
+    "Next.js (Dasar)",
   ],
   Backend: [
     "Node.js & Express.js",
     "Prisma ORM",
+    "Swagger",
     "RESTful API Development",
     "JWT Authentication",
     "Error Handling",
@@ -57,12 +64,18 @@ const categorizedSkills = {
   ],
   Database: ["PostgreSQL", "MySQL"],
   Tools: [
-    "Git & GitHub",
+    "Git",
+    "GitHub",
+    "Gitlab",
     "Visual Studio Code",
+    "Trello",
+    "Cursor",
+    "IDE Antigravity",
     "Postman",
     "Vercel",
     "Microsoft Office",
   ],
+  AI: ["Claude AI", "Gemini AI", "Chat GPT", "  Deepseek", "Github Copilot"],
 };
 
 const myExperiences = [

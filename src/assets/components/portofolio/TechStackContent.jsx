@@ -35,7 +35,7 @@ import {
 } from "react-icons/si";
 import { TbBrandPrisma, TbApi, TbBrandOffice } from "react-icons/tb";
 import { BiLogoVisualStudio, BiLogoGoogleCloud } from "react-icons/bi";
-import { RiClaudeFill } from "react-icons/ri";
+import { RiClaudeFill, RiNextjsFill } from "react-icons/ri";
 
 const skillsData = [
   // Frontend
@@ -43,6 +43,7 @@ const skillsData = [
   { name: "CSS", icon: FaCss3Alt, color: "text-blue-500" },
   { name: "JavaScript", icon: FaJs, color: "text-yellow-400" },
   { name: "ReactJS", icon: FaReact, color: "text-cyan-400" },
+  { name: "Nextjs (Dasar)", icon: RiNextjsFill, color: "text-black" },
   { name: "Redux", icon: SiRedux, color: "text-purple-600" },
   { name: "Tailwind CSS", icon: SiTailwindcss, color: "text-cyan-400" },
   { name: "Bootstrap", icon: FaBootstrap, color: "text-purple-700" },
@@ -93,7 +94,7 @@ const SkillItem = ({
 }) => (
   <div
     key={skill}
-    className={`${isHiddenOnMobile ? "hidden lg:flex" : "flex"} aspect-square w-full flex-col items-center justify-center rounded-lg border border-gray-700/50 bg-slate-300/70 p-2 text-center transition duration-300 hover:scale-110 hover:border-sky-600 hover:shadow-lg hover:shadow-indigo-500/20 dark:bg-gray-900/50 dark:hover:border-cyan-400 sm:p-4`}
+    className={`${isHiddenOnMobile ? "hidden lg:flex" : "flex"} aspect-square w-full flex-col items-center justify-center rounded-lg border border-gray-700/50 bg-slate-300/70 p-2 text-center transition duration-300 hover:scale-105 hover:border-sky-600 hover:shadow-lg hover:shadow-indigo-500/20 dark:bg-gray-900/40 dark:hover:border-cyan-400 sm:p-4`}
   >
     <Icon
       className={`mb-2 h-7 w-7 shrink-0 sm:h-10 sm:w-10 ${color || ""}`}
