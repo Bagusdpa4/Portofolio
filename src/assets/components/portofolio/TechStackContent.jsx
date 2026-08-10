@@ -107,7 +107,7 @@ const SkillItem = ({
 );
 
 export const TechStackContent = () => {
-  const itemsPerPage = 12;
+  const itemsPerPage = 15;
   const [isExpanded, setIsExpanded] = useState(false);
 
   const toggleItems = () => {
