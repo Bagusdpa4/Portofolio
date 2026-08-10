@@ -7,7 +7,6 @@ import {
   FaReact,
   FaNodeJs,
   FaBootstrap,
-  FaFigma,
   FaGitAlt,
   FaGithub,
   FaTrello,
@@ -16,15 +15,15 @@ import {
   FaLaravel,
   FaPhp,
   FaGitlab,
+  FaFigma
 } from "react-icons/fa";
+
 import {
   SiTailwindcss,
   SiVite,
-  SiFirebase,
   SiVercel,
   SiRedux,
   SiMui,
-  SiMongodb,
   SiExpress,
   SiPostgresql,
   SiMysql,
@@ -34,61 +33,202 @@ import {
   SiGooglegemini,
   SiShadcnui,
 } from "react-icons/si";
+
 import { TbBrandPrisma, TbApi, TbBrandOffice } from "react-icons/tb";
 import { BiLogoVisualStudio, BiLogoGoogleCloud } from "react-icons/bi";
-import { RiClaudeFill, RiNextjsFill } from "react-icons/ri";
+import { PiFramerLogoFill } from "react-icons/pi";
+import { RiClaudeFill, RiNextjsFill, RiSupabaseFill } from "react-icons/ri";
 
 const skillsData = [
   // Frontend
-  { name: "HTML", icon: FaHtml5, color: "text-orange-600" },
-  { name: "CSS", icon: FaCss3Alt, color: "text-blue-500" },
-  { name: "JavaScript", icon: FaJs, color: "text-yellow-400" },
-  { name: "ReactJS", icon: FaReact, color: "text-cyan-400" },
   {
-    name: "Nextjs (Dasar)",
+    name: "HTML",
+    icon: FaHtml5,
+    color: "text-orange-600",
+  },
+  {
+    name: "CSS",
+    icon: FaCss3Alt,
+    color: "text-blue-500",
+  },
+  {
+    name: "JavaScript",
+    icon: FaJs,
+    color: "text-yellow-400",
+  },
+  {
+    name: "ReactJS",
+    icon: FaReact,
+    color: "text-cyan-400",
+  },
+  {
+    name: "Next.js (Dasar)",
     icon: RiNextjsFill,
     color: "dark:text-white text-black",
   },
-  { name: "Redux", icon: SiRedux, color: "text-purple-600" },
-  { name: "Tailwind CSS", icon: SiTailwindcss, color: "text-cyan-400" },
-  { name: "Bootstrap", icon: FaBootstrap, color: "text-purple-700" },
-  { name: "Vite", icon: SiVite, color: "text-purple-400" },
-  { name: "Shadcn UI", icon: SiShadcnui, color: "dark:text-white text-black" },
-  { name: "Material UI", icon: SiMui, color: "text-blue-500" },
+  {
+    name: "Redux",
+    icon: SiRedux,
+    color: "text-purple-600",
+  },
+  {
+    name: "Tailwind CSS",
+    icon: SiTailwindcss,
+    color: "text-cyan-400",
+  },
+  {
+    name: "Bootstrap",
+    icon: FaBootstrap,
+    color: "text-purple-700",
+  },
+  {
+    name: "Vite",
+    icon: SiVite,
+    color: "text-purple-400",
+  },
+  {
+    name: "Shadcn UI",
+    icon: SiShadcnui,
+    color: "dark:text-white text-black",
+  },
+  {
+    name: "Material UI",
+    icon: SiMui,
+    color: "text-blue-500",
+  },
+  {
+    name: "Framer Motion",
+    icon: PiFramerLogoFill,
+    color: "dark:text-white text-black",
+  },
 
   // Backend & Database
-  { name: "Node JS", icon: FaNodeJs, color: "text-green-500" },
-  { name: "Express Js", icon: SiExpress, color: "text-gray-500" },
-  { name: "RESTful API", icon: TbApi, color: "text-pink-500" },
-  { name: "JWT", icon: SiJsonwebtokens, color: "text-red-500" },
-  { name: "Prisma", icon: TbBrandPrisma, color: "text-cyan-400" },
-  { name: "PostgreSQL", icon: SiPostgresql, color: "text-blue-500" },
-  { name: "Swagger", icon: SiSwagger, color: "text-emerald-400" },
-  // { name: "MongoDB", icon: SiMongodb, color: "text-green-600" },
-  { name: "Laravel", icon: FaLaravel, color: "text-orange-600" },
-  { name: "PHP", icon: FaPhp, color: "text-indigo-500" },
-  { name: "MySQL", icon: SiMysql, color: "text-orange-600" },
-  // { name: "Firebase", icon: SiFirebase, color: "text-yellow-500" },
-
-  // Tools & Lainnya
-  { name: "Git", icon: FaGitAlt, color: "text-orange-600" },
-  { name: "GitHub", icon: FaGithub, color: "dark:text-white text-black" },
-  { name: "Gitlab", icon: FaGitlab, color: "text-orange-600" },
-  { name: "Vercel", icon: SiVercel, color: "dark:text-white text-black" },
-  { name: "Trello", icon: FaTrello, color: "text-blue-500" },
-  { name: "NPM", icon: FaNpm, color: "text-red-600" },
-  { name: "Yarn", icon: FaYarn, color: "text-blue-500" },
-  { name: "Google Cloud", icon: BiLogoGoogleCloud, color: "text-blue-400" },
-  { name: "VS Code", icon: BiLogoVisualStudio, color: "text-blue-600" },
-  { name: "Postman", icon: SiPostman, color: "text-orange-500" },
-  { name: "MS Office", icon: TbBrandOffice, color: "text-red-400" },
-  { name: "Claude AI", icon: RiClaudeFill, color: "text-orange-600" },
   {
-    name: "Google Gemini Ai",
+    name: "Node.js",
+    icon: FaNodeJs,
+    color: "text-green-500",
+  },
+  {
+    name: "Express.js",
+    icon: SiExpress,
+    color: "text-gray-500",
+  },
+  {
+    name: "RESTful API",
+    icon: TbApi,
+    color: "text-pink-500",
+  },
+  {
+    name: "JWT",
+    icon: SiJsonwebtokens,
+    color: "text-red-500",
+  },
+  {
+    name: "Prisma",
+    icon: TbBrandPrisma,
+    color: "text-cyan-400",
+  },
+  {
+    name: "PostgreSQL",
+    icon: SiPostgresql,
+    color: "text-blue-500",
+  },
+  {
+    name: "Swagger",
+    icon: SiSwagger,
+    color: "text-emerald-400",
+  },
+  {
+    name: "Laravel",
+    icon: FaLaravel,
+    color: "text-orange-600",
+  },
+  {
+    name: "PHP",
+    icon: FaPhp,
+    color: "text-indigo-500",
+  },
+  {
+    name: "MySQL",
+    icon: SiMysql,
+    color: "text-orange-600",
+  },
+  {
+    name: "Supabase",
+    icon: RiSupabaseFill,
+    color: "text-green-600",
+  },
+
+  // Tools & Others
+  {
+    name: "Git",
+    icon: FaGitAlt,
+    color: "text-orange-600",
+  },
+  {
+    name: "GitHub",
+    icon: FaGithub,
+    color: "dark:text-white text-black",
+  },
+  {
+    name: "GitLab",
+    icon: FaGitlab,
+    color: "text-orange-600",
+  },
+  {
+    name: "Vercel",
+    icon: SiVercel,
+    color: "dark:text-white text-black",
+  },
+  {
+    name: "Trello",
+    icon: FaTrello,
+    color: "text-blue-500",
+  },
+  {
+    name: "NPM",
+    icon: FaNpm,
+    color: "text-red-600",
+  },
+  {
+    name: "Yarn",
+    icon: FaYarn,
+    color: "text-blue-500",
+  },
+  {
+    name: "Google Cloud",
+    icon: BiLogoGoogleCloud,
+    color: "text-blue-400",
+  },
+  {
+    name: "VS Code",
+    icon: BiLogoVisualStudio,
+    color: "text-blue-600",
+  },
+  {
+    name: "Postman",
+    icon: SiPostman,
+    color: "text-orange-500",
+  },
+  {
+    name: "MS Office",
+    icon: TbBrandOffice,
+    color: "text-red-400",
+  },
+  { 
+    name: "Figma", 
+    icon: FaFigma, 
+    color: "text-fuchsia-500" },
+  {
+    name: "Claude AI",
+    icon: RiClaudeFill,
+    color: "text-orange-600",
+  },
+  {
+    name: "Google Gemini AI",
     icon: SiGooglegemini,
     iconGradientId: "gemini-icon-gradient",
   },
-  // { name: "Figma", icon: FaFigma, color: "text-fuchsia-500" },
 ];
 
 const SkillItem = ({
@@ -99,16 +239,18 @@ const SkillItem = ({
   isHiddenOnMobile,
 }) => (
   <div
-    key={skill}
-    className={`${isHiddenOnMobile ? "hidden lg:flex" : "flex"} aspect-square w-full flex-col items-center justify-center rounded-lg border border-gray-700/50 bg-slate-300/70 p-2 text-center transition duration-300 hover:scale-105 hover:border-sky-600 hover:shadow-lg hover:shadow-indigo-500/20 dark:bg-gray-900/40 dark:hover:border-cyan-400 sm:p-4`}
+    className={`${
+      isHiddenOnMobile ? "hidden lg:flex" : "flex"
+    } aspect-square w-full flex-col items-center justify-center rounded-lg border border-gray-700/50 bg-slate-300/70 p-2 text-center transition duration-300 hover:scale-105 hover:border-sky-600 hover:shadow-lg hover:shadow-indigo-500/20 dark:bg-gray-900/40 dark:hover:border-cyan-400 sm:p-4`}
   >
     <Icon
       className={`mb-2 h-7 w-7 shrink-0 sm:h-10 sm:w-10 ${color || ""}`}
       style={iconGradientId ? { fill: `url(#${iconGradientId})` } : undefined}
     />
-    <p className="text-xs font-bold leading-tight text-black dark:font-semibold dark:text-white sm:text-sm">
+
+    <span className="text-xs font-medium text-gray-800 dark:text-gray-200 sm:text-sm">
       {skill}
-    </p>
+    </span>
   </div>
 );
 
@@ -119,9 +261,14 @@ export const TechStackContent = () => {
   const toggleItems = () => {
     if (isExpanded) {
       setIsExpanded(false);
+
       const portfolioSection = document.getElementById("portfolio");
+
       if (portfolioSection) {
-        portfolioSection.scrollIntoView({ behavior: "smooth", block: "start" });
+        portfolioSection.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
       }
     } else {
       setIsExpanded(true);
@@ -129,9 +276,9 @@ export const TechStackContent = () => {
   };
 
   return (
-    <div className="mt-4 rounded-xl border border-gray-700 bg-slate-200 p-6 shadow-xl dark:bg-slate-800/80 sm:p-8">
-      {/* Definisi gradient SVG, disembunyikan, dipakai via fill="url(#...)" */}
-      <svg width="0" height="0" className="absolute">
+    <div className="w-full">
+      {/* SVG gradient untuk icon Gemini */}
+      <svg width="0" height="0" className="absolute" aria-hidden="true">
         <defs>
           <linearGradient
             id="gemini-icon-gradient"
