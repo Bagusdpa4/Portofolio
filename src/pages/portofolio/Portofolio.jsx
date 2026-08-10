@@ -169,7 +169,7 @@ export const Portofolio = () => {
     onSelect,
   }) => (
     <div>
-      <div className="group relative overflow-hidden rounded-xl border border-gray-700 shadow-2xl">
+      <div className="group relative overflow-hidden rounded-xl border border-gray-400 shadow-2xl dark:border-gray-700">
         <AnimatePresence mode="wait">
           <motion.div
             key={currentImageIndex}
@@ -199,14 +199,14 @@ export const Portofolio = () => {
             <button
               onClick={onPrev}
               aria-label="Previous image"
-              className="absolute left-2 top-1/2 flex h-9 w-9 -translate-y-1/2 cursor-pointer items-center justify-center rounded-full bg-gray-900/70 text-white opacity-100 transition duration-300 hover:bg-cyan-600 md:opacity-0 md:group-hover:opacity-100"
+              className="absolute left-2 top-1/2 flex h-9 w-9 -translate-y-1/2 cursor-pointer items-center justify-center rounded-full bg-gray-900/70 text-white opacity-100 transition duration-300 hover:bg-sky-600 dark:hover:bg-cyan-600 md:opacity-0 md:group-hover:opacity-100"
             >
               <FaChevronLeft className="h-4 w-4" />
             </button>
             <button
               onClick={onNext}
               aria-label="Next image"
-              className="absolute right-2 top-1/2 flex h-9 w-9 -translate-y-1/2 cursor-pointer items-center justify-center rounded-full bg-gray-900/70 text-white opacity-100 transition duration-300 hover:bg-cyan-600 md:opacity-0 md:group-hover:opacity-100"
+              className="absolute right-2 top-1/2 flex h-9 w-9 -translate-y-1/2 cursor-pointer items-center justify-center rounded-full bg-gray-900/70 text-white opacity-100 transition duration-300 hover:bg-sky-600 dark:hover:bg-cyan-600 md:opacity-0 md:group-hover:opacity-100"
             >
               <FaChevronRight className="h-4 w-4" />
             </button>
@@ -223,7 +223,7 @@ export const Portofolio = () => {
               aria-label={`Go to image ${idx + 1}`}
               className={`h-4 w-4 cursor-pointer rounded-full transition duration-300 ${
                 idx === currentImageIndex
-                  ? "w-5 bg-cyan-400"
+                  ? "w-5 bg-sky-600 dark:bg-cyan-400"
                   : "bg-gray-600 hover:bg-gray-500"
               }`}
             />
@@ -238,7 +238,7 @@ export const Portofolio = () => {
       <Navbar />
 
       <motion.div
-        className="from-gray-950 to-blue-950 via-slate-800 bg-linear-to-r min-h-screen px-4 pb-16 pt-20 sm:px-8"
+        className="bg-linear-to-r min-h-screen bg-white from-gray-100 via-white to-blue-100 px-4 pb-16 pt-20 dark:bg-gray-950 dark:from-gray-950 dark:via-slate-800 dark:to-blue-950 sm:px-8"
         initial="hidden"
         animate="visible"
         variants={{
@@ -248,13 +248,13 @@ export const Portofolio = () => {
       >
         <div className="mx-auto max-w-7xl pt-4">
           <motion.div
-            className="mb-8 flex items-center space-x-2 text-sm text-gray-400"
+            className="mb-8 flex items-center space-x-2 text-sm text-gray-700 dark:text-gray-400"
             variants={itemVariants}
           >
             <a
               href="/"
               onClick={(e) => handleProjectLinkClickBreadcrumb(e, "home")}
-              className="hover:text-cyan-400"
+              className="hover:text-sky-600 dark:hover:text-cyan-400"
             >
               Home
             </a>
@@ -262,12 +262,12 @@ export const Portofolio = () => {
             <a
               href="/#portfolio"
               onClick={(e) => handleProjectLinkClickBreadcrumb(e, "portfolio")}
-              className="hover:text-cyan-400"
+              className="hover:text-sky-600 dark:hover:text-cyan-400"
             >
               Project
             </a>
             <span>/</span>
-            <span className="cursor-default font-medium text-cyan-400 underline">
+            <span className="cursor-default font-medium text-sky-600 underline dark:text-cyan-400">
               {project.title}
             </span>
           </motion.div>
@@ -278,15 +278,17 @@ export const Portofolio = () => {
               variants={contentFadeInVariants("left")}
             >
               <div className="space-y-3">
-                <h1 className="text-4xl font-extrabold text-white sm:text-5xl">
+                <h1 className="text-4xl font-extrabold text-gray-900 dark:text-white sm:text-5xl">
                   {project.title}
                 </h1>
                 <div className="flex flex-wrap items-center justify-between gap-y-2">
-                  <p className="text-lg text-gray-300">{project.category}</p>
+                  <p className="text-lg text-gray-600 dark:text-gray-300">
+                    {project.category}
+                  </p>
 
                   {project.time && (
-                    <p className="text-md flex items-center text-cyan-400">
-                      <FaClock className="mr-2 h-4 w-4 text-gray-400" />
+                    <p className="text-md flex items-center font-bold text-sky-600 dark:font-normal dark:text-cyan-400">
+                      <FaClock className="mr-2 h-4 w-4 text-gray-600 dark:text-gray-300" />
                       {project.time}
                     </p>
                   )}
@@ -309,7 +311,7 @@ export const Portofolio = () => {
               </div>
 
               <div className="space-y-8">
-                <p className="whitespace-pre-wrap pt-0 text-justify text-xl leading-relaxed text-gray-400">
+                <p className="whitespace-pre-wrap pt-0 text-justify text-xl leading-relaxed text-gray-700 dark:text-gray-300">
                   {mainDescription}
                 </p>
 
@@ -331,7 +333,7 @@ export const Portofolio = () => {
                     href={githubLink}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex flex-1 items-center justify-center rounded-lg border border-gray-600 px-6 py-3 text-lg font-bold text-gray-300 shadow transition duration-300 hover:bg-gray-800 hover:text-white"
+                    className="inline-flex flex-1 items-center justify-center rounded-lg border border-gray-600 bg-gray-800 px-6 py-3 text-lg font-bold text-white shadow transition duration-300 hover:scale-[1.02] dark:text-gray-300"
                     variants={itemVariants}
                   >
                     GitHub
@@ -340,17 +342,18 @@ export const Portofolio = () => {
                 </motion.div>
 
                 <motion.div
-                  className="bg-slate-800/60 rounded-xl border border-gray-700 p-6"
+                  className="rounded-xl border border-gray-400 bg-slate-200 p-6 dark:border-gray-700 dark:bg-slate-800/60"
                   variants={staggerContainerVariants}
                 >
-                  <h2 className="mb-4 flex items-center text-xl font-bold text-white">
-                    <FaCode className="mr-2 text-cyan-400" /> Technologies Used
+                  <h2 className="mb-4 flex items-center text-xl font-bold text-gray-900 dark:text-white">
+                    <FaCode className="mr-2 text-sky-600 dark:text-cyan-400" />{" "}
+                    Technologies Used
                   </h2>
                   <div className="flex flex-wrap gap-2">
                     {technologiesList.map((tech, index) => (
                       <motion.span
                         key={index}
-                        className="rounded-full bg-gray-700/70 px-3 py-1 text-sm font-medium text-cyan-300"
+                        className="rounded-full bg-slate-300 px-3 py-1 text-sm font-medium text-sky-600 dark:bg-gray-700/70 dark:text-cyan-400"
                         variants={itemVariants}
                       >
                         {tech}
@@ -379,20 +382,21 @@ export const Portofolio = () => {
               </div>
 
               <motion.div
-                className="bg-slate-800/60 rounded-xl border border-gray-700 p-8 shadow-xl"
+                className="rounded-xl border border-gray-400 bg-slate-200 p-8 shadow-xl dark:border-gray-700 dark:bg-slate-800/60"
                 variants={staggerContainerVariants}
               >
-                <h2 className="mb-5 flex items-center text-2xl font-bold text-white">
-                  <FaStar className="mr-3 text-yellow-400" /> Key Features
+                <h2 className="mb-5 flex items-center text-2xl font-bold text-gray-900 dark:text-white">
+                  <FaStar className="mr-3 text-yellow-400 dark:text-amber-400" />{" "}
+                  Key Features
                 </h2>
                 <ul className="list-none space-y-3 pl-0 text-justify">
                   {featuresList.map((feature, index) => (
                     <motion.li
                       key={index}
-                      className="flex items-start text-lg text-gray-300"
+                      className="flex items-start text-lg text-gray-700 dark:text-gray-300"
                       variants={itemVariants}
                     >
-                      <span className="mr-3 font-bold text-cyan-400">
+                      <span className="mr-3 font-bold text-sky-600 dark:text-cyan-400">
                         &#9679;
                       </span>{" "}
                       {feature}

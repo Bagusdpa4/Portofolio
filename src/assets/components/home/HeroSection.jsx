@@ -59,7 +59,7 @@ const contentFadeInVariants = (direction = "up") => ({
 export const HeroSection = ({ handleSmoothScroll }) => (
   <Section
     id="home"
-    className="from-gray-950 via-slate-800 to-blue-950 bg-linear-to-r overflow-hidden text-left"
+    className="bg-linear-to-r overflow-hidden from-gray-100 via-white to-blue-100 text-left dark:from-gray-950 dark:via-slate-800 dark:to-blue-950"
   >
     <div className="relative z-10 mx-auto flex h-full w-full max-w-7xl grow items-center justify-center">
       <div className="flex h-full w-full flex-col-reverse items-center gap-10 py-4 lg:flex-row lg:gap-8">
@@ -72,18 +72,18 @@ export const HeroSection = ({ handleSmoothScroll }) => (
           viewport={{ once: true, amount: 0.1 }}
         >
           {/* Main Headline */}
-          <h1 className="text-6xl font-extrabold leading-tight text-white sm:text-7xl md:text-8xl">
-            <span className="block text-cyan-400">Web</span>
+          <h1 className="text-6xl font-extrabold leading-tight text-black dark:text-white sm:text-7xl md:text-8xl">
+            <span className="block text-sky-600 dark:text-cyan-400">Web</span>
             <span className="mt-2 block">Developer</span>
           </h1>
 
           {/* 1. Sub-tagline yang cocok */}
-          <p className="mt-4 text-xl font-semibold text-gray-300 md:text-2xl">
+          <p className="mt-4 text-xl font-semibold text-black dark:text-gray-300 md:text-2xl">
             Building Fast, Reliable, and User-Focused Web Applications.
           </p>
 
           {/* 2. Short Description (Minimal 2 baris) */}
-          <p className="mx-auto mt-6 max-w-3xl text-justify text-lg text-gray-400 lg:mx-0 lg:max-w-none">
+          <p className="mx-auto mt-6 max-w-3xl text-justify text-lg text-black dark:text-gray-400 lg:mx-0 lg:max-w-none">
             I focus on building websites with modern technologies. I can help
             you create digital products that not only look great but also
             deliver a seamless user experience and top-notch performance.
@@ -94,21 +94,21 @@ export const HeroSection = ({ handleSmoothScroll }) => (
             <a
               href="#portfolio"
               onClick={(e) => handleSmoothScroll(e, "portfolio")}
-              className="inline-flex cursor-pointer items-center justify-center rounded-lg bg-cyan-600 px-6 py-3 text-base font-semibold text-white shadow-xl shadow-cyan-900/50 transition duration-300 hover:scale-[1.05] hover:bg-cyan-700 sm:px-8 sm:text-lg"
+              className="inline-flex cursor-pointer items-center justify-center rounded-lg bg-sky-600 px-6 py-3 text-base font-semibold text-white shadow-xl shadow-sky-900/30 transition duration-300 hover:scale-[1.05] hover:bg-sky-700 dark:bg-cyan-600 dark:shadow-cyan-900/50 dark:hover:bg-cyan-700 sm:px-8 sm:text-lg"
             >
               <FaBriefcase className="mr-2 h-5 w-5" /> View Portfolio
             </a>
             <a
               href="#contact"
               onClick={(e) => handleSmoothScroll(e, "contact")}
-              className="inline-flex items-center justify-center rounded-lg border border-white/30 px-6 py-3 text-base font-semibold text-white transition duration-300 hover:scale-[1.05] hover:bg-white/10 sm:px-8 sm:text-lg"
+              className="inline-flex items-center justify-center rounded-lg border border-black px-6 py-3 text-base font-semibold text-black transition duration-300 hover:scale-[1.05] hover:bg-black/10 dark:border-white dark:text-white dark:hover:bg-white/10 sm:px-8 sm:text-lg"
             >
               <FaEnvelope className="mr-2 h-5 w-5" /> Get in Touch
             </a>
           </div>
 
           {/* Social Icons */}
-          <div className="mt-10 flex w-full justify-center space-x-6 border-t border-gray-700/50 pt-6 lg:justify-start">
+          <div className="mt-10 flex w-full justify-center space-x-6 border-t border-black pt-6 dark:border-gray-700/50 lg:justify-start">
             {socialLinks.map((link, index) => (
               <motion.a
                 key={index}
@@ -116,7 +116,7 @@ export const HeroSection = ({ handleSmoothScroll }) => (
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={link.label}
-                className="text-gray-400 transition duration-300 hover:scale-125 hover:text-cyan-400"
+                className="text-black transition duration-300 hover:scale-125 hover:text-sky-600 dark:text-gray-400 dark:hover:text-cyan-400"
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 1.5 + index * 0.1, duration: 0.5 }}

@@ -94,9 +94,14 @@ const portfolioItems = [
 export const CertificateContent = () => {
   const itemsPerPage = 3;
   const [visibleCount, setVisibleCount] = useState(itemsPerPage);
+  const isExpanded = visibleCount >= portfolioItems.length;
 
-  const showMoreItems = () => {
-    setVisibleCount(portfolioItems.length);
+  const toggleItems = () => {
+    if (isExpanded) {
+      setVisibleCount(itemsPerPage);
+    } else {
+      setVisibleCount(portfolioItems.length);
+    }
   };
 
   return (
@@ -112,7 +117,7 @@ export const CertificateContent = () => {
                   window.open(item.projectUrl, "_blank", "noopener,noreferrer");
                 }
               }}
-              className={`bg-slate-800/80 flex h-full flex-col rounded-xl border border-gray-700 p-5 shadow-xl transition duration-300 hover:scale-105 hover:border-cyan-400 ${
+              className={`flex h-full flex-col rounded-xl border border-gray-700 bg-slate-200 p-5 shadow-xl transition duration-300 hover:scale-105 hover:border-sky-600 dark:bg-slate-800/80 dark:hover:border-cyan-400 ${
                 isClickable ? "cursor-pointer" : ""
               }`}
             >
@@ -121,13 +126,13 @@ export const CertificateContent = () => {
                   <img
                     src={item.thumbnailUrl}
                     alt={`Thumbnail ${item.title}`}
-                    className="h-full w-full object-cover transition duration-500 hover:scale-110"
+                    className="h-full w-full border border-slate-400 object-cover transition duration-500 hover:scale-105"
                   />
                 ) : (
                   <div
                     className={`absolute inset-0 flex items-center justify-center ${
                       item.category === "Certificate"
-                        ? "bg-cyan-900/40 text-cyan-400"
+                        ? "bg-cyan-900/40 text-cyan-400 "
                         : "bg-yellow-900/40 text-yellow-400"
                     }`}
                   >
@@ -140,10 +145,12 @@ export const CertificateContent = () => {
                 )}
               </div>
 
-              <h4 className="mb-1 text-lg font-bold text-white sm:text-xl">
+              <h4 className="mb-1 text-lg font-bold text-black dark:text-white sm:text-xl">
                 {item.title}
               </h4>
-              <p className="text-xs text-gray-400 sm:text-sm">{item.desc}</p>
+              <p className="text-xs text-gray-900 dark:text-gray-400 sm:text-sm">
+                {item.desc}
+              </p>
 
               <div className="mt-auto pt-3">
                 {item.files ? (
@@ -156,7 +163,7 @@ export const CertificateContent = () => {
                         rel="noopener noreferrer"
                         title={file.fullLabel || file.label}
                         onClick={(e) => e.stopPropagation()}
-                        className="flex items-center justify-center truncate rounded-md border border-cyan-500/30 bg-cyan-500/10 px-2 py-1 text-[11px] text-cyan-400 transition duration-300 hover:bg-cyan-500/20 hover:underline"
+                        className="flex items-center justify-center truncate rounded-md border border-sky-600 px-2 py-1 text-[11px] font-semibold text-sky-600 transition duration-300 hover:bg-sky-200 hover:underline dark:border-cyan-500/30 dark:bg-cyan-500/10 dark:font-normal dark:text-cyan-400 dark:hover:bg-cyan-500/20"
                       >
                         {file.label}
                       </a>
@@ -168,7 +175,7 @@ export const CertificateContent = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                     onClick={(e) => e.stopPropagation()}
-                    className="inline-flex items-center text-xs text-cyan-400 transition duration-300 hover:underline sm:text-sm"
+                    className="inline-flex items-center font-bold text-sky-600 transition duration-300 hover:underline dark:text-cyan-400"
                   >
                     View Certificate <FiExternalLink className="ml-1 h-3 w-3" />
                   </a>
@@ -179,13 +186,13 @@ export const CertificateContent = () => {
         })}
       </div>
 
-      {visibleCount < portfolioItems.length && (
+      {portfolioItems.length > itemsPerPage && (
         <div className="mt-12 sm:mt-16">
           <button
-            onClick={showMoreItems}
-            className="text-gray-950 cursor-pointer rounded-lg bg-cyan-500 px-8 py-3 text-base font-bold shadow-lg transition duration-300 hover:bg-cyan-400"
+            onClick={toggleItems}
+            className="inline-flex cursor-pointer items-center justify-center rounded-lg bg-sky-600 px-6 py-3 text-base font-semibold text-white shadow-xl shadow-sky-900/30 transition duration-300 hover:scale-[1.05] hover:bg-sky-700 dark:bg-cyan-600 dark:shadow-cyan-900/50 dark:hover:bg-cyan-700 sm:px-8 sm:text-lg"
           >
-            See All Certificates
+            {isExpanded ? "See Less" : "See All"}
           </button>
         </div>
       )}

@@ -8,10 +8,10 @@ export const Footer = () => {
   const emailAddress = "sugab.dwi88@gmail.com";
 
   return (
-    <footer className="bg-gray-950 border-t border-cyan-500/30 py-4 font-sans text-white">
+    <footer className="border-t border-sky-600/30 bg-white/90 py-4 font-sans text-black dark:border-cyan-500/30 dark:bg-gray-950 dark:text-white">
       <div className="mx-auto flex max-w-7xl flex-col items-center justify-center px-6 lg:px-8">
         <div className="mb-4 flex w-full max-w-7xl flex-col items-center justify-center sm:flex-row sm:justify-between sm:space-y-0">
-          <div className="mb-4 text-xl font-extrabold tracking-wider text-gray-400 transition duration-300 sm:mb-0 sm:text-2xl">
+          <div className="mb-4 text-xl font-bold tracking-wider text-gray-900 transition duration-300 dark:font-extrabold dark:text-gray-400 sm:mb-0 sm:text-2xl">
             Bagus Dwi Putra Adiyono
           </div>
 
@@ -20,7 +20,7 @@ export const Footer = () => {
               href="https://github.com/Bagusdpa4"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-lg text-gray-400 transition duration-200 hover:scale-150 hover:text-cyan-400 sm:text-2xl"
+              className="text-lg text-gray-900 transition duration-200 hover:scale-150 hover:text-sky-600 dark:text-gray-400 dark:hover:text-cyan-400 sm:text-2xl"
               title="GitHub"
             >
               <FaGithub />
@@ -30,7 +30,7 @@ export const Footer = () => {
               href="https://www.linkedin.com/in/bagusdwiputraadiyono/"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-lg text-gray-400 transition duration-200 hover:scale-150 hover:text-cyan-400 sm:text-2xl"
+              className="text-lg text-gray-900 transition duration-200 hover:scale-150 hover:text-sky-600 dark:text-gray-400 dark:hover:text-cyan-400 sm:text-2xl"
               title="LinkedIn"
             >
               <FaLinkedin />
@@ -40,7 +40,7 @@ export const Footer = () => {
               href="https://wa.me/+6282229749462"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-lg text-gray-400 transition duration-200 hover:scale-150 hover:text-cyan-400 sm:text-2xl"
+              className="text-lg text-gray-900 transition duration-200 hover:scale-150 hover:text-sky-600 dark:text-gray-400 dark:hover:text-cyan-400 sm:text-2xl"
               title="WhatsApp"
             >
               <FaWhatsapp />
@@ -50,7 +50,7 @@ export const Footer = () => {
               href="https://www.instagram.com/bagusdwiputraa/"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-lg text-gray-400 transition duration-200 hover:scale-150 hover:text-cyan-400 sm:text-2xl"
+              className="text-lg text-gray-900 transition duration-200 hover:scale-150 hover:text-sky-600 dark:text-gray-400 dark:hover:text-cyan-400 sm:text-2xl"
               title="Instagram"
             >
               <FaInstagram />
@@ -58,7 +58,7 @@ export const Footer = () => {
 
             <a
               href={`mailto:${emailAddress}`}
-              className="text-lg text-gray-400 transition duration-200 hover:scale-150 hover:text-cyan-400 sm:text-2xl"
+              className="text-lg text-gray-900 transition duration-200 hover:scale-150 hover:text-sky-600 dark:text-gray-400 dark:hover:text-cyan-400 sm:text-2xl"
               title={`Send Email to ${emailAddress}`}
             >
               <AiOutlineMail />
@@ -66,7 +66,7 @@ export const Footer = () => {
           </div>
         </div>
 
-        <p className="mt-4 text-center text-xs text-gray-500 sm:mt-2">
+        <p className="mt-4 text-center text-sm font-medium text-gray-900 dark:text-gray-400 sm:mt-2">
           &copy; {currentYear} Bagus. All Rights Reserved.
         </p>
       </div>

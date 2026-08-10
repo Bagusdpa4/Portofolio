@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
-// --- Komponen Internal: Section ---
+// --- Internal Component: Section ---
 const Section = ({ id, children, className = "" }) => {
   return (
     <section
@@ -13,12 +13,11 @@ const Section = ({ id, children, className = "" }) => {
   );
 };
 
-// --- Komponen TypewriterText (Kursor Cyan Tunggal) ---
+// --- TypewriterText Component (Single Cyan Cursor) ---
 const TypewriterText = ({ text, delay = 0, speed, initialDelay = 0 }) => {
   const [displayedText, setDisplayedText] = useState("");
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  // Efek untuk menangani proses pengetikan
   useEffect(() => {
     if (currentIndex < text.length) {
       const startTyping = setTimeout(() => {
@@ -33,7 +32,6 @@ const TypewriterText = ({ text, delay = 0, speed, initialDelay = 0 }) => {
     }
   }, [text, currentIndex, speed, initialDelay]);
 
-  // Reset state jika teks berubah
   useEffect(() => {
     setDisplayedText("");
     setCurrentIndex(0);
@@ -41,17 +39,16 @@ const TypewriterText = ({ text, delay = 0, speed, initialDelay = 0 }) => {
 
   return (
     <motion.p
-      className="text-xl font-semibold text-cyan-300 sm:text-2xl"
+      className="text-xl font-semibold text-sky-600 dark:text-cyan-300 sm:text-2xl"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ delay: delay, duration: 0.5 }}
     >
       {displayedText}
-      {/* Kursor Berkedip (Garis Tipis Cyan) */}
+      {/* Blinking Cursor */}
       <motion.span
         aria-hidden="true"
-        // w-1: Lebar tipis; h-6: Tinggi sesuai baris teks; bg-cyan-300: Warna sesuai teks
-        className="ml-0.5 inline-block h-6 w-1 bg-cyan-300 align-text-bottom"
+        className="ml-0.5 inline-block h-6 w-1 bg-sky-600 align-text-bottom dark:bg-cyan-300"
         animate={{ opacity: [0, 1, 1, 0] }}
         transition={{
           duration: 0.8,
@@ -116,7 +113,7 @@ const badgeAnimationVariants = {
   }),
 };
 
-// Komponen Badge Animasi
+// Animated Badges Component
 const AnimatedBadges = () => {
   const badges = ["Web Developer", "IT Programmer", "IT Support"];
 
@@ -141,7 +138,7 @@ const AnimatedBadges = () => {
             scale: 1.08,
             boxShadow: "0 0 20px rgba(6, 182, 212, 0.8)",
           }}
-          className="cursor-pointer rounded-lg border border-cyan-500/40 bg-gray-900/40 px-4 py-2 text-sm text-white shadow-md transition-all duration-300 hover:border-cyan-400/70 sm:text-base"
+          className="cursor-pointer rounded-lg border border-sky-600/40 bg-white/60 px-4 py-2 text-sm text-black shadow-md transition-all duration-300 hover:border-sky-500/70 dark:border-cyan-500/40 dark:bg-gray-900/40 dark:text-white dark:hover:border-cyan-400/70 sm:text-base"
         >
           <motion.span
             animate={{
@@ -166,9 +163,8 @@ const AnimatedBadges = () => {
   );
 };
 
-// Komponen Intro Overlay Utama
+// Main Intro Overlay Component
 export const IntroOverlay = ({ showIntro }) => {
-  // Durasi animasi keluar dari overlay
   const EXIT_DURATION_MS = 1500;
 
   useEffect(() => {
@@ -188,10 +184,8 @@ export const IntroOverlay = ({ showIntro }) => {
     };
   }, [showIntro]);
 
-  // Tagline
   const tagline = "Building Digital Solutions with Precision.";
 
-  // Menghitung kecepatan ketik
   const typingSpeed = EXIT_DURATION_MS / tagline.length;
 
   return (
@@ -204,18 +198,18 @@ export const IntroOverlay = ({ showIntro }) => {
             opacity: 0,
             transition: { duration: 1.5, ease: "easeInOut" },
           }}
-          className="from-gray-950 to-blue-950 via-slate-800 bg-linear-to-r fixed inset-0 z-50 flex items-center justify-center"
+          className="bg-linear-to-r fixed inset-0 z-50 flex items-center justify-center from-gray-100 via-white to-blue-100 dark:from-gray-950 dark:via-slate-800 dark:to-blue-950"
         >
           <Section id="intro-overlay" className="pt-0 text-center">
             <div className="mx-auto max-w-4xl py-20">
               <motion.p
-                className="mb-4 text-3xl font-light tracking-widest text-white opacity-80 sm:text-5xl"
+                className="mb-4 text-3xl font-light tracking-widest text-black opacity-80 dark:text-white sm:text-5xl"
                 variants={textVariants}
               >
                 Welcome To My
               </motion.p>
               <motion.h1
-                className="text-slate-500 text-5xl font-extrabold leading-tight tracking-tighter sm:text-7xl lg:text-9xl"
+                className="text-5xl font-extrabold leading-tight tracking-tighter text-black/40 dark:text-slate-500 sm:text-7xl lg:text-9xl"
                 variants={textVariants}
                 animate={{
                   scale: [1, 1.05, 1],
@@ -228,10 +222,10 @@ export const IntroOverlay = ({ showIntro }) => {
                 }}
               >
                 <span
-                  className="bg-linear-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent"
+                  className="bg-linear-to-r from-sky-600 to-blue-600 bg-clip-text text-transparent dark:from-cyan-400 dark:to-blue-400"
                   style={{
                     textShadow:
-                      "0 0 10px rgba(6, 182, 212, 0.8), 0 0 20px rgba(6, 182, 212, 0.5)",
+                      "0 0 10px rgba(2, 132, 199, 0.5), 0 0 20px rgba(2, 132, 199, 0.3)",
                   }}
                 >
                   Portfolio
@@ -239,7 +233,7 @@ export const IntroOverlay = ({ showIntro }) => {
                 <span
                   style={{
                     textShadow:
-                      "0 0 10px rgba(6, 182, 212, 0.3), 0 0 20px rgba(6, 182, 212, 0.1)",
+                      "0 0 10px rgba(2, 132, 199, 0.2), 0 0 20px rgba(2, 132, 199, 0.1)",
                   }}
                 >
                   Website

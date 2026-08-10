@@ -3,7 +3,6 @@ import { useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 
 // Component
-// import Profile from "../assets/img/Profile.jpg";
 import Formal from "../assets/img/Formal.PNG";
 import { Navbar } from "../assets/components/navbar/Navbar";
 import { Footer } from "../assets/components/navbar/Footer";
@@ -33,7 +32,7 @@ const INTRO_SHOWN_KEY = "intro_overlay_shown";
 const INTRO_DISPLAY_TIME_MS = 3000;
 const MINIMUM_LOAD_TIME_MS = 500;
 
-// Komponen Section
+// Section Component
 const Section = ({ id, children, className = "" }) => {
   return (
     <section
@@ -45,33 +44,20 @@ const Section = ({ id, children, className = "" }) => {
   );
 };
 
-// Framer Motion Variants
+// Framer Motion Variants (tidak berubah)
 const containerVariants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
-    transition: {
-      delayChildren: 0.1,
-      staggerChildren: 0.1,
-      duration: 1,
-    },
+    transition: { delayChildren: 0.1, staggerChildren: 0.1, duration: 1 },
   },
 };
 
-// Variants untuk Judul/Header Section (Muncul dari Atas) - Digunakan di About dan Portfolio
 const sectionHeaderVariants = {
   hidden: { opacity: 0, y: -50 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.8,
-      ease: "easeOut",
-    },
-  },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } },
 };
 
-// Variants untuk Konten (Muncul/Fade In) - Digunakan di About dan Portfolio Nav
 const contentFadeInVariants = (direction = "up") => ({
   hidden: {
     opacity: 0,
@@ -82,39 +68,33 @@ const contentFadeInVariants = (direction = "up") => ({
     opacity: 1,
     x: 0,
     y: 0,
-    transition: {
-      duration: 1,
-      ease: "easeOut",
-    },
+    transition: { duration: 1, ease: "easeOut" },
   },
 });
 
-// Variants Container untuk Staggering (misalnya, Daftar Kontak atau Statistik)
 const staggerContainerVariants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
-    transition: {
-      delayChildren: 0.2,
-      staggerChildren: 0.1,
-    },
+    transition: { delayChildren: 0.2, staggerChildren: 0.1 },
   },
 };
 
-// Variants untuk item-item di dalam Stagger Container
 const itemVariants = {
   hidden: { opacity: 0, y: 50 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.7 } },
 };
 
-// Komponen Statistik
+// Statistic Component
 const StatItem = ({ icon: Icon, number, label }) => (
   <div className="flex flex-col items-center p-4">
     <div className="flex items-center">
-      <Icon className="mr-2 h-5 w-5 text-cyan-400 sm:h-6 sm:w-6" />
-      <p className="text-3xl font-extrabold text-white sm:text-4xl">{number}</p>
+      <Icon className="mr-2 h-5 w-5 text-sky-600 dark:text-cyan-400 sm:h-6 sm:w-6" />
+      <p className="text-3xl font-extrabold text-gray-900 dark:text-white sm:text-4xl">
+        {number}
+      </p>
     </div>
-    <p className="mt-1 text-center text-xs uppercase tracking-widest text-gray-400">
+    <p className="mt-1 text-center text-xs font-bold uppercase tracking-widest text-black dark:text-gray-400">
       {label}
     </p>
   </div>
@@ -122,11 +102,11 @@ const StatItem = ({ icon: Icon, number, label }) => (
 
 const TypewriterText = ({
   texts,
-  typingSpeed = 50, // Sangat Cepat
-  deletingSpeed = 25, // Sangat Cepat
-  pauseDelay = 1000, // Jeda setelah selesai mengetik
+  typingSpeed = 50,
+  deletingSpeed = 25,
+  pauseDelay = 1000,
   initialDelay = 0,
-  className = "text-white",
+  className = "text-black dark:text-white",
 }) => {
   const [displayedText, setDisplayedText] = useState("");
   const [isDeleting, setIsDeleting] = useState(false);
@@ -139,34 +119,30 @@ const TypewriterText = ({
     const fullText = currentText;
 
     const handleTyping = () => {
-      // 1. Mengetik
       if (!isDeleting) {
         if (charIndex < fullText.length) {
           setDisplayedText(fullText.substring(0, charIndex + 1));
           setCharIndex((prev) => prev + 1);
           timer = setTimeout(handleTyping, typingSpeed);
         } else {
-          // Selesai mengetik, jeda
           timer = setTimeout(() => setIsDeleting(true), pauseDelay);
         }
-      } // 2. Menghapus
-      else {
+      } else {
         if (charIndex > 0) {
           setDisplayedText(fullText.substring(0, charIndex - 1));
           setCharIndex((prev) => prev - 1);
           timer = setTimeout(handleTyping, deletingSpeed);
         } else {
-          // Selesai menghapus, ganti teks
           setIsDeleting(false);
           setTextIndex((prev) => prev + 1);
-          timer = setTimeout(handleTyping, typingSpeed * 2); // Jeda singkat
+          timer = setTimeout(handleTyping, typingSpeed * 2);
         }
       }
     };
 
     const startTypingWithInitialDelay = setTimeout(() => {
       handleTyping();
-    }, initialDelay); // Cleanup function
+    }, initialDelay);
 
     return () => {
       clearTimeout(timer);
@@ -226,7 +202,6 @@ export const Homepage = () => {
     }
   }, [location.hash]);
 
-  // Logika Loading dan Intro
   useEffect(() => {
     let timeoutId;
     let introTimeoutId;
@@ -285,13 +260,11 @@ export const Homepage = () => {
     }
   };
 
-  // Kolom Statistik Section 2
   const totalProjects = 14;
   const totalCertificates = 14;
   const totalArticles = 3;
   const yearsOfExperience = 2;
 
-  // Component Section Portfolio
   let PortfolioContentComponent;
   if (activeTab === "certificate") {
     PortfolioContentComponent = CertificateContent;
@@ -303,11 +276,10 @@ export const Homepage = () => {
     PortfolioContentComponent = ProjectContent;
   }
 
-  // Active tab section portfolio
   const activeTabStyle =
     "bg-linear-to-r from-cyan-600 to-blue-700 text-white shadow-lg shadow-cyan-900/50";
   const inactiveTabStyle =
-    "text-gray-400 hover:bg-gray-700/50 hover:scale-105 cursor-pointer";
+    "text-gray-500 dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-gray-700/50 hover:scale-105 cursor-pointer";
 
   if (isLoading) {
     return <Loading />;
@@ -315,7 +287,7 @@ export const Homepage = () => {
 
   return (
     <motion.div
-      className="from-gray-950 to-blue-950 via-slate-800 bg-linear-to-r min-h-screen font-sans"
+      className="bg-linear-to-r min-h-screen bg-white from-gray-100 via-white to-blue-100 font-sans dark:bg-gray-950 dark:from-gray-950 dark:via-slate-800 dark:to-blue-950"
       variants={containerVariants}
       initial="hidden"
       animate="visible"
@@ -327,7 +299,7 @@ export const Homepage = () => {
 
         <HeroSection handleSmoothScroll={handleSmoothScroll} />
 
-        <hr className="mx-auto w-full max-w-7xl border-t border-gray-700" />
+        <hr className="mx-auto w-full max-w-7xl border-t border-black dark:border-gray-700" />
 
         {/* 3. ABOUT SECTION */}
         <Section id="about">
@@ -339,16 +311,16 @@ export const Homepage = () => {
               whileInView="visible"
               viewport={{ once: true, amount: 0.3 }}
             >
-              <h2 className="mb-2 text-4xl font-extrabold text-white sm:text-5xl">
+              <h2 className="mb-2 text-4xl font-extrabold text-gray-900 dark:text-white sm:text-5xl">
                 About Me
               </h2>
-              <p className="flex items-center justify-center text-xs font-semibold uppercase tracking-wider text-cyan-400 sm:text-sm">
+              <p className="flex items-center justify-center text-xs font-semibold uppercase tracking-wider text-sky-600 dark:text-cyan-400 sm:text-sm">
                 <FaUser className="mr-1 h-4 w-4 lg:mr-2" /> Transforming ideas
                 into functional code.
               </p>
             </motion.div>
 
-            {/* Konten Utama */}
+            {/* Main Content */}
             <div className="flex flex-col items-center gap-10 text-left md:flex-row-reverse md:items-start md:gap-16">
               <motion.div
                 className="mt-10 flex w-full justify-center md:mt-0 md:w-1/3 md:justify-end"
@@ -360,8 +332,8 @@ export const Homepage = () => {
                 <div className="relative h-64 w-64 sm:h-80 sm:w-80">
                   <div className="absolute inset-0 m-auto h-full w-full animate-pulse rounded-full bg-cyan-500 opacity-20 blur-3xl filter"></div>
 
-                  {/* Container Foto Profil */}
-                  <div className="relative z-10 flex h-full w-full items-center justify-center rounded-full border-4 border-cyan-500/50 bg-gray-700 shadow-2xl shadow-cyan-500/20">
+                  {/* Profile Photo Container */}
+                  <div className="relative z-10 flex h-full w-full items-center justify-center rounded-full border-4 border-sky-500/50 bg-gray-200 shadow-2xl shadow-sky-500/20 dark:bg-gray-700">
                     <img
                       src={Formal}
                       alt="Foto Profil Bagus Dwi"
@@ -371,7 +343,7 @@ export const Homepage = () => {
                 </div>
               </motion.div>
 
-              {/* Section Kiri */}
+              {/* Left Section */}
               <motion.div
                 className="w-full space-y-4 md:w-2/3"
                 variants={contentFadeInVariants("left")}
@@ -379,9 +351,9 @@ export const Homepage = () => {
                 whileInView="visible"
                 viewport={{ once: true, amount: 0.3 }}
               >
-                <p className="text-2xl font-light text-white sm:text-3xl">
+                <p className="text-2xl font-light text-black dark:text-white sm:text-3xl">
                   <span className="block sm:inline">Hello, I'm </span>
-                  <span className="font-semibold text-cyan-400">
+                  <span className="font-semibold text-sky-600 dark:text-cyan-400">
                     Bagus Dwi Putra Adiyono
                   </span>
                 </p>
@@ -392,10 +364,10 @@ export const Homepage = () => {
                     deletingSpeed={25}
                     pauseDelay={1000}
                     initialDelay={75}
-                    className="font-serif text-4xl font-extrabold text-white sm:text-5xl"
+                    className="font-serif text-4xl font-extrabold text-gray-900 dark:text-white sm:text-5xl"
                   />
                 </motion.div>
-                <p className="text-justify text-base text-gray-300 sm:text-lg">
+                <p className="text-justify text-base text-black dark:text-gray-300 sm:text-lg">
                   I am a Web Developer with over 2 years of experience building
                   responsive web applications through internships, academic
                   projects, and independent work. I am proficient in React.js,
@@ -416,7 +388,7 @@ export const Homepage = () => {
                   </a>
                   <a
                     href="/about-me"
-                    className="inline-flex items-center justify-center rounded-lg border border-white/30 px-6 py-3 font-semibold text-white transition duration-300 hover:scale-105 hover:bg-white/10"
+                    className="inline-flex items-center justify-center rounded-lg border border-black px-6 py-3 font-semibold text-black transition duration-300 hover:scale-105 hover:bg-gray-200 dark:border-white/30 dark:text-white dark:hover:bg-white/10"
                   >
                     <span className="mr-2">
                       <CgProfile size={20} />
@@ -427,16 +399,16 @@ export const Homepage = () => {
               </motion.div>
             </div>
 
-            {/* Statistik */}
+            {/* Statistics */}
             <motion.div
-              className="mt-16 border-t border-gray-700 pt-10"
+              className="mt-16 border-t border-black pt-10 dark:border-gray-700"
               variants={staggerContainerVariants}
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, amount: 0.3 }}
             >
               <motion.div
-                className="grid grid-cols-2 divide-x divide-gray-700 rounded-xl border border-gray-600 bg-gray-800/50 lg:grid-cols-4"
+                className="grid grid-cols-2 divide-x divide-black rounded-xl border border-black bg-gray-100 dark:divide-gray-700 dark:border-gray-600 dark:bg-gray-800/50 lg:grid-cols-4"
                 variants={staggerContainerVariants}
               >
                 {[
@@ -450,11 +422,7 @@ export const Homepage = () => {
                     number: totalCertificates,
                     label: "CERTIFICATES",
                   },
-                  {
-                    icon: GrArticle,
-                    number: totalArticles,
-                    label: "ARTICLES",
-                  },
+                  { icon: GrArticle, number: totalArticles, label: "ARTICLES" },
                   {
                     icon: FaClock,
                     number: `${yearsOfExperience}+`,
@@ -474,12 +442,12 @@ export const Homepage = () => {
           </div>
         </Section>
 
-        <hr className="mx-auto w-full max-w-7xl border-t border-gray-700" />
+        <hr className="mx-auto w-full max-w-7xl border-t border-black dark:border-gray-700" />
 
         {/* 4. SERVICE SECTION */}
         <ServiceSection SectionComponent={Section} />
 
-        <hr className="mx-auto w-full max-w-7xl border-t border-gray-700" />
+        <hr className="mx-auto w-full max-w-7xl border-t border-black dark:border-gray-700" />
 
         {/* 5. PORTFOLIO SECTION */}
         <Section id="portfolio">
@@ -490,13 +458,13 @@ export const Homepage = () => {
               whileInView="visible"
               viewport={{ once: true, amount: 0.3 }}
             >
-              <p className="mb-2 flex items-center justify-center text-xs font-semibold uppercase tracking-wider text-cyan-400 sm:text-sm">
+              <p className="mb-2 flex items-center justify-center text-xs font-semibold uppercase tracking-wider text-sky-600 dark:text-cyan-400 sm:text-sm">
                 <FaBriefcase className="mr-2 h-4 w-4" /> My Work
               </p>
-              <h2 className="mb-4 text-4xl font-extrabold text-white sm:text-5xl">
+              <h2 className="mb-4 text-4xl font-extrabold text-gray-900 dark:text-white sm:text-5xl">
                 Portfolio Showcase
               </h2>
-              <p className="mx-auto mb-8 max-w-xl text-base text-gray-400 sm:text-lg">
+              <p className="mx-auto mb-8 max-w-xl text-base text-gray-500 dark:text-gray-400 sm:text-lg">
                 Explore my journey through real-world projects, certifications
                 I've earned, articles I've published, and my technical skills.
                 Each section reflects my passion for learning and continuous
@@ -504,15 +472,15 @@ export const Homepage = () => {
               </p>
             </motion.div>
 
-            {/* TOMBOL NAVIGASI */}
+            {/* NAVIGATION BUTTONS */}
             <motion.div
-              className="mx-auto mb-12 flex max-w-4xl justify-center space-x-2 rounded-xl border border-cyan-700/50 bg-gray-900/50 p-2 sm:space-x-4 sm:p-3"
+              className="mx-auto mb-12 flex max-w-4xl justify-center space-x-2 rounded-xl border border-cyan-700/50 bg-gray-100 p-2 dark:bg-gray-900/50 sm:space-x-4 sm:p-3"
               variants={contentFadeInVariants("up")}
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, amount: 0.5 }}
             >
-              {/* Tombol Project */}
+              {/* Project Button */}
               <button
                 onClick={() => setActiveTab("project")}
                 className={`flex w-1/4 flex-col items-center justify-center rounded-lg px-3 py-3 font-semibold transition duration-300 sm:px-4 sm:py-4 ${
@@ -522,7 +490,7 @@ export const Homepage = () => {
                 <HiCode className="mb-1 h-6 w-6" />
                 <span className="text-sm sm:text-base">Projects</span>
               </button>
-              {/* Tombol Certificate */}
+              {/* Certificate Button */}
               <button
                 onClick={() => setActiveTab("certificate")}
                 className={`flex w-1/4 flex-col items-center justify-center rounded-lg px-3 py-3 font-semibold transition duration-300 sm:px-4 sm:py-4 ${
@@ -534,7 +502,7 @@ export const Homepage = () => {
                 <PiCertificateFill className="mb-1 h-6 w-6" />
                 <span className="text-sm sm:text-base">Certificates</span>
               </button>
-              {/* Tombol Article */}
+              {/* Article Button */}
               <button
                 onClick={() => setActiveTab("article")}
                 className={`flex w-1/4 flex-col items-center justify-center rounded-lg px-3 py-3 font-semibold transition duration-300 sm:px-4 sm:py-4 ${
@@ -544,7 +512,7 @@ export const Homepage = () => {
                 <GrArticle className="mb-1 h-6 w-6" />
                 <span className="text-sm sm:text-base">Articles</span>
               </button>
-              {/* Tombol Tech Stack */}
+              {/* Tech Stack Button */}
               <button
                 onClick={() => setActiveTab("techstack")}
                 className={`flex w-1/4 flex-col items-center justify-center rounded-lg px-3 py-3 font-semibold transition duration-300 sm:px-4 sm:py-4 ${
@@ -556,7 +524,7 @@ export const Homepage = () => {
               </button>
             </motion.div>
 
-            {/* Default Konten */}
+            {/* Default Content */}
             <div className="mt-10">
               <AnimatePresence mode="wait">
                 <motion.div
@@ -573,7 +541,7 @@ export const Homepage = () => {
           </div>
         </Section>
 
-        <hr className="mx-auto w-full max-w-7xl border-t border-gray-700" />
+        <hr className="mx-auto w-full max-w-7xl border-t border-black dark:border-gray-700" />
 
         {/* 6. CONTACT SECTION */}
         <ContactSection SectionComponent={Section} />

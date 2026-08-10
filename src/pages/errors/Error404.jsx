@@ -28,14 +28,14 @@ export const Error404 = () => {
   }
 
   return (
-    <div className="bg-linear-to-r from-gray-950 via-slate-800 to-blue-950 flex min-h-screen flex-col items-center justify-center gap-8">
+    <div className="bg-linear-to-r flex min-h-screen flex-col items-center justify-center gap-8 from-gray-100 via-white to-blue-100 dark:from-gray-950 dark:via-slate-800 dark:to-blue-950">
       <div className="flex flex-col items-center justify-center gap-4">
-        <div className="text-9xl font-bold text-white">404</div>
-        <div className="text-2xl font-semibold tracking-wider text-white">
+        <div className="text-9xl font-bold text-black dark:text-white">404</div>
+        <div className="text-2xl font-semibold tracking-wider text-black dark:text-white">
           PAGE NOT FOUND
         </div>
       </div>
-      <div className="hover:text-zinc-900 cursor-pointer rounded-xl border-2 px-3 py-2 text-lg font-semibold text-white transition-all hover:border-white hover:bg-white">
+      <div className="cursor-pointer rounded-xl border-2 border-black px-3 py-2 text-lg font-semibold text-black transition-all hover:border-sky-600 hover:bg-sky-600 hover:text-white dark:border-white dark:text-white dark:hover:border-white dark:hover:bg-white dark:hover:text-zinc-900">
         <a href="/">Back to Homepage</a>
       </div>
     </div>

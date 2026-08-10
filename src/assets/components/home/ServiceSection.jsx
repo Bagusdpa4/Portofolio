@@ -31,7 +31,7 @@ const ServiceItem = ({
 
     {/* Icon */}
     <div
-      className={`relative z-10 mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-gray-800/40 ${ring} ring-4 transition-all duration-300`}
+      className={`relative z-10 mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-white dark:bg-gray-800/40 ${ring} ring-4 transition-all duration-300`}
     >
       <motion.div whileHover={{ scale: 1.15 }} className={iconColor}>
         <Icon className="h-7 w-7" />
@@ -39,11 +39,11 @@ const ServiceItem = ({
     </div>
 
     {/* Title */}
-    <h4 className="relative z-10 mb-3 text-xl font-bold text-white">{title}</h4>
+    <h4 className="relative z-10 mb-3 text-xl font-bold text-black dark:text-white">{title}</h4>
 
     {/* Description */}
     <motion.p
-      className="relative z-10 text-sm text-gray-400 text-justify"
+      className="relative z-10 text-justify text-sm text-black dark:text-gray-400"
       whileHover={{ opacity: 1 }}
       initial={{ opacity: 0.75 }}
       transition={{ duration: 0.3 }}
@@ -59,8 +59,8 @@ const services = [
     icon: FaLaptopCode,
     title: "Full-Stack Development (End-to-End)",
     color: "from-cyan-500/20 to-blue-500/20",
-    ring: "ring-cyan-400/40",
-    iconColor: "text-cyan-400",
+    ring: "ring-cyan-500/40",
+    iconColor: "text-cyan-500",
     description:
       "I build complete web applications from the ground up — backend, RESTful APIs, database integration, and user interfaces — that are secure, stable, and ready to scale.",
   },
@@ -68,8 +68,8 @@ const services = [
     icon: FaCode,
     title: "Frontend Development & Modern UI/UX",
     color: "from-purple-500/20 to-pink-500/20",
-    ring: "ring-purple-400/40",
-    iconColor: "text-purple-400",
+    ring: "ring-purple-500/40",
+    iconColor: "text-purple-500",
     description:
       "I develop modern, responsive interfaces using React.js and Tailwind CSS, focused on speed, usability, and a smooth user experience.",
   },
@@ -77,8 +77,8 @@ const services = [
     icon: FaLightbulb,
     title: "API Integration & Third-Party Services",
     color: "from-yellow-500/20 to-orange-500/20",
-    ring: "ring-yellow-400/40",
-    iconColor: "text-yellow-300",
+    ring: "ring-yellow-500/40",
+    iconColor: "text-yellow-500",
     description:
       "I integrate applications with third-party services securely and efficiently, including payments, authentication, and real-time data synchronization.",
   },
@@ -86,8 +86,8 @@ const services = [
     icon: GiGears,
     title: "Database Design & Optimization",
     color: "from-green-500/20 to-emerald-500/20",
-    ring: "ring-green-400/40",
-    iconColor: "text-green-400",
+    ring: "ring-green-500/40",
+    iconColor: "text-green-500",
     description:
       "I design well-structured database schemas and optimize queries for fast, stable performance using Prisma ORM or SQL.",
   },
@@ -154,10 +154,10 @@ export const ServiceSection = ({ SectionComponent }) => {
           whileInView="visible"
           viewport={{ once: true, amount: 0.3 }}
         >
-          <h2 className="mb-2 py-4 text-4xl font-extrabold text-white sm:text-5xl">
+          <h2 className="mb-2 py-4 text-4xl font-extrabold text-black dark:text-white sm:text-5xl">
             My Expertise & Services
           </h2>
-          <p className="flex items-center justify-center text-xs font-semibold uppercase tracking-wider text-cyan-400 sm:text-sm">
+          <p className="flex items-center justify-center text-xs font-semibold uppercase tracking-wider text-sky-600 dark:text-cyan-400 sm:text-sm">
             <RiCustomerServiceFill className="mr-1 hidden h-4 w-4 lg:mr-2 lg:flex" />
             Building Digital Solutions with Precision & High Performance.
           </p>
@@ -184,7 +184,7 @@ export const ServiceSection = ({ SectionComponent }) => {
           whileInView="visible"
           viewport={{ once: true, amount: 0.3 }}
         >
-          <p className="mx-auto max-w-2xl text-lg text-gray-400">
+          <p className="mx-auto max-w-2xl text-lg font-bold text-black dark:text-gray-400">
             These services can be tailored to fit the unique needs of your
             project. Feel free to reach out for a more detailed discussion!
           </p>

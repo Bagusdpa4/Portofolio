@@ -185,7 +185,7 @@ export const AboutMe = () => {
 
   return (
     <motion.div
-      className="from-gray-950 to-blue-950 via-slate-800 bg-linear-to-br min-h-screen px-4 pb-16 sm:px-8"
+      className="bg-linear-to-br min-h-screen bg-white from-gray-100 via-white to-blue-100 px-4 pb-16 dark:bg-gray-950 dark:from-gray-950 dark:via-slate-800 dark:to-blue-950 sm:px-8"
       initial="hidden"
       animate="visible"
       variants={{
@@ -197,10 +197,10 @@ export const AboutMe = () => {
 
       <div className="mx-auto max-w-7xl pt-24 sm:pt-[100px]">
         <motion.header className="mb-8 text-center" variants={fadeIn}>
-          <h1 className="text-4xl font-extrabold text-white sm:text-5xl">
-            About <span className="text-cyan-400">Me</span>
+          <h1 className="text-4xl font-extrabold text-gray-900 dark:text-white sm:text-5xl">
+            About <span className="text-sky-600 dark:text-cyan-400">Me</span>
           </h1>
-          <p className="mt-3 text-lg text-gray-400">
+          <p className="mt-3 text-lg text-gray-600 dark:text-gray-400">
             A deep dive into my journey, skills, and goals.
           </p>
         </motion.header>
@@ -214,10 +214,10 @@ export const AboutMe = () => {
             viewport={{ once: true, amount: 0.1 }}
           >
             <motion.div
-              className="bg-slate-800/60 rounded-xl border border-gray-700 p-8 shadow-2xl"
+              className="rounded-xl border border-gray-400 bg-slate-200 p-8 shadow-2xl dark:border-gray-700 dark:bg-slate-800/60"
               variants={fadeInLeft}
             >
-              <div className="mx-auto mb-6 h-60 w-60 overflow-hidden rounded-xl border-4 border-cyan-400/50 bg-gray-700/70 shadow-inner">
+              <div className="mx-auto mb-6 h-60 w-60 overflow-hidden rounded-xl border-4 border-sky-400 bg-slate-200 shadow-inner dark:border-cyan-400 dark:bg-gray-700/70">
                 <div className="flex h-full w-full items-center justify-center">
                   <img
                     src={Foto}
@@ -228,52 +228,64 @@ export const AboutMe = () => {
                 </div>
               </div>
 
-              <h2 className="mb-4 text-center text-3xl font-bold text-white">
+              <h2 className="mb-4 text-center text-3xl font-bold text-gray-900 dark:text-white">
                 Bagus Dwi Putra Adiyono
               </h2>
 
-              <p className="mb-6 text-center text-lg text-gray-400">
+              <p className="mb-6 text-center text-lg text-gray-600 dark:text-gray-400">
                 S1 Information Systems | Certified Web Programmer
               </p>
 
-              <div className="space-y-3 text-gray-300">
-                <p className="flex justify-between border-b border-gray-700 pb-2">
-                  <span className="font-medium text-cyan-400">Email:</span>
+              <div className="space-y-3 text-gray-600 dark:text-gray-400">
+                <p className="flex justify-between border-b border-gray-400 pb-2 dark:border-gray-700">
+                  <span className="font-medium text-sky-600 dark:text-cyan-400">
+                    Email:
+                  </span>
                   <span className="text-right">sugab.dwi88@gmail.com</span>
                 </p>
-                <p className="flex justify-between border-b border-gray-700 pb-2">
-                  <span className="font-medium text-cyan-400">Phone:</span>
+                <p className="flex justify-between border-b border-gray-400 pb-2 dark:border-gray-700">
+                  <span className="font-medium text-sky-600 dark:text-cyan-400">
+                    Phone:
+                  </span>
                   <span className="text-right">0822-2974-9462</span>
                 </p>
                 <p className="flex justify-between">
-                  <span className="font-medium text-cyan-400">Location:</span>
+                  <span className="font-medium text-sky-600 dark:text-cyan-400">
+                    Location:
+                  </span>
                   <span className="text-right">Sidoarjo, Indonesia</span>
                 </p>
               </div>
             </motion.div>
 
             <motion.div
-              className="bg-slate-800/60 hidden rounded-xl border border-gray-700 p-8 shadow-2xl lg:block"
+              className="hidden rounded-xl border border-gray-400 bg-slate-200 p-8 shadow-2xl dark:border-gray-700 dark:bg-slate-800/60 lg:block"
               variants={fadeInLeft}
             >
-              <h2 className="mb-5 flex items-center text-2xl font-bold text-white">
-                <FaHeart className="mr-3 text-pink-400" /> Hobbies
+              <h2 className="mb-5 flex items-center text-2xl font-bold text-gray-900 dark:text-white">
+                <FaHeart className="mr-3 text-pink-500 dark:text-pink-400" />{" "}
+                Hobbies
               </h2>
-              <ul className="list-none space-y-2 pl-0 text-gray-300">
+              <ul className="list-none space-y-2 pl-0 text-gray-600 dark:text-gray-400">
                 {hobbies.map((hobby, index) => (
                   <li key={index} className="flex items-center">
-                    <span className="mr-2 text-pink-400">&#9679;</span>
+                    <span className="mr-2 text-pink-500 dark:text-pink-400">
+                      &#9679;
+                    </span>
                     {hobby}
                   </li>
                 ))}
               </ul>
-              <h2 className="mb-5 mt-6 flex items-center text-2xl font-bold text-white">
-                <FaBriefcase className="mr-3 text-cyan-400" /> Career Interests
+              <h2 className="mb-5 mt-6 flex items-center text-2xl font-bold text-gray-900 dark:text-white">
+                <FaBriefcase className="mr-3 text-sky-600 dark:text-cyan-400" />{" "}
+                Career Interests
               </h2>
-              <ul className="list-none space-y-2 pl-0 text-gray-300">
+              <ul className="list-none space-y-2 pl-0 text-gray-600 dark:text-gray-400">
                 {interest.map((item, index) => (
                   <li key={index} className="flex items-center">
-                    <span className="mr-2 text-cyan-400">&#9679;</span>
+                    <span className="mr-2 text-sky-600 dark:text-cyan-400">
+                      &#9679;
+                    </span>
                     {item}
                   </li>
                 ))}
@@ -281,17 +293,17 @@ export const AboutMe = () => {
             </motion.div>
 
             <motion.section
-              className="bg-slate-800/60 hidden space-y-6 rounded-xl border border-gray-700 p-6 shadow-xl lg:block"
+              className="hidden space-y-6 rounded-xl border border-gray-400 bg-slate-200 p-6 shadow-xl dark:border-gray-700 dark:bg-slate-800/60 lg:block"
               variants={fadeInLeft}
             >
-              <h2 className="flex items-center text-3xl font-bold text-white">
-                <FaCode className="mr-3 text-yellow-400" />
+              <h2 className="flex items-center text-3xl font-bold text-gray-900 dark:text-white">
+                <FaCode className="mr-3 text-yellow-400 dark:text-amber-400" />
                 Technical Expertise
               </h2>
 
               {Object.keys(categorizedSkills).map((category) => (
                 <div key={category} className="pt-2">
-                  <h3 className="mb-3 text-xl font-semibold text-cyan-400">
+                  <h3 className="mb-3 text-xl font-semibold text-sky-600 dark:text-cyan-400">
                     {category}
                   </h3>
 
@@ -299,7 +311,7 @@ export const AboutMe = () => {
                     {categorizedSkills[category].map((skill, index) => (
                       <motion.span
                         key={index}
-                        className="rounded-full bg-gray-700/70 px-4 py-1 text-sm font-medium text-white shadow-md transition duration-200 hover:bg-gray-600"
+                        className="rounded-full bg-slate-400 px-4 py-1 text-sm font-medium text-white shadow-md transition duration-200 hover:bg-gray-400 dark:bg-gray-700/70 dark:hover:bg-gray-600"
                         initial={{ opacity: 0, scale: 0.8 }}
                         animate={{ opacity: 1, scale: 1 }}
                         transition={{
@@ -327,13 +339,14 @@ export const AboutMe = () => {
               className="lg:order-0 order-2 space-y-4 text-justify"
               variants={fadeInRight}
             >
-              <h2 className="flex items-center border-b border-cyan-500/50 pb-2 text-3xl font-bold text-white">
-                <FaUserTie className="mr-3 text-cyan-400" /> Summary
+              <h2 className="flex items-center border-b border-sky-600 pb-2 text-3xl font-bold text-gray-900 dark:border-cyan-500/50 dark:text-white">
+                <FaUserTie className="mr-3 text-sky-600 dark:text-cyan-400" />{" "}
+                Summary
               </h2>
-              <p className="text-lg leading-relaxed text-gray-300">
+              <p className="text-lg leading-relaxed text-gray-500 dark:text-gray-300">
                 {careerSummary1}
               </p>
-              <p className="text-lg leading-relaxed text-gray-300">
+              <p className="text-lg leading-relaxed text-gray-500 dark:text-gray-300">
                 {careerSummary2}
               </p>
             </motion.section>
@@ -342,41 +355,43 @@ export const AboutMe = () => {
               className="lg:order-0 order-3 space-y-6"
               variants={fadeInRight}
             >
-              <h2 className="flex items-center border-b border-cyan-500/50 pb-2 text-3xl font-bold text-white">
-                <MdWorkHistory className="mr-3 text-green-400" /> Work
-                Experience
+              <h2 className="flex items-center border-b border-sky-600 pb-2 text-3xl font-bold text-gray-900 dark:border-cyan-500/50 dark:text-white">
+                <MdWorkHistory className="mr-3 text-green-500 dark:text-green-400" />{" "}
+                Work Experience
               </h2>
               <div className="space-y-6 text-justify">
                 {myExperiences.map((exp, index) => (
                   <motion.div
                     key={index}
-                    className="border-l-4 border-cyan-400 pl-4"
+                    className="border-l-4 border-sky-600 pl-4 dark:border-cyan-400"
                     variants={fadeInRight}
                   >
                     <div className="flex flex-wrap items-center gap-2">
-                      <h3 className="text-xl font-semibold text-white">
+                      <h3 className="text-xl font-bold text-gray-900 dark:text-white">
                         {exp.title}
                       </h3>
                       {exp.type && (
-                        <span className="rounded-full border border-cyan-500/30 bg-cyan-500/20 px-2.5 py-0.5 text-sm font-medium text-cyan-300">
+                        <span className="rounded-full border bg-slate-400 px-2.5 py-0.5 text-sm font-semibold text-white dark:border-cyan-500/30 dark:bg-cyan-500/20 dark:text-cyan-300">
                           {exp.type}
                         </span>
                       )}
                     </div>
-                    <p className="font-medium text-cyan-300">
+                    <p className="font-semibold text-sky-600 dark:text-cyan-300">
                       {exp.company} | {exp.duration}
                     </p>
-                    <ul className="mt-2 list-none space-y-1 text-gray-400">
+                    <ul className="mt-2 list-none space-y-1 text-gray-600 dark:text-gray-400">
                       {exp.jobdesk.map((point, i) => {
                         const match = point.match(/^(.*?)(\(.*?\))(.*)$/);
                         return (
                           <li key={i} className="flex items-start">
-                            <span className="mr-3 text-cyan-400">&#9679;</span>
+                            <span className="mr-3 text-sky-600 dark:text-cyan-400">
+                              &#9679;
+                            </span>
                             <span>
                               {match ? (
                                 <>
                                   {match[1]}
-                                  <span className="rounded-md border border-cyan-500/30 bg-cyan-500/20 px-1.5 py-0.5 text-sm font-medium text-cyan-300">
+                                  <span className="rounded-md border bg-slate-400 px-1.5 py-0.5 text-sm font-medium text-white dark:border-cyan-500/30 dark:bg-cyan-500/20 dark:text-cyan-300">
                                     {match[2]}
                                   </span>
                                   {match[3]}
@@ -398,23 +413,26 @@ export const AboutMe = () => {
               className="lg:order-0 order-4 space-y-6"
               variants={fadeInRight}
             >
-              <h2 className="flex items-center border-b border-cyan-500/50 pb-2 text-3xl font-bold text-white">
-                <FaGraduationCap className="mr-3 text-red-400" /> Education
+              <h2 className="flex items-center border-b border-sky-600 pb-2 text-3xl font-bold text-gray-900 dark:border-cyan-500/50 dark:text-white">
+                <FaGraduationCap className="mr-3 text-red-500 dark:text-red-400" />{" "}
+                Education
               </h2>
               <div className="space-y-4 text-justify">
                 {myEducation.map((edu, index) => (
                   <motion.div
                     key={index}
-                    className="border-l-4 border-cyan-400 pl-4"
+                    className="border-l-4 border-sky-600 pl-4 dark:border-cyan-400"
                     variants={fadeInRight}
                   >
-                    <h3 className="text-xl font-semibold text-white">
+                    <h3 className="text-xl font-bold text-gray-900 dark:text-white">
                       {edu.degree}
                     </h3>
-                    <p className="font-medium text-gray-300">
+                    <p className="font-semibold text-gray-500 dark:text-gray-300">
                       {edu.institution} | {edu.duration}
                     </p>
-                    <p className="mt-1 text-sm text-gray-400">GPA: {edu.gpa}</p>
+                    <p className="mt-1 text-sm font-medium text-gray-600 dark:text-gray-400">
+                      GPA: {edu.gpa}
+                    </p>
                   </motion.div>
                 ))}
               </div>
@@ -424,52 +442,60 @@ export const AboutMe = () => {
               className="lg:order-0 order-4 space-y-6"
               variants={fadeInRight}
             >
-              <h2 className="flex items-center border-b border-cyan-500/50 pb-2 text-3xl font-bold text-white">
-                <GiBookmarklet className="mr-3 text-blue-400" /> Education
-                Non-Formal
+              <h2 className="flex items-center border-b border-sky-600 pb-2 text-3xl font-bold text-gray-900 dark:border-cyan-500/50 dark:text-white">
+                <GiBookmarklet className="mr-3 text-blue-500 dark:text-blue-400" />{" "}
+                Education Non-Formal
               </h2>
               <div className="space-y-4 text-justify">
                 {myEducationNonFormal.map((edu, index) => (
                   <motion.div
                     key={index}
-                    className="border-l-4 border-cyan-400 pl-4"
+                    className="border-l-4 border-sky-600 pl-4 dark:border-cyan-400"
                     variants={fadeInRight}
                   >
-                    <h3 className="text-xl font-semibold text-white">
+                    <h3 className="text-xl font-bold text-gray-900 dark:text-white">
                       {edu.degree}
                     </h3>
-                    <p className="font-medium text-gray-300">
+                    <p className="font-semibold text-gray-500 dark:text-gray-300">
                       {edu.institution}
                     </p>
-                    <p className="mt-1 text-sm text-gray-400">{edu.duration}</p>
+                    <p className="mt-1 text-sm font-medium text-gray-600 dark:text-gray-400">
+                      {edu.duration}
+                    </p>
                   </motion.div>
                 ))}
               </div>
             </motion.section>
 
             <motion.div
-              className="bg-slate-800/60 lg:order-0 order-5 rounded-xl border border-gray-700 p-8 shadow-2xl lg:hidden"
+              className="lg:order-0 order-5 rounded-xl border border-gray-400 bg-slate-200 p-8 shadow-2xl dark:border-gray-700 dark:bg-slate-800/60 lg:hidden"
               variants={fadeInRight}
             >
-              <h2 className="mb-5 flex items-center text-2xl font-bold text-white">
-                <FaHeart className="mr-3 text-pink-400" /> Hobbies
+              <h2 className="mb-5 flex items-center text-2xl font-bold text-gray-900 dark:text-white">
+                <FaHeart className="mr-3 text-pink-500 dark:text-pink-400" />{" "}
+                Hobbies
               </h2>
-              <ul className="list-none space-y-2 pl-0 text-gray-300">
+              <ul className="list-none space-y-2 pl-0 text-gray-600 dark:text-gray-400">
                 {hobbies.map((hobby, index) => (
                   <li key={index} className="flex items-center">
-                    <span className="mr-2 text-pink-400">&#9679;</span>
+                    <span className="mr-2 text-pink-500 dark:text-pink-400">
+                      &#9679;
+                    </span>
                     {hobby}
                   </li>
                 ))}
               </ul>
 
-              <h2 className="mb-5 mt-6 flex items-center text-2xl font-bold text-white">
-                <FaBriefcase className="mr-3 text-cyan-400" /> Career Interests
+              <h2 className="mb-5 mt-6 flex items-center text-2xl font-bold text-gray-900 dark:text-white">
+                <FaBriefcase className="mr-3 text-sky-600 dark:text-cyan-400" />{" "}
+                Career Interests
               </h2>
-              <ul className="list-none space-y-2 pl-0 text-gray-300">
+              <ul className="list-none space-y-2 pl-0 text-gray-600 dark:text-gray-400">
                 {interest.map((interest, index) => (
                   <li key={index} className="flex items-center">
-                    <span className="mr-2 text-blue-400">&#9679;</span>
+                    <span className="mr-2 text-sky-600 dark:text-cyan-400">
+                      &#9679;
+                    </span>
                     {interest}
                   </li>
                 ))}
@@ -477,30 +503,17 @@ export const AboutMe = () => {
             </motion.div>
 
             <motion.section
-              className="bg-slate-800/60 lg:order-0 order-6 space-y-4 rounded-xl border border-gray-700 p-6 shadow-xl"
+              className="lg:order-0 order-6 space-y-6 rounded-xl border border-gray-400 bg-slate-200 p-6 shadow-xl dark:border-gray-700 dark:bg-slate-800/60 lg:hidden"
               variants={fadeInRight}
             >
-              <h2 className="flex items-center text-3xl font-bold text-white">
-                <FaLightbulb className="mr-3 text-amber-400" /> Future Goals &
-                Aspirations
-              </h2>
-              <p className="text-justify text-lg leading-relaxed text-gray-300">
-                {futureFocusAndAspiration}
-              </p>
-            </motion.section>
-
-            <motion.section
-              className="bg-slate-800/60 lg:order-0 order-7 space-y-6 rounded-xl border border-gray-700 p-6 shadow-xl lg:hidden"
-              variants={fadeInRight}
-            >
-              <h2 className="flex items-center text-3xl font-bold text-white">
-                <FaCode className="mr-3 text-yellow-400" />
+              <h2 className="flex items-center text-3xl font-bold text-gray-900 dark:text-white">
+                <FaCode className="mr-3 text-yellow-400 dark:text-amber-400" />
                 Technical Expertise
               </h2>
 
               {Object.keys(categorizedSkills).map((category) => (
                 <div key={category} className="pt-2">
-                  <h3 className="mb-3 text-xl font-semibold text-cyan-400">
+                  <h3 className="mb-3 text-xl font-semibold text-sky-600 dark:text-cyan-400">
                     {category}
                   </h3>
 
@@ -508,7 +521,7 @@ export const AboutMe = () => {
                     {categorizedSkills[category].map((skill, index) => (
                       <motion.span
                         key={index}
-                        className="rounded-full bg-gray-700/70 px-4 py-1 text-sm font-medium text-white shadow-md transition duration-200 hover:bg-gray-600"
+                        className="rounded-full bg-slate-400 px-4 py-1 text-sm font-medium text-white shadow-md transition duration-200 hover:bg-gray-400 dark:bg-gray-700/70 dark:hover:bg-gray-600"
                         initial={{ opacity: 0, scale: 0.8 }}
                         animate={{ opacity: 1, scale: 1 }}
                         transition={{
@@ -522,6 +535,19 @@ export const AboutMe = () => {
                   </div>
                 </div>
               ))}
+            </motion.section>
+
+            <motion.section
+              className="lg:order-0 order-7 space-y-4 rounded-xl border border-gray-400 bg-slate-200 p-6 shadow-xl dark:border-gray-700 dark:bg-slate-800/60"
+              variants={fadeInRight}
+            >
+              <h2 className="flex items-center text-3xl font-bold text-gray-900 dark:text-white">
+                <FaLightbulb className="mr-3 text-yellow-400 dark:text-amber-400" />{" "}
+                Future Goals & Aspirations
+              </h2>
+              <p className="text-justify text-lg leading-relaxed text-gray-500 dark:text-gray-300">
+                {futureFocusAndAspiration}
+              </p>
             </motion.section>
           </motion.div>
         </div>
