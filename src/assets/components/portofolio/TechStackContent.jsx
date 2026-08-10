@@ -154,7 +154,7 @@ export const TechStackContent = () => {
 
   const allCategories = Object.entries(skillsData);
   const hasHiddenCategories = allCategories.some(
-    ([category]) => !DEFAULT_VISIBLE_CATEGORIES.includes(category)
+    ([category]) => !DEFAULT_VISIBLE_CATEGORIES.includes(category),
   );
 
   return (
@@ -185,9 +185,7 @@ export const TechStackContent = () => {
             <div
               key={category}
               className={
-                isDefaultVisible || isExpanded
-                  ? undefined
-                  : "hidden lg:block"
+                isDefaultVisible || isExpanded ? undefined : "hidden lg:block"
               }
             >
               <h3 className="mb-4 text-lg font-bold text-gray-800 dark:text-gray-200 sm:text-xl">
