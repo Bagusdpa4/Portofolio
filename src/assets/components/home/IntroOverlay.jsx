@@ -124,7 +124,7 @@ const AnimatedBadges = () => {
 
   return (
     <motion.div
-      className="mt-20 flex flex-wrap justify-center gap-3"
+      className="mt-20 grid grid-cols-2 justify-items-center gap-3 sm:flex sm:flex-wrap sm:justify-center"
       variants={staggerContainerVariants}
       initial="hidden"
       animate="visible"
