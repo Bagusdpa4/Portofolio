@@ -238,7 +238,7 @@ export const Portofolio = () => {
       <Navbar />
 
       <motion.div
-        className="bg-linear-to-r min-h-screen bg-white from-gray-100 via-white to-blue-100 px-4 pb-16 pt-20 dark:bg-gray-950 dark:from-gray-950 dark:via-slate-800 dark:to-blue-950 sm:px-8"
+        className="bg-linear-to-r min-h-screen bg-white from-gray-100 via-white to-blue-100/40 px-4 pb-16 pt-20 dark:bg-gray-950 dark:from-gray-950 dark:via-slate-800 dark:to-blue-950 sm:px-8"
         initial="hidden"
         animate="visible"
         variants={{

@@ -287,7 +287,7 @@ export const Homepage = () => {
 
   return (
     <motion.div
-      className="bg-linear-to-r min-h-screen bg-white from-gray-100 via-white to-blue-100 font-sans dark:bg-gray-950 dark:from-gray-950 dark:via-slate-800 dark:to-blue-950"
+      className="bg-linear-to-r min-h-screen bg-white from-gray-100 via-white to-blue-100/40 font-sans dark:bg-gray-950 dark:from-gray-950 dark:via-slate-800 dark:to-blue-950"
       variants={containerVariants}
       initial="hidden"
       animate="visible"

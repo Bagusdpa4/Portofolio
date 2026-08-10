@@ -59,7 +59,7 @@ const contentFadeInVariants = (direction = "up") => ({
 export const HeroSection = ({ handleSmoothScroll }) => (
   <Section
     id="home"
-    className="bg-linear-to-r overflow-hidden from-gray-100 via-white to-blue-100 text-left dark:from-gray-950 dark:via-slate-800 dark:to-blue-950"
+    className="bg-linear-to-r overflow-hidden from-gray-100 via-white to-blue-50 text-left dark:from-gray-950 dark:via-slate-800 dark:to-blue-950"
   >
     <div className="relative z-10 mx-auto flex h-full w-full max-w-7xl grow items-center justify-center">
       <div className="flex h-full w-full flex-col-reverse items-center gap-10 py-4 lg:flex-row lg:gap-8">
