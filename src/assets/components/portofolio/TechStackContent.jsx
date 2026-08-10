@@ -32,6 +32,7 @@ import {
   SiJsonwebtokens,
   SiSwagger,
   SiGooglegemini,
+  SiShadcnui,
 } from "react-icons/si";
 import { TbBrandPrisma, TbApi, TbBrandOffice } from "react-icons/tb";
 import { BiLogoVisualStudio, BiLogoGoogleCloud } from "react-icons/bi";
@@ -43,11 +44,16 @@ const skillsData = [
   { name: "CSS", icon: FaCss3Alt, color: "text-blue-500" },
   { name: "JavaScript", icon: FaJs, color: "text-yellow-400" },
   { name: "ReactJS", icon: FaReact, color: "text-cyan-400" },
-  { name: "Nextjs (Dasar)", icon: RiNextjsFill, color: "text-black" },
+  {
+    name: "Nextjs (Dasar)",
+    icon: RiNextjsFill,
+    color: "dark:text-white text-black",
+  },
   { name: "Redux", icon: SiRedux, color: "text-purple-600" },
   { name: "Tailwind CSS", icon: SiTailwindcss, color: "text-cyan-400" },
   { name: "Bootstrap", icon: FaBootstrap, color: "text-purple-700" },
   { name: "Vite", icon: SiVite, color: "text-purple-400" },
+  { name: "Shadcn UI", icon: SiShadcnui, color: "dark:text-white text-black" },
   { name: "Material UI", icon: SiMui, color: "text-blue-500" },
 
   // Backend & Database
@@ -66,9 +72,9 @@ const skillsData = [
 
   // Tools & Lainnya
   { name: "Git", icon: FaGitAlt, color: "text-orange-600" },
-  { name: "GitHub", icon: FaGithub, color: "text-white" },
+  { name: "GitHub", icon: FaGithub, color: "dark:text-white text-black" },
   { name: "Gitlab", icon: FaGitlab, color: "text-orange-600" },
-  { name: "Vercel", icon: SiVercel, color: "text-white" },
+  { name: "Vercel", icon: SiVercel, color: "dark:text-white text-black" },
   { name: "Trello", icon: FaTrello, color: "text-blue-500" },
   { name: "NPM", icon: FaNpm, color: "text-red-600" },
   { name: "Yarn", icon: FaYarn, color: "text-blue-500" },
@@ -134,9 +140,9 @@ export const TechStackContent = () => {
             x2="100%"
             y2="0%"
           >
-            <stop offset="30%" stopColor="#facc15" /> {/* yellow-400 */}
-            <stop offset="50%" stopColor="#22c55e" /> {/* green-500 */}
-            <stop offset="90%" stopColor="#3b82f6" /> {/* blue-500 */}
+            <stop offset="40%" stopColor="#facc15" /> {/* yellow-400 */}
+            <stop offset="40%" stopColor="#22c55e" /> {/* green-500 */}
+            <stop offset="70%" stopColor="#3b82f6" /> {/* blue-500 */}
           </linearGradient>
         </defs>
       </svg>
