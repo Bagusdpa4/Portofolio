@@ -311,7 +311,7 @@ export const Portofolio = () => {
               </div>
 
               <div className="space-y-8">
-                <p className="whitespace-pre-wrap pt-0 text-justify text-xl leading-relaxed text-gray-700 dark:text-gray-300">
+                <p className="whitespace-pre-wrap pt-0 text-justify text-base leading-relaxed text-gray-700 dark:text-gray-300 lg:text-xl">
                   {mainDescription}
                 </p>
 
@@ -382,7 +382,7 @@ export const Portofolio = () => {
               </div>
 
               <motion.div
-                className="rounded-xl border border-gray-400 bg-slate-200 p-8 shadow-xl dark:border-gray-700 dark:bg-slate-800/60"
+                className="rounded-xl border border-gray-400 bg-slate-200 p-6 shadow-xl dark:border-gray-700 dark:bg-slate-800/60"
                 variants={staggerContainerVariants}
               >
                 <h2 className="mb-5 flex items-center text-2xl font-bold text-gray-900 dark:text-white">
@@ -393,7 +393,7 @@ export const Portofolio = () => {
                   {featuresList.map((feature, index) => (
                     <motion.li
                       key={index}
-                      className="flex items-start text-lg text-gray-700 dark:text-gray-300"
+                      className="flex items-start text-base text-gray-700 dark:text-gray-300 lg:text-lg"
                       variants={itemVariants}
                     >
                       <span className="mr-3 font-bold text-sky-600 dark:text-cyan-400">

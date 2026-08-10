@@ -9,7 +9,7 @@ export const portfolioItems = [
     desc: "A food & beverage ordering website with direct WhatsApp integration for order fulfillment with the store owner.",
     longDesc:
       "Drulz Deals is a food and beverage ordering web app built to simplify the ordering process between customers and outlet owners. Customers can choose their favorite outlet to place an order. Every product comes with its own discounted price, so customers can see the best price upfront without needing to negotiate. After selecting individual items or bundle packages, the order list is automatically forwarded to the website owner's WhatsApp, so the only remaining steps are payment confirmation and pickup at the chosen outlet.",
-    category: "Frontend Javascript",
+    category: "Website/Full-Stack",
     time: "June 2026 - Present",
     projectUrl: "https://drulz-deals.vercel.app/",
     githubUrl: "https://github.com/Bagusdpa4/drulz-deals",
@@ -309,7 +309,7 @@ export const ProjectContent = () => {
           <div
             key={item.id}
             onClick={() => navigate(`/project/${item.id}`)}
-            className="cursor-pointer rounded-xl border border-gray-700 bg-slate-200 p-5 shadow-xl transition duration-300 hover:scale-105 hover:border-sky-600 dark:hover:border-cyan-400 dark:bg-slate-800/80"
+            className="cursor-pointer rounded-xl border border-gray-700 bg-slate-200 p-5 shadow-xl transition duration-300 hover:scale-105 hover:border-sky-600 dark:bg-slate-800/80 dark:hover:border-cyan-400"
           >
             <div className="mb-4 h-40 overflow-hidden rounded-lg bg-gray-900 sm:h-52">
               <img
