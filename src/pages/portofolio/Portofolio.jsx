@@ -353,7 +353,7 @@ export const Portofolio = () => {
                     {technologiesList.map((tech, index) => (
                       <motion.span
                         key={index}
-                        className="rounded-full bg-slate-300 px-3 py-1 text-sm font-medium text-sky-600 dark:bg-gray-700/70 dark:text-cyan-400"
+                        className="rounded-full bg-slate-400 px-3 py-1 text-sm font-medium text-sky-600 dark:bg-gray-700/70 dark:text-cyan-400"
                         variants={itemVariants}
                       >
                         {tech}
