@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
+import { useTheme } from "../context/ThemeContext";
 
 // Component
 import Formal from "../assets/img/Formal.PNG";
+import Formal2 from "../assets/img/Formal.jpg";
 import { Navbar } from "../assets/components/navbar/Navbar";
 import { Footer } from "../assets/components/navbar/Footer";
 import { Loading } from "../assets/components/loading/Loading";
@@ -183,6 +185,7 @@ const TypewriterText = ({
 };
 
 export const Homepage = () => {
+  const { theme } = useTheme();
   const [isLoading, setIsLoading] = useState(true);
   const [activeTab, setActiveTab] = useState("project");
   const initialShowIntro = sessionStorage.getItem(INTRO_SHOWN_KEY) !== "true";
@@ -334,11 +337,18 @@ export const Homepage = () => {
 
                   {/* Profile Photo Container */}
                   <div className="relative z-10 flex h-full w-full items-center justify-center rounded-full border-4 border-sky-500/50 bg-gray-200 shadow-2xl shadow-sky-500/20 dark:bg-gray-700">
-                    <img
-                      src={Formal}
-                      alt="Foto Profil Bagus Dwi"
-                      className="h-full w-full rounded-full object-cover"
-                    />
+                    <AnimatePresence mode="wait">
+                      <motion.img
+                        key={theme}
+                        src={theme === "dark" ? Formal2 : Formal}
+                        alt="Foto Profil Bagus Dwi"
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        transition={{ duration: 0.25 }}
+                        className="absolute h-full w-full rounded-full object-cover"
+                      />
+                    </AnimatePresence>
                   </div>
                 </div>
               </motion.div>
