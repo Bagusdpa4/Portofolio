@@ -31,6 +31,7 @@ import {
   SiSwagger,
   SiGooglegemini,
   SiShadcnui,
+  SiTypescript
 } from "react-icons/si";
 import { IoIosSettings } from "react-icons/io";
 import { TbBrandPrisma, TbApi, TbBrandOffice } from "react-icons/tb";
@@ -43,6 +44,7 @@ const skillsData = {
     { name: "HTML", icon: FaHtml5, color: "text-orange-600" },
     { name: "CSS", icon: FaCss3Alt, color: "text-blue-500" },
     { name: "JavaScript", icon: FaJs, color: "text-yellow-400" },
+    { name: "Typescript", icon: SiTypescript, color: "text-blue-500" },
     { name: "ReactJS", icon: FaReact, color: "text-cyan-400" },
     {
       name: "Next.js (Dasar)",
