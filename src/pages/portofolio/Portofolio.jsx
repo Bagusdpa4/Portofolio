@@ -114,6 +114,7 @@ export const Portofolio = () => {
 
   const featuresList = project?.features || [];
   const technologiesList = project?.techStack || [];
+  const isTechStackCategorized = !Array.isArray(technologiesList);
   const githubLink = project?.githubUrl || "#";
   const mainDescription = project?.longDesc || project?.desc;
 
@@ -150,6 +151,45 @@ export const Portofolio = () => {
   if (!project) {
     return null;
   }
+
+  // Deteksi apakah project ini punya "tim lain" (backend atau frontend terpisah)
+  const hasBackendTeam = project.backendurl || project.backendgithuburl;
+  const hasFrontendTeam = project.frontendurl || project.frontendgithuburl;
+
+  // Label tombol utama
+  const mainDemoLabel = hasFrontendTeam ? "Documentation API" : "Live Demo";
+
+  // Label tombol GitHub utama, disesuaikan berdasarkan peran project ini
+  const mainGithubLabel = hasBackendTeam
+    ? "Frontend GitHub"
+    : hasFrontendTeam
+      ? "Backend GitHub"
+      : "GitHub";
+
+  // Data tim lain (untuk heading & tombol sekunder)
+  const otherRepo = hasBackendTeam
+    ? {
+        role: "Backend",
+        url: project.backendurl,
+        githubUrl: project.backendgithuburl,
+        demoLabel: "Documentation API",
+        githubLabel: "Backend GitHub",
+      }
+    : hasFrontendTeam
+      ? {
+          role: "Frontend",
+          url: project.frontendurl,
+          githubUrl: project.frontendgithuburl,
+          demoLabel: "Live Demo",
+          githubLabel: "Frontend GitHub",
+        }
+      : null;
+
+  const otherRepoHeading = otherRepo
+    ? project.isTeamProject
+      ? `${otherRepo.role} Team Repository`
+      : `${otherRepo.role} Repository`
+    : null;
 
   // Animasi transisi gambar
   const imageVariants = {
@@ -278,13 +318,24 @@ export const Portofolio = () => {
               variants={contentFadeInVariants("left")}
             >
               <div className="space-y-3">
-                <h1 className="text-4xl font-extrabold text-gray-900 dark:text-white sm:text-5xl">
+                <h1 className="text-3xl font-extrabold text-gray-900 dark:text-white sm:text-4xl">
                   {project.title}
                 </h1>
                 <div className="flex flex-wrap items-center justify-between gap-y-2">
-                  <p className="text-lg text-gray-600 dark:text-gray-300">
-                    {project.category}
-                  </p>
+                  <div className="flex flex-wrap items-center gap-3">
+                    <p className="text-lg text-gray-600 dark:text-gray-300">
+                      {project.category}
+                    </p>
+                    <span
+                      className={`rounded-full border px-3 py-1 text-xs font-semibold uppercase tracking-wide ${
+                        project.isTeamProject
+                          ? "border-purple-500/40 bg-purple-500/10 text-purple-600 dark:text-purple-300"
+                          : "border-emerald-500/40 bg-emerald-500/10 text-emerald-600 dark:text-emerald-300"
+                      }`}
+                    >
+                      {project.isTeamProject ? "Team Project" : "Solo Project"}
+                    </span>
+                  </div>
 
                   {project.time && (
                     <p className="text-md flex items-center font-bold text-sky-600 dark:font-normal dark:text-cyan-400">
@@ -326,7 +377,7 @@ export const Portofolio = () => {
                     className="bg-linear-to-r inline-flex flex-1 items-center justify-center rounded-lg from-cyan-600 to-blue-700 px-6 py-3 text-lg font-bold text-white shadow-lg transition duration-300 hover:scale-[1.02] hover:bg-cyan-500"
                     variants={itemVariants}
                   >
-                    Live Demo
+                    {mainDemoLabel}
                     <FiExternalLink className="ml-2 h-5 w-5" />
                   </motion.a>
                   <motion.a
@@ -336,10 +387,47 @@ export const Portofolio = () => {
                     className="inline-flex flex-1 items-center justify-center rounded-lg border border-gray-600 bg-gray-800 px-6 py-3 text-lg font-bold text-white shadow transition duration-300 hover:scale-[1.02] dark:text-gray-300"
                     variants={itemVariants}
                   >
-                    GitHub
+                    {mainGithubLabel}
                     <FaGithub className="ml-2 h-5 w-5" />
                   </motion.a>
                 </motion.div>
+
+                {otherRepo && (
+                  <div className="space-y-2">
+                    <p className="text-sm font-semibold uppercase tracking-wide text-gray-600 dark:text-gray-400">
+                      {otherRepoHeading}
+                    </p>
+                    <motion.div
+                      className="flex flex-col space-y-4 sm:flex-row sm:space-x-4 sm:space-y-0"
+                      variants={staggerContainerVariants}
+                    >
+                      {otherRepo.url && (
+                        <motion.a
+                          href={otherRepo.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex flex-1 items-center justify-center rounded-lg border border-sky-600 bg-sky-600/10 px-6 py-3 text-lg font-bold text-sky-600 shadow transition duration-300 hover:scale-[1.02] hover:bg-sky-600/20 dark:border-cyan-500/30 dark:bg-cyan-500/10 dark:text-cyan-400 dark:hover:bg-cyan-500/20"
+                          variants={itemVariants}
+                        >
+                          {otherRepo.demoLabel}
+                          <FiExternalLink className="ml-2 h-5 w-5" />
+                        </motion.a>
+                      )}
+                      {otherRepo.githubUrl && (
+                        <motion.a
+                          href={otherRepo.githubUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex flex-1 items-center justify-center rounded-lg border border-gray-600 bg-gray-800 px-6 py-3 text-lg font-bold text-white shadow transition duration-300 hover:scale-[1.02] dark:text-gray-300"
+                          variants={itemVariants}
+                        >
+                          {otherRepo.githubLabel}
+                          <FaGithub className="ml-2 h-5 w-5" />
+                        </motion.a>
+                      )}
+                    </motion.div>
+                  </div>
+                )}
 
                 <motion.div
                   className="rounded-xl border border-gray-400 bg-slate-200 p-6 dark:border-gray-700 dark:bg-slate-800/60"
@@ -349,17 +437,41 @@ export const Portofolio = () => {
                     <FaCode className="mr-2 text-sky-600 dark:text-cyan-400" />{" "}
                     Technologies Used
                   </h2>
-                  <div className="flex flex-wrap gap-2">
-                    {technologiesList.map((tech, index) => (
-                      <motion.span
-                        key={index}
-                        className="rounded-full bg-slate-400 px-3 py-1 text-sm font-medium text-white dark:bg-gray-700/70 dark:text-cyan-400"
-                        variants={itemVariants}
-                      >
-                        {tech}
-                      </motion.span>
-                    ))}
-                  </div>
+
+                  {isTechStackCategorized ? (
+                    <div className="space-y-4">
+                      {Object.keys(technologiesList).map((category) => (
+                        <div key={category}>
+                          <h3 className="mb-2 text-sm font-bold uppercase tracking-wide text-gray-900 dark:text-white">
+                            {category}
+                          </h3>
+                          <div className="flex flex-wrap gap-2">
+                            {technologiesList[category].map((tech, index) => (
+                              <motion.span
+                                key={index}
+                                className="rounded-full bg-slate-400 px-3 py-1 text-sm font-medium text-white dark:bg-gray-700/70 dark:text-cyan-400"
+                                variants={itemVariants}
+                              >
+                                {tech}
+                              </motion.span>
+                            ))}
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  ) : (
+                    <div className="flex flex-wrap gap-2">
+                      {technologiesList.map((tech, index) => (
+                        <motion.span
+                          key={index}
+                          className="rounded-full bg-slate-400 px-3 py-1 text-sm font-medium text-white dark:bg-gray-700/70 dark:text-cyan-400"
+                          variants={itemVariants}
+                        >
+                          {tech}
+                        </motion.span>
+                      ))}
+                    </div>
+                  )}
                 </motion.div>
               </div>
             </motion.div>

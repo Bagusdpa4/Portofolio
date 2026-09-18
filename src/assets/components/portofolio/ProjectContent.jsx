@@ -3,8 +3,9 @@ import { FiExternalLink } from "react-icons/fi";
 import { useNavigate } from "react-router-dom";
 
 export const portfolioItems = [
+
   {
-    id: 1,
+    id: 2,
     title: "Drulz Deals",
     desc: "A food & beverage ordering website with direct WhatsApp integration for order fulfillment with the store owner.",
     longDesc:
@@ -13,6 +14,7 @@ export const portfolioItems = [
     time: "June 2026 - Present",
     projectUrl: "https://drulz-deals.vercel.app/",
     githubUrl: "https://github.com/Bagusdpa4/drulz-deals",
+    isTeamProject: false,
     techStack: [
       "Javascript",
       "ReactJS",
@@ -42,7 +44,7 @@ export const portfolioItems = [
     ],
   },
   {
-    id: 2,
+    id: 3,
     title: "E-Commerce Cahaya Kreativ",
     desc: "A booking and management system for creative services, featuring a complete e-commerce setup, product management, chat consultation, and an admin dashboard.",
     longDesc:
@@ -51,25 +53,31 @@ export const portfolioItems = [
     time: "December 2024 - August 2025",
     projectUrl: "https://cahayakreativ.vercel.app/",
     githubUrl: "https://github.com/Bagusdpa4/Cahaya-Kreativ-FE",
-    techStack: [
-      "Javascript",
-      "ReactJS",
-      "Tailwind CSS",
-      "Redux",
-      "Node.js",
-      "Expressjs",
-      "PostgreSQL",
-      "Midtrans",
-      "Prisma ORM",
-      "Google Cloud Platform",
-      "JWT Authentication",
-      "Restful API",
-      "Github",
-      "Visual Studio Code",
-      "Vercel",
-      "Neon",
-      "Imagekit",
-    ],
+    backendurl: "https://cahaya-kreativ-be.vercel.app/api-docs",
+    backendgithuburl: "https://github.com/Bagusdpa4/Cahaya-Kreativ-BE",
+    isTeamProject: false,
+    techStack: {
+      Frontend: [
+        "Javascript",
+        "ReactJS",
+        "Tailwind CSS",
+        "Redux",
+        "Framer Motion",
+      ],
+      Backend: [
+        "Node.js",
+        "Expressjs",
+        "PostgreSQL",
+        "Midtrans",
+        "Prisma ORM",
+        "Google Cloud Platform",
+        "JWT Authentication",
+        "Restful API",
+        "Neon",
+        "Imagekit",
+      ],
+      Tools: ["Github", "Visual Studio Code", "Vercel", "Postman"],
+    },
     features: [
       "24/7 online creative service booking system.",
       "Service scheduling and selection system.",
@@ -97,7 +105,7 @@ export const portfolioItems = [
     ],
   },
   {
-    id: 3,
+    id: 4,
     title: "Restful API for Airline Ticket Booking",
     desc: "A RESTful API built for a flight ticket booking simulation, featuring flight schedule search, online ticket booking, and payment.",
     longDesc:
@@ -105,7 +113,10 @@ export const portfolioItems = [
     category: "Backend Javascript",
     time: "February - July 2024",
     projectUrl: "https://api-ticketing.vercel.app/api-docs",
-    githubUrl: "https://github.com/Bagusdpa4/Backend_Flight_Ticketing",
+    githubUrl: "https://github.com/Bagusdpa4/Final_Project_BEJS_KM_6",
+    frontendurl: "https://flynowfoundation.vercel.app/",
+    frontendgithuburl: "https://github.com/gihonsinaga/FinalProject_FE_B6",
+    isTeamProject: true,
     techStack: [
       "Javascript",
       "Node.js",
@@ -143,7 +154,7 @@ export const portfolioItems = [
     ],
   },
   {
-    id: 4,
+    id: 5,
     title: "Website Online Course",
     desc: "A modern, responsive online course website, focused on course discovery, learning progress tracking, and an admin dashboard for course management.",
     longDesc:
@@ -152,6 +163,9 @@ export const portfolioItems = [
     time: "August 2023 - January 2024",
     projectUrl: "https://final-project-binar-seven.vercel.app/",
     githubUrl: "https://github.com/Bagusdpa4/Final-Project",
+    backendurl: "https://bingwa-b11.vercel.app/api-docs/",
+    backendgithuburl: "https://github.com/Final-Project-B11-KM5/Bingwa-BE",
+    isTeamProject: true,
     techStack: [
       "Javascript",
       "ReactJS",
@@ -186,7 +200,7 @@ export const portfolioItems = [
     ],
   },
   {
-    id: 5,
+    id: 6,
     title: "List Movie TMDB",
     desc: "A web app displaying movie listings, movie details, and search for today's most popular films worldwide, powered by The Movie Database (TMDB) API.",
     longDesc:
@@ -195,6 +209,7 @@ export const portfolioItems = [
     time: "November 2023",
     projectUrl: "https://challenge-06-beta.vercel.app/",
     githubUrl: "https://github.com/Bagusdpa4/challenge-06",
+    isTeamProject: false,
     techStack: [
       "Javascript",
       "Tailwind CSS",
@@ -225,7 +240,7 @@ export const portfolioItems = [
     ],
   },
   {
-    id: 6,
+    id: 7,
     title: "ToDo List App",
     desc: "A simple daily task management app with features for adding, deleting, and marking tasks as complete.",
     longDesc:
@@ -234,6 +249,7 @@ export const portfolioItems = [
     time: "September 2023",
     projectUrl: "https://bagusdpa4.github.io/challenge03/",
     githubUrl: "https://github.com/Bagusdpa4/challenge03",
+    isTeamProject: false,
     techStack: [
       "JavaScript",
       "ReactJS",
@@ -256,7 +272,7 @@ export const portfolioItems = [
     thumbnailUrl: "/images/Project/Project 6/ToDo List.jpg",
   },
   {
-    id: 7,
+    id: 8,
     title: "Landing Pages Rental Car",
     desc: "A UI/UX design implementation for a car rental landing page, focused on clear and simple information display.",
     longDesc:
@@ -265,6 +281,7 @@ export const portfolioItems = [
     time: "August 2023",
     projectUrl: "https://bagusdpa4.github.io/challenge-01/",
     githubUrl: "https://github.com/Bagusdpa4/challenge-01",
+    isTeamProject: false,
     techStack: [
       "Javascript",
       "HTML5",
