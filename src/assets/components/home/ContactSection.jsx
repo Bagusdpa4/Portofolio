@@ -128,7 +128,7 @@ export const ContactSection = ({ SectionComponent }) => {
           <h2 className="mb-4 text-4xl font-extrabold text-gray-900 dark:text-white sm:text-5xl lg:text-6xl">
             Let's Collaborate
           </h2>
-          <p className="mx-auto max-w-2xl text-base text-gray-500 dark:text-gray-400 sm:text-xl">
+          <p className="mx-auto max-w-2xl text-base text-gray-700 dark:text-gray-400 sm:text-xl">
             Interested in discussing job opportunities, projects, or
             collaboration? Feel free to reach out through any of the platforms
             below.

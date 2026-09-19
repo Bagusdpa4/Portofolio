@@ -3,7 +3,58 @@ import { FiExternalLink } from "react-icons/fi";
 import { useNavigate } from "react-router-dom";
 
 export const portfolioItems = [
-
+  {
+    id: 1,
+    title: "Tracking of Job Applications",
+    desc: "A full-stack job application tracker with filtering, pagination, and a statistics dashboard.",
+    longDesc: "Job Tracker is a web application for logging and monitoring job applications from submission through to final outcome. Built with Next.js and Redux Toolkit on the frontend, and Express.js, Prisma, and PostgreSQL (Supabase) on the backend. The app supports JWT authentication, full CRUD for applications with multi-criteria filtering (status, source, city, date range, search), pagination, and a dashboard displaying progress statistics as a pie chart alongside a list of recent applications. The entire REST API is documented using OpenAPI/Swagger.",
+    category: "Website/Full-Stack",
+    time: "September 2026",
+    projectUrl: "https://frontend-application-job-tracker.vercel.app",
+    githubUrl: "https://github.com/Bagusdpa4/Frontend-Job-Tracker",
+    backendurl: "https://backend-job-application-tracker.vercel.app/api-docs",
+    backendgithuburl: "https://github.com/Bagusdpa4/Backend-Job-Tracker",
+    isTeamProject: false,
+    techStack: {
+      Frontend: [
+        "Javascript",
+        "Typescript",
+        "NextJS",
+        "Tailwind CSS",
+        "Redux",
+      ],
+      Backend: [
+        "Node.js",
+        "Expressjs",
+        "PostgreSQL",
+        "Prisma ORM",
+        "JWT Authentication",
+        "Restfull API",
+        "Supabase",
+        "swagger"
+      ],
+      Tools: ["Github", "Visual Studio Code", "Vercel", "Postman"],
+    },
+    features: [
+      "User authentication (register & login) with JWT, tokens auto-expire after 2 hours",
+      "Full CRUD for job applications: company, position, status, source, city, salary range, applied date, and notes",
+      "Filter and search applications by status, source, city, date range, and keyword",
+      "Paginated application list (10 items per page)",
+      "Dashboard summary with a pie chart of status distribution and a list of recent applications",
+      "Application source dropdown with a manual input option for sources not in the preset list",
+      "Applied date validation prevents selecting a future date",
+      "Fully documented REST API using OpenAPI/Swagger",
+    ],
+    thumbnailUrl: "/images/Project/Project 8/Dashboard.png",
+    galleryUrls: [
+      "/images/Project/Project 8/Login.png",
+      "/images/Project/Project 8/Register.png",
+      "/images/Project/Project 8/List.png",
+      "/images/Project/Project 8/Detail.png",
+      "/images/Project/Project 8/Add.png",
+      "/images/Project/Project 8/Edit.png",
+    ],
+  },
   {
     id: 2,
     title: "Drulz Deals",

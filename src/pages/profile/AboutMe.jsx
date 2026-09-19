@@ -215,7 +215,7 @@ export const AboutMe = () => {
           <h1 className="text-4xl font-extrabold text-gray-900 dark:text-white sm:text-5xl">
             About <span className="text-sky-600 dark:text-cyan-400">Me</span>
           </h1>
-          <p className="mt-3 text-lg text-gray-600 dark:text-gray-400">
+          <p className="mt-3 text-lg text-gray-700 dark:text-gray-400">
             A deep dive into my journey, skills, and goals.
           </p>
         </motion.header>
@@ -247,7 +247,7 @@ export const AboutMe = () => {
                 Bagus Dwi Putra Adiyono
               </h2>
 
-              <div className="mb-6 text-center text-lg text-gray-600 dark:text-gray-400">
+              <div className="mb-6 text-center text-lg text-gray-700 dark:text-gray-400">
                 {/* Mobile */}
                 <p className="block lg:hidden">
                   <span className="block">S1 Information Systems</span>
@@ -259,7 +259,7 @@ export const AboutMe = () => {
                 </p>
               </div>
 
-              <div className="space-y-3 text-gray-600 dark:text-gray-400">
+              <div className="space-y-3 text-gray-700 dark:text-gray-400">
                 <p className="flex justify-between border-b border-gray-400 pb-2 dark:border-gray-700">
                   <span className="font-medium text-sky-600 dark:text-cyan-400">
                     Email:
@@ -289,7 +289,7 @@ export const AboutMe = () => {
                 <FaHeart className="mr-3 text-pink-500 dark:text-pink-400" />{" "}
                 Hobbies
               </h2>
-              <ul className="list-none space-y-2 pl-0 text-gray-600 dark:text-gray-400">
+              <ul className="list-none space-y-2 pl-0 text-gray-700 dark:text-gray-400">
                 {hobbies.map((hobby, index) => (
                   <li key={index} className="flex items-center">
                     <span className="mr-2 text-pink-500 dark:text-pink-400">
@@ -303,7 +303,7 @@ export const AboutMe = () => {
                 <FaBriefcase className="mr-3 text-sky-600 dark:text-cyan-400" />{" "}
                 Career Interests
               </h2>
-              <ul className="list-none space-y-2 pl-0 text-gray-600 dark:text-gray-400">
+              <ul className="list-none space-y-2 pl-0 text-gray-700 dark:text-gray-400">
                 {interest.map((item, index) => (
                   <li key={index} className="flex items-center">
                     <span className="mr-2 text-sky-600 dark:text-cyan-400">
@@ -366,10 +366,10 @@ export const AboutMe = () => {
                 <FaUserTie className="mr-3 text-sky-600 dark:text-cyan-400" />{" "}
                 Summary
               </h2>
-              <p className="text-base leading-relaxed text-gray-500 dark:text-gray-300 lg:text-lg">
+              <p className="text-base leading-relaxed text-gray-700 dark:text-gray-300 lg:text-lg">
                 {careerSummary1}
               </p>
-              <p className="text-base leading-relaxed text-gray-500 dark:text-gray-300 lg:text-lg">
+              <p className="text-base leading-relaxed text-gray-700 dark:text-gray-300 lg:text-lg">
                 {careerSummary2}
               </p>
             </motion.section>
@@ -409,7 +409,7 @@ export const AboutMe = () => {
                         {exp.duration}
                       </span>
                     </div>
-                    <ul className="mt-2 list-none space-y-1 text-base text-gray-600 dark:text-gray-400 lg:text-lg">
+                    <ul className="mt-2 list-none space-y-1 text-base text-gray-700 dark:text-gray-400 lg:text-lg">
                       {exp.jobdesk.map((point, i) => {
                         const match = point.match(/^(.*?)(\(.*?\))(.*)$/);
                         return (
@@ -587,7 +587,7 @@ export const AboutMe = () => {
                 <FaLightbulb className="mr-3 text-yellow-400 dark:text-amber-400" />{" "}
                 Future Goals & Aspirations
               </h2>
-              <p className="text-justify text-lg leading-relaxed text-gray-500 dark:text-gray-300">
+              <p className="text-justify text-lg leading-relaxed text-gray-700 dark:text-gray-300">
                 {futureFocusAndAspiration}
               </p>
             </motion.section>

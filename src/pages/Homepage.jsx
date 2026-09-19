@@ -469,7 +469,7 @@ export const Homepage = () => {
               <h2 className="mb-4 text-4xl font-extrabold text-gray-900 dark:text-white sm:text-5xl">
                 Portfolio Showcase
               </h2>
-              <p className="mx-auto mb-8 max-w-xl text-base text-gray-500 dark:text-gray-400 sm:text-lg">
+              <p className="mx-auto mb-8 max-w-xl text-base text-gray-700 dark:text-gray-400 sm:text-lg">
                 Explore my journey through real-world projects, certifications
                 I've earned, articles I've published, and my technical skills.
                 Each section reflects my passion for learning and continuous
