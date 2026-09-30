@@ -9,6 +9,7 @@ import {
   FaBuilding,
   FaClock,
 } from "react-icons/fa";
+import Formal2 from "../../assets/img/Formal2.jpg";
 import { MdWorkHistory } from "react-icons/md";
 import { GiBookmarklet } from "react-icons/gi";
 import Profile from "../../assets/img/Profile.jpg";
@@ -235,7 +236,7 @@ export const AboutMe = () => {
               <div className="mx-auto mb-6 h-60 w-60 overflow-hidden rounded-xl border-4 border-sky-400 bg-slate-200 shadow-inner dark:border-cyan-400 dark:bg-gray-700/70">
                 <div className="flex h-full w-full items-center justify-center">
                   <img
-                    src={Profile}
+                    src={Formal2}
                     loading="lazy"
                     alt="Foto Profil Bagus Dwi"
                     className="h-full w-full object-cover"
