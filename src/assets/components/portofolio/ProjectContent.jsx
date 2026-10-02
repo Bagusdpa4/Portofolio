@@ -102,7 +102,7 @@ export const portfolioItems = [
       "A booking and management system built for a photography company in Surabaya. This project focuses on end-to-end online service booking, from registration and schedule booking to payment and in-website chat consultation. Admins can control the website through product management and by monitoring incoming orders and chats. The services offered include photography, videography, and social media content management packages. The system took about 9 months to build and has since been handed over to and integrated by the client company. The entire development process, from planning to deployment, was carried out individually.",
     category: "Website/Full-Stack",
     time: "December 2024 - August 2025",
-    projectUrl: "https://cahayakreativ.vercel.app/",
+    projectUrl: "https://www.cahayakreativ.com/",
     githubUrl: "https://github.com/Bagusdpa4/Cahaya-Kreativ-FE",
     backendurl: "https://cahaya-kreativ-be.vercel.app/api-docs",
     backendgithuburl: "https://github.com/Bagusdpa4/Cahaya-Kreativ-BE",
@@ -139,7 +139,7 @@ export const portfolioItems = [
       "PostgreSQL database integration.",
       "Responsive and dynamic design.",
     ],
-    thumbnailUrl: "/images/Project/Project 2/Cahaya Kreativ.jpg",
+    thumbnailUrl: "/images/Project/Project 2/Dashboard.png",
     galleryUrls: [
       "/images/Project/Project 2/Gallery.png",
       "/images/Project/Project 2/Product.png",
