@@ -13,7 +13,6 @@ import Formal2 from "../../assets/img/Formal2.jpg";
 import { MdWorkHistory } from "react-icons/md";
 import { GiBookmarklet } from "react-icons/gi";
 import Profile from "../../assets/img/Profile.jpg";
-// import Profile from "../../assets/img/Profile.jpg";
 import { Navbar } from "../../assets/components/navbar/Navbar";
 import { Loading } from "../../assets/components/loading/Loading";
 import { motion } from "framer-motion";
