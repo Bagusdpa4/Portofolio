@@ -62,7 +62,7 @@ export const portfolioItems = [
     longDesc:
       "Drulz Deals is a food and beverage ordering web app built to simplify the ordering process between customers and outlet owners. Customers can choose their favorite outlet to place an order. Every product comes with its own discounted price, so customers can see the best price upfront without needing to negotiate. After selecting individual items or bundle packages, the order list is automatically forwarded to the website owner's WhatsApp, so the only remaining steps are payment confirmation and pickup at the chosen outlet.",
     category: "Website/Full-Stack",
-    time: "June 2026 - Present",
+    time: "June - September 2026",
     projectUrl: "https://drulz-deals.vercel.app/",
     githubUrl: "https://github.com/Bagusdpa4/drulz-deals",
     isTeamProject: false,
