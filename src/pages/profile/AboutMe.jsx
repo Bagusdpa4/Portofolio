@@ -96,7 +96,7 @@ const myExperiences = [
     title: "Full-Stack Web Developer",
     type: "Freelance",
     company: "Drulz Deals",
-    duration: "Jun 2026 - Now",
+    duration: "Jun - Sep 2026",
     jobdesk: [
       "Developed a web-based coffee ordering platform featuring discounted products from multiple coffee brands for client promotional campaigns.",
       "Implemented a structured product catalog to display coffee brands and menu offerings in a user-friendly interface.",
