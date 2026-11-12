@@ -116,10 +116,10 @@ const badgeAnimationVariants = {
 // Animated Badges Component
 const AnimatedBadges = () => {
   const badges = [
+    "Fullstack Web Developer",
     "Web Developer",
     "IT Programmer",
     "IT Support",
-    "IT Operational",
   ];
 
   return (

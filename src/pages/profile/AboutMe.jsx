@@ -34,10 +34,10 @@ const hobbies = [
 ];
 
 const interest = [
+  "Fullstack Web Developer",
   "Web Developer",
   "IT Programmer",
   "IT Support",
-  "IT Operational",
 ];
 
 const categorizedSkills = {

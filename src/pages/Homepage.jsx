@@ -360,10 +360,10 @@ export const Homepage = () => {
                 <motion.div>
                   <TypewriterText
                     texts={[
+                      "Fullstack Web Developer",
                       "Web Developer",
                       "IT Programmer",
                       "IT Support",
-                      "IT Operational",
                     ]}
                     typingSpeed={50}
                     deletingSpeed={25}
@@ -391,15 +391,24 @@ export const Homepage = () => {
                   >
                     <span className="mr-2">💾</span> Download CV
                   </a>
-                  <a
-                    href="/about-me"
-                    className="inline-flex items-center justify-center rounded-lg border border-black px-6 py-3 font-semibold text-black transition duration-300 hover:scale-105 hover:bg-gray-200 dark:border-white/30 dark:text-white dark:hover:bg-white/10"
-                  >
-                    <span className="mr-2">
-                      <CgProfile size={20} />
-                    </span>{" "}
-                    Learn More About Me
-                  </a>
+
+                  <div className="relative inline-block hover:scale-105">
+                    <a
+                      href="/about-me"
+                      className="group relative inline-flex cursor-pointer items-center justify-center overflow-hidden rounded-lg border-2 border-sky-600 px-6 py-3 font-semibold text-sky-600 transition duration-300 hover:text-white dark:border-cyan-400 dark:text-cyan-400"
+                    >
+                      <span className="bg-linear-to-r absolute inset-0 -z-10 translate-x-[-101%] from-cyan-600 to-blue-700 transition-transform duration-300 group-hover:translate-x-0" />
+                      <span className="mr-2">
+                        <CgProfile size={20} />
+                      </span>
+                      Learn More About Me
+                    </a>
+
+                    <span className="pointer-events-none absolute -right-1 -top-1 flex h-3 w-3">
+                      <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-amber-400  opacity-75"></span>
+                      <span className="relative inline-flex h-3 w-3 rounded-full bg-amber-500"></span>
+                    </span>
+                  </div>
                 </div>
               </motion.div>
             </div>
